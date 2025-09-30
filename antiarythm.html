@@ -371,11 +371,11 @@
                 options: ["Vérapamil", "Digoxine", "Métoprolol", "Flécaïnide"], 
                 correct: 2, 
                 feedback: "Le Métoprolol (et les autres Bêta-bloquants) est contre-indiqué chez l'asthmatique car il peut provoquer un bronchospasme par blocage des récepteurs $\\beta_2$ bronchiques." 
-            }
+            },
             { 
                 question: "Quelle est la signification de la Règle des 3R des digitaliques ?", 
-                options: ["Régularise, Réduit, Remplace", "Régularise, Renforce, Ralenti", "Ralenti, Rigidifie, Retourne", "Remplace, Retourne, Ralenti"], 
-                correct: 2, 
+                options: ["Régularise, Réduit, Remplace", "Ralenti, Rigidifie, Retourne", "Remplace, Retourne, Ralenti", "Régularise, Renforce, Ralenti"], 
+                correct: 3, 
                 feedback: "Renforce : Augmente la force de contraction du cœur (inotropes positifs). Ralentit : Diminue la fréquence cardiaque (chronotropes négatifs). Régularise : Ralentit la conduction dans le nœud auriculo-ventriculaire." 
             }
         ];
@@ -384,12 +384,14 @@
         const navButtons = document.querySelectorAll('.nav-btn');
 
         function showPage(pageId) {
+            // 1. Masquer toutes les pages
             pages.forEach(page => page.classList.add('hidden'));
+            
+            // 2. Afficher la page active
             const activePage = document.getElementById(pageId);
             if (activePage) activePage.classList.remove('hidden');
             
             const gradients = {
-                // MODIFICATION DE LA COULEUR DE CLASSE I
                 classe1: ['from-red-500', 'to-rose-600'],
                 classe2: ['from-purple-500', 'to-indigo-600'],
                 classe3: ['from-red-500', 'to-orange-500'],
@@ -399,15 +401,40 @@
                 synthese: ['from-gray-400', 'to-gray-600'],
             };
 
+            const allGradientClasses = Object.values(gradients).flat();
+
             navButtons.forEach(btn => {
                 const btnPageId = btn.getAttribute('onclick').match(/'([^']+)'/)[1];
-                Object.values(gradients).flat().forEach(gClass => btn.classList.remove(gClass));
+                
+                // 3. Retirer TOUS les styles actifs précédents de TOUS les boutons
                 btn.classList.remove('bg-gradient-to-r', 'text-white', 'shadow-md');
-                btn.classList.add('text-slate-800');
+                allGradientClasses.forEach(gClass => btn.classList.remove(gClass));
+
+                // Retirer les styles de hover spécifiques (car ils masquent l'état actif)
+                btn.classList.remove('hover:bg-rose-100', 'hover:text-rose-800', 
+                                    'hover:bg-purple-100', 'hover:text-purple-800',
+                                    'hover:bg-red-100', 'hover:text-red-800',
+                                    'hover:bg-green-100', 'hover:text-green-800',
+                                    'hover:bg-amber-100', 'hover:text-amber-800',
+                                    'hover:bg-slate-300', 'hover:text-slate-800',
+                                    'hover:bg-gray-200', 'hover:text-gray-800');
+
+
                 if (btnPageId === pageId) {
-                    btn.classList.remove('text-slate-800');
-                    // Ajout des classes de gradient spécifiques pour le bouton sélectionné
+                    // 4. Appliquer les styles actifs au bouton sélectionné
                     btn.classList.add('bg-gradient-to-r', 'text-white', 'shadow-md', ...gradients[pageId]);
+                    btn.classList.remove('text-slate-800');
+                } else {
+                    // 5. Appliquer les styles inactifs (hover) aux autres boutons
+                    btn.classList.add('text-slate-800');
+                    // Réappliquer les styles de hover spécifiques qui ont été retirés à l'étape 3.
+                    if (btnPageId === 'classe1') btn.classList.add('hover:bg-rose-100', 'hover:text-rose-800');
+                    if (btnPageId === 'classe2') btn.classList.add('hover:bg-purple-100', 'hover:text-purple-800');
+                    if (btnPageId === 'classe3') btn.classList.add('hover:bg-red-100', 'hover:text-red-800');
+                    if (btnPageId === 'classe4') btn.classList.add('hover:bg-green-100', 'hover:text-green-800');
+                    if (btnPageId === 'digitaliques') btn.classList.add('hover:bg-amber-100', 'hover:text-amber-800');
+                    if (btnPageId === 'quiz') btn.classList.add('hover:bg-slate-300', 'hover:text-slate-800');
+                    if (btnPageId === 'synthese') btn.classList.add('hover:bg-gray-200', 'hover:text-gray-800');
                 }
             });
             window.scrollTo(0, 0);
@@ -579,4 +606,3 @@
     </script>
 </body>
 </html>
-
