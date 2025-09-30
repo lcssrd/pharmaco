@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les Anticoagulants - IFSI</title>
     
     <!-- Tailwind CSS for styling -->
@@ -77,8 +77,8 @@
 
         <!-- Top Navigation Bar -->
         <nav id="navbar" class="bg-white sticky z-10 p-4 shadow-md">
-             <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 gap-2">
-                <button onclick="showPage('home')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-cyan-100 hover:text-cyan-800">Accueil</button>
+             <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-3 sm:grid-cols-5 md:grid-cols-8 gap-2">
+                <!-- L'onglet 'Accueil' a été supprimé ici -->
                 <button onclick="showPage('hemostase')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-green-100 hover:text-green-800">Hémostase</button>
                 <button onclick="showPage('aap')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-purple-100 hover:text-purple-800">AAP</button>
                 <button onclick="showPage('hnf')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-sky-100 hover:text-sky-800">HNF</button>
@@ -93,8 +93,8 @@
         <!-- Main Content Area -->
         <main id="main-content" class="p-4 sm:p-6 md:p-8">
 
-            <!-- Home Page -->
-            <div id="home" class="page">
+            <!-- Home Page (Masquée mais conservée pour éviter des erreurs JS si nécessaire) -->
+            <div id="home" class="page hidden">
                 <div class="bg-slate-50 p-6 rounded-xl shadow-sm">
                     <h2 class="text-xl md:text-2xl font-bold text-slate-800 mb-3">Bienvenue sur votre guide de révision !</h2>
                     <p class="text-slate-600 md:text-base">
@@ -105,6 +105,7 @@
             </div>
 
             <!-- Hémostase Page -->
+            <!-- Cette page est désormais la page d'accueil par défaut (voir JS en bas) -->
             <div id="hemostase" class="page hidden">
                 <h2 class="text-2xl md:text-3xl font-bold text-green-600">
                     🩸 L'HÉMOSTASE
@@ -603,7 +604,8 @@
             if (activePage) activePage.classList.remove('hidden');
             
             const gradients = {
-                home: ['from-cyan-400', 'to-blue-500'], hemostase: ['from-green-500', 'to-emerald-600'],
+                // 'home' est supprimé des couleurs
+                hemostase: ['from-green-500', 'to-emerald-600'],
                 aap: ['from-purple-500', 'to-indigo-600'], hnf: ['from-sky-400', 'to-cyan-500'],
                 hbpm: ['from-blue-600', 'to-indigo-700'], aod: ['from-amber-500', 'to-yellow-500'],
                 avk: ['from-red-500', 'to-orange-500'], quiz: ['from-slate-500', 'to-gray-700'],
@@ -763,7 +765,8 @@
         
         // --- Initial Load ---
         window.onload = () => {
-            showPage('home');
+            // Changement ici : on affiche la page 'hemostase' par défaut
+            showPage('hemostase'); 
             setNavbarPosition();
             createHeparineCharts();
             createOralAnticoagCharts();
@@ -776,5 +779,4 @@
     </script>
 </body>
 </html>
-
 
