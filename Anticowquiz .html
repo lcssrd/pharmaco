@@ -93,17 +93,6 @@
         <!-- Main Content Area -->
         <main id="main-content" class="p-4 sm:p-6 md:p-8">
 
-            <!-- Home Page (Masquée mais conservée pour éviter des erreurs JS si nécessaire) -->
-            <div id="home" class="page hidden">
-                <div class="bg-slate-50 p-6 rounded-xl shadow-sm">
-                    <h2 class="text-xl md:text-2xl font-bold text-slate-800 mb-3">Bienvenue sur votre guide de révision !</h2>
-                    <p class="text-slate-600 md:text-base">
-                        Cet outil a été conçu pour vous aider à maîtriser les points essentiels concernant les traitements anticoagulants.
-                        Naviguez à travers les sections pour réviser ou testez vos connaissances avec le quiz.
-                    </p>
-                </div>
-            </div>
-
             <!-- Hémostase Page -->
             <!-- Cette page est désormais la page d'accueil par défaut (voir JS en bas) -->
             <div id="hemostase" class="page hidden">
@@ -765,7 +754,6 @@
         
         // --- Initial Load ---
         window.onload = () => {
-            // Changement ici : on affiche la page 'hemostase' par défaut
             showPage('hemostase'); 
             setNavbarPosition();
             createHeparineCharts();
