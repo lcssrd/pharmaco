@@ -61,7 +61,7 @@
 </head>
 <body class="bg-slate-100 p-2 sm:p-4 md:p-8">
     <!-- Main container -->
-    <div id="app" class="max-w-6xl mx-auto bg-white min-h-screen shadow-2xl rounded-xl overflow-hidden">
+    <div id="app" class="max-w-6xl mx-auto bg-white min-h-screen shadow-2xl rounded-xl overflow-hidden flex flex-col">
                 
         <!-- Header -->
         <header id="header" class="bg-slate-800 text-white p-6 md:p-8 sticky top-0 z-50">
@@ -73,10 +73,10 @@
             </div>
         </header>
 
-        <!-- Top Navigation Bar -->
+        <!-- Top Navigation Bar (Accueil removed) -->
         <nav id="navbar" class="bg-white sticky z-10 p-4 shadow-md">
-             <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-4 md:grid-cols-8 gap-2">
-                <button onclick="showPage('home')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-cyan-100 hover:text-cyan-800">Accueil</button>
+             <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-7 md:grid-cols-7 gap-2">
+                <!-- Removed: <button onclick="showPage('home')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-cyan-100 hover:text-cyan-800">Accueil</button> -->
                 <button onclick="showPage('physioHTA')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-green-100 hover:text-green-800">Physio. HTA</button>
                 <button onclick="showPage('iec')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-orange-100 hover:text-orange-800">IEC</button>
                 <button onclick="showPage('ara2')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-red-100 hover:text-red-800">ARA II</button>
@@ -88,20 +88,9 @@
         </nav>
 
         <!-- Main Content Area -->
-        <main id="main-content" class="p-4 sm:p-6 md:p-8">
+        <main id="main-content" class="p-4 sm:p-6 md:p-8 flex-grow">
 
-            <!-- Home Page -->
-            <div id="home" class="page">
-                <div class="bg-slate-50 p-6 rounded-xl shadow-sm">
-                    <h2 class="text-xl md:text-2xl font-bold text-slate-800 mb-3">Bienvenue sur votre guide de révision !</h2>
-                    <p class="text-slate-600 md:text-base">
-                        Cet outil a été conçu pour vous aider à maîtriser les points essentiels concernant les traitements antihypertenseurs.
-                        Naviguez à travers les sections pour réviser les différentes classes thérapeutiques ou testez vos connaissances avec le quiz.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Physiopathologie HTA Page -->
+            <!-- Physiopathologie HTA Page (Now the default landing page) -->
             <div id="physioHTA" class="page hidden">
                 <h2 class="text-2xl md:text-3xl font-bold text-green-600">
                     🩺 PHYSIOPATHOLOGIE DE L'HTA
@@ -408,9 +397,8 @@
             </div>
 
         </main>
-
+        
         <!-- Footer (Replicating Header Style) -->
-        <!-- Placé à l'intérieur de l'élément #app pour bénéficier de la bordure et de l'ombre -->
         <footer id="footer" class="bg-slate-800 text-white p-4 md:p-6 mt-auto">
             <div class="flex items-center justify-center md:justify-end text-center">
                 <!-- Mobile/Tablet & Desktop Author Info (Footer) -->
@@ -419,7 +407,6 @@
                 </p>
             </div>
         </footer>
-
     </div>
 
     <script>
@@ -501,6 +488,8 @@
         // --- Navigation Logic ---
         const pages = document.querySelectorAll('.page');
         const navButtons = document.querySelectorAll('.nav-btn');
+        // Set the new default page ID
+        const defaultPageId = 'physioHTA';
 
         function showPage(pageId) {
             pages.forEach(page => page.classList.add('hidden'));
@@ -508,7 +497,8 @@
             if (activePage) activePage.classList.remove('hidden');
             
             const gradients = {
-                home: ['from-cyan-400', 'to-blue-500'], physioHTA: ['from-green-500', 'to-emerald-600'],
+                // Removed 'home' gradient
+                physioHTA: ['from-green-500', 'to-emerald-600'],
                 iec: ['from-orange-500', 'to-red-500'], ara2: ['from-red-500', 'to-rose-500'],
                 calciques: ['from-amber-500', 'to-orange-500'], beta: ['from-sky-500', 'to-cyan-500'],
                 diuretiques: ['from-indigo-500', 'to-purple-600'], quiz: ['from-slate-500', 'to-gray-700'],
@@ -516,10 +506,13 @@
 
             navButtons.forEach(btn => {
                 const btnPageId = btn.getAttribute('onclick').match(/'([^']+)'/)[1];
+                // Remove all previous gradient/active classes
                 Object.values(gradients).flat().forEach(gClass => btn.classList.remove(gClass));
                 btn.classList.remove('bg-gradient-to-r', 'text-white', 'shadow-md');
                 btn.classList.add('text-slate-800');
-                if (btnPageId === pageId) {
+                
+                // Add active classes to the current button
+                if (btnPageId === pageId && gradients[pageId]) {
                     btn.classList.remove('text-slate-800');
                     btn.classList.add('bg-gradient-to-r', 'text-white', 'shadow-md', ...gradients[pageId]);
                 }
@@ -626,7 +619,8 @@
         
         // --- Initial Load ---
         window.onload = () => {
-            showPage('home');
+            // New default page is 'physioHTA'
+            showPage(defaultPageId); 
             setNavbarPosition();
             renderQuiz();
             setupQuizListeners();
@@ -637,4 +631,3 @@
     </script>
 </body>
 </html>
-
