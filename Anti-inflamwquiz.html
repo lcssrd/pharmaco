@@ -77,9 +77,8 @@
 
         <!-- Top Navigation Bar -->
         <nav id="navbar" class="bg-white sticky z-10 p-4 shadow-md">
-             <!-- The navigation now only contains 4 main sections: Accueil, Inflamation, AINS, Corticoïdes, Quiz -->
-             <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-5 gap-2">
-                <button onclick="showPage('home')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-cyan-100 hover:text-cyan-800">Accueil</button>
+             <!-- Mise à jour pour 4 sections après suppression de 'Accueil' -->
+             <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-4 gap-2">
                 <button onclick="showPage('inflammation')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-red-100 hover:text-red-800">Inflammation</button>
                 <button onclick="showPage('ains')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-orange-100 hover:text-orange-800">AINS</button>
                 <button onclick="showPage('cortico')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-lime-100 hover:text-lime-800">Corticoïdes</button>
@@ -90,16 +89,7 @@
         <!-- Main Content Area -->
         <main id="main-content" class="p-4 sm:p-6 md:p-8">
 
-            <!-- Home Page -->
-            <div id="home" class="page">
-                <div class="bg-slate-50 p-6 rounded-xl shadow-sm">
-                    <h2 class="text-xl md:text-2xl font-bold text-slate-800 mb-3">Bienvenue sur votre guide de révision !</h2>
-                    <p class="text-slate-600 md:text-base">
-                        Cet outil a été conçu pour vous aider à maîtriser les points essentiels concernant les <strong>Anti-Inflammatoires</strong> (AINS et Corticoïdes) en UE 2.11.
-                        Naviguez à travers les sections pour réviser ou testez vos connaissances avec le quiz.
-                    </p>
-                </div>
-            </div>
+            <!-- L'ancienne page 'home' a été supprimée -->
 
             <!-- Inflammation Page -->
             <div id="inflammation" class="page hidden">
@@ -156,7 +146,6 @@
                         </ol>
                     </div>
 
-                    <!-- CORRECTION DES ** en <strong> ici -->
                     <p class="text-slate-600 pt-2">En comprenant ce mécanisme, on comprend mieux pourquoi les <strong>Corticoïdes</strong> (qui coupent l'inflammation à la source via PL-A2) ont un pouvoir anti-inflammatoire bien supérieur aux <strong>AINS</strong> (qui bloquent seulement la voie COX).</p>
                 </div>
 
@@ -383,17 +372,18 @@
             const activePage = document.getElementById(pageId);
             if (activePage) activePage.classList.remove('hidden');
             
-            // Note: Removed 'synthese' from gradients and the array
+            // Mise à jour de l'objet gradients : 'home' a été retiré.
             const gradients = {
-                home: ['from-cyan-400', 'to-blue-500'], inflammation: ['from-red-500', 'to-orange-500'],
-                ains: ['from-orange-500', 'to-yellow-500'], cortico: ['from-lime-500', 'to-green-500'],
+                inflammation: ['from-red-500', 'to-orange-500'],
+                ains: ['from-orange-500', 'to-yellow-500'], 
+                cortico: ['from-lime-500', 'to-green-500'],
                 quiz: ['from-slate-500', 'to-gray-700'],
             };
 
             navButtons.forEach(btn => {
                 const btnPageId = btn.getAttribute('onclick').match(/'([^']+)'/)[1];
                 
-                // Only process buttons that are still in the gradients object (i.e., not 'synthese')
+                // Uniquement les boutons actifs
                 if (gradients[btnPageId]) {
                     Object.values(gradients).flat().forEach(gClass => btn.classList.remove(gClass));
                     btn.classList.remove('bg-gradient-to-r', 'text-white', 'shadow-md');
@@ -513,7 +503,7 @@
         
         // --- Initial Load ---
         window.onload = () => {
-            showPage('home');
+            showPage('inflammation'); // La page 'inflammation' est maintenant la page par défaut
             setNavbarPosition();
             createCharts();
             renderQuiz();
@@ -525,3 +515,4 @@
     </script>
 </body>
 </html>
+
