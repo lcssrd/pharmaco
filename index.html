@@ -32,14 +32,15 @@
         }
     </style>
 </head>
-<body class="p-2 sm:p-4 md:p-8">
+<body class="p-2 sm:p-4 md:p-8 flex flex-col min-h-screen">
     <!-- Main container -->
-    <div id="app" class="max-w-6xl mx-auto bg-white min-h-screen shadow-2xl rounded-xl overflow-hidden">
+    <div id="app" class="max-w-6xl mx-auto bg-white shadow-2xl rounded-xl overflow-hidden flex-grow w-full">
         
         <!-- Header -->
         <header id="header" class="bg-slate-800 text-white p-6 md:p-8 sticky top-0 z-50">
             <div class="flex items-center justify-between">
                 <h1 id="main-title" class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent pb-2">Les essentiels en pharmacologie</h1>
+                <!-- Desktop Author Info (Header) -->
                 <div class="hidden md:block text-right font-bold text-slate-300 text-sm">
                     <p>Lucas Séraudie - <span id="author-ifsi" class="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">IFSI du CHU de Rouen</span> - 2025</p>
                 </div>
@@ -47,7 +48,7 @@
         </header>
 
         <!-- Main Content Area -->
-        <main id="main-content" class="p-4 sm:p-6 md:p-8">
+        <main id="main-content" class="p-4 sm:p-6 md:p-8 flex-grow">
 
             <!-- HOME PAGE -->
             <div id="module-accueil" class="module-page">
@@ -96,6 +97,17 @@
             </div>
 
         </main>
+
+        <!-- Footer (Replicating Header Style) -->
+        <!-- Placé à l'intérieur de l'élément #app pour bénéficier de la bordure et de l'ombre -->
+        <footer id="footer" class="bg-slate-800 text-white p-4 md:p-6 mt-auto">
+            <div class="flex items-center justify-center md:justify-end text-center">
+                <!-- Mobile/Tablet & Desktop Author Info (Footer) -->
+                <p class="font-bold text-slate-300 text-xs sm:text-sm">
+                    Lucas Séraudie - <span class="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">IFSI du CHU de Rouen</span> - 2025
+                </p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
