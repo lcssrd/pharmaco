@@ -277,21 +277,30 @@
                 </div>
             </div>
             
-            <!-- La section Fiche de synthèse a été supprimée -->
-
         </main>
+
+        <!-- Footer (Replicating Header Style) -->
+        <!-- Placé à l'intérieur de l'élément #app pour bénéficier de la bordure et de l'ombre -->
+        <footer id="footer" class="bg-slate-800 text-white p-4 md:p-6 mt-auto">
+            <div class="flex items-center justify-center md:justify-end text-center">
+                <!-- Mobile/Tablet & Desktop Author Info (Footer) -->
+                <p class="font-bold text-slate-300 text-xs sm:text-sm">
+                    Lucas Séraudie - <span class="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">IFSI du CHU de Rouen</span> - 2025
+                </p>
+            </div>
+        </footer>
+
+        
     </div>
 
     <script>
         const quizData = [
-            // NOUVELLE QUESTION AJOUTÉE EN PREMIER
             {
                 question: "Selon la triade de Celse, quels sont les signes locaux CARDINAUX de l'inflammation aiguë ?",
                 options: ["Fièvre, frissons, tachycardie, hypotension", "Chaleur, rougeur, douleur, œdème", "Céphalée, nausée, vomissement, dyspnée", "Pâleur, cyanose, sueurs, polypnée"],
                 correct: 1,
                 feedback: "Les quatre signes cardinaux de l'inflammation sont la <strong>chaleur</strong>, la <strong>rougeur</strong>, l'<strong>œdème</strong> et la <strong>douleur</strong>. Ils sont le résultat de la vasodilatation et de l'exsudation plasmatique."
             },
-            // FIN DE LA NOUVELLE QUESTION
             {
                 question: "Quel est l'effet secondaire majeur à surveiller chez un patient sous AINS ?",
                 options: ["L'insuffisance surrénale", "L'ulcère gastro-duodénal", "La rétention hydrosodée", "L'hypotension orthostatique"],
@@ -340,8 +349,6 @@
                 correct: 1,
                 feedback: "La prise d'AINS est strictement contre-indiquée dès le début du 6e mois (24 SA) en raison du risque de toxicité cardio-pulmonaire fœtale, notamment la <strong>fermeture prématurée du canal artériel</strong>."
             },
-            
-            <!-- QUESTIONS SUR LES EFFETS INDÉSIRABLES AJOUTÉES PRÉCÉDEMMENT -->
             {
                 question: "Quel est le principal risque infectieux ou immunologique associé à un traitement corticoïde au long cours ?",
                 options: ["Augmentation des lymphocytes", "Sévérité accrue des infections", "Activation des anticorps", "Diminution de la vitesse de sédimentation"],
@@ -360,7 +367,6 @@
                 correct: 2,
                 feedback: "La rétention de sel et d'eau due à l'effet minéralocorticoïde des corticoïdes augmente la volémie et conduit à l'<strong>hypertension artérielle</strong> et aux œdèmes."
             }
-            <!-- FIN DES QUESTIONS PRÉCÉDEMMENT AJOUTÉES -->
         ];
 
         // --- Navigation Logic (same as original) ---
