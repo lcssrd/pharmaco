@@ -81,9 +81,78 @@
                 <section class="bg-gradient-to-br from-violet-100 to-purple-100 rounded-2xl p-6 md:p-12">
                     <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-violet-500 to-purple-600 bg-clip-text text-transparent">Le Diabète : Généralités</span></h3>
                     <div class="space-y-8">
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"><div class="flex items-center gap-4 mb-4"><div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="microscope" class="text-blue-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Définition & Diagnostic</h4></div><p class="text-slate-600 mb-4">Présence d'une hyperglycémie chronique due à une carence (relative ou absolue) en insuline.</p><div class="grid md:grid-cols-2 gap-4 text-sm"><div class="p-4 bg-blue-50 rounded-lg"><h5 class="font-semibold text-blue-800">Glycémie à jeun</h5><p>Diabète si <strong>> 1,26 g/L (7 mmol/L)</strong> à deux reprises.</p></div><div class="p-4 bg-blue-50 rounded-lg"><h5 class="font-semibold text-blue-800">N'importe quand</h5><p>Diabète si <strong>> 2 g/L (11,1 mmol/L)</strong> avec des symptômes.</p></div></div></div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"><div class="flex items-center gap-4 mb-4"><div class="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="heart-pulse" class="text-red-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Complications à long terme</h4></div><div class="grid md:grid-cols-2 gap-4 text-sm"><div class="p-4 bg-red-50 rounded-lg"><h5 class="font-semibold text-red-800">Macroangiopathies</h5><p>Atteinte des gros vaisseaux : AVC, infarctus du myocarde, artérite des membres inférieurs.</p></div><div class="p-4 bg-orange-50 rounded-lg"><h5 class="font-semibold text-orange-800">Microangiopathies</h5><p><strong>Rétinopathie</strong> (yeux), <strong>Néphropathie</strong> (reins), <strong>Neuropathie</strong> (nerfs), menant au mal perforant plantaire.</p></div></div></div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"><div class="flex items-center gap-4 mb-4"><div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="clipboard-check" class="text-green-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Surveillance Clé</h4></div><div class="flex flex-wrap gap-4 text-sm"><div class="flex-1 min-w-[200px] p-4 bg-green-50 rounded-lg"><h5 class="font-semibold text-green-800">HbA1c (Hémoglobine glyquée)</h5><p>Reflet de l'équilibre glycémique sur 3 mois. Objectif < 7% pour la plupart des patients.</p></div><div class="flex-1 min-w-[200px] p-4 bg-green-50 rounded-lg"><h5 class="font-semibold text-green-800">Annuelle</h5><p>Fond d'œil, bilan rénal (créatinine, protéinurie), bilan lipidique, examen des pieds, ECG.</p></div></div></div>
+                        <!-- What is diabetes? -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-sky-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="help-circle" class="text-sky-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Qu'est-ce que le diabète ?</h4>
+                            </div>
+                            <p class="text-slate-600 mb-4">Le diabète est une maladie chronique qui apparaît lorsque le pancréas ne produit pas suffisamment d'insuline ou que l'organisme n'utilise pas correctement celle qu'il produit. L'insuline est une hormone qui régule la concentration de sucre dans le sang (glycémie). Une hyperglycémie chronique est un effet courant du diabète non contrôlé qui, avec le temps, endommage gravement de nombreux systèmes organiques.</p>
+                            <div class="grid md:grid-cols-3 gap-4 text-sm mt-4">
+                                <div class="p-4 bg-sky-50 rounded-lg"><h5 class="font-semibold text-sky-800">Type 1</h5><p>Carence absolue en insuline due à une destruction auto-immune des cellules du pancréas.</p></div>
+                                <div class="p-4 bg-sky-50 rounded-lg"><h5 class="font-semibold text-sky-800">Type 2</h5><p>Utilisation inefficace de l'insuline (résistance) et/ou production insuffisante.</p></div>
+                                <div class="p-4 bg-sky-50 rounded-lg"><h5 class="font-semibold text-sky-800">Gestationnel</h5><p>Hyperglycémie apparaissant pendant la grossesse.</p></div>
+                            </div>
+                        </div>
+
+                        <!-- Symptoms -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-yellow-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="list-checks" class="text-yellow-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Symptômes et Signes d'Alerte</h4>
+                            </div>
+                            <p class="text-slate-600 mb-4">Les symptômes peuvent apparaître soudainement (Type 1) ou être progressifs et subtils (Type 2).</p>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-3 text-slate-700 list-inside list-disc">
+                                <li>Soif excessive (polydipsie)</li>
+                                <li>Envie fréquente d'uriner (polyurie)</li>
+                                <li>Faim exagérée (polyphagie)</li>
+                                <li>Perte de poids inexpliquée</li>
+                                <li>Fatigue intense</li>
+                                <li>Vision floue</li>
+                                <li>Cicatrisation lente</li>
+                                <li>Infections fréquentes</li>
+                            </ul>
+                        </div>
+
+                        <!-- Diagnosis -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="microscope" class="text-blue-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Diagnostic</h4>
+                            </div>
+                            <p class="text-slate-600 mb-4">Le diagnostic est posé par une prise de sang pour mesurer la glycémie.</p>
+                            <div class="grid md:grid-cols-3 gap-4 text-sm">
+                                <div class="p-4 bg-blue-50 rounded-lg"><h5 class="font-semibold text-blue-800">Glycémie à jeun</h5><p>Diabète si <strong>≥ 1,26 g/L (7 mmol/L)</strong> à deux reprises.</p></div>
+                                <div class="p-4 bg-blue-50 rounded-lg"><h5 class="font-semibold text-blue-800">Glycémie aléatoire</h5><p>Diabète si <strong>≥ 2 g/L (11,1 mmol/L)</strong> avec des symptômes.</p></div>
+                                <div class="p-4 bg-blue-50 rounded-lg"><h5 class="font-semibold text-blue-800">HbA1c</h5><p>Diabète si <strong>≥ 6,5%</strong>. Reflète la moyenne glycémique sur 3 mois.</p></div>
+                            </div>
+                        </div>
+
+                        <!-- Complications -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="heart-pulse" class="text-red-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Complications à long terme</h4>
+                            </div>
+                            <p class="text-slate-600 mb-4">L'hyperglycémie chronique endommage les vaisseaux sanguins, entraînant des complications sévères.</p>
+                            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                <div class="p-4 bg-red-50 rounded-lg"><h5 class="font-semibold text-red-800">Macroangiopathies</h5><p>Atteinte des gros vaisseaux : AVC, infarctus du myocarde, artérite des membres inférieurs.</p></div>
+                                <div class="p-4 bg-orange-50 rounded-lg"><h5 class="font-semibold text-orange-800">Microangiopathies</h5><p><strong>Rétinopathie</strong> (yeux), <strong>Néphropathie</strong> (reins), <strong>Neuropathie</strong> (nerfs), menant au mal perforant plantaire.</p></div>
+                            </div>
+                        </div>
+
+                        <!-- Monitoring -->
+                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                             <div class="flex items-center gap-4 mb-4">
+                                 <div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="clipboard-check" class="text-green-600 w-6 h-6"></i></div>
+                                 <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Surveillance et Objectifs</h4>
+                            </div>
+                            <p class="text-slate-600 mb-4">Une surveillance régulière est essentielle pour ajuster le traitement et prévenir les complications.</p>
+                            <div class="flex flex-wrap gap-4 text-sm">
+                                <div class="flex-1 min-w-[200px] p-4 bg-green-50 rounded-lg"><h5 class="font-semibold text-green-800">HbA1c (Hémoglobine glyquée)</h5><p>Reflet de l'équilibre glycémique sur 3 mois. Objectif <strong>&lt; 7%</strong> pour la plupart des patients.</p></div>
+                                <div class="flex-1 min-w-[200px] p-4 bg-green-50 rounded-lg"><h5 class="font-semibold text-green-800">Surveillance annuelle</h5><p>Fond d'œil, bilan rénal (créatinine, protéinurie), bilan lipidique, examen des pieds, ECG.</p></div>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -93,6 +162,25 @@
                     <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-teal-500 to-cyan-600 bg-clip-text text-transparent">Diabète de Type I (DID)</span></h3>
                     <div class="space-y-8">
                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6"><div class="flex items-center gap-4 mb-4"><div class="bg-emerald-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="shield-x" class="text-emerald-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Physiopathologie & Clinique</h4></div><p class="text-slate-600 mb-4">Maladie auto-immune menant à la destruction des cellules β du pancréas, provoquant une <strong>carence absolue en insuline</strong>. Touche le sujet jeune (< 20 ans) avec une survenue brutale.</p><div class="p-4 bg-emerald-50 rounded-lg"><h5 class="font-semibold text-emerald-800">Syndrome Cardinal</h5><p class="text-sm">Polyurie (urine abondante), Polydipsie (soif intense), Polyphagie (faim excessive), Amaigrissement.</p></div></div>
+                        
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-violet-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="dna" class="text-violet-600 w-6 h-6"></i>
+                                </div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Étiologie</h4>
+                            </div>
+                            <p class="text-slate-600 mb-4">Le DT1 est une maladie auto-immune dont les causes exactes combinent des facteurs génétiques et environnementaux.</p>
+                            <div class="p-4 bg-violet-50 rounded-lg text-sm">
+                                <h5 class="font-semibold text-violet-800 mb-2">Facteurs Contributifs</h5>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li><strong>Prédisposition génétique :</strong> Présence de certains gènes de prédisposition (système HLA).</li>
+                                    <li><strong>Facteurs environnementaux :</strong> Des infections virales (entérovirus, coxsackie B) pourraient agir comme déclencheurs.</li>
+                                    <li><strong>Réponse auto-immune :</strong> Le système immunitaire produit des auto-anticorps qui détruisent spécifiquement les cellules bêta du pancréas.</li>
+                                </ul>
+                            </div>
+                        </div>
+
                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6"><div class="flex items-center gap-4 mb-4"><div class="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="alert-triangle" class="text-orange-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Complications Aiguës</h4></div><div class="grid md:grid-cols-2 gap-4 text-sm"><div class="p-4 bg-orange-50 rounded-lg"><h5 class="font-semibold text-orange-800">Acidocétose Diabétique</h5><p>Urgence vitale. Carence en insuline → production de corps cétoniques → acidose. <strong>Signes :</strong> dyspnée de Kussmaul, haleine cétonique, déshydratation, coma. <strong>TTT :</strong> réhydratation + insulinothérapie IV.</p></div><div class="p-4 bg-red-50 rounded-lg"><h5 class="font-semibold text-red-800">Hypoglycémie (< 0,6 g/L)</h5><p>Due au traitement. <strong>Signes neurovégétatifs :</strong> sueurs, tremblements, palpitations. <strong>Signes de souffrance cérébrale :</strong> troubles de la vue, confusion, coma. <strong>TTT :</strong> resucrage per os si conscient, Glucagon IM ou G30% IV si inconscient.</p></div></div></div>
                     </div>
                 </section>
@@ -107,10 +195,10 @@
                             <h4 class="text-xl font-bold text-slate-800 mb-2">Analogues Ultra-Rapides</h4>
                             <p class="text-xs text-slate-500 italic mb-4">Novorapid®, Humalog®, Apidra®</p>
                             <div class="space-y-3 text-sm flex-grow">
-                                <p class="flex items-center gap-2"><i data-lucide="zap" class="w-4 h-4 text-yellow-500"></i><strong>Délai action :</strong> 15 min</p>
-                                <p class="flex items-center gap-2"><i data-lucide="bar-chart-2" class="w-4 h-4 text-sky-500"></i><strong>Pic :</strong> ~1h</p>
-                                <p class="flex items-center gap-2"><i data-lucide="hourglass" class="w-4 h-4 text-slate-500"></i><strong>Durée :</strong> 2-5h</p>
-                                <p class="flex items-center gap-2"><i data-lucide="syringe" class="w-4 h-4 text-blue-500"></i><strong>Rôle :</strong> Contrôler la glycémie des repas (bolus). Injecter juste avant ou après le repas.</p>
+                                <p class="flex items-center gap-3"><i data-lucide="zap" class="w-5 h-5 text-yellow-500"></i><span><strong>Délai action:</strong> 15 min</span></p>
+                                <p class="flex items-center gap-3"><i data-lucide="bar-chart-2" class="w-5 h-5 text-sky-500"></i><span><strong>Pic:</strong> ~1h</span></p>
+                                <p class="flex items-center gap-3"><i data-lucide="hourglass" class="w-5 h-5 text-slate-500"></i><span><strong>Durée:</strong> 2-5h</span></p>
+                                <p class="flex items-start gap-3"><i data-lucide="syringe" class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5"></i><span><strong>Rôle:</strong> Contrôler la glycémie des repas (bolus). Injecter juste avant ou après le repas.</span></p>
                             </div>
                         </div>
                         <!-- Intermédiaires Card -->
@@ -118,10 +206,10 @@
                             <h4 class="text-xl font-bold text-slate-800 mb-2">Insulines Intermédiaires (NPH)</h4>
                             <p class="text-xs text-slate-500 italic mb-4">Insulatard®, Umuline NPH®</p>
                             <div class="space-y-3 text-sm flex-grow">
-                                <p class="flex items-center gap-2"><i data-lucide="zap" class="w-4 h-4 text-yellow-500"></i><strong>Délai action :</strong> 90 min</p>
-                                <p class="flex items-center gap-2"><i data-lucide="bar-chart-2" class="w-4 h-4 text-sky-500"></i><strong>Pic :</strong> 4-8h</p>
-                                <p class="flex items-center gap-2"><i data-lucide="hourglass" class="w-4 h-4 text-slate-500"></i><strong>Durée :</strong> 12-18h</p>
-                                <p class="flex items-center gap-2"><i data-lucide="syringe" class="w-4 h-4 text-blue-500"></i><strong>Rôle :</strong> Couverture basale. Apparence laiteuse, à agiter avant emploi.</p>
+                                <p class="flex items-center gap-3"><i data-lucide="zap" class="w-5 h-5 text-yellow-500"></i><span><strong>Délai action:</strong> 90 min</span></p>
+                                <p class="flex items-center gap-3"><i data-lucide="bar-chart-2" class="w-5 h-5 text-sky-500"></i><span><strong>Pic:</strong> 4-8h</span></p>
+                                <p class="flex items-center gap-3"><i data-lucide="hourglass" class="w-5 h-5 text-slate-500"></i><span><strong>Durée:</strong> 12-18h</span></p>
+                                <p class="flex items-start gap-3"><i data-lucide="syringe" class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5"></i><span><strong>Rôle:</strong> Couverture basale. Apparence laiteuse, à agiter avant emploi.</span></p>
                             </div>
                         </div>
                         <!-- Lentes Card -->
@@ -129,10 +217,10 @@
                             <h4 class="text-xl font-bold text-slate-800 mb-2">Analogues Lents</h4>
                             <p class="text-xs text-slate-500 italic mb-4">Lantus®, Levemir®, Toujeo®</p>
                             <div class="space-y-3 text-sm flex-grow">
-                                <p class="flex items-center gap-2"><i data-lucide="zap" class="w-4 h-4 text-yellow-500"></i><strong>Délai action :</strong> 2-4h</p>
-                                <p class="flex items-center gap-2"><i data-lucide="bar-chart-2" class="w-4 h-4 text-sky-500"></i><strong>Pic :</strong> Pas de pic marqué</p>
-                                <p class="flex items-center gap-2"><i data-lucide="hourglass" class="w-4 h-4 text-slate-500"></i><strong>Durée :</strong> ~24h</p>
-                                <p class="flex items-center gap-2"><i data-lucide="syringe" class="w-4 h-4 text-blue-500"></i><strong>Rôle :</strong> Assurer les besoins de base en insuline (basal). Ne pas mélanger.</p>
+                                <p class="flex items-center gap-3"><i data-lucide="zap" class="w-5 h-5 text-yellow-500"></i><span><strong>Délai action:</strong> 2-4h</span></p>
+                                <p class="flex items-center gap-3"><i data-lucide="bar-chart-2" class="w-5 h-5 text-sky-500"></i><span><strong>Pic:</strong> Pas de pic marqué</span></p>
+                                <p class="flex items-center gap-3"><i data-lucide="hourglass" class="w-5 h-5 text-slate-500"></i><span><strong>Durée:</strong> ~24h</span></p>
+                                <p class="flex items-start gap-3"><i data-lucide="syringe" class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5"></i><span><strong>Rôle:</strong> Assurer les besoins de base en insuline (basal). Ne pas mélanger.</span></p>
                             </div>
                         </div>
                     </div>
@@ -152,6 +240,26 @@
                     <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-orange-500 to-red-600 bg-clip-text text-transparent">Diabète de Type II (DNID)</span></h3>
                     <div class="space-y-8">
                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6"><div class="flex items-center gap-4 mb-4"><div class="bg-amber-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="move-3d" class="text-amber-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Physiopathologie & Clinique</h4></div><p class="text-slate-600 mb-4">Le plus fréquent (85%). Apparition progressive chez le sujet > 40 ans, souvent en surpoids. L'organisme développe une <strong>insulinorésistance</strong> (les cellules répondent mal à l'insuline), puis le pancréas s'épuise (<strong>insulinodéficience relative</strong>).</p><div class="p-4 bg-amber-50 rounded-lg"><h5 class="font-semibold text-amber-800">Facteurs de risque</h5><p class="text-sm">Génétique, obésité, sédentarité.</p></div></div>
+                        
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-rose-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="weight" class="text-rose-600 w-6 h-6"></i>
+                                </div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Étiologie et Facteurs de Risque</h4>
+                            </div>
+                            <p class="text-slate-600 mb-4">Le DT2 est multifactoriel, résultant d'une interaction complexe entre un terrain génétique favorable et des facteurs liés au mode de vie.</p>
+                            <div class="p-4 bg-rose-50 rounded-lg text-sm">
+                                <h5 class="font-semibold text-rose-800 mb-2">Principaux Facteurs de Risque</h5>
+                                 <ul class="list-disc list-inside space-y-1">
+                                    <li><strong>Facteurs génétiques :</strong> Les antécédents familiaux jouent un rôle majeur.</li>
+                                    <li><strong>Surcharge pondérale :</strong> L'obésité, surtout abdominale, est le principal facteur de risque modifiable.</li>
+                                    <li><strong>Sédentarité :</strong> Le manque d'activité physique réduit la sensibilité des cellules à l'insuline.</li>
+                                    <li><strong>Âge :</strong> Le risque augmente significativement après 45 ans.</li>
+                                </ul>
+                            </div>
+                        </div>
+
                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6"><div class="flex items-center gap-4 mb-4"><div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="scale-3d" class="text-green-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Stratégie Thérapeutique</h4></div><div class="flex flex-wrap gap-4 text-sm"><div class="flex-1 min-w-[200px] p-4 bg-green-50 rounded-lg"><h5 class="font-semibold text-green-800">1. Règles Hygiéno-Diététiques</h5><p>Perte de poids, alimentation équilibrée, activité physique. Peut suffire au début.</p></div><div class="flex-1 min-w-[200px] p-4 bg-green-50 rounded-lg"><h5 class="font-semibold text-green-800">2. Monothérapie (Metformine)</h5><p>Si échec des RHD après 3-6 mois, introduction de la metformine.</p></div><div class="flex-1 min-w-[200px] p-4 bg-green-50 rounded-lg"><h5 class="font-semibold text-green-800">3. Bi- ou Trithérapie / Insulinothérapie</h5><p>Ajout d'autres ADO si HbA1c > 7%. Passage à l'insuline si l'équilibre n'est pas atteint.</p></div></div></div>
                     </div>
                 </section>
@@ -220,7 +328,14 @@
                  <section class="bg-gradient-to-br from-indigo-100 to-blue-100 rounded-2xl p-6 md:p-12">
                     <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-indigo-500 to-blue-600 bg-clip-text text-transparent">Le Rôle Infirmier</span></h3>
                     <div class="space-y-6">
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"><div class="flex items-center gap-4 mb-4"><div class="bg-indigo-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="book-user" class="text-indigo-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Éducation Thérapeutique du Patient (ETP)</h4></div><p class="text-slate-600">C'est le pilier de la prise en charge. L'infirmier(e) apprend au patient à devenir autonome et acteur de sa maladie.</p><ul class="list-disc list-inside space-y-2 mt-4 text-slate-700 text-sm"><li><strong>Autosurveillance glycémique :</strong> Apprendre la technique, l'interprétation des résultats et quand la réaliser.</li><li><strong>Techniques d'injection de l'insuline :</strong> Choix du matériel, rotation des sites (éviter les lipodystrophies), conservation.</li><li><strong>Reconnaissance des signes :</strong> Apprendre à identifier et gérer une hypo/hyperglycémie.</li><li><strong>Règles hygiéno-diététiques :</strong> Expliquer l'impact de l'alimentation et de l'activité physique.</li><li><strong>Soins des pieds :</strong> Inspection quotidienne pour prévenir le mal perforant plantaire.</li><li><strong>Gestion des déchets :</strong> Utilisation des collecteurs pour objets piquants (DASRI).</li></ul></div>
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"><div class="flex items-center gap-4 mb-4"><div class="bg-indigo-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="book-user" class="text-indigo-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Éducation Thérapeutique du Patient (ETP)</h4></div><p class="text-slate-600">C'est le pilier de la prise en charge. L'infirmier(e) apprend au patient à devenir autonome et acteur de sa maladie.</p><ul class="list-disc list-inside space-y-2 mt-4 text-slate-700 text-sm">
+                            <li><strong>Autosurveillance glycémique</strong> : Apprendre la technique, l'interprétation des résultats et quand la réaliser.</li>
+                            <li><strong>Techniques d'injection de l'insuline</strong> : Choix du matériel, rotation des sites (éviter les lipodystrophies), conservation.</li>
+                            <li><strong>Reconnaissance des signes</strong> : Apprendre à identifier et gérer une hypo/hyperglycémie.</li>
+                            <li><strong>Règles hygiéno-diététiques</strong> : Expliquer l'impact de l'alimentation et de l'activité physique.</li>
+                            <li><strong>Soins des pieds</strong> : Inspection quotidienne pour prévenir le mal perforant plantaire.</li>
+                            <li><strong>Gestion des déchets</strong> : Utilisation des collecteurs pour objets piquants (DASRI).</li>
+                        </ul></div>
                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"><div class="flex items-center gap-4 mb-4"><div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="eye" class="text-purple-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Surveillance Clinique et Paraclinique</h4></div><p class="text-slate-600">Surveiller l'efficacité et la tolérance des traitements, et dépister les complications.</p><ul class="list-disc list-inside space-y-2 mt-4 text-slate-700 text-sm"><li>Contrôle des glycémies capillaires selon la prescription.</li><li>Recherche de cétonurie par bandelette urinaire si hyperglycémie > 2,5 g/L.</li><li>Surveillance des paramètres vitaux (TA, pouls).</li><li>Surveillance de l'état cutané (points d'injection, pieds).</li><li>Vérification de la bonne observance du traitement.</li><li>Suivi du carnet de surveillance du patient.</li></ul></div>
                     </div>
                 </section>
