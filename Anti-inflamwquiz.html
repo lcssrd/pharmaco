@@ -78,14 +78,15 @@
         <!-- Top Navigation Bar -->
         <nav id="navbar" class="bg-white sticky z-10 p-4 shadow-md">
              <!-- Mise à jour pour 4 sections après suppression de 'Accueil' -->
-            <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-2">
-                <button data-page="inflammation" onclick="showPage('inflammation')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Inflammation</button>
-                <button data-page="ains" onclick="showPage('ains')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">AINS</button>
-                <button data-page="cortico" onclick="showPage('cortico')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Corticoïdes</button>
-                <button data-page="quiz" onclick="showPage('quiz')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Quiz</button>
+             <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-4 gap-2">
+                <button data-page="inflammation" onclick="showPage('inflammation')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-red-100 hover:text-red-800">Inflammation</button>
+                <button data-page="ains" onclick="showPage('ains')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-orange-100 hover:text-orange-800">AINS</button>
+                <button data-page="cortico" onclick="showPage('cortico')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-lime-100 hover:text-lime-800">Corticoïdes</button>
+                <button data-page="quiz" onclick="showPage('quiz')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-slate-300 hover:text-slate-800">Quiz</button>
             </div>
         </nav>
 
+        
         <!-- Main Content Area -->
         <main id="main-content" class="p-4 sm:p-6 md:p-8">
 
