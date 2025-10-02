@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +22,7 @@
             font-family: 'Inter', sans-serif;
             background-color: #f0f4f8; /* A slightly softer background */
         }
-        /* Animation pour un effet subtil au chargement */
+        /* Animation for a subtle loading effect */
         .module-page {
             animation: fadeIn 0.5s ease-in-out;
         }
@@ -40,6 +40,7 @@
         <header id="header" class="bg-slate-800 text-white p-6 md:p-8 sticky top-0 z-50 rounded-t-xl">
             <div class="flex items-center justify-between">
                 <h1 id="main-title" class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent pb-2">Les essentiels en pharmacologie</h1>
+                <!-- Desktop Author Info (Header) -->
                 <div class="hidden md:block text-right font-bold text-slate-300 text-sm">
                     <p>Lucas Séraudie - <span id="author-ifsi" class="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">IFSI du CHU de Rouen</span> - 2025</p>
                 </div>
@@ -51,32 +52,48 @@
 
             <!-- HOME PAGE -->
             <div id="module-accueil" class="module-page">
+                
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     
                     <!-- 1. Card Antalgiques -->
-                    <!-- Le bouton renvoie vers le fichier Antalgiqueswquiz.html -->
-                    <a href="Antalgiqueswquiz.html" class="group bg-gradient-to-br from-cyan-50 to-blue-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-cyan-500/50">
+                    <a href="Antalgiqueswquiz.html" class="group relative bg-gradient-to-br from-cyan-50 to-blue-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-cyan-500/50">
+                        <div class="absolute top-4 right-4 bg-cyan-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">S1</div>
                         <h3 class="text-2xl font-bold text-slate-800 bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent mb-4">Les Antalgiques</h3>
                         <p class="text-slate-600 text-sm mb-6 flex-grow">De la physiologie de la douleur aux traitements de palier I, II et III.</p>
                         <span class="bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300 w-full md:w-auto">Commencer</span>
                     </a>
                     
                     <!-- 2. Card Anti-inflammatoires -->
-                    <!-- Le bouton renvoie vers le fichier Anti-inflamwquiz.html -->
-                    <a href="Anti-inflamwquiz.html" class="group bg-gradient-to-br from-teal-50 to-cyan-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-teal-500/50">
+                    <a href="Anti-inflamwquiz.html" class="group relative bg-gradient-to-br from-teal-50 to-cyan-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-teal-500/50">
+                        <div class="absolute top-4 right-4 bg-teal-400 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">S1</div>
                         <h3 class="text-2xl font-bold text-slate-800 bg-gradient-to-r from-teal-400 to-cyan-500 bg-clip-text text-transparent mb-4">Les Anti-inflammatoires</h3>
                         <p class="text-slate-600 text-sm mb-6 flex-grow">L'inflammation, les AINS, les corticoïdes et la surveillance infirmière associée.</p>
                         <span class="bg-gradient-to-r from-teal-400 to-cyan-500 text-white font-semibold py-3 px-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300 w-full md:w-auto">Commencer</span>
                     </a>
 
                     <!-- 3. Card Anticoagulants -->
-                    <!-- Le bouton renvoie vers le fichier Anticowquiz .html -->
-                    <a href="Anticowquiz .html" class="group bg-gradient-to-br from-red-50 to-orange-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-red-500/50">
+                    <a href="Anticowquiz .html" class="group relative bg-gradient-to-br from-red-50 to-orange-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-red-500/50">
+                        <div class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">S1</div>
                         <h3 class="text-2xl font-bold text-slate-800 bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent mb-4">Les Anticoagulants</h3>
                         <p class="text-slate-600 text-sm mb-6 flex-grow">Explorez l'hémostase et les différentes familles de traitements.</p>
                         <span class="bg-gradient-to-r from-red-500 to-orange-500 text-white font-semibold py-3 px-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300 w-full md:w-auto">Commencer</span>
                     </a>
+                    
+                    <!-- 4. Card Antihypertenseurs -->
+                    <a href="AntiHTAwquiz.html" class="group relative bg-gradient-to-br from-emerald-50 to-green-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-emerald-500/50">
+                        <div class="absolute top-4 right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">S3</div>
+                        <h3 class="text-2xl font-bold text-slate-800 bg-gradient-to-r from-emerald-500 to-green-600 bg-clip-text text-transparent mb-4">Les Antihypertenseurs</h3>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow">Comprenez l'HTA et maîtrisez les IEC, ARA II, inhibiteurs calciques, bêtabloquants et diurétiques.</p>
+                        <span class="bg-gradient-to-r from-emerald-500 to-green-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300 w-full md:w-auto">Commencer</span>
+                    </a>
 
+                    <!-- 5. Card Antiarythmiques et Digitaliques -->
+                    <a href="antiarythm.html" class="group relative bg-gradient-to-br from-red-200 to-red-300 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-red-800/50">
+                        <div class="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">S3</div>
+                        <h3 class="text-2xl font-bold text-slate-800 bg-gradient-to-r from-red-500 to-red-800 bg-clip-text text-transparent mb-4">Antiarythmiques & Digitaliques</h3>
+                        <p class="text-slate-700 text-sm mb-6 flex-grow">Stabilisateurs de membranes, Bêta-bloquants, Inhib. Potassiques, Inhib. Calciques et digitaliques.</p>
+                        <span class="bg-gradient-to-r from-red-500 to-red-800 text-white font-semibold py-3 px-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300 w-full md:w-auto">Commencer</span>
+                    </a>
                     
                 </div>
             </div>
@@ -95,5 +112,3 @@
     </div>
 </body>
 </html>
-
-
