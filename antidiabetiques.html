@@ -568,7 +568,15 @@
 
         function updateScore() {
             const totalQuestions = quizData.length;
-            const correctAnswers = document.querySelectorAll('.qcm-option.correct:not(.incorrect):disabled').length;
+            // DÉBUT DE LA CORRECTION : La méthode de comptage précédente comptait les réponses correctes non sélectionnées
+            // La bonne méthode est de compter les questions marquées 'answered' qui n'ont AUCUNE option 'incorrect'
+            let correctAnswers = 0; 
+            document.querySelectorAll('.qcm-question.answered').forEach(questionEl => {
+                if (!questionEl.querySelector('.qcm-option.incorrect')) {
+                    correctAnswers++;
+                }
+            });
+            // FIN DE LA CORRECTION
             const answeredCount = document.querySelectorAll('.qcm-question.answered').length;
 
             const scoreEl = document.getElementById('quiz-score');
