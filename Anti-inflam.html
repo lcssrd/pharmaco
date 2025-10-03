@@ -67,10 +67,10 @@
         <header id="header" class="bg-slate-800 text-white p-6 md:p-8 sticky top-0 z-50">
             <div class="flex items-center justify-between">
                 <!-- Title is now left-aligned -->
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-teal-400 to-cyan-500 bg-clip-text text-transparent pb-2">Anti-Inflammatoires</h1>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent pb-2">Anti-Inflammatoires</h1>
                 <!-- Author information aligned to the right -->
                 <div class="hidden md:flex text-right font-bold text-slate-300 text-sm">
-                    <p>Lucas Séraudie - <span class="bg-gradient-to-r from-teal-400 to-cyan-500 bg-clip-text text-transparent">IFSI du CHU de Rouen</span> - 2025</p>
+                    <p>Lucas Séraudie - <span class="bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent">IFSI du CHU de Rouen</span> - 2025</p>
                 </div>
             </div>
         </header>
@@ -79,7 +79,7 @@
         <nav id="navbar" class="bg-white sticky top-0 z-10 p-4 shadow-md">
              <!-- Mise à jour pour 4 sections après suppression de 'Accueil' -->
              <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-4 gap-2">
-                <button data-page="inflammation" onclick="showPage('inflammation')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-red-100 hover:text-red-800">Inflammation</button>
+                <button data-page="inflammation" onclick="showPage('inflammation')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-purple-100 hover:text-purple-800">Inflammation</button>
                 <button data-page="ains" onclick="showPage('ains')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-orange-100 hover:text-orange-800">AINS</button>
                 <button data-page="cortico" onclick="showPage('cortico')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-lime-100 hover:text-lime-800">Corticoïdes</button>
                 <button data-page="quiz" onclick="showPage('quiz')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-slate-300 hover:text-slate-800">Quiz</button>
@@ -94,7 +94,7 @@
 
             <!-- Inflammation Page -->
             <div id="inflammation" class="page hidden">
-                <h2 class="text-2xl md:text-3xl font-bold text-red-600 mb-6">
+                <h2 class="text-2xl md:text-3xl font-bold text-purple-500 mb-6">
                     🔥 LE PROCESSUS INFLAMMATOIRE
                 </h2>
                 
@@ -102,8 +102,8 @@
                     <p>L'inflammation est une réaction de défense naturelle de l'organisme face à une agression (infection, traumatisme, allergie...).</p>
                     
                     <!-- Signes Cliniques -->
-                    <div class="bg-red-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-red-800 text-base mb-2 border-b border-red-200 pb-1">Les Signes Cliniques</h3>
+                    <div class="bg-purple-50 p-4 rounded-xl border-2 border-red-300 shadow-lg">
+                        <h3 class="font-semibold text-red-800 text-lg mb-2 border-b border-red-200 pb-1">Les Signes Cliniques</h3>
                         <ul class="list-disc list-inside space-y-1">
                             <li><strong>Chaleur :</strong> Augmentation du flux sanguin (vasodilatation).</li>
                             <li><strong>Rougeur :</strong> Augmentation du flux sanguin local.</li>
@@ -381,7 +381,7 @@
             
             // Mise à jour de l'objet gradients : 'home' a été retiré.
             const gradients = {
-                inflammation: ['from-red-500', 'to-orange-500'],
+                inflammation: ['from-purple-500', 'to-pink-500'],
                 ains: ['from-orange-500', 'to-yellow-500'], 
                 cortico: ['from-lime-500', 'to-green-500'],
                 quiz: ['from-slate-500', 'to-gray-700'],
