@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Hypolipémiants - IFSI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        html {
+            overflow-y: scroll; /* Force the scrollbar to always be visible, preventing layout shifts */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        /* Animation for page transitions */
+        .page {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Quiz specific styles */
+        .qcm-option.correct {
+            background-image: linear-gradient(to right, #4ade80, #16a34a); /* from-green-400 to-green-600 */
+            color: white;
+            border-color: #15803d; /* green-700 */
+            font-weight: 600;
+        }
+        .qcm-option.incorrect {
+            background-image: linear-gradient(to right, #f87171, #dc2626); /* from-red-400 to-red-600 */
+            color: white;
+            border-color: #b91c1c; /* red-700 */
+            font-weight: 600;
+        }
+        .qcm-option:disabled {
+            cursor: not-allowed;
+        }
+        .qcm-option:disabled:not(.correct):not(.incorrect) {
+            color: #475569; /* slate-600 */
+            background-color: #f1f5f9; /* slate-100 */
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body class="p-2 sm:p-4 md:p-8">
+    <!-- Main container with rounded corners and shadow -->
+    <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
+        <!-- Header -->
+        <header class="bg-slate-800 text-white p-6 md:p-8">
+            <div class="flex items-center justify-between">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-teal-500 to-cyan-600 bg-clip-text text-transparent pb-2">Les Hypolipémiants</h1>
+                <div class="hidden md:flex text-right font-bold text-slate-300 text-sm">
+                    <p>Lucas Séraudie - <span class="bg-gradient-to-r from-teal-500 to-cyan-600 bg-clip-text text-transparent">IFSI du CHU de Rouen</span> - 2025</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation bar -->
+        <nav class="bg-white sticky top-0 z-10 p-4 shadow-md">
+            <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
+                <button data-page="generalites" onclick="showPage('generalites')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Généralités</button>
+                <button data-page="rhd" onclick="showPage('rhd')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Regles Hygiéno-Diét.</button>
+                <button data-page="traitements" onclick="showPage('traitements')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Traitements</button>
+                <button data-page="role" onclick="showPage('role')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Rôle Infirmier</button>
+                <button data-page="quiz" onclick="showPage('quiz')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Quiz</button>
+            </div>
+        </nav>
+
+        <!-- Main content -->
+        <main class="p-4 sm:p-6 md:p-8">
+            <!-- Section 1: Generalities -->
+            <div id="generalites" class="page">
+                <section class="bg-gradient-to-br from-teal-100 to-cyan-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-teal-500 to-cyan-600 bg-clip-text text-transparent">Rappels sur les Lipides</span></h3>
+                    <div class="space-y-8">
+                        <!-- Cholesterol Role -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="shield-check" class="text-blue-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Rôle Physiologique du Cholestérol</h4>
+                            </div>
+                            <p class="text-slate-600 mb-4">Essentiel à l'organisme, le cholestérol est un constituant des membranes cellulaires et le précurseur de molécules vitales.</p>
+                             <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-3 text-slate-700 list-inside list-disc">
+                                <li>Hormones stéroïdes</li>
+                                <li>Vitamine D</li>
+                                <li>Sels biliaires</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Transport Sanguin -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                             <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-teal-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="truck" class="text-teal-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Transport Sanguin</h4>
+                            </div>
+                            <p class="text-slate-600 mb-4">Les lipides sont transportés dans le sang par des lipoprotéines.</p>
+                            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                <div class="p-4 bg-red-50 rounded-lg"><h5 class="font-semibold text-red-800">LDL ("Mauvais")</h5><p>Transporte le cholestérol du foie vers les tissus. En excès, il se dépose dans les artères.</p></div>
+                                <div class="p-4 bg-green-50 rounded-lg"><h5 class="font-semibold text-green-800">HDL ("Bon")</h5><p>Ramène le cholestérol excédentaire des tissus vers le foie pour être éliminé.</p></div>
+                                <div class="p-4 bg-orange-50 rounded-lg md:col-span-2"><h5 class="font-semibold text-orange-800">Triglycérides (TG)</h5><p>Transportés par les VLDL et les chylomicrons, ils constituent une réserve d'énergie.</p></div>
+                            </div>
+                        </div>
+
+                        <!-- Dyslipidémies -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                             <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="heart-pulse" class="text-red-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Dyslipidémies et Risques</h4>
+                            </div>
+                            <p class="text-slate-600 mb-4">Une dyslipidémie est une anomalie du profil lipidique (LDL ↑, TG ↑, HDL ↓). L'excès de cholestérol mène à l'<strong>athérosclérose</strong>, un dépôt de plaques dans les artères augmentant le risque d'accidents cardiovasculaires.</p>
+                            <div class="grid md:grid-cols-3 gap-4 text-sm mt-4">
+                                <div class="p-4 bg-red-50 rounded-lg"><h5 class="font-semibold text-red-800">AVC</h5></div>
+                                <div class="p-4 bg-red-50 rounded-lg"><h5 class="font-semibold text-red-800">Infarctus du Myocarde</h5></div>
+                                <div class="p-4 bg-red-50 rounded-lg"><h5 class="font-semibold text-red-800">Artériopathie</h5></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <div id="rhd" class="page hidden">
+                <section class="bg-gradient-to-br from-orange-100 to-amber-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-orange-500 to-amber-600 bg-clip-text text-transparent">Prise en Charge & RHD</span></h3>
+                    <div class="space-y-8">
+                        <!-- Facteurs de risque -->
+                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-yellow-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="list-checks" class="text-yellow-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Facteurs de Risque Cardiovasculaire</h4>
+                            </div>
+                            <p class="text-slate-600 mb-4">Plusieurs facteurs augmentent le risque de développer une maladie cardiovasculaire.</p>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-3 text-slate-700 list-inside list-disc">
+                                <li>Âge</li>
+                                <li>Tabagisme</li>
+                                <li>HTA</li>
+                                <li>Diabète</li>
+                                <li>Antécédents familiaux</li>
+                                <li>HDL bas</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Bilan & Objectifs -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="target" class="text-blue-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Bilan Lipidique et Objectifs</h4>
+                            </div>
+                            <p class="text-slate-600 mb-4">Un bilan lipidique à jeun (12h) mesure le Cholestérol Total (CT), LDL-c, HDL-c et les Triglycérides (TG). Les objectifs de LDL-c dépendent du niveau de risque du patient.</p>
+                             <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                <div class="p-4 bg-blue-50 rounded-lg"><h5 class="font-semibold text-blue-800">Sans Facteur de Risque</h5><p>Objectif LDL-c : <strong>&lt; 2,2 g/L</strong></p></div>
+                                <div class="p-4 bg-red-50 rounded-lg"><h5 class="font-semibold text-red-800">Haut Risque Cardiovasculaire</h5><p>Objectif LDL-c : <strong>&lt; 1 g/L</strong></p></div>
+                            </div>
+                        </div>
+
+                        <!-- RHD -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                             <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="leaf" class="text-green-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Règles Hygiéno-Diététiques (RHD)</h4>
+                            </div>
+                            <p class="text-slate-600 mb-4"><strong>Indispensables</strong>, elles constituent la base de la prise en charge et doivent toujours être associées au traitement médicamenteux.</p>
+                            <ul class="list-disc list-inside space-y-2 mt-4 text-slate-700 text-sm">
+                                <li>Arrêt du tabac, perte de poids, activité physique régulière.</li>
+                                <li>Réduction des graisses saturées (charcuterie, beurre, fromages gras).</li>
+                                <li>Augmentation de la consommation de fibres, fruits, légumes.</li>
+                                <li>Privilégier les poissons gras riches en oméga 3.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <div id="traitements" class="page hidden">
+                <section class="bg-gradient-to-br from-sky-100 to-blue-100 rounded-2xl p-6 md:p-12">
+                     <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-sky-500 to-blue-600 bg-clip-text text-transparent">Traitements Hypolipémiants</span></h3>
+                     <div class="space-y-8">
+                        <!-- Statines -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                           <h4 class="text-2xl font-bold text-slate-800 mb-2">🔹 1. Statines</h4>
+                           <p class="text-sm text-slate-600 mb-4">Atorvastatine (Tahor®), Rosuvastatine (Crestor®), Simvastatine (Zocor®), Pravastatine (Elisor®)...</p>
+                           <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
+                                <div><h5 class="font-semibold text-sky-800">Mécanisme :</h5><p class="text-sm text-slate-600">Inhibent une enzyme clé (HMG-CoA réductase), diminuant la synthèse du cholestérol par le foie.</p></div>
+                                <div><h5 class="font-semibold text-sky-800">Effets :</h5><p class="text-sm text-slate-600">↓ LDL (30%), ↓ TG (10%), ↑ HDL (&lt;10%).</p></div>
+                                <div class="md:col-span-2"><h5 class="font-semibold text-sky-800">Indications :</h5><p class="text-sm text-slate-600">Hypercholestérolémie, prévention secondaire après IDM ou AVC (traitement "BASIC").</p></div>
+                                <div class="p-4 bg-blue-100 border border-blue-200 rounded-lg"><h5 class="font-bold text-blue-900">Surveillance IDE :</h5><ul class="list-disc list-inside text-sm text-slate-700"><li>Bilan lipidique, Transaminases (ASAT/ALAT), CPK si douleurs musculaires.</li></ul></div>
+                                <div class="p-4 bg-blue-100 border border-blue-200 rounded-lg"><h5 class="font-bold text-blue-900">Éducation Patient :</h5><ul class="list-disc list-inside text-sm text-slate-700"><li>Prise unique le soir. Prévenir si douleurs musculaires, urine foncée, jaunisse. Traitement souvent à vie.</li></ul></div>
+                           </div>
+                        </div>
+                        <!-- Fibrates -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                           <h4 class="text-2xl font-bold text-slate-800 mb-2">🔹 2. Fibrates</h4>
+                           <p class="text-sm text-slate-600 mb-4">Fénofibrate (Lipanthyl®), Bézafibrate (Befizal®)...</p>
+                           <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
+                                <div><h5 class="font-semibold text-sky-800">Mécanisme :</h5><p class="text-sm text-slate-600">Activent PPARα, ce qui augmente la dégradation des triglycérides.</p></div>
+                                <div><h5 class="font-semibold text-sky-800">Effets :</h5><p class="text-sm text-slate-600">↓ TG (45%), ↓ CT/LDL (10-25%), ↑ HDL (15-25%).</p></div>
+                                <div class="md:col-span-2"><h5 class="font-semibold text-sky-800">Indications :</h5><p class="text-sm text-slate-600">Hypertriglycéridémie, 2ème intention dans l'hypercholestérolémie.</p></div>
+                                <div class="p-4 bg-blue-100 border border-blue-200 rounded-lg"><h5 class="font-bold text-blue-900">Surveillance IDE :</h5><ul class="list-disc list-inside text-sm text-slate-700"><li>Fonction hépatique et rénale. Risque de lithiases biliaires. CPK (myalgies).</li></ul></div>
+                                <div class="p-4 bg-blue-100 border border-blue-200 rounded-lg"><h5 class="font-bold text-blue-900">Éducation Patient :</h5><ul class="list-disc list-inside text-sm text-slate-700"><li>Prise avec repas. Prévenir si douleurs abdominales.</li></ul></div>
+                           </div>
+                        </div>
+                        <!-- Autres -->
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                                <h4 class="text-xl font-bold text-slate-800 mb-2">🔹 3. Résines</h4>
+                                <p class="text-xs text-slate-500 italic mb-2">Cholestyramine (Questran®)</p>
+                                <div class="space-y-2 text-sm"><p><strong>Mécanisme :</strong> Fixent les acides biliaires, forçant le foie à utiliser le cholestérol pour en produire de nouveaux.</p><p><strong>EI :</strong> Constipation, ballonnements.</p><p><strong>IDE :</strong> Administrer 2h avant ou après les autres médicaments (risque de malabsorption).</p></div>
+                            </div>
+                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                                <h4 class="text-xl font-bold text-slate-800 mb-2">🔹 4. Ézétimibe</h4>
+                                <p class="text-xs text-slate-500 italic mb-2">Ézetrol®</p>
+                                <div class="space-y-2 text-sm"><p><strong>Mécanisme :</strong> Inhibe l'absorption intestinale du cholestérol.</p><p><strong>Usage :</strong> Seul si intolérance aux statines, ou en association.</p><p><strong>IDE :</strong> Surveillance de la tolérance digestive et des transaminases.</p></div>
+                            </div>
+                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                                <h4 class="text-xl font-bold text-slate-800 mb-2">🔹 5. Oméga 3</h4>
+                                <p class="text-xs text-slate-500 italic mb-2">Omacor®</p>
+                                <div class="space-y-2 text-sm"><p><strong>Indication :</strong> Hypertriglycéridémie endogène.</p><p><strong>EI :</strong> Troubles digestifs.</p><p><strong>IDE :</strong> Informer que c'est un médicament sur prescription et non un simple complément alimentaire.</p></div>
+                            </div>
+                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                                <h4 class="text-xl font-bold text-slate-800 mb-2">🔹 6. Anti-PCSK9</h4>
+                                <p class="text-xs text-slate-500 italic mb-2">Anticorps monoclonaux</p>
+                                <div class="space-y-2 text-sm"><p><strong>Mécanisme :</strong> Thérapie innovante qui augmente massivement la capacité du foie à capter le LDL.</p><p><strong>Usage :</strong> Hypercholestérolémie familiale, intolérance aux statines.</p><p><strong>IDE :</strong> Éducation à l'auto-injection SC (tous les 15j ou 1 mois).</p></div>
+                            </div>
+                        </div>
+                     </div>
+                </section>
+            </div>
+            
+            <div id="role" class="page hidden">
+                 <section class="bg-gradient-to-br from-red-100 to-rose-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-red-500 to-rose-600 bg-clip-text text-transparent">Rôle Infirmier Transversal</span></h3>
+                    <div class="space-y-6">
+                        <!-- Surveillance -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="eye" class="text-purple-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Surveillance Clinique et Biologique</h4>
+                            </div>
+                            <p class="text-slate-600">Surveiller l'efficacité et la tolérance des traitements est un rôle clé.</p>
+                            <div class="grid md:grid-cols-2 gap-4 mt-4">
+                                <div class="p-4 bg-green-100 rounded-lg border border-green-200"><h5 class="font-bold text-green-900">Clinique</h5><ul class="list-disc list-inside text-sm text-slate-700"><li>Douleurs musculaires</li><li>Troubles digestifs</li><li>Ictère (jaunisse)</li></ul></div>
+                                <div class="p-4 bg-yellow-100 rounded-lg border border-yellow-200"><h5 class="font-bold text-yellow-900">Biologique</h5><ul class="list-disc list-inside text-sm text-slate-700"><li>Bilan lipidique (EAL)</li><li>CPK (enzymes musculaires)</li><li>Transaminases (fonction hépatique)</li></ul></div>
+                            </div>
+                        </div>
+
+                        <!-- ETP -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-indigo-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="book-user" class="text-indigo-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Éducation Thérapeutique du Patient (ETP)</h4>
+                            </div>
+                            <p class="text-slate-600">L'infirmier(e) a un rôle majeur dans l'adhésion du patient au traitement, qui est souvent long et préventif.</p>
+                            <ul class="list-disc list-inside space-y-2 mt-4 text-slate-700 text-sm">
+                                <li><strong>Observance :</strong> Expliquer que le traitement est préventif, son bénéfice se voit sur le long terme.</li>
+                                <li><strong>Hygiène de vie :</strong> Rappeler que les médicaments ne remplacent pas les règles hygiéno-diététiques.</li>
+                                <li><strong>Effets indésirables :</strong> Inciter le patient à signaler tout effet inhabituel, notamment les douleurs musculaires.</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Points Clés -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 border-l-4 border-amber-400">
+                             <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-amber-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="key-round" class="text-amber-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Points Clés à Retenir</h4>
+                            </div>
+                            <ul class="list-disc list-inside space-y-2 mt-4 text-slate-700">
+                                <li>Les hypolipémiants préviennent les maladies cardiovasculaires.</li>
+                                <li>Les <strong>statines</strong> sont le traitement de référence, surtout après un infarctus.</li>
+                                <li>La surveillance clinique et biologique est indispensable.</li>
+                                <li>L'éducation thérapeutique est au cœur du rôle infirmier pour garantir l'observance.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Quiz Page -->
+            <div id="quiz" class="page hidden">
+                <div class="bg-gradient-to-br from-slate-50 to-gray-100 p-6 sm:p-8 md:p-10 rounded-2xl shadow-inner">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-2">Quiz Interactif</h2>
+                    <p class="text-slate-600 mb-8">Testez vos connaissances sur les hypolipémiants.</p>
+                    <div id="qcm-container" class="space-y-8"></div>
+                    <div id="quiz-footer" class="mt-10 pt-6 border-t-2 border-slate-200 flex justify-between items-center">
+                        <p id="quiz-score" class="text-xl md:text-2xl font-bold text-slate-800"></p>
+                        <button onclick="resetQuiz()" id="reset-button" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 transform opacity-0 pointer-events-none">
+                            Recommencer
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer (Replicating Header Style) -->
+        <footer id="footer" class="bg-slate-800 text-white p-4 md:p-6 mt-auto">
+            <div class="flex items-center justify-center md:justify-end text-center">
+                <p class="font-bold text-slate-300 text-xs sm:text-sm">
+                    Lucas Séraudie - <span class="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">IFSI du CHU de Rouen</span> - 2025
+                </p>
+            </div>
+        </footer>
+
+    <script>
+        // --- Quiz Data ---
+        const quizData = [
+            {
+                question: "Quel est le principal mécanisme d'action des statines ?",
+                options: ["Inhiber l'absorption intestinale du cholestérol", "Inhiber l'enzyme HMG-CoA réductase", "Fixer les acides biliaires", "Augmenter la dégradation des triglycérides"],
+                correct: 1,
+                feedback: "Les statines bloquent l'HMG-CoA réductase, une enzyme essentielle à la production de cholestérol par le foie."
+            },
+            {
+                question: "La surveillance des CPK est nécessaire avec les statines pour dépister quel risque majeur ?",
+                options: ["Une atteinte hépatique", "Une lithiase biliaire", "Une rhabdomyolyse", "Une constipation sévère"],
+                correct: 2,
+                feedback: "Une élévation des CPK (enzymes musculaires) peut signaler une rhabdomyolyse, une destruction musculaire grave, qui est un effet secondaire rare mais possible des statines."
+            },
+            {
+                question: "Quelle classe de médicaments est principalement indiquée en cas d'hypertriglycéridémie majeure ?",
+                options: ["Les statines", "Les résines", "L'ézétimibe", "Les fibrates"],
+                correct: 3,
+                feedback: "Les fibrates sont les plus efficaces pour abaisser le taux de triglycérides."
+            },
+            {
+                question: "Quel conseil est primordial pour un patient prenant de la cholestyramine (Questran®) ?",
+                options: ["Prendre le médicament le soir", "Le prendre pendant le repas", "Respecter un délai de 2h avec les autres médicaments", "Arrêter en cas de jaunisse"],
+                correct: 2,
+                feedback: "La cholestyramine peut diminuer l'absorption de nombreux autres médicaments. Il est donc crucial de décaler les prises."
+            },
+            {
+                question: "Quel médicament inhibe spécifiquement l'absorption intestinale du cholestérol ?",
+                options: ["Fénofibrate (Lipanthyl®)", "Atorvastatine (Tahor®)", "Ézétimibe (Ezetrol®)", "Anti-PCSK9"],
+                correct: 2,
+                feedback: "L'ézétimibe agit au niveau de la bordure en brosse de l'intestin pour bloquer l'absorption du cholestérol alimentaire et biliaire."
+            },
+            {
+                question: "Par quelle voie les anti-PCSK9 sont-ils administrés ?",
+                options: ["Voie orale, le matin", "Injection intra-musculaire", "Perfusion intra-veineuse", "Injection sous-cutanée"],
+                correct: 3,
+                feedback: "Les anti-PCSK9 sont des anticorps monoclonaux qui s'administrent par injection sous-cutanée, tous les 15 jours ou tous les mois."
+            },
+            {
+                question: "Quel est le moment de la journée généralement recommandé pour la prise des statines ?",
+                options: ["Le matin à jeun", "Le midi pendant le repas", "Le soir au coucher", "N'importe quand"],
+                correct: 2,
+                feedback: "La synthèse du cholestérol par le foie est maximale la nuit, la prise le soir optimise donc l'efficacité des statines."
+            },
+            {
+                question: "En plus des douleurs musculaires, quel autre signe doit alerter un patient sous statine et motiver une consultation ?",
+                options: ["Une toux sèche", "Des urines foncées couleur 'coca-cola'", "Des éruptions cutanées", "Une prise de poids"],
+                correct: 1,
+                feedback: "Des urines foncées peuvent être un signe de rhabdomyolyse (destruction musculaire) et de souffrance rénale, une urgence médicale."
+            },
+            {
+                question: "Quel est l'objectif principal et quantifiable d'un traitement par hypolipémiant ?",
+                options: ["Augmenter le HDL-cholestérol", "Diminuer les triglycérides", "Diminuer le LDL-cholestérol", "Perdre du poids"],
+                correct: 2,
+                feedback: "L'objectif thérapeutique principal est d'atteindre une valeur cible de LDL-cholestérol, qui est le principal facteur de risque de l'athérosclérose."
+            },
+            {
+                question: "L'éducation sur les règles hygiéno-diététiques est-elle encore nécessaire si le patient prend un traitement médicamenteux efficace ?",
+                options: ["Non, les médicaments suffisent", "Seulement si le patient est en surpoids", "Oui, elles sont indispensables et complémentaires", "Non, sauf si le bilan lipidique reste mauvais"],
+                correct: 2,
+                feedback: "Les règles hygiéno-diététiques sont le pilier de la prise en charge. Elles potentialisent l'effet des médicaments et agissent sur d'autres facteurs de risque."
+            }
+        ];
+
+        // --- Navigation Logic ---
+        const pages = ['generalites', 'rhd', 'traitements', 'role', 'quiz'];
+        const buttonColors = {
+            generalites: 'bg-gradient-to-r from-teal-500 to-cyan-600 text-white shadow-md',
+            rhd: 'bg-gradient-to-r from-orange-500 to-amber-600 text-white shadow-md',
+            traitements: 'bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-md',
+            role: 'bg-gradient-to-r from-red-500 to-rose-600 text-white shadow-md',
+            quiz: 'bg-gradient-to-r from-gray-600 to-slate-800 text-white shadow-md'
+        };
+        const buttonHoverColors = {
+            generalites: 'hover:bg-teal-100 hover:text-teal-800',
+            rhd: 'hover:bg-orange-100 hover:text-orange-800',
+            traitements: 'hover:bg-sky-100 hover:text-sky-800',
+            role: 'hover:bg-red-100 hover:text-red-800',
+            quiz: 'hover:bg-gray-200 hover:text-gray-800'
+        };
+
+        function showPage(pageId) {
+            pages.forEach(id => {
+                document.getElementById(id).classList.add('hidden');
+            });
+            document.getElementById(pageId).classList.remove('hidden');
+            
+            const navButtons = document.querySelectorAll('.nav-btn');
+            navButtons.forEach(btn => {
+                const page = btn.dataset.page;
+                btn.className = 'nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm';
+                if (page === pageId) {
+                    btn.classList.add(...buttonColors[page].split(' '));
+                } else {
+                    btn.classList.add(...buttonHoverColors[page].split(' '));
+                }
+            });
+        }
+
+        // --- Quiz Logic ---
+        function renderQuiz() {
+            const container = document.getElementById('qcm-container');
+            container.innerHTML = '';
+            quizData.forEach((item, index) => {
+                const optionsHtml = item.options.map((option, optionIndex) => 
+                    `<button class="qcm-option w-full text-left p-4 rounded-xl bg-white border-2 border-slate-200 hover:bg-slate-100 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200" data-index="${optionIndex}">${option}</button>`
+                ).join('');
+
+                container.innerHTML += `
+                    <div class="qcm-question bg-slate-100/70 border border-slate-200/80 p-6 rounded-2xl shadow-lg" data-question-index="${index}">
+                        <p class="font-semibold text-lg text-slate-800 mb-4">${index + 1}. ${item.question}</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">${optionsHtml}</div>
+                        <div class="qcm-feedback mt-4 text-sm font-medium"></div>
+                    </div>`;
+            });
+            document.getElementById('quiz-score').textContent = `Prêt ? 0 / ${quizData.length}`;
+            const resetButton = document.getElementById('reset-button');
+            resetButton.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        function setupQuizListeners() {
+            const container = document.getElementById('qcm-container');
+            container.addEventListener('click', (event) => {
+                if (!event.target.classList.contains('qcm-option')) return;
+                
+                const optionButton = event.target;
+                const questionEl = optionButton.closest('.qcm-question');
+                if (!questionEl || questionEl.classList.contains('answered')) return;
+                
+                questionEl.classList.add('answered');
+                const questionIndex = parseInt(questionEl.dataset.questionIndex, 10);
+                const questionData = quizData[questionIndex];
+                const selectedIndex = parseInt(optionButton.dataset.index, 10);
+                const isCorrect = selectedIndex === questionData.correct;
+                const feedbackEl = questionEl.querySelector('.qcm-feedback');
+
+                if (isCorrect) {
+                    optionButton.classList.add('correct');
+                    feedbackEl.innerHTML = `<div class="text-emerald-700 p-3 bg-emerald-100 rounded-lg"><b class="font-bold">Bravo !</b> ${questionData.feedback || ''}</div>`;
+                } else {
+                    optionButton.classList.add('incorrect');
+                    questionEl.querySelector(`[data-index="${questionData.correct}"]`).classList.add('correct');
+                    feedbackEl.innerHTML = `<div class="text-red-700 p-3 bg-red-100 rounded-lg"><b class="font-bold">Dommage.</b> ${questionData.feedback || ''}</div>`;
+                }
+                
+                questionEl.querySelectorAll('.qcm-option').forEach(btn => btn.disabled = true);
+                updateScore();
+            });
+        }
+
+        function updateScore() {
+            const totalQuestions = quizData.length;
+            // DÉBUT DE LA CORRECTION : La méthode de comptage précédente comptait les réponses correctes non sélectionnées
+            // La bonne méthode est de compter les questions marquées 'answered' qui n'ont AUCUNE option 'incorrect'
+            let correctAnswers = 0; 
+            document.querySelectorAll('.qcm-question.answered').forEach(questionEl => {
+                if (!questionEl.querySelector('.qcm-option.incorrect')) {
+                    correctAnswers++;
+                }
+            });
+            // FIN DE LA CORRECTION
+            const answeredCount = document.querySelectorAll('.qcm-question.answered').length;
+
+            const scoreEl = document.getElementById('quiz-score');
+            scoreEl.textContent = `Votre score : ${correctAnswers} / ${answeredCount}`;
+
+            if (answeredCount === totalQuestions) {
+                scoreEl.textContent = `Score final : ${correctAnswers} / ${totalQuestions}`;
+                const percentage = (correctAnswers / totalQuestions) * 100;
+                if (percentage >= 80) {
+                    scoreEl.textContent += " - Excellent travail ! 🎉";
+                } else if (percentage >= 50) {
+                    scoreEl.textContent += " - Pas mal, continuez à réviser ! 💪";
+                } else {
+                    scoreEl.textContent += " - Encore un effort ! 📚";
+                }
+                document.getElementById('reset-button').classList.remove('opacity-0', 'pointer-events-none');
+            }
+        }
+
+        function resetQuiz() {
+            renderQuiz();
+        }
+
+        // --- Initialisation ---
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            showPage('generalites'); // Show the first page by default
+            renderQuiz();
+            setupQuizListeners();
+        });
+    </script>
+</body>
+</html>
