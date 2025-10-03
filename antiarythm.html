@@ -551,45 +551,36 @@
 
         function updateScore() {
             const totalQuestions = quizData.length;
-            let score = 0;
-            
-            // Recalculer le score en se basant sur la présence de la classe 'correct' SANS la classe 'incorrect' sur le bouton sélectionné.
-             score = 0;
+            // DÉBUT DE LA CORRECTION : La méthode de comptage précédente comptait les réponses correctes non sélectionnées
+            // La bonne méthode est de compter les questions marquées 'answered' qui n'ont AUCUNE option 'incorrect'
+            let correctAnswers = 0; 
             document.querySelectorAll('.qcm-question.answered').forEach(questionEl => {
-                const correctButton = questionEl.querySelector('.qcm-option.correct:not(.incorrect)');
-                if (correctButton) { // Si un bouton a été marqué comme 'correct' sans être marqué 'incorrect', c'est que la bonne réponse a été choisie.
-                    // On vérifie que c'est bien la réponse *correcte* qui a été cliquée.
-                    const questionIndex = parseInt(questionEl.dataset.questionIndex, 10);
-                    const questionData = quizData[questionIndex];
-                    if (correctButton.dataset.index == questionData.correct) {
-                         score++;
-                    }
+                if (!questionEl.querySelector('.qcm-option.incorrect')) {
+                    correctAnswers++;
                 }
             });
-            
-            // FIN DE LA RE-ÉVALUATION DU SCORE.
+            // FIN DE LA CORRECTION
+            const answeredCount = document.querySelectorAll('.qcm-question.answered').length;
 
             const scoreEl = document.getElementById('quiz-score');
-            if (scoreEl) {
-                const answeredCount = document.querySelectorAll('.qcm-question.answered').length;
-                scoreEl.textContent = `Votre score : ${score} / ${totalQuestions}`;
-                if (answeredCount === totalQuestions) {
-                     const percentage = (score / totalQuestions) * 100;
-                     if (percentage >= 75) {
-                        scoreEl.textContent += " - Excellent travail ! 🎉";
-                     } else if (percentage >= 50) {
-                        scoreEl.textContent += " - Pas mal, continuez à réviser ! 💪";
-                     } else {
-                        scoreEl.textContent += " - Encore un effort ! 📚";
-                     }
-                     const resetButton = document.getElementById('reset-button');
-                     resetButton.classList.remove('opacity-0', 'pointer-events-none');
+            scoreEl.textContent = `Votre score : ${correctAnswers} / ${answeredCount}`;
+
+            if (answeredCount === totalQuestions) {
+                scoreEl.textContent = `Score final : ${correctAnswers} / ${totalQuestions}`;
+                const percentage = (correctAnswers / totalQuestions) * 100;
+                if (percentage >= 80) {
+                    scoreEl.textContent += " - Excellent travail ! 🎉";
+                } else if (percentage >= 50) {
+                    scoreEl.textContent += " - Pas mal, continuez à réviser ! 💪";
+                } else {
+                    scoreEl.textContent += " - Encore un effort ! 📚";
                 }
+                document.getElementById('reset-button').classList.remove('opacity-0', 'pointer-events-none');
             }
         }
-        
+
         function resetQuiz() {
-            renderQuiz(); 
+            renderQuiz();
         }
         
         // --- Initial Load ---
@@ -606,3 +597,4 @@
     </script>
 </body>
 </html>
+
