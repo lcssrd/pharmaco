@@ -49,34 +49,29 @@
     </style>
 </head>
 <body class="p-2 sm:p-4 md:p-8">
-    <!-- Conteneur principal avec coins arrondis et ombre -->
     <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
-        <!-- En-tête -->
-        <header class="bg-slate-800 text-white p-6 md:p-8">
+        <header class="bg-slate-800 text-white p-6 md:p-8 sticky top-0 z-10">
             <div class="flex items-center justify-between">
                 <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent pb-2">Les Antalgiques</h1>
                 <div class="hidden md:flex text-right font-bold text-slate-300 text-sm">
                     <p><span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2025</p>
                 </div>
             </div>
+
+            <nav class="pt-6">
+                <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-4 sm:grid-cols-4 md:grid-cols-7 gap-2">
+                    <button data-page="douleur" onclick="showPage('douleur')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">La Douleur</button>
+                    <button data-page="nonopioides" onclick="showPage('nonopioides')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Non-opioïdes</button>
+                    <button data-page="opioidesfaibles" onclick="showPage('opioidesfaibles')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Opioïdes faibles</button>
+                    <button data-page="opioidesforts" onclick="showPage('opioidesforts')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Opioïdes forts</button>
+                    <button data-page="coanalgesiques" onclick="showPage('coanalgesiques')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Co-analgésiques</button>
+                    <button data-page="role" onclick="showPage('role')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Rôle Infirmier</button>
+                    <button data-page="quiz" onclick="showPage('quiz')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Quiz</button>
+                </div>
+            </nav>
         </header>
 
-        <!-- Barre de navigation -->
-        <nav class="bg-white sticky top-0 z-10 p-4 shadow-md">
-            <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-4 sm:grid-cols-4 md:grid-cols-7 gap-2">
-                <button data-page="douleur" onclick="showPage('douleur')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">La Douleur</button>
-                <button data-page="nonopioides" onclick="showPage('nonopioides')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Non-opioïdes</button>
-                <button data-page="opioidesfaibles" onclick="showPage('opioidesfaibles')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Opioïdes faibles</button>
-                <button data-page="opioidesforts" onclick="showPage('opioidesforts')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Opioïdes forts</button>
-                <button data-page="coanalgesiques" onclick="showPage('coanalgesiques')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Co-analgésiques</button>
-                <button data-page="role" onclick="showPage('role')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Rôle Infirmier</button>
-                <button data-page="quiz" onclick="showPage('quiz')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Quiz</button>
-            </div>
-        </nav>
-
-        <!-- Contenu principal -->
         <main class="p-4 sm:p-6 md:p-8">
-            <!-- Section 1: Rappels sur la douleur -->
             <div id="douleur" class="page">
                 <section class="bg-gradient-to-br from-sky-100 to-cyan-100 rounded-2xl p-6 md:p-12">
                     <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-cyan-400 to-blue-600 bg-clip-text text-transparent">Rappels sur la Douleur</span></h3>
@@ -93,7 +88,6 @@
                 <section class="bg-gradient-to-br from-green-100 to-emerald-100 rounded-2xl p-6 md:p-12">
                     <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-green-500 to-emerald-700 bg-clip-text text-transparent">Antalgiques non-opioïdes</span></h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <!-- Paracétamol Card -->
                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Paracétamol</h4>
@@ -109,7 +103,6 @@
                                 <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie max</h5><p class="text-slate-500 pl-6">4 g/j (adulte) → 1 g/prise toutes les 6h.</p></div>
                             </div>
                         </div>
-                        <!-- AINS Card -->
                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">AINS</h4>
@@ -124,7 +117,6 @@
                                 <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie max</h5><p class="text-slate-500 pl-6">Ibuprofène: 1.2–1.8 g/j. Kétoprofène: 200 mg/j.</p></div>
                             </div>
                         </div>
-                        <!-- Néfopam Card -->
                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Néfopam</h4>
@@ -147,7 +139,6 @@
                 <section class="bg-gradient-to-br from-amber-100 to-yellow-100 rounded-2xl p-6 md:p-12">
                     <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-amber-500 to-yellow-600 bg-clip-text text-transparent">Opioïdes faibles</span></h3>
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <!-- Codéine Card -->
                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Codéine</h4>
@@ -163,7 +154,6 @@
                                 <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie max</h5><p class="text-slate-500 pl-6">120 mg/j (souvent en association).</p></div>
                             </div>
                         </div>
-                        <!-- Tramadol Card -->
                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Tramadol</h4>
@@ -187,7 +177,6 @@
                 <section class="bg-gradient-to-br from-red-100 to-orange-100 rounded-2xl p-6 md:p-12">
                     <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-red-500 to-orange-600 bg-clip-text text-transparent">Opioïdes forts</span></h3>
                      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <!-- Morphine Card -->
                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Morphine</h4>
@@ -203,7 +192,6 @@
                                 <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie max</h5><p class="text-slate-500 pl-6">Pas de dose plafond → titration.</p></div>
                             </div>
                         </div>
-                        <!-- Fentanyl Card -->
                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                              <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Fentanyl</h4>
@@ -219,7 +207,6 @@
                                  <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie max</h5><p class="text-slate-500 pl-6">Dépend de la forme (Patch 25–100 µg/h).</p></div>
                              </div>
                         </div>
-                        <!-- Oxycodone Card -->
                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Oxycodone</h4>
@@ -243,7 +230,6 @@
                 <section class="bg-gradient-to-br from-purple-100 to-indigo-100 rounded-2xl p-6 md:p-12">
                     <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-purple-500 to-indigo-600 bg-clip-text text-transparent">Adjuvants (Co-analgésiques)</span></h3>
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <!-- Gabapentine / Prégabaline Card -->
                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Gabapentine / Prégabaline</h4>
@@ -258,7 +244,6 @@
                                 <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie max</h5><p class="text-slate-500 pl-6">Gabapentine: 3600 mg/j. Prégabaline: 600 mg/j.</p></div>
                             </div>
                         </div>
-                        <!-- Antidépresseurs Card -->
                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Amitriptyline / Duloxétine</h4>
@@ -317,15 +302,16 @@
             </div>
         </main>
 
-        <!-- Footer (Replicating Header Style) -->
-        <footer id="footer" class="bg-slate-800 text-white p-4 md:p-6 mt-auto">
-            <div class="flex items-center justify-center md:justify-end text-center">
-                <!-- Mobile/Tablet & Desktop Author Info (Footer) -->
+        <!-- Footer -->
+        <!-- La bordure arrondie est maintenue uniquement sur le footer pour le bas de page -->
+        <footer id="footer" class="bg-slate-800 text-white p-4 md:p-6 mt-auto rounded-b-xl shadow-inner">
+            <div class="max-w-6xl mx-auto flex items-center justify-center md:justify-end text-center">
                 <p class="font-bold text-slate-300 text-xs sm:text-sm">
                 <span class="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2025
                 </p>
             </div>
         </footer>
+    </div>
 
     </div>
 
