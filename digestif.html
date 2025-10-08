@@ -1,0 +1,354 @@
+﻿<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thérapeutiques du Système Digestif - IFSI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        html {
+            overflow-y: scroll; 
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .page {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .qcm-option.correct {
+            background-image: linear-gradient(to right, #4ade80, #16a34a);
+            color: white;
+            border-color: #15803d; 
+            font-weight: 600;
+        }
+        .qcm-option.incorrect {
+            background-image: linear-gradient(to right, #f87171, #dc2626); 
+            color: white;
+            border-color: #b91c1c; 
+            font-weight: 600;
+        }
+        .qcm-option:disabled {
+            cursor: not-allowed;
+        }
+        .qcm-option:disabled:not(.correct):not(.incorrect) {
+            color: #475569; 
+            background-color: #f1f5f9; 
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body class="p-2 sm:p-4 md:p-8">
+    <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
+        <header class="bg-slate-800 text-white p-6 md:p-8 sticky top-0 z-10">
+            <div class="flex items-center justify-between">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-lime-500 to-green-600 bg-clip-text text-transparent pb-2">Thérapeutiques Digestives</h1>
+                <div class="hidden md:flex text-right font-bold text-slate-300 text-sm">
+                    <p><span class="bg-gradient-to-r from-lime-400 to-green-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2025</p>
+                </div>
+            </div>
+
+            <nav class="pt-6">
+                <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-4 sm:grid-cols-4 md:grid-cols-7 gap-2">
+                    <button data-page="rappels" onclick="showPage('rappels')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Rappels</button>
+                    <button data-page="antiacides" onclick="showPage('antiacides')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Anti-acides</button>
+                    <button data-page="antiemetiques" onclick="showPage('antiemetiques')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Antiémétiques</button>
+                    <button data-page="laxatifs" onclick="showPage('laxatifs')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Laxatifs</button>
+                    <button data-page="antidiarrheiques" onclick="showPage('antidiarrheiques')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Anti-diarrhéiques</button>
+                    <button data-page="role" onclick="showPage('role')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Rôle Infirmier</button>
+                    <button data-page="quiz" onclick="showPage('quiz')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Quiz</button>
+                </div>
+            </nav>
+        </header>
+
+        <main class="p-4 sm:p-6 md:p-8">
+            <div id="rappels" class="page">
+                <section class="bg-gradient-to-br from-lime-50 to-green-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-lime-500 to-green-600 bg-clip-text text-transparent">Rappels sur le Système Digestif</span></h3>
+                    <div class="grid grid-cols-1 gap-8">
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"><div class="flex items-center gap-4 mb-4"><div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="blinds" class="text-blue-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Fonctions Clés</h4></div><p class="text-slate-600 text-sm sm:text-base">Le système digestif assure la <b>digestion</b> des aliments, l'<b>absorption</b> des nutriments et de l'eau, et l'<b>élimination</b> des déchets.</p></div>
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"><div class="flex items-center gap-4 mb-4"><div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="shield-alert" class="text-green-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Pathologies Fréquentes</h4></div><div class="grid md:grid-cols-3 gap-4 text-sm"><div class="p-4 bg-green-50 rounded-lg ring-1 ring-slate-300"><h5 class="font-semibold text-green-800">RGO & Ulcères</h5><p>Excès d'acidité gastrique, altération de la muqueuse.</p></div><div class="p-4 bg-orange-50 rounded-lg ring-1 ring-slate-300"><h5 class="font-semibold text-orange-800">Troubles du transit</h5><p>Constipation (ralentissement) ou diarrhée (accélération).</p></div><div class="p-4 bg-red-50 rounded-lg ring-1 ring-slate-300"><h5 class="font-semibold text-red-800">Nausées/Vomissements</h5><p>Réflexe de protection, souvent d'origine centrale ou périphérique.</p></div></div></div>
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"><div class="flex items-center gap-4 mb-4"><div class="bg-yellow-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="clipboard-list" class="text-yellow-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Évaluation Infirmière</h4></div><p class="text-slate-600 mb-4 text-sm sm:text-base">L'évaluation est la clé de la prise en charge. Elle guide le choix thérapeutique et la surveillance.</p><div class="flex flex-wrap gap-4 text-sm"><div class="flex-1 min-w-[200px] p-4 bg-yellow-50 rounded-lg ring-1 ring-slate-300"><h5 class="font-semibold text-yellow-800">Douleur</h5><p>Localisation, type, intensité (EVA, EN, EVS).</p></div><div class="flex-1 min-w-[200px] p-4 bg-yellow-50 rounded-lg ring-1 ring-slate-300"><h5 class="font-semibold text-yellow-800">Transit</h5><p>Fréquence, consistance (échelle de Bristol), présence de sang.</p></div><div class="flex-1 min-w-[200px] p-4 bg-yellow-50 rounded-lg ring-1 ring-slate-300"><h5 class="font-semibold text-yellow-800">Nausées</h5><p>Intensité (EN), facteurs déclenchants, vomissements associés.</p></div></div></div>
+                    </div>
+                </section>
+            </div>
+            
+            <div id="antiacides" class="page hidden">
+                <section class="bg-gradient-to-br from-orange-100 to-amber-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-orange-500 to-amber-600 bg-clip-text text-transparent">Anti-acides & Anti-ulcéreux</span></h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl font-bold text-slate-800">IPP (Inhibiteurs Pompe à Protons)</h4>
+                            <p class="text-xs text-slate-500 italic">Ex: Oméprazole, Pantoprazole®...</p>
+                            <div class="space-y-4 text-sm flex-grow mt-4">
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Bloquent la production d'acide gastrique (H+).</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets secondaires</h5><p class="text-slate-500 pl-6">Rares : céphalées, troubles digestifs. Long terme : carences, risque infectieux accru.</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="info" class="w-4 h-4 text-indigo-600"></i>Surveillance</h5><p class="text-slate-500 pl-6"><b>À prendre 30 min avant le repas.</b> Efficacité, signes de carence (Mg, B12).</p></div>
+                            </div>
+                        </div>
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl font-bold text-slate-800">Antihistaminiques H2</h4>
+                            <p class="text-xs text-slate-500 italic">Ex: Famotidine®...</p>
+                            <div class="space-y-4 text-sm flex-grow mt-4">
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Bloquent les récepteurs H2 de l'histamine, réduisant la sécrétion acide.</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets secondaires</h5><p class="text-slate-500 pl-6">Rares. Confusion possible chez la personne âgée ou l'insuffisant rénal.</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="info" class="w-4 h-4 text-indigo-600"></i>Surveillance</h5><p class="text-slate-500 pl-6">État de conscience (personne âgée).</p></div>
+                            </div>
+                        </div>
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl font-bold text-slate-800">Antiacides & Pansements</h4>
+                            <p class="text-xs text-slate-500 italic">Ex: Maalox®, Gaviscon®...</p>
+                             <div class="space-y-4 text-sm flex-grow mt-4">
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Neutralisent l'acidité (tampon) ou protègent la muqueuse (film).</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets secondaires</h5><p class="text-slate-500 pl-6">Modifient le transit (constipation/diarrhée).</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="info" class="w-4 h-4 text-indigo-600"></i>Surveillance</h5><p class="text-slate-500 pl-6"><b>À prendre à distance des autres médicaments (2h)</b> car diminue leur absorption.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="antiemetiques" class="page hidden">
+                <section class="bg-gradient-to-br from-sky-100 to-blue-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-sky-500 to-blue-600 bg-clip-text text-transparent">Antiémétiques</span></h3>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl font-bold text-slate-800">Antagonistes 5-HT3 (Sétrons)</h4>
+                            <p class="text-xs text-slate-500 italic">Ex: Ondansétron (Zophren®)...</p>
+                            <div class="space-y-4 text-sm flex-grow mt-4">
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Bloquent les récepteurs de la sérotonine au niveau central et digestif.</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets secondaires</h5><p class="text-slate-500 pl-6">Céphalées, constipation, <b>allongement de l'espace QT</b>.</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="info" class="w-4 h-4 text-indigo-600"></i>Surveillance</h5><p class="text-slate-500 pl-6">ECG si administration IV et facteurs de risque cardiaques.</p></div>
+                            </div>
+                        </div>
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl font-bold text-slate-800">Antagonistes D2 (Dopaminergiques)</h4>
+                            <p class="text-xs text-slate-500 italic">Ex: Métoclopramide (Primpéran®)...</p>
+                            <div class="space-y-4 text-sm flex-grow mt-4">
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Bloquent les récepteurs de la dopamine, effet prokinétique.</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets secondaires</h5><p class="text-slate-500 pl-6">Somnolence, <b>symptômes extrapyramidaux</b> (mouvements anormaux).</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="info" class="w-4 h-4 text-indigo-600"></i>Surveillance</h5><p class="text-slate-500 pl-6">Apparition de tremblements, rigidité, spasmes. Durée de traitement la plus courte possible.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+             <div id="laxatifs" class="page hidden">
+                <section class="bg-gradient-to-br from-yellow-100 to-orange-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-yellow-500 to-orange-600 bg-clip-text text-transparent">Laxatifs</span></h3>
+                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl font-bold text-slate-800">Laxatifs osmotiques</h4>
+                            <p class="text-xs text-slate-500 italic">Ex: Macrogol (Forlax®), Lactulose...</p>
+                            <div class="space-y-4 text-sm flex-grow mt-4">
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Attirent l'eau dans le côlon, hydratant et ramollissant les selles.</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets secondaires</h5><p class="text-slate-500 pl-6">Ballonnements, crampes abdominales.</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="info" class="w-4 h-4 text-indigo-600"></i>Surveillance</h5><p class="text-slate-500 pl-6">Efficacité (reprise du transit), hydratation du patient.</p></div>
+                            </div>
+                        </div>
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                             <h4 class="text-xl font-bold text-slate-800">Laxatifs stimulants</h4>
+                            <p class="text-xs text-slate-500 italic">Ex: Séné, Bisacodyl (Dulcolax®)...</p>
+                             <div class="space-y-4 text-sm flex-grow mt-4">
+                                 <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Irritent la muqueuse intestinale, stimulant le péristaltisme.</p></div>
+                                 <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets secondaires</h5><p class="text-slate-500 pl-6">Douleurs abdominales, risque de dépendance ("maladie des laxatifs").</p></div>
+                                 <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="info" class="w-4 h-4 text-indigo-600"></i>Surveillance</h5><p class="text-slate-500 pl-6"><b>Usage ponctuel uniquement.</b> Ne pas utiliser si occlusion suspectée.</p></div>
+                             </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <div id="antidiarrheiques" class="page hidden">
+                <section class="bg-gradient-to-br from-lime-100 to-green-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-lime-500 to-green-600 bg-clip-text text-transparent">Anti-diarrhéiques</span></h3>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl font-bold text-slate-800">Ralentisseurs du transit</h4>
+                            <p class="text-xs text-slate-500 italic">Ex: Lopéramide (Imodium®)...</p>
+                            <div class="space-y-4 text-sm flex-grow mt-4">
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Dérivé opioïde qui ralentit les contractions intestinales.</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="ban" class="w-4 h-4 text-red-600"></i>Contre-indications</h5><p class="text-slate-500 pl-6"><b>Diarrhée infectieuse avec fièvre/sang</b> (risque de colectasie).</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="info" class="w-4 h-4 text-indigo-600"></i>Surveillance</h5><p class="text-slate-500 pl-6">Arrêt si constipation ou distension abdominale.</p></div>
+                            </div>
+                        </div>
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl font-bold text-slate-800">Antisécrétoires</h4>
+                            <p class="text-xs text-slate-500 italic">Ex: Racécadotril (Tiorfan®)...</p>
+                            <div class="space-y-4 text-sm flex-grow mt-4">
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Diminue l'hypersécrétion d'eau et d'électrolytes dans l'intestin.</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="thumbs-up" class="w-4 h-4 text-green-600"></i>Avantage</h5><p class="text-slate-500 pl-6">Ne ralentit pas le transit, donc <b>pas de risque en cas de diarrhée infectieuse</b>.</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="info" class="w-4 h-4 text-indigo-600"></i>Surveillance</h5><p class="text-slate-500 pl-6">État d'hydratation, évolution de la diarrhée.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <div id="role" class="page hidden">
+                <section class="bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-pink-500 to-rose-600 bg-clip-text text-transparent">Le Rôle Infirmier</span></h3>
+                    <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+                         <div class="lg:col-span-2"><h4 class="text-2xl sm:text-3xl font-bold text-slate-800 mb-4">Une approche <span class="bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text text-transparent">globale</span></h4><p class="text-slate-600 text-sm sm:text-base">L'infirmier(ère) est au cœur de la gestion des troubles digestifs. Son action va de l'évaluation à l'éducation thérapeutique du patient.</p></div>
+                         <div class="lg:col-span-3 space-y-6">
+                            <div class="flex items-start gap-4 sm:gap-6 p-6 bg-white/70 backdrop-blur-sm rounded-xl shadow-lg"><div class="bg-green-100 text-green-700 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex-shrink-0 flex items-center justify-center text-xl sm:text-2xl font-bold">1</div><div><h5 class="font-bold text-lg sm:text-xl text-slate-800 mb-1">Évaluer</h5><p class="text-slate-600 text-sm sm:text-base">Évaluer les symptômes (douleur, transit, nausées), l'état d'hydratation et les habitudes alimentaires.</p></div></div>
+                            <div class="flex items-start gap-4 sm:gap-6 p-6 bg-white/70 backdrop-blur-sm rounded-xl shadow-lg"><div class="bg-blue-100 text-blue-700 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex-shrink-0 flex items-center justify-center text-xl sm:text-2xl font-bold">2</div><div><h5 class="font-bold text-lg sm:text-xl text-slate-800 mb-1">Administrer</h5><p class="text-slate-600 text-sm sm:text-base">Respecter les moments de prise (ex: IPP avant repas) et les espacer si besoin (ex: pansements).</p></div></div>
+                            <div class="flex items-start gap-4 sm:gap-6 p-6 bg-white/70 backdrop-blur-sm rounded-xl shadow-lg"><div class="bg-orange-100 text-orange-700 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex-shrink-0 flex items-center justify-center text-xl sm:text-2xl font-bold">3</div><div><h5 class="font-bold text-lg sm:text-xl text-slate-800 mb-1">Surveiller</h5><p class="text-slate-600 text-sm sm:text-base">Observer l'efficacité du traitement (soulagement) et l'apparition d'effets indésirables (ex: symptômes extrapyramidaux).</p></div></div>
+                            <div class="flex items-start gap-4 sm:gap-6 p-6 bg-white/70 backdrop-blur-sm rounded-xl shadow-lg"><div class="bg-purple-100 text-purple-700 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex-shrink-0 flex items-center justify-center text-xl sm:text-2xl font-bold">4</div><div><h5 class="font-bold text-lg sm:text-xl text-slate-800 mb-1">Éduquer</h5><p class="text-slate-600 text-sm sm:text-base">Conseiller sur l'hydratation, l'alimentation (fibres, etc.), et les règles hygiéno-diététiques.</p></div></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="quiz" class="page hidden">
+                <div class="bg-gradient-to-br from-slate-50 to-gray-100 p-6 sm:p-8 md:p-10 rounded-2xl shadow-inner">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-2">Quiz Interactif</h2>
+                    <p class="text-slate-600 mb-8">Testez vos connaissances sur les thérapeutiques du système digestif.</p>
+                    
+                    <div id="qcm-container" class="space-y-8"></div>
+
+                    <div id="quiz-footer" class="mt-10 pt-6 border-t-2 border-slate-200 flex justify-between items-center">
+                        <p id="quiz-score" class="text-xl md:text-2xl font-bold text-slate-800"></p>
+                        <button onclick="resetQuiz()" id="reset-button" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 transform opacity-0 pointer-events-none">Recommencer</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer id="footer" class="bg-slate-800 text-white p-4 md:p-6 mt-auto rounded-b-xl shadow-inner">
+            <div class="max-w-6xl mx-auto flex items-center justify-center md:justify-end text-center">
+                <p class="font-bold text-slate-300 text-xs sm:text-sm">
+                <span class="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2025
+                </p>
+            </div>
+        </footer>
+
+    </div>
+    <script>
+        const quizData = [
+            { question: "À quel moment est-il préférable d'administrer un Inhibiteur de la Pompe à Protons (IPP) ?", options: ["30 minutes avant le repas", "Pendant le repas", "Juste après le repas", "Au coucher"], correct: 0, feedback: "Les IPP sont plus efficaces lorsque les pompes à protons sont activées par l'anticipation d'un repas. Il faut donc les prendre avant." },
+            { question: "Quel est le risque principal associé au Métoclopramide (Primpéran®), surtout chez les jeunes et les personnes âgées ?", options: ["Hypertension", "Symptômes extrapyramidaux", "Hypoglycémie", "Insuffisance rénale"], correct: 1, feedback: "Le blocage des récepteurs dopaminergiques peut causer des mouvements anormaux (dyskinésies, crises oculogyres), ce qui impose une surveillance stricte." },
+            { question: "Pourquoi faut-il prendre les pansements gastriques (type Smecta®, Gaviscon®) à distance des autres médicaments ?", options: ["Pour éviter les nausées", "Car ils diminuent l'absorption des autres molécules", "Pour augmenter leur propre efficacité", "Car ils inactivent les autres médicaments"], correct: 1, feedback: "Les pansements tapissent la muqueuse et peuvent adsorber d'autres médicaments, réduisant ainsi leur passage dans la circulation sanguine." },
+            { question: "Quelle classe de laxatifs est considérée comme la plus sûre pour un usage au long cours ?", options: ["Laxatifs stimulants", "Laxatifs lubrifiants", "Lavements", "Laxatifs osmotiques"], correct: 3, feedback: "Les laxatifs osmotiques (Macrogol) ne créent pas de dépendance et sont généralement bien tolérés, ce qui les rend adaptés à un usage chronique." },
+            { question: "Dans quel cas le Lopéramide (Imodium®) est-il formellement contre-indiqué ?", options: ["Diarrhée avec fièvre élevée et présence de sang", "Diarrhée du voyageur simple", "Gastro-entérite virale sans fièvre", "Diarrhée post-antibiothérapie"], correct: 0, feedback: "En cas de diarrhée infectieuse (bactérienne invasive), ralentir le transit risque d'enfermer le pathogène et d'aggraver l'infection, pouvant mener à une colectasie." },
+            { question: "Quel antiémétique est connu pour pouvoir allonger l'intervalle QT sur l'ECG ?", options: ["Métoclopramide", "Dompéridone", "Ondansétron", "Dimenhydrinate"], correct: 2, feedback: "Les sétrons, comme l'Ondansétron, nécessitent une prudence particulière chez les patients ayant des troubles cardiaques préexistants." },
+            { question: "L'échelle de Bristol est un outil utilisé par les infirmiers pour évaluer :", options: ["L'intensité de la douleur abdominale", "Le risque d'escarres", "La consistance des selles", "Le niveau de nausée"], correct: 2, feedback: "L'échelle de Bristol classe les selles en 7 types, de la constipation sévère (type 1) à la diarrhée sévère (type 7). C'est un outil objectif de surveillance du transit." },
+            { question: "Le Racécadotril (Tiorfan®) est un antidiarrhéique qui agit en :", options: ["Ralentissant le transit intestinal", "Absorbant les toxines", "Diminuant l'hypersécrétion d'eau", "Détruisant les bactéries"], correct: 2, feedback: "Son mécanisme antisécrétoire permet de réduire le volume des selles sans affecter la motilité intestinale, ce qui est un avantage majeur." },
+            { question: "Un patient sous laxatifs stimulants (ex: Séné) au long cours risque de développer :", options: ["Une insuffisance hépatique", "Une dépendance (maladie des laxatifs)", "Une hypertension artérielle", "Des ulcères gastriques"], correct: 1, feedback: "L'intestin devient 'paresseux' et ne fonctionne plus sans la stimulation, créant un cercle vicieux et une dépendance au traitement." },
+            { question: "Quel est le rôle principal des fibres alimentaires (Psyllium, etc.) dans le traitement de la constipation ?", options: ["Augmenter le volume des selles (laxatif de lest)", "Lubrifier les selles", "Stimuler chimiquement l'intestin", "Neutraliser l'acidité"], correct: 0, feedback: "Les fibres augmentent le volume et la teneur en eau des selles, ce qui facilite leur évacuation. On les appelle laxatifs de lest." }
+        ];
+
+        const pages = ['rappels', 'antiacides', 'antiemetiques', 'laxatifs', 'antidiarrheiques', 'role', 'quiz'];
+        const buttonColors = {
+            rappels: 'bg-gradient-to-r from-lime-500 to-green-600 text-white shadow-md',
+            antiacides: 'bg-gradient-to-r from-orange-400 to-amber-500 text-white shadow-md',
+            antiemetiques: 'bg-gradient-to-r from-sky-400 to-blue-500 text-white shadow-md',
+            laxatifs: 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white shadow-md',
+            antidiarrheiques: 'bg-gradient-to-r from-lime-400 to-green-500 text-white shadow-md',
+            role: 'bg-gradient-to-r from-pink-500 to-rose-600 text-white shadow-md',
+            quiz: 'bg-gradient-to-r from-slate-500 to-gray-700 text-white shadow-md'
+        };
+        const buttonHoverColors = {
+            rappels: 'hover:bg-green-100 hover:text-green-800',
+            antiacides: 'hover:bg-orange-100 hover:text-orange-800',
+            antiemetiques: 'hover:bg-sky-100 hover:text-sky-800',
+            laxatifs: 'hover:bg-yellow-100 hover:text-yellow-800',
+            antidiarrheiques: 'hover:bg-lime-100 hover:text-lime-800',
+            role: 'hover:bg-pink-100 hover:text-pink-800',
+            quiz: 'hover:bg-slate-300 hover:text-slate-800'
+        };
+
+        function showPage(pageId) {
+            pages.forEach(id => { document.getElementById(id).classList.add('hidden'); });
+            document.getElementById(pageId).classList.remove('hidden');
+            const navButtons = document.querySelectorAll('.nav-btn');
+            navButtons.forEach(btn => {
+                const page = btn.dataset.page;
+                btn.className = 'nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm';
+                if (page === pageId) {
+                    btn.classList.add(...buttonColors[page].split(' '));
+                } else {
+                    btn.classList.add(...buttonHoverColors[page].split(' '));
+                }
+            });
+        }
+
+       function renderQuiz() {
+            const container = document.getElementById('qcm-container');
+            container.innerHTML = '';
+            quizData.forEach((item, index) => {
+                const optionsHtml = item.options.map((option, optionIndex) => `<button class="qcm-option w-full text-left p-4 rounded-xl bg-white border-2 border-slate-200 hover:bg-slate-100 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200" data-index="${optionIndex}">${option}</button>`).join('');
+                container.innerHTML += `<div class="qcm-question bg-slate-100/70 border border-slate-200/80 p-6 rounded-2xl shadow-lg" data-question-index="${index}"><p class="font-semibold text-lg text-slate-800 mb-4">${index + 1}. ${item.question}</p><div class="grid grid-cols-1 sm:grid-cols-2 gap-3">${optionsHtml}</div><div class="qcm-feedback mt-4 text-sm font-medium"></div></div>`;
+            });
+            document.getElementById('quiz-score').textContent = `Prêt ? 0 / ${quizData.length}`;
+            document.getElementById('reset-button').classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        function setupQuizListeners() {
+            document.getElementById('qcm-container').addEventListener('click', (event) => {
+                if (!event.target.classList.contains('qcm-option')) return;
+                const optionButton = event.target;
+                const questionEl = optionButton.closest('.qcm-question');
+                if (!questionEl || questionEl.classList.contains('answered')) return;
+                questionEl.classList.add('answered');
+                const questionIndex = parseInt(questionEl.dataset.questionIndex, 10);
+                const questionData = quizData[questionIndex];
+                const selectedIndex = parseInt(optionButton.dataset.index, 10);
+                const isCorrect = selectedIndex === questionData.correct;
+                const feedbackEl = questionEl.querySelector('.qcm-feedback');
+                if (isCorrect) {
+                    optionButton.classList.add('correct');
+                    feedbackEl.innerHTML = `<div class="text-emerald-700 p-3 bg-emerald-100 rounded-lg"><b class="font-bold">Bravo !</b> ${questionData.feedback || ''}</div>`;
+                } else {
+                    optionButton.classList.add('incorrect');
+                    questionEl.querySelector(`[data-index="${questionData.correct}"]`).classList.add('correct');
+                    feedbackEl.innerHTML = `<div class="text-red-700 p-3 bg-red-100 rounded-lg"><b class="font-bold">Dommage.</b> ${questionData.feedback || ''}</div>`;
+                }
+                questionEl.querySelectorAll('.qcm-option').forEach(btn => { btn.disabled = true; });
+                updateScore();
+            });
+        }
+
+        function updateScore() {
+            const totalQuestions = quizData.length;
+            let score = 0;
+            document.querySelectorAll('.qcm-question.answered').forEach(questionEl => {
+                const incorrectButton = questionEl.querySelector('.qcm-option.incorrect');
+                if (!incorrectButton) score++;
+            });
+            const scoreEl = document.getElementById('quiz-score');
+            const answeredCount = document.querySelectorAll('.qcm-question.answered').length;
+            scoreEl.textContent = `Votre score : ${score} / ${answeredCount}`;
+            if (answeredCount === totalQuestions) {
+                scoreEl.textContent = `Score final : ${score} / ${totalQuestions}`;
+                const percentage = (score / totalQuestions) * 100;
+                if (percentage >= 80) scoreEl.textContent += " - Excellent travail ! 🎉";
+                else if (percentage >= 50) scoreEl.textContent += " - Pas mal, continuez à réviser ! 💪";
+                else scoreEl.textContent += " - Encore un effort ! 📚";
+                document.getElementById('reset-button').classList.remove('opacity-0', 'pointer-events-none');
+            }
+        }
+
+        function resetQuiz() { renderQuiz(); }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            showPage('rappels');
+            renderQuiz();
+            setupQuizListeners();
+        });
+    </script>
+</body>
+</html>
+

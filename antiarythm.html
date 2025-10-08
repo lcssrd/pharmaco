@@ -1,25 +1,27 @@
-<!DOCTYPE html>
-<html lang="fr">
+﻿<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anti-arythmiques & Digitaliques - IFSI</title>
     
-    <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     
-    <!-- Chart.js for radar charts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <style>
-        /* Custom styles to complement Tailwind */
+        html {
+            overflow-y: scroll; /* Force the scrollbar to always be visible, preventing layout shifts */
+        }
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* A slightly softer background color */
         }
+        /* Animation for page transitions */
         .page {
             animation: fadeIn 0.5s ease-in-out;
         }
@@ -50,38 +52,32 @@
         }
     </style>
 </head>
-<body class="bg-slate-100 p-2 sm:p-4 md:p-8">
-    <!-- Main container -->
-    <div id="app" class="max-w-6xl mx-auto bg-white min-h-screen shadow-2xl rounded-xl overflow-hidden">
+<body class="p-2 sm:p-4 md:p-8">
+    <div class="max-w-6xl mx-auto bg-white min-h-screen shadow-2xl rounded-xl overflow-hidden">
                 
-        <!-- Header -->
-        <header id="header" class="bg-slate-800 text-white p-6 md:p-8 sticky top-0 z-50">
+        <header class="bg-slate-800 text-white p-6 md:p-8 sticky top-0 z-50">
             <div class="flex items-center justify-between">
                 <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-red-500 to-red-800 bg-clip-text text-transparent pb-2">Anti-arythmiques & Digitaliques</h1>
                 <div class="hidden md:flex text-right font-bold text-slate-300 text-sm">
                     <p><span class="bg-gradient-to-r from-red-500 to-red-800 bg-clip-text text-transparent">Lucas Séraudie</span> - 2025</p>
                 </div>
             </div>
+
+            <nav class="pt-6">
+                <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-4 sm:grid-cols-4 md:grid-cols-7 gap-2">
+                    <button onclick="showPage('classe1')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-rose-100 hover:text-rose-800">Stab. Membrane</button>
+                    <button onclick="showPage('classe2')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-purple-100 hover:text-purple-800">Bêta-bloquants</button>
+                    <button onclick="showPage('classe3')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-red-100 hover:text-red-800">Inhib. Potassiques</button>
+                    <button onclick="showPage('classe4')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-green-100 hover:text-green-800">Inhib. Calciques</button>
+                    <button onclick="showPage('digitaliques')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-amber-100 hover:text-amber-800">Digitaliques</button>
+                    <button onclick="showPage('quiz')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-slate-300 hover:text-slate-800">Quiz</button>
+                    <button onclick="showPage('synthese')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-gray-200 hover:text-gray-800">Synthèse</button>
+                </div>
+            </nav>
         </header>
 
-        <!-- Top Navigation Bar -->
-        <nav id="navbar" class="bg-white sticky z-10 p-4 shadow-md">
-             <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-4 sm:grid-cols-4 md:grid-cols-7 gap-2">
-                <!-- MODIFICATION DU BOUTON CLASSE I : Utilisation des couleurs rouges/roses -->
-                <button onclick="showPage('classe1')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-rose-100 hover:text-rose-800">Stab. Membrane</button>
-                <button onclick="showPage('classe2')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-purple-100 hover:text-purple-800">Bêta-bloquants</button>
-                <button onclick="showPage('classe3')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-red-100 hover:text-red-800">Inhib. Potassiques</button>
-                <button onclick="showPage('classe4')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-green-100 hover:text-green-800">Inhib. Calciques</button>
-                <button onclick="showPage('digitaliques')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-amber-100 hover:text-amber-800">Digitaliques</button>
-                <button onclick="showPage('quiz')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-slate-300 hover:text-slate-800">Quiz</button>
-                <button onclick="showPage('synthese')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-gray-200 hover:text-gray-800">Synthèse</button>
-            </div>
-        </nav>
-
-        <!-- Main Content Area -->
         <main id="main-content" class="p-4 sm:p-6 md:p-8">
 
-            <!-- Classe I Page - COULEURS MODIFIÉES (sky- à rose-/red-) -->
             <div id="classe1" class="page">
                 <h2 class="text-2xl md:text-3xl font-bold text-red-600">Classe I : Stabilisants de membrane</h2>
                 <div class="space-y-4 mt-4">
@@ -90,7 +86,6 @@
                         <p class="text-red-700 text-sm">Bloquent les canaux sodiques, ce qui ralentit la dépolarisation des cellules cardiaques. Ils stabilisent la membrane cellulaire pour réduire l'excitabilité cardiaque.</p>
                     </div>
                     
-                    <!-- CLASSE Ia -->
                     <div class="bg-red-100 p-4 rounded-lg">
                     <h3 class="text-xl font-bold text-red-700 pt-4">Sous-classe Ia (ex: Serecor®, Rythmodan®)</h3>
                     <div class="bg-red-100 p-4 rounded-lg">
@@ -108,7 +103,6 @@
                     </div>
                     </div>
                     
-                    <!-- CLASSE Ib -->
                     <div class="bg-red-100 p-4 rounded-lg">
                     <h3 class="text-xl font-bold text-red-700 pt-4">Sous-classe Ib (ex: Xylocard®, Dilantin®)</h3>
                      <div class="bg-red-100 p-4 rounded-lg">
@@ -124,7 +118,6 @@
                     </div>
                     </div>
 
-                    <!-- CLASSE Ic -->
                     <div class="bg-red-100 p-4 rounded-lg">
                     <h3 class="text-xl font-bold text-red-700 pt-4">Sous-classe Ic (ex: Flecaïne®, Rythmol®)</h3>
                     <div class="bg-red-100 p-4 rounded-lg">
@@ -143,7 +136,6 @@
                 </div>
             </div>
             
-            <!-- Classe II Page -->
             <div id="classe2" class="page hidden">
                 <h2 class="text-2xl md:text-3xl font-bold text-purple-600">Classe II : Bêta-bloquants</h2>
                 <div class="space-y-4 mt-4">
@@ -171,7 +163,6 @@
                 </div>
             </div>
 
-            <!-- Classe III Page -->
             <div id="classe3" class="page hidden">
                 <h2 class="text-2xl md:text-3xl font-bold text-red-600">Classe III : Inhibiteurs des canaux potassiques</h2>
                  <div class="space-y-4 mt-4">
@@ -201,7 +192,6 @@
                 </div>
             </div>
 
-            <!-- Classe IV Page -->
             <div id="classe4" class="page hidden">
                 <h2 class="text-2xl md:text-3xl font-bold text-green-600">Classe IV : Inhibiteurs calciques</h2>
                  <div class="space-y-4 mt-4">
@@ -229,7 +219,6 @@
                 </div>
             </div>
 
-            <!-- Digitaliques Page -->
             <div id="digitaliques" class="page hidden">
                 <h2 class="text-2xl md:text-3xl font-bold text-amber-600">Les Digitaliques</h2>
                 <div class="space-y-4 mt-4">
@@ -262,15 +251,13 @@
                 </div>
             </div>
 
-            <!-- Quiz Page -->
             <div id="quiz" class="page hidden">
                 <div class="bg-gradient-to-br from-slate-50 to-gray-100 p-6 sm:p-8 md:p-10 rounded-2xl shadow-inner">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-2">Quiz Interactif</h2>
                     <p class="text-slate-600 mb-8">Testez vos connaissances sur les anti-arythmiques et les digitaliques.</p>
                     
                     <div id="qcm-container" class="space-y-8">
-                        <!-- Les questions du quiz seront injectées ici par le JavaScript -->
-                    </div>
+                        </div>
 
                     <div id="quiz-footer" class="mt-10 pt-6 border-t-2 border-slate-200 flex justify-between items-center">
                         <p id="quiz-score" class="text-xl md:text-2xl font-bold text-slate-800"></p>
@@ -281,7 +268,6 @@
                 </div>
             </div>
 
-            <!-- Synthèse Page -->
             <div id="synthese" class="page hidden">
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-700">Tableau de Synthèse</h2>
                 <div class="mt-4 overflow-x-auto">
@@ -295,7 +281,6 @@
                             </tr>
                         </thead>
                         <tbody class="text-gray-800">
-                            <!-- COULEUR DU TABLEAU MODIFIÉE (sky- à rose-) -->
                             <tr class="bg-rose-50 border-b"><td class="p-3 font-semibold">Classe I</td><td class="p-3">Blocage canaux Na+</td><td class="p-3">Flécaïnide (Flecaïne®)</td><td class="p-3">Effet pro-arythmogène</td></tr>
                             <tr class="bg-purple-50 border-b"><td class="p-3 font-semibold">Classe II</td><td class="p-3">Bêta-bloquant</td><td class="p-3">Métoprolol</td><td class="p-3">Ne jamais arrêter brutalement, CI (asthme, BAV)</td></tr>
                             <tr class="bg-red-50 border-b"><td class="p-3 font-semibold">Classe III</td><td class="p-3">Blocage canaux K+</td><td class="p-3">Amiodarone (Cordarone®)</td><td class="p-3">Toxicité multiple (thyroïde, poumon, peau), torsades de pointes</td></tr>
@@ -316,12 +301,10 @@
 
         </main>
 
-        <!-- Footer -->
         <footer id="footer" class="bg-slate-800 text-white p-4 md:p-6 mt-auto rounded-b-xl shadow-inner">
             <div class="max-w-6xl mx-auto flex items-center justify-center md:justify-end text-center">
                 <p class="font-bold text-slate-300 text-xs sm:text-sm">
-                    <!-- COULEUR DU FOOTER MODIFIÉE (sky-400 à red-500) pour plus d'harmonie -->
-                    Lucas Séraudie - <span class="bg-gradient-to-r from-red-500 via-rose-500 to-pink-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2025
+                <span class="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2025
                 </p>
             </div>
         </footer>
@@ -376,7 +359,7 @@
                 question: "Un patient asthmatique présente une arythmie nécessitant un traitement. Quel anti-arythmique de Classe II est strictement contre-indiqué chez ce patient ?", 
                 options: ["Vérapamil", "Digoxine", "Métoprolol", "Flécaïnide"], 
                 correct: 2, 
-                feedback: "Le Métoprolol (et les autres Bêta-bloquants) est contre-indiqué chez l'asthmatique car il peut provoquer un bronchospasme par blocage des récepteurs $\\beta_2$ bronchiques." 
+                feedback: "Le Métoprolol (et les autres Bêta-bloquants) est contre-indiqué chez l'asthmatique car il peut provoquer un bronchospasme par blocage des récepteurs β₂ bronchiques." 
             },
             { 
                 question: "Quelle est la signification de la Règle des 3R des digitaliques ?", 
@@ -390,10 +373,7 @@
         const navButtons = document.querySelectorAll('.nav-btn');
 
         function showPage(pageId) {
-            // 1. Masquer toutes les pages
             pages.forEach(page => page.classList.add('hidden'));
-            
-            // 2. Afficher la page active
             const activePage = document.getElementById(pageId);
             if (activePage) activePage.classList.remove('hidden');
             
@@ -412,38 +392,15 @@
             navButtons.forEach(btn => {
                 const btnPageId = btn.getAttribute('onclick').match(/'([^']+)'/)[1];
                 
-                // 3. Retirer TOUS les styles actifs précédents de TOUS les boutons
-                btn.classList.remove('bg-gradient-to-r', 'text-white', 'shadow-md');
-                allGradientClasses.forEach(gClass => btn.classList.remove(gClass));
-
-                // Retirer les styles de hover spécifiques (car ils masquent l'état actif)
-                btn.classList.remove('hover:bg-rose-100', 'hover:text-rose-800', 
-                                    'hover:bg-purple-100', 'hover:text-purple-800',
-                                    'hover:bg-red-100', 'hover:text-red-800',
-                                    'hover:bg-green-100', 'hover:text-green-800',
-                                    'hover:bg-amber-100', 'hover:text-amber-800',
-                                    'hover:bg-slate-300', 'hover:text-slate-800',
-                                    'hover:bg-gray-200', 'hover:text-gray-800');
-
+                btn.classList.remove('bg-gradient-to-r', 'text-white', 'shadow-md', ...allGradientClasses);
+                btn.classList.add('text-slate-800');
 
                 if (btnPageId === pageId) {
-                    // 4. Appliquer les styles actifs au bouton sélectionné
                     btn.classList.add('bg-gradient-to-r', 'text-white', 'shadow-md', ...gradients[pageId]);
                     btn.classList.remove('text-slate-800');
-                } else {
-                    // 5. Appliquer les styles inactifs (hover) aux autres boutons
-                    btn.classList.add('text-slate-800');
-                    // Réappliquer les styles de hover spécifiques qui ont été retirés à l'étape 3.
-                    if (btnPageId === 'classe1') btn.classList.add('hover:bg-rose-100', 'hover:text-rose-800');
-                    if (btnPageId === 'classe2') btn.classList.add('hover:bg-purple-100', 'hover:text-purple-800');
-                    if (btnPageId === 'classe3') btn.classList.add('hover:bg-red-100', 'hover:text-red-800');
-                    if (btnPageId === 'classe4') btn.classList.add('hover:bg-green-100', 'hover:text-green-800');
-                    if (btnPageId === 'digitaliques') btn.classList.add('hover:bg-amber-100', 'hover:text-amber-800');
-                    if (btnPageId === 'quiz') btn.classList.add('hover:bg-slate-300', 'hover:text-slate-800');
-                    if (btnPageId === 'synthese') btn.classList.add('hover:bg-gray-200', 'hover:text-gray-800');
                 }
             });
-            window.scrollTo(0, 0);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         // --- Chart Logic ---
@@ -451,8 +408,7 @@
             const chartData = {
                 labels: ['Ralentissement FC', 'Effet Inotrope', 'Ralentissement Conduction AV', 'Risque Pro-arythmogène', 'Effets Extra-Cardiaques'],
                 datasets: [
-                    // MODIFICATION DE LA COULEUR DU GRAPHIQUE CLASSE I
-                    { label: 'Classe I (Flécaïnide)', data: [3, 2, 5, 5, 1], borderColor: 'rgb(244, 63, 94)', backgroundColor: 'rgba(244, 63, 94, 0.2)' }, // rose-500
+                    { label: 'Classe I (Flécaïnide)', data: [3, 2, 5, 5, 1], borderColor: 'rgb(244, 63, 94)', backgroundColor: 'rgba(244, 63, 94, 0.2)' }, 
                     { label: 'Classe II (BB)', data: [5, 2, 4, 2, 4], borderColor: 'rgb(139, 92, 246)', backgroundColor: 'rgba(139, 92, 246, 0.2)' },
                     { label: 'Classe III (Amiodarone)', data: [4, 1, 3, 4, 5], borderColor: 'rgb(239, 68, 68)', backgroundColor: 'rgba(239, 68, 68, 0.2)' },
                     { label: 'Classe IV (Vérapamil)', data: [4, 2, 5, 2, 3], borderColor: 'rgb(34, 197, 94)', backgroundColor: 'rgba(34, 197, 94, 0.2)' },
@@ -460,31 +416,8 @@
                 ]
             };
             const chartOptions = { 
-                scales: { 
-                    r: { 
-                        suggestedMin: 0, 
-                        suggestedMax: 5, 
-                        ticks: { stepSize: 1 }, 
-                        pointLabels: { font: { size: 10 } } 
-                    } 
-                }, 
-                plugins: { 
-                    legend: { position: 'top' },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                let label = context.dataset.label || '';
-                                if (label) {
-                                    label += ': ';
-                                }
-                                if (context.parsed.r !== null) {
-                                    label += context.parsed.r + '/5';
-                                }
-                                return label;
-                            }
-                        }
-                    }
-                } 
+                scales: { r: { suggestedMin: 0, suggestedMax: 5, ticks: { stepSize: 1 }, pointLabels: { font: { size: 10 } } } }, 
+                plugins: { legend: { position: 'top' } } 
             };
             const canvas = document.getElementById('aarChart');
             if(canvas && !canvas.chart) {
@@ -492,15 +425,6 @@
             }
         }
         
-        // --- Dynamic Top Position for Navbar ---
-        function setNavbarPosition() {
-            const header = document.getElementById('header');
-            const navbar = document.getElementById('navbar');
-            if (header && navbar) {
-                navbar.style.top = `${header.offsetHeight}px`;
-            }
-        }
-
         // --- Quiz Logic ---
         function renderQuiz() {
             const container = document.getElementById('qcm-container');
@@ -557,15 +481,12 @@
 
         function updateScore() {
             const totalQuestions = quizData.length;
-            // DÉBUT DE LA CORRECTION : La méthode de comptage précédente comptait les réponses correctes non sélectionnées
-            // La bonne méthode est de compter les questions marquées 'answered' qui n'ont AUCUNE option 'incorrect'
             let correctAnswers = 0; 
             document.querySelectorAll('.qcm-question.answered').forEach(questionEl => {
                 if (!questionEl.querySelector('.qcm-option.incorrect')) {
                     correctAnswers++;
                 }
             });
-            // FIN DE LA CORRECTION
             const answeredCount = document.querySelectorAll('.qcm-question.answered').length;
 
             const scoreEl = document.getElementById('quiz-score');
@@ -591,16 +512,12 @@
         
         // --- Initial Load ---
         window.onload = () => {
-            showPage('classe1'); // Affiche la première page au chargement
-            setNavbarPosition();
+            showPage('classe1');
             createAARChart();
             renderQuiz();
             setupQuizListeners();
         };
 
-        window.onresize = setNavbarPosition;
-
     </script>
 </body>
 </html>
-

@@ -1,32 +1,23 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les Anticoagulants - IFSI</title>
-    
-    <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Inter -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Chart.js for radar charts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        /* Custom styles to complement Tailwind */
+        html {
+            overflow-y: scroll; /* Force the scrollbar to always be visible, preventing layout shifts */
+        }
         body {
             font-family: 'Inter', sans-serif;
-        }
-        /* Hide scrollbar for a cleaner look on mobile */
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
+            background-color: #f0f4f8;
         }
         /* Animation for page transitions */
         .page {
@@ -36,7 +27,7 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        /* Styles for selected quiz options */
+        /* Quiz specific styles */
         .qcm-option.correct {
             background-image: linear-gradient(to right, #4ade80, #16a34a); /* from-green-400 to-green-600 */
             color: white;
@@ -59,36 +50,30 @@
         }
     </style>
 </head>
-<body class="bg-slate-100 p-2 sm:p-4 md:p-8">
-    <!-- Main container with rounded corners and shadow -->
-    <div id="app" class="max-w-6xl mx-auto bg-white min-h-screen shadow-2xl rounded-xl overflow-hidden">
-                
-        <!-- Header -->
-        <header id="header" class="bg-slate-800 text-white p-6 md:p-8 sticky top-0 z-50">
+<body class="p-2 sm:p-4 md:p-8">
+    <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
+        <header class="bg-slate-800 text-white p-6 md:p-8 sticky top-0 z-10">
             <div class="flex items-center justify-between">
-                <!-- Title is now left-aligned -->
                 <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent pb-2">Les Anticoagulants</h1>
-                <!-- Author information aligned to the right -->
                 <div class="hidden md:flex text-right font-bold text-slate-300 text-sm">
                     <p><span class="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2025</p>
                 </div>
             </div>
+
+            <nav id="navbar" class="pt-6">
+                 <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-4 sm:grid-cols-4 md:grid-cols-8 gap-2">
+                    <button data-page="hemostase" onclick="showPage('hemostase')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Hémostase</button>
+                    <button data-page="aap" onclick="showPage('aap')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">AAP</button>
+                    <button data-page="hnf" onclick="showPage('hnf')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">HNF</button>
+                    <button data-page="hbpm" onclick="showPage('hbpm')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">HBPM</button>
+                    <button data-page="aod" onclick="showPage('aod')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">AOD</button>
+                    <button data-page="avk" onclick="showPage('avk')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">AVK</button>
+                    <button data-page="quiz" onclick="showPage('quiz')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Quiz</button>
+                    <button data-page="synthese" onclick="showPage('synthese')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Synthèse</button>
+                </div>
+            </nav>
         </header>
 
-        <!-- Top Navigation Bar -->
-        <nav id="navbar" class="bg-white sticky z-10 p-4 shadow-md">
-             <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-4 sm:grid-cols-4 md:grid-cols-8 gap-2">
-                <!-- L'onglet 'Accueil' a été supprimé ici -->
-                <button onclick="showPage('hemostase')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-green-100 hover:text-green-800">Hémostase</button>
-                <button onclick="showPage('aap')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-purple-100 hover:text-purple-800">AAP</button>
-                <button onclick="showPage('hnf')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-sky-100 hover:text-sky-800">HNF</button>
-                <button onclick="showPage('hbpm')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-blue-100 hover:text-blue-800">HBPM</button>
-                <button onclick="showPage('aod')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-amber-100 hover:text-amber-800">AOD</button>
-                <button onclick="showPage('avk')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-red-100 hover:text-red-800">AVK</button>
-                <button onclick="showPage('quiz')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-slate-300 hover:text-slate-800">Quiz</button>
-                <button onclick="showPage('synthese')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-gray-200 hover:text-gray-800">Synthèse</button>
-            </div>
-        </nav>
 
         <!-- Main Content Area -->
         <main id="main-content" class="p-4 sm:p-6 md:p-8">

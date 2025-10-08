@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         html {
-            overflow-y: scroll; 
+            overflow-y: scroll; /* Force the scrollbar to always be visible */
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -48,35 +48,36 @@
 </head>
 <body class="p-2 sm:p-4 md:p-8">
     <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
-        <header class="bg-slate-800 text-white p-6 md:p-8">
+        <!-- Header and Nav updated as per your request -->
+        <header class="bg-slate-800 text-white p-6 md:p-8 sticky top-0 z-10">
             <div class="flex items-center justify-between">
                 <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-fuchsia-500 to-purple-600 bg-clip-text text-transparent pb-2">Antiasthmatiques & Antihistaminiques</h1>
                 <div class="hidden md:flex text-right font-bold text-slate-300 text-sm">
                     <p><span class="bg-gradient-to-r from-fuchsia-500 to-purple-600 bg-clip-text text-transparent">Lucas Séraudie</span> - 2025</p>
                 </div>
             </div>
+            
+            <nav class="pt-6">
+                <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-4 sm:grid-cols-4 md:grid-cols-7 gap-2">
+                    <button data-page="asthme" onclick="showPage('asthme')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">L'Asthme</button>
+                    <button data-page="antihistaminiques" onclick="showPage('antihistaminiques')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Antihistaminiques</button>
+                    <button data-page="beta2" onclick="showPage('beta2')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">β2-mimétiques</button>
+                    <button data-page="corticoides" onclick="showPage('corticoides')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Corticoïdes</button>
+                    <button data-page="autres" onclick="showPage('autres')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Autres Traitements</button>
+                    <button data-page="role" onclick="showPage('role')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Administration</button>
+                    <button data-page="quiz" onclick="showPage('quiz')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Quiz</button>
+                </div>
+            </nav>
         </header>
-
-        <nav class="bg-white sticky top-0 z-10 p-4 shadow-md">
-            <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-4 sm:grid-cols-4 md:grid-cols-7 gap-2">
-                <button data-page="asthme" onclick="showPage('asthme')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">L'Asthme</button>
-                <button data-page="antihistaminiques" onclick="showPage('antihistaminiques')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Antihistaminiques</button>
-                <button data-page="beta2" onclick="showPage('beta2')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">β2-mimétiques</button>
-                <button data-page="corticoides" onclick="showPage('corticoides')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Corticoïdes</button>
-                <button data-page="autres" onclick="showPage('autres')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Autres Traitements</button>
-                <button data-page="role" onclick="showPage('role')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Administration</button>
-                <button data-page="quiz" onclick="showPage('quiz')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Quiz</button>
-            </div>
-        </nav>
 
         <main class="p-4 sm:p-6 md:p-8">
             <div id="asthme" class="page">
                 <section class="bg-gradient-to-br from-fuchsia-50 to-purple-100 rounded-2xl p-6 md:p-12">
                     <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-fuchsia-500 to-purple-600 bg-clip-text text-transparent">Physiopathologie de l'Asthme</span></h3>
                     <div class="grid grid-cols-1 gap-8">
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"><div class="flex items-center gap-4 mb-4"><div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="lungs" class="text-purple-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Définition</h4></div><p class="text-slate-600 text-sm sm:text-base">L'asthme est une <strong>maladie inflammatoire chronique</strong> des voies respiratoires, caractérisée par des épisodes récurrents d'<strong>obstruction bronchique</strong>. Cette inflammation entraîne une hyperréactivité des bronches.</p></div>
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"><div class="flex items-center gap-4 mb-4"><div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="book-text" class="text-purple-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Définition</h4></div><p class="text-slate-600 text-sm sm:text-base">L'asthme est une <strong>maladie inflammatoire chronique</strong> des voies respiratoires, caractérisée par des épisodes récurrents d'<strong>obstruction bronchique</strong>. Cette inflammation entraîne une hyperréactivité des bronches.</p></div>
                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"><div class="flex items-center gap-4 mb-4"><div class="bg-fuchsia-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="shield-alert" class="text-fuchsia-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Mécanisme Allergique</h4></div><p class="text-slate-600 mb-4 text-sm sm:text-base">Chez 80% des asthmatiques, une allergie est en cause. Un contact avec un allergène déclenche la libération de médiateurs par les mastocytes, notamment :</p><div class="grid md:grid-cols-3 gap-4 text-sm"><div class="p-4 bg-fuchsia-50 rounded-lg"><h5 class="font-semibold text-fuchsia-800">1. Histamine</h5><p>Libération immédiate, provoquant bronchospasme et inflammation.</p></div><div class="p-4 bg-purple-50 rounded-lg"><h5 class="font-semibold text-purple-800">2. Leucotriènes</h5><p>Libérés après 10 minutes, effets bronchoconstricteurs puissants et prolongés.</p></div><div class="p-4 bg-violet-50 rounded-lg"><h5 class="font-semibold text-violet-800">3. Interleukines</h5><p>Libérées après plusieurs heures, entretiennent la réaction inflammatoire chronique.</p></div></div></div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"><div class="flex items-center gap-4 mb-4"><div class="bg-pink-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="activity" class="text-pink-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Manifestations Cliniques</h4></div><div class="grid md:grid-cols-2 gap-4 text-sm"><div class="p-4 bg-pink-50 rounded-lg"><h5 class="font-semibold text-pink-800">Bronchoconstriction</h5><p>Contraction des muscles lisses des bronches, réduisant le calibre des voies aériennes. [Image de bronche enflammée]</p></div><div class="p-4 bg-rose-50 rounded-lg"><h5 class="font-semibold text-rose-800">Inflammation & Œdème</h5><p>L'inflammation de la muqueuse bronchique et un excès de mucus aggravent l'obstruction.</p></div></div></div>
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"><div class="flex items-center gap-4 mb-4"><div class="bg-pink-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="activity" class="text-pink-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Manifestations Cliniques</h4></div><div class="grid md:grid-cols-2 gap-4 text-sm"><div class="p-4 bg-pink-50 rounded-lg"><h5 class="font-semibold text-pink-800">Bronchoconstriction</h5><p>Contraction des muscles lisses des bronches, réduisant le calibre des voies aériennes.</p></div><div class="p-4 bg-rose-50 rounded-lg"><h5 class="font-semibold text-rose-800">Inflammation & Œdème</h5><p>L'inflammation de la muqueuse bronchique et un excès de mucus aggravent l'obstruction.</p></div></div></div>
                     </div>
                 </section>
             </div>
@@ -209,7 +210,6 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6">
                             <h4 class="text-xl font-bold text-slate-800 mb-2">Aérosol-doseur</h4>
-                            <img src="doseur.jpg" alt="Image d'un aérosol doseur" class="w-full h-40 object-contain rounded-lg border border-gray-200 mb-3">
                             <ol class="list-decimal list-inside text-sm text-slate-600 space-y-2">
                                 <li><strong>Secouer</strong> l'aérosol.</li>
                                 <li>Expirer profondément.</li>
@@ -222,13 +222,11 @@
                         </div>
                          <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6">
                             <h4 class="text-xl font-bold text-slate-800 mb-2">Chambre d'inhalation</h4>
-                            <img src="chambre.jpg" alt="Image d'une chambre d'inhalation" class="w-full h-40 object-contain rounded-lg border border-gray-200 mb-3">
                             <p class="text-sm text-slate-600 mb-4">Indispensable chez l'enfant et recommandée chez l'adulte, elle <strong>élimine le problème de coordination</strong>. Le médicament est pulvérisé dans la chambre, puis le patient inspire tranquillement le produit qui y est en suspension.</p>
                             <p class="text-sm font-semibold text-slate-700">Après utilisation, rincer la bouche et le visage de l'enfant (si masque).</p>
                         </div>
                          <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6">
                             <h4 class="text-xl font-bold text-slate-800 mb-2">Inhalateurs de poudre sèche (Diskus®, etc.)</h4>
-                            <img src="diskus.jpg" alt="Image d'un Diskus" class="w-full h-40 object-contain rounded-lg border border-gray-200 mb-3">
                              <ol class="list-decimal list-inside text-sm text-slate-600 space-y-2">
                                 <li>Ouvrir et armer le dispositif (un "clic" se fait entendre).</li>
                                 <li>Expirer loin de l'embout.</li>
@@ -240,7 +238,6 @@
                         </div>
                          <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6">
                             <h4 class="text-xl font-bold text-slate-800 mb-2">Inhalateurs de poudre sèche (Turbuhaler®)</h4>
-                            <img src="turbu.jpg" alt="Image d'un Turbuhaler®" class="w-full h-40 object-contain rounded-lg border border-gray-200 mb-3">
                             <ol class="list-decimal list-inside text-sm text-slate-600 space-y-2">
                                 <li>Dévisser le capuchon.</li>
                                 <li>Tourner la base colorée dans un sens puis dans l'autre jusqu'au "clic".</li>
@@ -373,7 +370,6 @@
             }
         ];
 
-
         const pages = ['asthme', 'antihistaminiques', 'beta2', 'corticoides', 'autres', 'role', 'quiz'];
         const buttonColors = {
             asthme: 'bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white shadow-md',
@@ -412,38 +408,32 @@
                     btn.classList.add(...buttonHoverColors[page].split(' '));
                 }
             });
-             window.scrollTo(0, 0);
+             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function shuffleQuizData() {
-            quizData.forEach(item => {
-                // Store the correct answer's text before shuffling
-                const correctAnswerText = item.options[item.correct];
-                
-                // Shuffle the options array using Fisher-Yates algorithm
-                for (let i = item.options.length - 1; i > 0; i--) {
-                    // Pick a random index from 0 to i
-                    const j = Math.floor(Math.random() * (i + 1));
-                    // Swap elements item.options[i] and item.options[j]
-                    [item.options[i], item.options[j]] = [item.options[j], item.options[i]];
-                }
-                
-                // Find the new index of the correct answer after shuffling
-                item.correct = item.options.findIndex(option => option === correctAnswerText);
-            });
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
         }
-        
-       function renderQuiz() {
+
+        function renderQuiz() {
+            shuffleArray(quizData);
             const container = document.getElementById('qcm-container');
             if (!container) return;
             container.innerHTML = '';
             quizData.forEach((item, index) => {
+                const correctAnswerText = item.options[item.correct];
+                shuffleArray(item.options);
+                item.correct = item.options.indexOf(correctAnswerText);
+
                 const optionsHtml = item.options.map((option, optionIndex) => 
                     `<button class="qcm-option w-full text-left p-4 rounded-xl bg-white border-2 border-slate-200 hover:bg-slate-100 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200" data-index="${optionIndex}">${option}</button>`
                 ).join('');
 
                 container.innerHTML += `
-                    <div class="qcm-question bg-slate-100/70 border border-slate-200/80 p-6 rounded-2xl shadow-lg" data-question-index="${index}">
+                    <div class="qcm-question bg-slate-100/70 border border-slate-200/80 p-6 rounded-2xl shadow-sm" data-question-index="${index}">
                         <p class="font-semibold text-lg text-slate-800 mb-4">${index + 1}. ${item.question}</p>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">${optionsHtml}</div>
                         <div class="qcm-feedback mt-4 text-sm font-medium"></div>
@@ -452,6 +442,7 @@
             document.getElementById('quiz-score').textContent = `Prêt ? 0 / ${quizData.length}`;
             const resetButton = document.getElementById('reset-button');
             resetButton.classList.add('opacity-0', 'pointer-events-none');
+            resetButton.classList.remove('animate-pulse');
         }
 
         function setupQuizListeners() {
@@ -473,14 +464,15 @@
 
                 if (isCorrect) {
                     optionButton.classList.add('correct');
-                    feedbackEl.innerHTML = `<div class="text-emerald-700 p-3 bg-emerald-100 rounded-lg"><b class="font-bold">Bravo !</b> ${questionData.feedback || ''}</div>`;
+                    feedbackEl.innerHTML = `<div class="text-emerald-700 p-3 bg-emerald-100 rounded-lg flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5"></i><div><b class="font-bold">Bravo !</b> ${questionData.feedback || ''}</div></div>`;
                 } else {
                     optionButton.classList.add('incorrect');
                     const correctButton = questionEl.querySelector(`[data-index="${questionData.correct}"]`);
                     correctButton.classList.add('correct');
-                    feedbackEl.innerHTML = `<div class="text-red-700 p-3 bg-red-100 rounded-lg"><b class="font-bold">Dommage.</b> ${questionData.feedback || ''}</div>`;
+                    feedbackEl.innerHTML = `<div class="text-red-700 p-3 bg-red-100 rounded-lg flex items-center gap-2"><i data-lucide="x-circle" class="w-5 h-5"></i><div><b class="font-bold">Dommage.</b> ${questionData.feedback || ''}</div></div>`;
                 }
                 
+                lucide.createIcons();
                 questionEl.querySelectorAll('.qcm-option').forEach(btn => {
                     btn.disabled = true;
                 });
@@ -494,8 +486,9 @@
             const answeredQuestions = document.querySelectorAll('.qcm-question.answered');
 
             answeredQuestions.forEach(questionEl => {
-                const selectedIncorrect = questionEl.querySelector('.qcm-option.incorrect');
-                if (!selectedIncorrect) {
+                const selectedCorrect = questionEl.querySelector('.qcm-option.correct:disabled');
+                const selectedIncorrect = questionEl.querySelector('.qcm-option.incorrect:disabled');
+                if (selectedCorrect && !selectedIncorrect) {
                     score++;
                 }
             });
@@ -505,35 +498,34 @@
                 const answeredCount = answeredQuestions.length;
                 scoreEl.textContent = `Votre score : ${score} / ${answeredCount}`;
                 if (answeredCount === totalQuestions) {
-                     scoreEl.textContent = `Score final : ${score} / ${totalQuestions}`;
                     const percentage = (score / totalQuestions) * 100;
+                    let finalMessage = `Score final : ${score} / ${totalQuestions}`;
                     if (percentage >= 80) {
-                        scoreEl.textContent += " - Excellent travail ! 🎉";
+                        finalMessage += " - Excellent travail ! 🎉";
                     } else if (percentage >= 50) {
-                        scoreEl.textContent += " - Pas mal, continuez à réviser ! 💪";
+                        finalMessage += " - Pas mal, continuez à réviser ! 💪";
                     } else {
-                        scoreEl.textContent += " - Encore un effort ! 📚";
+                        finalMessage += " - Encore un effort ! 📚";
                     }
+                    scoreEl.textContent = finalMessage;
                     const resetButton = document.getElementById('reset-button');
                     resetButton.classList.remove('opacity-0', 'pointer-events-none');
+                    resetButton.classList.add('animate-pulse');
                 }
             }
         }
         
         function resetQuiz() {
-            shuffleQuizData();
             renderQuiz();
         }
 
         document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
             showPage('asthme');
-            shuffleQuizData();
             renderQuiz();
             setupQuizListeners();
         });
     </script>
 </body>
 </html>
-
 
