@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Immunosuppresseurs - IFSI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        html {
+            overflow-y: scroll; /* Force the scrollbar to always be visible, preventing layout shifts */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        /* Animation for page transitions */
+        .page {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Quiz specific styles */
+        .qcm-option.correct {
+            background-image: linear-gradient(to right, #4ade80, #16a34a); /* from-green-400 to-green-600 */
+            color: white;
+            border-color: #15803d; /* green-700 */
+            font-weight: 600;
+        }
+        .qcm-option.incorrect {
+            background-image: linear-gradient(to right, #f87171, #dc2626); /* from-red-400 to-red-600 */
+            color: white;
+            border-color: #b91c1c; /* red-700 */
+            font-weight: 600;
+        }
+        .qcm-option:disabled {
+            cursor: not-allowed;
+        }
+        .qcm-option:disabled:not(.correct):not(.incorrect) {
+            color: #475569; /* slate-600 */
+            background-color: #f1f5f9; /* slate-100 */
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body class="p-2 sm:p-4 md:p-8">
+    <!-- Main container with rounded corners and shadow -->
+    <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
+        <!-- Header -->
+        <header class="bg-slate-800 text-white p-6 md:p-8">
+            <div class="flex items-center justify-between">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent pb-2">Les Immunosuppresseurs</h1>
+                <div class="hidden md:flex text-right font-bold text-slate-300 text-sm">
+                    <p><span class="bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">Lucas Séraudie</span> - 2025</p>
+                </div>
+            </div>
+
+            <!-- Navigation bar -->
+            <nav class="pt-6">
+                <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 gap-2">
+                    <button data-page="generalites" onclick="showPage('generalites')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Généralités</button>
+                    <button data-page="mecanismes" onclick="showPage('mecanismes')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Classes & Molécules</button>
+                    <button data-page="surveillance" onclick="showPage('surveillance')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Surveillance</button>
+                    <button data-page="quiz" onclick="showPage('quiz')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Quiz</button>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main content -->
+        <main class="p-4 sm:p-6 md:p-8">
+            <!-- Section 1: Generalites -->
+            <div id="generalites" class="page">
+                <section class="bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-amber-500 to-orange-600 bg-clip-text text-transparent">Définition et Enjeux</span></h3>
+                    <div class="space-y-8">
+                        <!-- Système Immunitaire -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="shield-check" class="text-blue-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Le système immunitaire : notre garde du corps</h4>
+                            </div>
+                            <p class="text-slate-600 mb-4">Notre système immunitaire est un réseau complexe de cellules et d'organes qui protègent le corps contre les agressions. Sa mission principale est de faire la distinction entre le "soi" (nos propres cellules) et le "non-soi" (agents pathogènes, cellules cancéreuses, greffons) pour neutraliser les menaces. Il agit via deux bras principaux : l'immunité innée (rapide, non-spécifique) et l'immunité adaptative (plus lente, spécifique et dotée de mémoire), orchestrée par les lymphocytes T et B.</p>
+                             <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-slate-700 list-inside list-disc">
+                                <li>Reconnaissance fine du "soi" et du "non-soi"</li>
+                                <li>Mise en place d'une mémoire immunitaire durable</li>
+                                <li>Orchestration de la réponse inflammatoire</li>
+                                 <li>Élimination des cellules infectées ou tumorales</li>
+                            </ul>
+                        </div>
+
+                        <!-- Immunosuppresseurs -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                             <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="pilcrow" class="text-purple-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">L'immunosuppresseur : mettre en sourdine l'immunité</h4>
+                            </div>
+                            <p class="text-slate-600 mb-4">Un immunosuppresseur est une substance qui vise à diminuer ou supprimer la réponse immunitaire. On l'utilise de manière contrôlée lorsque le système immunitaire devient une menace, soit parce qu'il s'attaque à un organe vital greffé, soit parce qu'il se dérègle et attaque les propres constituants de l'organisme.</p>
+                            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                <div class="p-4 bg-green-50 rounded-lg"><h5 class="font-semibold text-green-800">Greffes d'organes</h5><p>Indispensable pour prévenir le rejet, où le système immunitaire du receveur identifie le greffon comme "étranger" et cherche à le détruire. Le traitement est généralement maintenu à vie.</p></div>
+                                <div class="p-4 bg-orange-50 rounded-lg"><h5 class="font-semibold text-orange-800">Maladies auto-immunes</h5><p>Utilisé pour calmer l'hyperactivité du système immunitaire dans des pathologies comme la polyarthrite rhumatoïde, la maladie de Crohn, le lupus ou la sclérose en plaques.</p></div>
+                            </div>
+                        </div>
+
+                        <!-- Risques -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                             <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="shield-alert" class="text-red-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">La balance bénéfice/risque : un équilibre fragile</h4>
+                            </div>
+                            <p class="text-slate-600 mb-4">L'immunosuppression est un compromis : en affaiblissant les défenses pour contrôler une réaction néfaste, on expose le patient à d'autres dangers. La gestion de ces traitements est un exercice d'équilibriste constant, nécessitant une surveillance rapprochée et une éducation thérapeutique rigoureuse.</p>
+                            <div class="grid md:grid-cols-3 gap-4 text-sm mt-4">
+                                <div class="p-4 bg-red-50 rounded-lg"><h5 class="font-semibold text-red-800">Risque Infectieux</h5><p class="text-xs">Le plus fréquent. Augmentation de la susceptibilité aux infections banales (qui peuvent devenir graves) et aux infections opportunistes (germes normalement inoffensifs).</p></div>
+                                <div class="p-4 bg-red-50 rounded-lg"><h5 class="font-semibold text-red-800">Risque Tumoral</h5><p class="text-xs">L'immunité joue un rôle de surveillance anti-cancer. Sa suppression augmente le risque à long terme de certains cancers, notamment cutanés et lymphomes.</p></div>
+                                <div class="p-4 bg-red-50 rounded-lg"><h5 class="font-semibold text-red-800">Toxicité d'Organe</h5><p class="text-xs">De nombreux immunosuppresseurs peuvent être toxiques pour les reins (néphrotoxicité) ou le foie (hépatotoxicité), imposant une surveillance biologique régulière.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <div id="mecanismes" class="page hidden">
+                <section class="bg-gradient-to-br from-emerald-100 to-teal-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-emerald-500 to-teal-600 bg-clip-text text-transparent">Classes & Molécules</span></h3>
+                    <div class="space-y-8">
+                        <!-- Corticoides -->
+                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-yellow-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="sparkles" class="text-yellow-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">1. Les corticoïdes</h4>
+                            </div>
+                            <table class="w-full text-sm my-4 border-collapse">
+                                <thead>
+                                    <tr class="border-b-2 border-slate-200">
+                                        <th class="p-2 text-left font-semibold text-slate-700">DCI</th>
+                                        <th class="p-2 text-left font-semibold text-slate-700">Nom Commercial</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-slate-100">
+                                        <td class="p-2 text-slate-600">Prednisone</td>
+                                        <td class="p-2 text-slate-600">Cortancyl®</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2 text-slate-600">Prednisolone</td>
+                                        <td class="p-2 text-slate-600">Solupred®</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="text-slate-600 mb-4">Puissants anti-inflammatoires et immunosuppresseurs non spécifiques, ils agissent sur de nombreuses cellules de l'immunité.</p>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-slate-700 list-inside list-disc">
+                                <li>Action rapide et large</li>
+                                <li>Utilisés en traitement d'attaque</li>
+                                <li>Nombreux effets secondaires à long terme</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Anti-calcineurines -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-pink-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="zap-off" class="text-pink-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">2. Les inhibiteurs de la calcineurine</h4>
+                            </div>
+                            <table class="w-full text-sm my-4 border-collapse">
+                                <thead>
+                                    <tr class="border-b-2 border-slate-200">
+                                        <th class="p-2 text-left font-semibold text-slate-700">DCI</th>
+                                        <th class="p-2 text-left font-semibold text-slate-700">Nom Commercial</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-slate-100">
+                                        <td class="p-2 text-slate-600">Ciclosporine</td>
+                                        <td class="p-2 text-slate-600">Neoral®</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2 text-slate-600">Tacrolimus</td>
+                                        <td class="p-2 text-slate-600">Prograf®</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="text-slate-600 mb-4">Ils bloquent l'activation des lymphocytes T, cellules clés de la réponse immunitaire et du rejet de greffe. Ce sont des piliers du traitement anti-rejet.</p>
+                             <div class="p-4 bg-red-50 rounded-lg text-sm"><h5 class="font-semibold text-red-800">Attention !</h5><p>Ce sont des médicaments à marge thérapeutique étroite, nécessitant un suivi des concentrations sanguines (dosages). Risque de toxicité rénale.</p></div>
+                        </div>
+
+                        <!-- Antiprolifératifs -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                             <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="copy-minus" class="text-green-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">3. Les antiprolifératifs</h4>
+                            </div>
+                            <table class="w-full text-sm my-4 border-collapse">
+                                <thead>
+                                    <tr class="border-b-2 border-slate-200">
+                                        <th class="p-2 text-left font-semibold text-slate-700">DCI</th>
+                                        <th class="p-2 text-left font-semibold text-slate-700">Nom Commercial</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-slate-100">
+                                        <td class="p-2 text-slate-600">Azathioprine</td>
+                                        <td class="p-2 text-slate-600">Imurel®</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2 text-slate-600">Mycophénolate</td>
+                                        <td class="p-2 text-slate-600">Cellcept®</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="text-slate-600 mb-4">Ils empêchent la multiplication (prolifération) des lymphocytes B et T en bloquant la synthèse de l'ADN.</p>
+                             <ul class="list-disc list-inside space-y-2 mt-4 text-slate-700 text-sm">
+                                <li>Souvent associés aux anti-calcineurines en transplantation.</li>
+                                <li>Risque de toxicité hématologique (baisse des globules blancs).</li>
+                            </ul>
+                        </div>
+
+                        <!-- mTOR -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                           <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="crosshair" class="text-blue-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">4. Inhibiteurs de mTOR</h4>
+                           </div>
+                           <table class="w-full text-sm my-4 border-collapse">
+                                <thead>
+                                    <tr class="border-b-2 border-slate-200">
+                                        <th class="p-2 text-left font-semibold text-slate-700">DCI</th>
+                                        <th class="p-2 text-left font-semibold text-slate-700">Nom Commercial</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-slate-100">
+                                        <td class="p-2 text-slate-600">Sirolimus</td>
+                                        <td class="p-2 text-slate-600">Rapamune®</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2 text-slate-600">Everolimus</td>
+                                        <td class="p-2 text-slate-600">Certican®</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                           <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
+                                <div><h5 class="font-semibold text-teal-800">Mécanisme :</h5><p class="text-sm text-slate-600">Bloquent un signal de prolifération cellulaire différent de celui des anti-calcineurines.</p></div>
+                                <div><h5 class="font-semibold text-teal-800">Indications :</h5><p class="text-sm text-slate-600">Prévention du rejet de greffe (rénale, cardiaque), parfois en remplacement des anti-calcineurines pour préserver le rein.</p></div>
+                                <div class="p-4 bg-emerald-100 border border-emerald-200 rounded-lg md:col-span-2"><h5 class="font-bold text-emerald-900">Surveillance & EI :</h5><ul class="list-disc list-inside text-sm text-slate-700"><li>Dosages sanguins, surveillance de la fonction rénale.</li><li>Effets secondaires : aphtes, oedèmes, troubles lipidiques (hypercholestérolémie).</li></ul></div>
+                           </div>
+                        </div>
+
+                        <!-- Biothérapies -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                           <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-indigo-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="atom" class="text-indigo-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">5. Biothérapies (thérapies ciblées)</h4>
+                           </div>
+                           <table class="w-full text-sm my-4 border-collapse">
+                                <thead>
+                                    <tr class="border-b-2 border-slate-200">
+                                        <th class="p-2 text-left font-semibold text-slate-700">Classe</th>
+                                        <th class="p-2 text-left font-semibold text-slate-700">DCI</th>
+                                        <th class="p-2 text-left font-semibold text-slate-700">Nom Commercial</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-slate-100">
+                                        <td class="p-2 text-slate-600 align-top" rowspan="2">Anti-TNFα</td>
+                                        <td class="p-2 text-slate-600">Infliximab</td>
+                                        <td class="p-2 text-slate-600">Remicade®</td>
+                                    </tr>
+                                    <tr class="border-b border-slate-100">
+                                        <td class="p-2 text-slate-600">Adalimumab</td>
+                                        <td class="p-2 text-slate-600">Humira®</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2 text-slate-600">Anti-CD20</td>
+                                        <td class="p-2 text-slate-600">Rituximab</td>
+                                        <td class="p-2 text-slate-600">Mabthera®</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                           <p class="text-sm text-slate-600 mb-4">Anticorps monoclonaux (-mab) ou protéines de fusion (-cept) qui ciblent très spécifiquement une molécule ou une cellule de l'inflammation.</p>
+                           <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
+                                <div><h5 class="font-semibold text-teal-800">Cibles :</h5><p class="text-sm text-slate-600">TNF-alpha, interleukines, lymphocytes spécifiques...</p></div>
+                                <div><h5 class="font-semibold text-teal-800">Indications :</h5><p class="text-sm text-slate-600">Maladies auto-immunes (Polyarthrite, Crohn, Psoriasis), traitement d'induction en greffe.</p></div>
+                                <div class="p-4 bg-emerald-100 border border-emerald-200 rounded-lg md:col-span-2"><h5 class="font-bold text-emerald-900">Points clés IDE :</h5><ul class="list-disc list-inside text-sm text-slate-700"><li>Bilan pré-thérapeutique (recherche tuberculose latente...).</li><li>Administration souvent par voie IV (hôpital de jour) ou SC (auto-injection).</li><li>Risque de réactions allergiques à la perfusion, risque infectieux.</li></ul></div>
+                           </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <div id="surveillance" class="page hidden">
+                 <section class="bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-pink-500 to-rose-600 bg-clip-text text-transparent">Rôle Infirmier Transversal</span></h3>
+                    <div class="space-y-6">
+                        <!-- Surveillance -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="eye" class="text-purple-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Surveillance clinique et biologique</h4>
+                            </div>
+                            <p class="text-slate-600">Le rôle infirmier est central pour dépister les complications et évaluer l'efficacité du traitement.</p>
+                            <div class="grid md:grid-cols-2 gap-4 mt-4">
+                                <div class="p-4 bg-red-100 rounded-lg border border-red-200"><h5 class="font-bold text-red-900">Clinique</h5><ul class="list-disc list-inside text-sm text-slate-700"><li><strong>Signes d'infection :</strong> Fièvre, toux, frissons...</li><li><strong>Signes de rejet (greffe) :</strong> Douleur, fièvre, dysfonction de l'organe...</li><li>État cutané, état buccal (muguet)...</li></ul></div>
+                                <div class="p-4 bg-yellow-100 rounded-lg border border-yellow-200"><h5 class="font-bold text-yellow-900">Biologique</h5><ul class="list-disc list-inside text-sm text-slate-700"><li><strong>Dosages médicamenteux</strong> (respecter l'horaire de prélèvement !)</li><li>NFS (dépister leucopénie)</li><li>Fonction rénale (urée, créatinine) et hépatique (transaminases)</li></ul></div>
+                            </div>
+                        </div>
+
+                        <!-- ETP -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-indigo-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="book-user" class="text-indigo-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Éducation thérapeutique du patient (ETP)</h4>
+                            </div>
+                            <p class="text-slate-600">L'adhésion du patient à son traitement et aux mesures de prévention est la clé du succès.</p>
+                            <ul class="list-disc list-inside space-y-2 mt-4 text-slate-700 text-sm">
+                                <li><strong>Observance :</strong> Expliquer l'importance de la régularité des prises, le traitement est à vie. Ne jamais arrêter seul.</li>
+                                <li><strong>Prévention des infections :</strong> Hygiène des mains, éviter les lieux bondés, alimentation (cuisson des viandes), vaccination à jour (vaccins inactivés !).</li>
+                                <li><strong>Interactions médicamenteuses :</strong> Pamplemousse (avec les anti-calcineurines), Millepertuis. Toujours demander un avis médical avant un nouveau médicament.</li>
+                                <li><strong>Protection solaire :</strong> Risque accru de cancers cutanés.</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Points Clés -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 border-l-4 border-amber-400">
+                             <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-amber-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="key-round" class="text-amber-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Points clés à retenir</h4>
+                            </div>
+                            <ul class="list-disc list-inside space-y-2 mt-4 text-slate-700">
+                                <li>Les immunosuppresseurs sont essentiels dans la prise en charge des greffes et des maladies auto-immunes.</li>
+                                <li>Le principal risque est <strong>infectieux</strong>. Toute fièvre est une urgence potentielle.</li>
+                                <li>Certains médicaments (Tacrolimus, Ciclosporine) nécessitent des <strong>dosages sanguins</strong> réguliers.</li>
+                                <li>L'éducation thérapeutique (ETP) est au cœur du rôle infirmier pour garantir l'observance et la sécurité du patient.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Quiz Page -->
+            <div id="quiz" class="page hidden">
+                <div class="bg-gradient-to-br from-slate-50 to-gray-100 p-6 sm:p-8 md:p-10 rounded-2xl shadow-inner">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-2">Quiz Interactif</h2>
+                    <p class="text-slate-600 mb-8">Testez vos connaissances sur les immunosuppresseurs.</p>
+                    <div id="qcm-container" class="space-y-8"></div>
+                    <div id="quiz-footer" class="mt-10 pt-6 border-t-2 border-slate-200 flex justify-between items-center">
+                        <p id="quiz-score" class="text-xl md:text-2xl font-bold text-slate-800"></p>
+                        <button onclick="resetQuiz()" id="reset-button" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 transform opacity-0 pointer-events-none">
+                            Recommencer
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer id="footer" class="bg-slate-800 text-white p-4 md:p-6 mt-auto">
+            <div class="flex items-center justify-center md:justify-end text-center">
+                <p class="font-bold text-slate-300 text-xs sm:text-sm">
+                <span class="bg-gradient-to-r from-purple-400 via-pink-500 to-amber-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2025
+                </p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        // --- Quiz Data ---
+        const quizData = [
+            {
+                question: "Quelle est la principale indication des immunosuppresseurs en transplantation d'organe ?",
+                options: ["Traiter les infections post-opératoires", "Prévenir le rejet du greffon", "Diminuer la douleur", "Améliorer la cicatrisation"],
+                correct: 1,
+                feedback: "Le but principal est d'empêcher le système immunitaire du receveur d'attaquer et de détruire l'organe greffé, considéré comme un corps étranger."
+            },
+            {
+                question: "Le tacrolimus (Prograf®) et la ciclosporine (Neoral®) appartiennent à quelle classe ?",
+                options: ["Antiprolifératifs", "Corticoïdes", "Inhibiteurs de la calcineurine", "Biothérapies"],
+                correct: 2,
+                feedback: "Ce sont les deux principaux inhibiteurs de la calcineurine, des médicaments clés dans la prévention du rejet de greffe."
+            },
+            {
+                question: "Quel est le risque majeur et commun à tous les traitements immunosuppresseurs ?",
+                options: ["L'hypertension artérielle", "La prise de poids", "Le risque infectieux", "L'insuffisance rénale"],
+                correct: 2,
+                feedback: "En diminuant les défenses de l'organisme, tous ces traitements augmentent la susceptibilité aux infections bactériennes, virales ou fongiques."
+            },
+            {
+                question: "Pourquoi est-il crucial de réaliser des dosages sanguins pour des médicaments comme le tacrolimus ?",
+                options: ["Pour vérifier que le patient prend bien son traitement", "Car ils ont une marge thérapeutique étroite", "Pour ajuster la dose en fonction du poids", "Pour dépister une allergie"],
+                correct: 1,
+                feedback: "Ces médicaments ont une marge thérapeutique étroite : une dose trop faible est inefficace (risque de rejet), une dose trop forte est toxique. Le dosage permet de rester dans la bonne fourchette."
+            },
+            {
+                question: "Quel conseil d'ETP est fondamental pour un patient traité par un inhibiteur de la calcineurine ?",
+                options: ["Éviter le pamplemousse", "Manger plus de fibres", "Faire du sport à jeun", "Prendre le traitement avec du lait"],
+                correct: 0,
+                feedback: "Le jus de pamplemousse est un inhibiteur enzymatique qui peut augmenter dangereusement les concentrations sanguines de ces médicaments."
+            },
+            {
+                question: "Les médicaments se terminant par '-mab' (ex: Adalimumab) appartiennent généralement à quelle catégorie ?",
+                options: ["Corticoïdes", "Inhibiteurs de mTOR", "Anticorps monoclonaux (Biothérapies)", "Antiprolifératifs"],
+                correct: 2,
+                feedback: "Le suffixe '-mab' signifie 'Monoclonal AntiBody'. Ce sont des thérapies ciblées qui visent une molécule précise de l'inflammation."
+            },
+            {
+                question: "La surveillance de la NFS (Numération Formule Sanguine) est particulièrement importante avec les antiprolifératifs (ex: Azathioprine) pour dépister :",
+                options: ["Une anémie", "Une leucopénie (baisse des globules blancs)", "Une thrombopénie (baisse des plaquettes)", "Toutes ces réponses sont correctes"],
+                correct: 3,
+                feedback: "Les antiprolifératifs peuvent avoir une toxicité sur la moelle osseuse, affectant la production de toutes les lignées cellulaires sanguines."
+            },
+            {
+                question: "Face à un patient sous immunosuppresseur qui présente une fièvre à 38.5°C, quelle est la conduite à tenir ?",
+                options: ["Lui donner du paracétamol et réévaluer dans 24h", "Le rassurer, c'est probablement un rhume", "Considérer que c'est une urgence et contacter un médecin rapidement", "Lui conseiller de bien s'hydrater"],
+                correct: 2,
+                feedback: "Chez un patient immunodéprimé, toute fièvre doit être considérée comme le signe d'une infection potentiellement grave jusqu'à preuve du contraire. Une évaluation médicale urgente est nécessaire."
+            },
+            {
+                question: "Quel type de vaccin est généralement contre-indiqué chez un patient fortement immunodéprimé ?",
+                options: ["Les vaccins inactivés (ex: grippe)", "Les vaccins vivants atténués (ex: ROR, fièvre jaune)", "Tous les vaccins sont contre-indiqués", "Les rappels de vaccin"],
+                correct: 1,
+                feedback: "Les vaccins vivants contiennent une version affaiblie du pathogène qui pourrait provoquer la maladie chez un patient dont le système immunitaire ne peut pas le contrôler."
+            },
+            {
+                question: "En plus du risque infectieux, les immunosuppresseurs au long cours augmentent le risque de développer :",
+                options: ["Du diabète", "Certains types de cancers", "De l'ostéoporose", "Toutes ces réponses sont correctes"],
+                correct: 3,
+                feedback: "En effet, le risque de cancers (cutanés, lymphomes), de diabète (surtout avec les corticoïdes et anti-calcineurines) et d'ostéoporose (corticoïdes) est augmenté."
+            }
+        ];
+
+        // --- Navigation Logic ---
+        const pages = ['generalites', 'mecanismes', 'surveillance', 'quiz'];
+        const buttonColors = {
+            generalites: 'bg-gradient-to-r from-amber-500 to-orange-600 text-white shadow-md',
+            mecanismes: 'bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-md',
+            surveillance: 'bg-gradient-to-r from-pink-500 to-rose-600 text-white shadow-md',
+            quiz: 'bg-gradient-to-r from-slate-600 to-gray-700 text-white shadow-md'
+        };
+        const buttonHoverColors = {
+            generalites: 'hover:bg-amber-100 hover:text-amber-800',
+            mecanismes: 'hover:bg-emerald-100 hover:text-emerald-800',
+            surveillance: 'hover:bg-pink-100 hover:text-pink-800',
+            quiz: 'hover:bg-slate-200 hover:text-slate-800'
+        };
+
+        function showPage(pageId) {
+            pages.forEach(id => {
+                document.getElementById(id).classList.add('hidden');
+            });
+            document.getElementById(pageId).classList.remove('hidden');
+            
+            const navButtons = document.querySelectorAll('.nav-btn');
+            navButtons.forEach(btn => {
+                const page = btn.dataset.page;
+                btn.className = 'nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm';
+                if (page === pageId) {
+                    btn.classList.add(...buttonColors[page].split(' '));
+                } else {
+                    btn.classList.add(...buttonHoverColors[page].split(' '));
+                }
+            });
+        }
+
+        // --- Quiz Logic ---
+        function renderQuiz() {
+            const container = document.getElementById('qcm-container');
+            container.innerHTML = '';
+            quizData.forEach((item, index) => {
+                // Create an array of option objects with original index and shuffle it
+                let shuffledOptions = item.options
+                    .map((option, originalIndex) => ({ text: option, originalIndex }))
+                    .sort(() => Math.random() - 0.5);
+                
+                const optionsHtml = shuffledOptions.map(optionObj => 
+                    `<button class="qcm-option w-full text-left p-4 rounded-xl bg-white border-2 border-slate-200 hover:bg-slate-100 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200" data-index="${optionObj.originalIndex}">${optionObj.text}</button>`
+                ).join('');
+
+                container.innerHTML += `
+                    <div class="qcm-question bg-slate-100/70 border border-slate-200/80 p-6 rounded-2xl shadow-lg" data-question-index="${index}">
+                        <p class="font-semibold text-lg text-slate-800 mb-4">${index + 1}. ${item.question}</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">${optionsHtml}</div>
+                        <div class="qcm-feedback mt-4 text-sm font-medium"></div>
+                    </div>`;
+            });
+            document.getElementById('quiz-score').textContent = `Prêt ? 0 / ${quizData.length}`;
+            const resetButton = document.getElementById('reset-button');
+            resetButton.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        function setupQuizListeners() {
+            const container = document.getElementById('qcm-container');
+            container.addEventListener('click', (event) => {
+                if (!event.target.classList.contains('qcm-option')) return;
+                
+                const optionButton = event.target;
+                const questionEl = optionButton.closest('.qcm-question');
+                if (!questionEl || questionEl.classList.contains('answered')) return;
+                
+                questionEl.classList.add('answered');
+                const questionIndex = parseInt(questionEl.dataset.questionIndex, 10);
+                const questionData = quizData[questionIndex];
+                const selectedIndex = parseInt(optionButton.dataset.index, 10);
+                const isCorrect = selectedIndex === questionData.correct;
+                const feedbackEl = questionEl.querySelector('.qcm-feedback');
+
+                if (isCorrect) {
+                    optionButton.classList.add('correct');
+                    feedbackEl.innerHTML = `<div class="text-emerald-700 p-3 bg-emerald-100 rounded-lg"><b class="font-bold">Bravo !</b> ${questionData.feedback || ''}</div>`;
+                } else {
+                    optionButton.classList.add('incorrect');
+                    questionEl.querySelector(`[data-index="${questionData.correct}"]`).classList.add('correct');
+                    feedbackEl.innerHTML = `<div class="text-red-700 p-3 bg-red-100 rounded-lg"><b class="font-bold">Dommage.</b> ${questionData.feedback || ''}</div>`;
+                }
+                
+                questionEl.querySelectorAll('.qcm-option').forEach(btn => btn.disabled = true);
+                updateScore();
+            });
+        }
+
+        function updateScore() {
+            const totalQuestions = quizData.length;
+            let correctAnswers = 0; 
+            document.querySelectorAll('.qcm-question.answered').forEach(questionEl => {
+                if (!questionEl.querySelector('.qcm-option.incorrect')) {
+                    correctAnswers++;
+                }
+            });
+            const answeredCount = document.querySelectorAll('.qcm-question.answered').length;
+
+            const scoreEl = document.getElementById('quiz-score');
+            scoreEl.textContent = `Votre score : ${correctAnswers} / ${answeredCount}`;
+
+            if (answeredCount === totalQuestions) {
+                scoreEl.textContent = `Score final : ${correctAnswers} / ${totalQuestions}`;
+                const percentage = (correctAnswers / totalQuestions) * 100;
+                if (percentage >= 80) {
+                    scoreEl.textContent += " - Excellent travail ! 🎉";
+                } else if (percentage >= 50) {
+                    scoreEl.textContent += " - Pas mal, continuez à réviser ! 💪";
+                } else {
+                    scoreEl.textContent += " - Encore un effort ! 📚";
+                }
+                document.getElementById('reset-button').classList.remove('opacity-0', 'pointer-events-none');
+            }
+        }
+
+        function resetQuiz() {
+            renderQuiz();
+        }
+
+        // --- Initialisation ---
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            showPage('generalites'); // Show the first page by default
+            renderQuiz();
+            setupQuizListeners();
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
