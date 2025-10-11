@@ -13,36 +13,43 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
     <style>
         /* Custom styles to complement Tailwind */
-        html {
-            overflow-y: scroll; /* Prevents layout shifts */
-        }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8; /* A slightly softer background */
+            background-color: #f1f5f9; /* slate-100 */
         }
         /* Animation for a subtle loading effect */
-        .module-page {
-            animation: fadeIn 0.5s ease-in-out;
+        .card-enter {
+            animation: fadeIn 0.5s ease-in-out forwards;
+            opacity: 0;
         }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
         }
     </style>
 </head>
-<body class="p-2 sm:p-4 md:p-8 flex flex-col min-h-screen">
+<body class="p-2 sm:p-4 md:p-8">
     <!-- Main container -->
-    <div id="app" class="max-w-6xl mx-auto bg-white shadow-2xl rounded-xl flex-grow w-full flex flex-col">
+    <div id="app" class="max-w-6xl mx-auto bg-white shadow-2xl rounded-2xl flex flex-col min-h-[calc(100vh-4rem)]">
         
         <!-- Header -->
-        <header id="header" class="bg-slate-800 text-white p-6 md:p-8 sticky top-0 z-50 rounded-t-xl">
+        <header id="header" class="bg-slate-800 text-white p-6 md:p-8 rounded-t-2xl">
             <div class="flex items-center justify-between">
-                <h1 id="main-title" class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent pb-2">Les essentiels en pharmacologie</h1>
-                <!-- Desktop Author Info (Header) -->
+                <h1 id="main-title" class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight gradient-text bg-gradient-to-r from-sky-400 via-violet-400 to-pink-500 pb-1">
+                    Les essentiels en pharmacologie
+                </h1>
                 <div class="hidden md:block text-right font-bold text-slate-300 text-sm">
-                    <p><span id="author-ifsi" class="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2025</p>
+                    <p><span class="gradient-text bg-gradient-to-r from-sky-400 to-violet-400">Lucas Séraudie</span> - 2025 - V2</p>
                 </div>
             </div>
         </header>
@@ -50,126 +57,201 @@
         <!-- Main Content Area -->
         <main id="main-content" class="p-4 sm:p-6 md:p-8 flex-grow">
 
-            <!-- HOME PAGE -->
-            <div id="module-accueil" class="module-page">
+            <!-- Grid of modules -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" style="grid-auto-rows: 1fr;">
                 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    
-                    <!-- 1. Card Antalgiques (Bleu/Cyan) -->
-                    <a href="antalgiques.html" class="h-full min-h-72 group relative bg-gradient-to-br from-cyan-50 to-blue-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-cyan-500/50">
-                        <div class="absolute top-4 right-4 bg-cyan-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">S1</div>
-                        <h3 class="text-2xl font-bold text-slate-800 bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent mb-4">Antalgiques</h3>
-                        <p class="text-slate-600 text-sm mb-6 flex-grow">De la physiologie de la douleur aux traitements médicamenteux.</p>
-                        <span class="bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300 w-full md:w-auto">Commencer</span>
-                    </a>
-                    
-                    <!-- 2. Card Anti-inflammatoires (Violet/Rose) -->
-                    <a href="antiinflam.html" class="h-full min-h-72 group relative bg-gradient-to-br from-rose-50 to-purple-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-purple-500/50">
-                        <div class="absolute top-4 right-4 bg-fuchsia-400 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">S1</div>
-                        <h3 class="text-2xl font-bold text-slate-800 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-4">Anti-inflammatoires</h3>
-                        <p class="text-slate-600 text-sm mb-6 flex-grow">L'inflammation, les AINS, les corticoïdes et la surveillance infirmière associée.</p>
-                        <span class="bg-gradient-to-r from-purple-400 to-pink-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300 w-full md:w-auto">Commencer</span>
-                    </a>
+                <!-- 1. Card Antalgiques -->
+                <a href="antalgiques.html" class="card-enter group flex flex-col p-4 rounded-xl border bg-cyan-50 border-cyan-200 hover:shadow-2xl hover:bg-white hover:-translate-y-2 hover:ring-2 hover:ring-cyan-500/80 transition-all duration-300 h-full">
+                    <div class="flex justify-between items-start">
+                        <i class="ph-bold ph-pill text-3xl text-cyan-500 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="bg-cyan-200 text-cyan-800 text-xs font-bold px-2.5 py-1 rounded-full group-hover:scale-110 transition-transform duration-300">S1</span>
+                    </div>
+                    <div class="mt-3 flex-grow">
+                        <h3 class="font-bold text-slate-800 group-hover:scale-105 origin-left transition-transform duration-300">Antalgiques</h3>
+                    </div>
+                    <div class="mt-2 text-right h-5">
+                        <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity font-black text-2xl leading-none">→</span>
+                    </div>
+                </a>
+                
+                <!-- 2. Card Anti-inflammatoires -->
+                <a href="antiinflam.html" class="card-enter group flex flex-col p-4 rounded-xl border bg-purple-50 border-purple-200 hover:shadow-2xl hover:bg-white hover:-translate-y-2 hover:ring-2 hover:ring-purple-500/80 transition-all duration-300 h-full" style="animation-delay: 50ms;">
+                    <div class="flex justify-between items-start">
+                        <i class="ph-bold ph-shield-plus text-3xl text-purple-500 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="bg-purple-200 text-purple-800 text-xs font-bold px-2.5 py-1 rounded-full group-hover:scale-110 transition-transform duration-300">S1</span>
+                    </div>
+                    <div class="mt-3 flex-grow">
+                        <h3 class="font-bold text-slate-800 group-hover:scale-105 origin-left transition-transform duration-300">Anti-inflammatoires</h3>
+                    </div>
+                    <div class="mt-2 text-right h-5">
+                        <span class="text-purple-500 opacity-0 group-hover:opacity-100 transition-opacity font-black text-2xl leading-none">→</span>
+                    </div>
+                </a>
 
-                    <!-- 3. Card Anticoagulants (Rouge/Orange) -->
-                    <a href="antico.html" class="h-full min-h-72 group relative bg-gradient-to-br from-red-50 to-orange-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-red-500/50">
-                        <div class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">S1</div>
-                        <h3 class="text-2xl font-bold text-slate-800 bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent mb-4">Anticoagulants</h3>
-                        <p class="text-slate-600 text-sm mb-6 flex-grow">Explorez l'hémostase et les différentes familles de traitements.</p>
-                        <span class="bg-gradient-to-r from-red-500 to-orange-500 text-white font-semibold py-3 px-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300 w-full md:w-auto">Commencer</span>
-                    </a>
-                    
-                    <!-- 4. Card Antihypertenseurs (Vert/Émeraude) -->
-                    <a href="antihta.html" class="h-full min-h-72 group relative bg-gradient-to-br from-emerald-50 to-green-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-emerald-500/50">
-                        <div class="absolute top-4 right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">S3</div>
-                        <h3 class="text-2xl font-bold text-slate-800 bg-gradient-to-r from-emerald-500 to-green-600 bg-clip-text text-transparent mb-4">Antihypertenseurs</h3>
-                        <p class="text-slate-600 text-sm mb-6 flex-grow">Comprenez l'HTA et maîtrisez les IEC, ARA II, inhibiteurs calciques, bêtabloquants et diurétiques.</p>
-                        <span class="bg-gradient-to-r from-emerald-500 to-green-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300 w-full md:w-auto">Commencer</span>
-                    </a>
+                <!-- 3. Card Anticoagulants -->
+                <a href="antico.html" class="card-enter group flex flex-col p-4 rounded-xl border bg-red-50 border-red-200 hover:shadow-2xl hover:bg-white hover:-translate-y-2 hover:ring-2 hover:ring-red-500/80 transition-all duration-300 h-full" style="animation-delay: 100ms;">
+                    <div class="flex justify-between items-start">
+                         <i class="ph-bold ph-drop text-3xl text-red-500 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="bg-red-200 text-red-800 text-xs font-bold px-2.5 py-1 rounded-full group-hover:scale-110 transition-transform duration-300">S1</span>
+                    </div>
+                    <div class="mt-3 flex-grow">
+                        <h3 class="font-bold text-slate-800 group-hover:scale-105 origin-left transition-transform duration-300">Anticoagulants</h3>
+                    </div>
+                    <div class="mt-2 text-right h-5">
+                        <span class="text-red-500 opacity-0 group-hover:opacity-100 transition-opacity font-black text-2xl leading-none">→</span>
+                    </div>
+                </a>
+                
+                <!-- 4. Card Antihypertenseurs -->
+                <a href="antihta.html" class="card-enter group flex flex-col p-4 rounded-xl border bg-emerald-50 border-emerald-200 hover:shadow-2xl hover:bg-white hover:-translate-y-2 hover:ring-2 hover:ring-emerald-500/80 transition-all duration-300 h-full" style="animation-delay: 150ms;">
+                    <div class="flex justify-between items-start">
+                        <i class="ph-bold ph-heartbeat text-3xl text-emerald-500 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="bg-emerald-200 text-emerald-800 text-xs font-bold px-2.5 py-1 rounded-full group-hover:scale-110 transition-transform duration-300">S3</span>
+                    </div>
+                    <div class="mt-3 flex-grow">
+                        <h3 class="font-bold text-slate-800 group-hover:scale-105 origin-left transition-transform duration-300">Antihypertenseurs</h3>
+                    </div>
+                     <div class="mt-2 text-right h-5">
+                        <span class="text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity font-black text-2xl leading-none">→</span>
+                    </div>
+                </a>
 
-                    <!-- 5. Card Antiarythmiques et Digitaliques (Rose/Rouge) -->
-                    <a href="antiarythm.html" class="h-full min-h-72 group relative bg-gradient-to-br from-rose-50 to-red-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-red-400/50">
-                        <div class="absolute top-4 right-4 bg-red-400 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">S3</div>
-                        <h3 class="text-2xl font-bold text-slate-800 bg-gradient-to-r from-pink-400 to-rose-500 bg-clip-text text-transparent mb-4">Antiarythmiques & Digitaliques</h3>
-                        <p class="text-slate-700 text-sm mb-6 flex-grow">Stabilisateurs de membranes, Bêta-bloquants, Inhib. Potassiques, Inhib. Calciques et digitaliques.</p>
-                        <span class="bg-gradient-to-r from-red-400 to-rose-500 text-white font-semibold py-3 px-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300 w-full md:w-auto">Commencer</span>
-                    </a>
+                <!-- 5. Card Antiarythmiques & Digitaliques -->
+                <a href="antiarythm.html" class="card-enter group flex flex-col p-4 rounded-xl border bg-rose-50 border-rose-200 hover:shadow-2xl hover:bg-white hover:-translate-y-2 hover:ring-2 hover:ring-rose-500/80 transition-all duration-300 h-full" style="animation-delay: 200ms;">
+                    <div class="flex justify-between items-start">
+                         <i class="ph-bold ph-pulse text-3xl text-rose-500 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="bg-rose-200 text-rose-800 text-xs font-bold px-2.5 py-1 rounded-full group-hover:scale-110 transition-transform duration-300">S3</span>
+                    </div>
+                    <div class="mt-3 flex-grow">
+                        <h3 class="font-bold text-slate-800 group-hover:scale-105 origin-left transition-transform duration-300">Antiarythmiques & Digitaliques</h3>
+                    </div>
+                     <div class="mt-2 text-right h-5">
+                        <span class="text-rose-500 opacity-0 group-hover:opacity-100 transition-opacity font-black text-2xl leading-none">→</span>
+                    </div>
+                </a>
 
-                    <!-- 6. Card Anti-diabétiques (Violet) -->
-                    <a href="antidiabetiques.html" class="h-full min-h-72 group relative bg-gradient-to-br from-violet-50 to-purple-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-red-400/50">
-                        <div class="absolute top-4 right-4 bg-purple-400 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">S3</div>
-                        <h3 class="text-2xl font-bold text-slate-800 bg-gradient-to-r from-pink-400 to-violet-500 bg-clip-text text-transparent mb-4">Anti-diabétiques</h3>
-                        <p class="text-slate-700 text-sm mb-6 flex-grow">Généralités sur le diabète, insulines & antidiabétiques oraux</p>
-                        <span class="bg-gradient-to-r from-purple-400 to-violet-500 text-white font-semibold py-3 px-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300 w-full md:w-auto">Commencer</span>
-                    </a>
-                    
-                    <!-- 7. Card Hypolipémiants (Cyan/Teal) -->
-                    <a href="hypolipemiants.html" class="h-full min-h-72 group relative bg-gradient-to-br from-cyan-50 to-teal-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-red-400/50">
-                        <div class="absolute top-4 right-4 bg-cyan-400 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">S3</div>
-                        <h3 class="text-2xl font-bold text-slate-800 bg-gradient-to-r from-teal-500 to-cyan-600 bg-clip-text text-transparent mb-4">Hypolipémiants</h3>
-                        <p class="text-slate-700 text-sm mb-6 flex-grow">Généralités sur le choléstérol, les règles hygiéno-diététiques et les traitements</p>
-                        <span class="bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300 w-full md:w-auto">Commencer</span>
-                    </a>
-                    
-                    <!-- 8. Card Antiasthmatiques & Antihistaminiques  -->
-                    <a href="asthme.html" class="h-full min-h-72 group relative bg-gradient-to-br from-fuchsia-50 to-purple-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-fuchsia-500/50">
-                        <div class="absolute top-4 right-4 bg-fuchsia-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">S3</div>
-                        <h3 class="text-2xl font-bold text-slate-800 bg-gradient-to-r from-fuchsia-600 to-purple-700 bg-clip-text text-transparent mb-4">Antiasthmatiques & Antihistaminiques</h3>
-                        <p class="text-slate-700 text-sm mb-6 flex-grow">Rappels sur l'astme et ses traitements : bronchodilatateurs, corticoïdes...</p>
-                        <span class="bg-gradient-to-r from-fuchsia-600 to-purple-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300 w-full md:w-auto">Commencer</span>
-                    </a>
+                <!-- 6. Card Anti-diabétiques -->
+                <a href="antidiabetiques.html" class="card-enter group flex flex-col p-4 rounded-xl border bg-violet-50 border-violet-200 hover:shadow-2xl hover:bg-white hover:-translate-y-2 hover:ring-2 hover:ring-violet-500/80 transition-all duration-300 h-full" style="animation-delay: 250ms;">
+                    <div class="flex justify-between items-start">
+                         <i class="ph-bold ph-syringe text-3xl text-violet-500 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="bg-violet-200 text-violet-800 text-xs font-bold px-2.5 py-1 rounded-full group-hover:scale-110 transition-transform duration-300">S3</span>
+                    </div>
+                    <div class="mt-3 flex-grow">
+                        <h3 class="font-bold text-slate-800 group-hover:scale-105 origin-left transition-transform duration-300">Anti-diabétiques</h3>
+                    </div>
+                     <div class="mt-2 text-right h-5">
+                        <span class="text-violet-500 opacity-0 group-hover:opacity-100 transition-opacity font-black text-2xl leading-none">→</span>
+                    </div>
+                </a>
 
-                    <!-- 9. Card Thérapeutiques Digestives -->
-                    <a href="digestif.html" class="h-full min-h-72 group relative bg-gradient-to-br from-lime-50 to-green-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-lime-500/50">
-                        <div class="absolute top-4 right-4 bg-lime-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">S3</div>
-                        <h3 class="text-2xl font-bold text-slate-800 bg-gradient-to-r from-lime-500 to-green-600 bg-clip-text text-transparent mb-4">Thérapeutiques Digestives</h3>
-                        <p class="text-slate-700 text-sm mb-6 flex-grow">Explorez les anti-acides, laxatifs, antiémétiques et le rôle infirmier associé.</p>
-                        <span class="bg-gradient-to-r from-lime-500 to-green-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300 w-full md:w-auto">Commencer</span>
-                    </a>
+                <!-- 7. Card Hypolipémiants -->
+                <a href="hypolipemiants.html" class="card-enter group flex flex-col p-4 rounded-xl border bg-teal-50 border-teal-200 hover:shadow-2xl hover:bg-white hover:-translate-y-2 hover:ring-2 hover:ring-teal-500/80 transition-all duration-300 h-full" style="animation-delay: 300ms;">
+                     <div class="flex justify-between items-start">
+                        <i class="ph-bold ph-scales text-3xl text-teal-500 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="bg-teal-200 text-teal-800 text-xs font-bold px-2.5 py-1 rounded-full group-hover:scale-110 transition-transform duration-300">S3</span>
+                    </div>
+                    <div class="mt-3 flex-grow">
+                        <h3 class="font-bold text-slate-800 group-hover:scale-105 origin-left transition-transform duration-300">Hypolipémiants</h3>
+                    </div>
+                     <div class="mt-2 text-right h-5">
+                        <span class="text-teal-500 opacity-0 group-hover:opacity-100 transition-opacity font-black text-2xl leading-none">→</span>
+                    </div>
+                </a>
 
-                    <!-- 10. Card Anticancéreux (Bleu/Indigo) -->
-                    <a href="anticancer.html" class="h-full min-h-72 group relative bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-blue-500/50">
-                        <div class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">S5</div>
-                        <h3 class="text-2xl font-bold text-slate-800 bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent mb-4">Traitements anticancéreux</h3>
-                        <p class="text-slate-700 text-sm mb-6 flex-grow">Chimiothérapies, thérapies ciblées, immunothérapies et rôle infirmier.</p>
-                        <span class="bg-gradient-to-r from-blue-500 to-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300 w-full md:w-auto">Commencer</span>
-                    </a>
+                <!-- 8. Card Antiasthmatiques & Antihistaminiques -->
+                <a href="asthme.html" class="card-enter group flex flex-col p-4 rounded-xl border bg-fuchsia-50 border-fuchsia-200 hover:shadow-2xl hover:bg-white hover:-translate-y-2 hover:ring-2 hover:ring-fuchsia-500/80 transition-all duration-300 h-full" style="animation-delay: 350ms;">
+                     <div class="flex justify-between items-start">
+                        <i class="ph-bold ph-feather text-3xl text-fuchsia-500 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="bg-fuchsia-200 text-fuchsia-800 text-xs font-bold px-2.5 py-1 rounded-full group-hover:scale-110 transition-transform duration-300">S3</span>
+                    </div>
+                    <div class="mt-3 flex-grow">
+                        <h3 class="font-bold text-slate-800 group-hover:scale-105 origin-left transition-transform duration-300">Antiasthmatiques & Antihistaminiques</h3>
+                    </div>
+                     <div class="mt-2 text-right h-5">
+                        <span class="text-fuchsia-500 opacity-0 group-hover:opacity-100 transition-opacity font-black text-2xl leading-none">→</span>
+                    </div>
+                </a>
 
-                    <!-- 11. Card Immunosuppresseurs (Ambre/Orange) -->
-                    <a href="immunosuppresseurs.html" class="h-full min-h-72 group relative bg-gradient-to-br from-amber-50 to-orange-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-amber-500/50">
-                        <div class="absolute top-4 right-4 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">S5</div>
-                        <h3 class="text-2xl font-bold text-slate-800 bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent mb-4">Immunosuppresseurs</h3>
-                        <p class="text-slate-700 text-sm mb-6 flex-grow">Greffes, maladies auto-immunes, et surveillance infirmière.</p>
-                        <span class="bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300 w-full md:w-auto">Commencer</span>
-                    </a>
-                    
-                    <!-- 12. Card Anxiolytiques & Hypnotiques (Gris/Ardoise) -->
-                    <a href="anxiolytiques.html" class="h-full min-h-72 group relative bg-gradient-to-br from-slate-50 to-slate-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-slate-500/50">
-                        <div class="absolute top-4 right-4 bg-slate-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">S5</div>
-                        <h3 class="text-2xl font-bold text-slate-800 bg-gradient-to-r from-slate-500 to-slate-700 bg-clip-text text-transparent mb-4">Anxiolytiques & Hypnotiques</h3>
-                        <p class="text-slate-800 text-lg font-semibold mb-6 flex-grow flex items-center justify-center">A VENIR</p>
-                        <span class="bg-gradient-to-r from-slate-500 to-slate-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300 w-full md:w-auto">Commencer</span>
-                    </a>
+                <!-- 9. Card Thérapeutiques Digestives -->
+                 <a href="digestif.html" class="card-enter group flex flex-col p-4 rounded-xl border bg-lime-50 border-lime-200 hover:shadow-2xl hover:bg-white hover:-translate-y-2 hover:ring-2 hover:ring-lime-500/80 transition-all duration-300 h-full" style="animation-delay: 400ms;">
+                     <div class="flex justify-between items-start">
+                        <i class="ph-bold ph-first-aid text-3xl text-lime-600 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="bg-lime-200 text-lime-800 text-xs font-bold px-2.5 py-1 rounded-full group-hover:scale-110 transition-transform duration-300">S3</span>
+                    </div>
+                    <div class="mt-3 flex-grow">
+                        <h3 class="font-bold text-slate-800 group-hover:scale-105 origin-left transition-transform duration-300">Thérapeutiques Digestives</h3>
+                    </div>
+                     <div class="mt-2 text-right h-5">
+                        <span class="text-lime-600 opacity-0 group-hover:opacity-100 transition-opacity font-black text-2xl leading-none">→</span>
+                    </div>
+                </a>
 
-                    <!-- 13. Card Psychotropes (Vert/Teal) -->
-                    <a href="psychotropes.html" class="h-full min-h-72 group relative bg-gradient-to-br from-teal-50 to-green-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-teal-500/50">
-                        <div class="absolute top-4 right-4 bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">S5</div>
-                        <h3 class="text-2xl font-bold text-slate-800 bg-gradient-to-r from-teal-600 to-green-700 bg-clip-text text-transparent mb-4">Psychotropes</h3>
-                        <p class="text-slate-800 text-lg font-semibold mb-6 flex-grow flex items-center justify-center">A VENIR</p>
-                        <span class="bg-gradient-to-r from-teal-600 to-green-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300 w-full md:w-auto">Commencer</span>
-                    </a>
+                <!-- 10. Card Anticancéreux -->
+                <a href="anticancer.html" class="card-enter group flex flex-col p-4 rounded-xl border bg-blue-50 border-blue-200 hover:shadow-2xl hover:bg-white hover:-translate-y-2 hover:ring-2 hover:ring-blue-500/80 transition-all duration-300 h-full" style="animation-delay: 450ms;">
+                     <div class="flex justify-between items-start">
+                        <i class="ph-bold ph-dna text-3xl text-blue-500 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="bg-blue-200 text-blue-800 text-xs font-bold px-2.5 py-1 rounded-full group-hover:scale-110 transition-transform duration-300">S5</span>
+                    </div>
+                    <div class="mt-3 flex-grow">
+                        <h3 class="font-bold text-slate-800 group-hover:scale-105 origin-left transition-transform duration-300">Traitements anticancéreux</h3>
+                    </div>
+                     <div class="mt-2 text-right h-5">
+                        <span class="text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity font-black text-2xl leading-none">→</span>
+                    </div>
+                </a>
 
-                </div>
+                <!-- 11. Card Immunosuppresseurs -->
+                <a href="immunosuppresseurs.html" class="card-enter group flex flex-col p-4 rounded-xl border bg-amber-50 border-amber-200 hover:shadow-2xl hover:bg-white hover:-translate-y-2 hover:ring-2 hover:ring-amber-500/80 transition-all duration-300 h-full" style="animation-delay: 500ms;">
+                     <div class="flex justify-between items-start">
+                        <i class="ph-bold ph-shield-check text-3xl text-amber-500 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="bg-amber-200 text-amber-800 text-xs font-bold px-2.5 py-1 rounded-full group-hover:scale-110 transition-transform duration-300">S5</span>
+                    </div>
+                    <div class="mt-3 flex-grow">
+                        <h3 class="font-bold text-slate-800 group-hover:scale-105 origin-left transition-transform duration-300">Immunosuppresseurs</h3>
+                    </div>
+                     <div class="mt-2 text-right h-5">
+                        <span class="text-amber-500 opacity-0 group-hover:opacity-100 transition-opacity font-black text-2xl leading-none">→</span>
+                    </div>
+                </a>
+                
+                <!-- 12. Card Anxiolytiques & Hypnotiques -->
+                <a href="anxiolytiques.html" class="card-enter group flex flex-col p-4 rounded-xl border bg-slate-100 border-slate-200 hover:shadow-2xl hover:bg-white hover:-translate-y-2 hover:ring-2 hover:ring-slate-500/80 transition-all duration-300 h-full" style="animation-delay: 550ms;">
+                    <div class="flex justify-between items-start">
+                        <i class="ph-bold ph-moon text-3xl text-slate-400 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="bg-slate-200 text-slate-600 text-xs font-bold px-2.5 py-1 rounded-full group-hover:scale-110 transition-transform duration-300">S5</span>
+                    </div>
+                    <div class="mt-3 flex-grow">
+                        <h3 class="font-bold text-slate-500 group-hover:scale-105 origin-left transition-transform duration-300">Anxiolytiques & Hypnotiques</h3>
+                         <p class="text-xs text-slate-400 mt-1 font-semibold">À VENIR</p>
+                    </div>
+                    <div class="mt-2 text-right h-5">
+                        <span class="text-slate-500 opacity-0 group-hover:opacity-100 transition-opacity font-black text-2xl leading-none">→</span>
+                    </div>
+                </a>
+
+                <!-- 13. Card Psychotropes -->
+                <a href="psychotropes.html" class="card-enter group flex flex-col p-4 rounded-xl border bg-slate-100 border-slate-200 hover:shadow-2xl hover:bg-white hover:-translate-y-2 hover:ring-2 hover:ring-slate-500/80 transition-all duration-300 h-full" style="animation-delay: 600ms;">
+                    <div class="flex justify-between items-start">
+                        <i class="ph-bold ph-brain text-3xl text-slate-400 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="bg-slate-200 text-slate-600 text-xs font-bold px-2.5 py-1 rounded-full group-hover:scale-110 transition-transform duration-300">S5</span>
+                    </div>
+                    <div class="mt-3 flex-grow">
+                        <h3 class="font-bold text-slate-500 group-hover:scale-105 origin-left transition-transform duration-300">Psychotropes</h3>
+                        <p class="text-xs text-slate-400 mt-1 font-semibold">À VENIR</p>
+                    </div>
+                    <div class="mt-2 text-right h-5">
+                        <span class="text-slate-500 opacity-0 group-hover:opacity-100 transition-opacity font-black text-2xl leading-none">→</span>
+                    </div>
+                </a>
+
             </div>
-
         </main>
         
-        <!-- Footer (Replicating Header Style) -->
-        <footer id="footer" class="bg-slate-800 text-white p-4 md:p-6 mt-auto rounded-b-xl shadow-inner">
+        <!-- Footer -->
+        <footer id="footer" class="bg-slate-800 text-white p-4 md:p-6 mt-auto rounded-b-2xl">
             <div class="max-w-6xl mx-auto flex items-center justify-center md:justify-end text-center">
-                <!-- Mobile/Tablet & Desktop Author Info (Footer) -->
                 <p class="font-bold text-slate-300 text-xs sm:text-sm">
-                <span class="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2025
+                    <span class="gradient-text bg-gradient-to-r from-sky-400 to-violet-400">Lucas Séraudie</span> - 2025
                 </p>
             </div>
         </footer>
