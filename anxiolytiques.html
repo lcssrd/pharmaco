@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anxiolytiques & Hypnotiques - IFSI</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        html {
+            overflow-y: scroll; /* Empêche le décalage de la mise en page */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Fond gris-bleu clair */
+        }
+        /* Animation pour les transitions de page */
+        .page {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Styles spécifiques au Quiz (conservés du modèle) */
+        .qcm-option.correct {
+            background-image: linear-gradient(to right, #4ade80, #16a34a); /* from-green-400 to-green-600 */
+            color: white;
+            border-color: #15803d; /* green-700 */
+            font-weight: 600;
+        }
+        .qcm-option.incorrect {
+            background-image: linear-gradient(to right, #f87171, #dc2626); /* from-red-400 to-red-600 */
+            color: white;
+            border-color: #b91c1c; /* red-700 */
+            font-weight: 600;
+        }
+        .qcm-option:disabled {
+            cursor: not-allowed;
+        }
+        .qcm-option:disabled:not(.correct):not(.incorrect) {
+            color: #475569; /* slate-600 */
+            background-color: #f1f5f9; /* slate-100 */
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body class="p-2 sm:p-4 md:p-8">
+    <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
+        
+        <!-- En-tête -->
+        <header class="bg-slate-800 text-white p-6 md:p-8 sticky top-0 z-10">
+            <div class="flex items-center justify-between">
+                <!-- Titre avec nouveau dégradé -->
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent pb-2">Anxiolytiques & Hypnotiques</h1>
+                <div class="hidden md:flex text-right font-bold text-slate-300 text-sm">
+                    <!-- Auteur basé sur les PDFs -->
+                    <p><span class="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2025</p>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="pt-6">
+                <!-- Grille de navigation adaptée pour 6 éléments -->
+                <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-3 sm:grid-cols-6 gap-2">
+                    <button data-page="generalites" onclick="showPage('generalites')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Généralités</button>
+                    <button data-page="bzd" onclick="showPage('bzd')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Benzodiazépines</button>
+                    <button data-page="zdrugs" onclick="showPage('zdrugs')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Z-Drugs</button>
+                    <button data-page="autres" onclick="showPage('autres')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Autres</button>
+                    <button data-page="risques" onclick="showPage('risques')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Risques & Règles</button>
+                    <button data-page="quiz" onclick="showPage('quiz')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Quiz</button>
+                </div>
+            </nav>
+        </header>
+
+        <main class="p-4 sm:p-6 md:p-8">
+
+            <!-- Page 1: Généralités -->
+            <div id="generalites" class="page">
+                <section class="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-purple-500 to-pink-600 bg-clip-text text-transparent">Anxiété & Insomnie</span></h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4"><div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="brain-circuit" class="text-purple-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">L'Anxiété</h4></div>
+                            <p class="text-slate-600 italic text-sm sm:text-base mb-4">« Sentiment d'un danger imminent indéterminé s'accompagnant d'un état de malaise, d'agitation, de désarroi voire d'anéantissement. » (OMS)</p>
+                            <p class="text-slate-600 text-sm sm:text-base">Elle devient pathologique (ex: Trouble Anxieux Généralisé - TAG, Trouble Panique) lorsqu'elle est excessive, persistante, et entraîne une souffrance ou une altération fonctionnelle.</p>
+                        </div>
+                        
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4"><div class="bg-pink-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="moon-star" class="text-pink-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">L'Insomnie</h4></div>
+                            <p class="text-slate-600 text-sm sm:text-base mb-4">Trouble affectant la quantité ou la qualité du sommeil. On distingue :</p>
+                            <ul class="list-disc list-inside space-y-2 text-sm text-slate-500">
+                                <li><b>Insomnie transitoire :</b> Quelques jours/semaines, liée à un événement (stress, douleur...).</li>
+                                <li><b>Insomnie chronique :</b> Difficultés d'endormissement (anxiété), réveils nocturnes (dépression), ou réveil précoce.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 md:col-span-2">
+                            <div class="flex items-center gap-4 mb-4"><div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="list-tree" class="text-purple-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Classification des Troubles Anxieux</h4></div>
+                            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 text-sm"><div class="p-4 bg-purple-50 rounded-lg"><h5 class="font-semibold text-purple-800">Attaque de panique</h5><p>Peur intense, brutale, imprévisible, sans objet.</p></div><div class="p-4 bg-purple-50 rounded-lg"><h5 class="font-semibold text-purple-800">Trouble Anxieux Généralisé (TAG)</h5><p>Fond anxieux chronique (> 6 mois) avec agitation, fatigabilité.</p></div><div class="p-4 bg-purple-50 rounded-lg"><h5 class="font-semibold text-purple-800">Phobies</h5><p>Peurs irrationnelles face à des situations non dangereuses.</p></div><div class="p-4 bg-pink-50 rounded-lg"><h5 class="font-semibold text-pink-800">TOC</h5><p>Obsessions conduisant à des rituels compulsifs.</p></div><div class="p-4 bg-pink-50 rounded-lg"><h5 class="font-semibold text-pink-800">Stress Post-Traumatique</h5><p>Réaction émotionnelle retardée suite à un stress aigu.</p></div></div>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Page 2: Benzodiazépines (BZD) -->
+            <div id="bzd" class="page hidden">
+                <section class="bg-gradient-to-br from-indigo-100 to-blue-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-indigo-500 to-blue-600 bg-clip-text text-transparent">Benzodiazépines (BZD)</span></h3>
+                    
+                    <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 mb-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <div class="flex items-center gap-4 mb-4"><div class="bg-indigo-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="puzzle" class="text-indigo-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Propriétés Fondamentales</h4></div>
+                        <p class="text-slate-600 mb-4 text-sm sm:text-base">Toutes les BZD partagent 5 propriétés clés en potentialisant l'effet du <strong>GABA</strong> (le "frein" du SNC) :</p>
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-sm"><div class="p-4 bg-indigo-50 rounded-lg"><h5 class="font-semibold text-indigo-800">Anxiolytique</h5></div><div class="p-4 bg-blue-50 rounded-lg"><h5 class="font-semibold text-blue-800">Sédative (Hypnotique)</h5></div><div class="p-4 bg-indigo-50 rounded-lg"><h5 class="font-semibold text-indigo-800">Amnésiante</h5></div><div class="p-4 bg-blue-50 rounded-lg"><h5 class="font-semibold text-blue-800">Myorelaxante</h5></div><div class="p-4 bg-indigo-50 rounded-lg sm:col-span-2 lg:col-span-1"><h5 class="font-semibold text-indigo-800">Anti-convulsivante</h5></div></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="mb-4">
+                                <h4 class="text-xl font-bold text-slate-800">BZD Anxiolytiques</h4>
+                                <p class="text-xs text-slate-500 italic">Ex: Xanax® (Alprazolam), Temesta® (Lorazepam), Valium® (Diazepam)</p>
+                                <p class="text-sm text-slate-500 mt-1">Classe : Anxiolytique</p>
+                            </div>
+                            <div class="space-y-4 text-sm flex-grow">
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Profil</h5><p class="text-slate-500 pl-6">Demi-vie <strong>intermédiaire à longue</strong> pour couvrir la journée.</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="file-clock" class="w-4 h-4 text-red-600"></i>Prescription max</h5><p class="text-slate-500 pl-6"><strong>12 semaines</strong> (arrêt progressif inclus).</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="calendar-plus" class="w-4 h-4 text-indigo-600"></i>Plan de prise</h5><p class="text-slate-500 pl-6">Une ou plusieurs fois par jour.</p></div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="mb-4">
+                                <h4 class="text-xl font-bold text-slate-800">BZD Hypnotiques</h4>
+                                <p class="text-xs text-slate-500 italic">Ex: Noctamide® (Lormétazépam), Havlane® (Loprazolam)</p>
+                                <p class="text-sm text-slate-500 mt-1">Classe : Hypnotique</p>
+                            </div>
+                            <div class="space-y-4 text-sm flex-grow">
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Profil</h5><p class="text-slate-500 pl-6">Demi-vie <strong>courte à intermédiaire</strong> pour limiter la somnolence diurne.</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="file-clock" class="w-4 h-4 text-red-600"></i>Prescription max</h5><p class="text-slate-500 pl-6"><strong>4 semaines</strong> (arrêt progressif inclus).</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="bed-double" class="w-4 h-4 text-blue-600"></i>Plan de prise</h5><p class="text-slate-500 pl-6">Une fois, le soir au coucher.</p></div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="mb-4">
+                                <h4 class="text-xl font-bold text-slate-800">Risques & Surveillance</h4>
+                                <p class="text-xs text-slate-500 italic">Communs à toutes les BZD</p>
+                                <p class="text-sm text-slate-500 mt-1">Pharmacovigilance</p>
+                            </div>
+                            <div class="space-y-4 text-sm flex-grow">
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets Indésirables</h5><p class="text-slate-500 pl-6">Somnolence, amnésie antérograde, risque de chutes (myorelaxant), dépression respiratoire.</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="ban" class="w-4 h-4 text-red-600"></i>Contre-indications</h5><p class="text-slate-500 pl-6">Insuffisance respiratoire sévère, apnée du sommeil, myasthénie.</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="flask-conical" class="w-4 h-4 text-green-600"></i>Antidote</h5><p class="text-slate-500 pl-6"><strong>Flumazénil (Anexate®)</strong>.</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="beer" class="w-4 h-4 text-red-800"></i>Interaction</h5><p class="text-slate-500 pl-6">Majoration MAJEURE avec l'<strong>Alcool</strong>.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Page 3: Z-Drugs -->
+            <div id="zdrugs" class="page hidden">
+                <section class="bg-gradient-to-br from-teal-100 to-cyan-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-teal-500 to-cyan-600 bg-clip-text text-transparent">Apparentés "Z-Drugs"</span></h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="mb-4">
+                                <h4 class="text-xl font-bold text-slate-800">Zolpidem</h4>
+                                <p class="text-xs text-slate-500 italic">Ex: Stilnox®</p>
+                                <p class="text-sm text-slate-500 mt-1">Classe : Hypnotique apparenté BZD</p>
+                            </div>
+                            <div class="space-y-4 text-sm flex-grow">
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Agoniste sélectif des récepteurs GABA-A (similaire BZD).</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets Indésirables</h5><p class="text-slate-500 pl-6">Amnésie antérograde, comportements anormaux (somnambulisme).</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="file-clock" class="w-4 h-4 text-red-600"></i>Prescription max</h5><p class="text-slate-500 pl-6"><strong>4 semaines</strong> (comme BZD hypnotiques).</p></div>
+                            </div>
+                        </div>
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="mb-4">
+                                <h4 class="text-xl font-bold text-slate-800">Zopiclone</h4>
+                                <p class="text-xs text-slate-500 italic">Ex: Imovane®</p>
+                                <p class="text-sm text-slate-500 mt-1">Classe : Hypnotique apparenté BZD</p>
+                            </div>
+                            <div class="space-y-4 text-sm flex-grow">
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Agoniste sélectif des récepteurs GABA-A (similaire BZD).</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets Indésirables</h5><p class="text-slate-500 pl-6">Goût amer/métallique, amnésie, somnambulisme.</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="file-clock" class="w-4 h-4 text-red-600"></i>Prescription max</h5><p class="text-slate-500 pl-6"><strong>4 semaines</strong> (comme BZD hypnotiques).</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 bg-teal-50 border-l-4 border-teal-500 text-teal-800 p-6 rounded-lg shadow">
+                        <h5 class="font-bold text-lg flex items-center gap-2"><i data-lucide="info" class="w-5 h-5"></i>Point de Vigilance Clé</h5>
+                        <p class="mt-2 text-sm sm:text-base">Bien qu'ayant un mécanisme légèrement différent, les Z-Drugs présentent les <strong>mêmes risques de tolérance, de dépendance et d'effets indésirables</strong> que les benzodiazépines.</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Page 4: Autres Traitements -->
+            <div id="autres" class="page hidden">
+                <section class="bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-amber-500 to-orange-600 bg-clip-text text-transparent">Autres Classes</span></h3>
+                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="mb-4">
+                                <h4 class="text-xl font-bold text-slate-800">Antihistaminiques H1</h4>
+                                <p class="text-xs text-slate-500 italic">Ex: Atarax® (Hydroxyzine), Donormyl® (Doxylamine)</p>
+                            </div>
+                            <div class="space-y-4 text-sm flex-grow">
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Antagoniste des récepteurs H1, propriétés sédatives.</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets Indésirables</h5><p class="text-slate-500 pl-6"><strong>Effets anticholinergiques :</strong> sécheresse buccale, constipation, confusion (sujet âgé).</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-circle" class="w-4 h-4 text-red-600"></i>Vigilance</h5><p class="text-slate-500 pl-6">Atarax® : Risque d'allongement de l'intervalle QT.</p></div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                             <div class="mb-4">
+                                <h4 class="text-xl font-bold text-slate-800">Bêta-bloquants</h4>
+                                <p class="text-xs text-slate-500 italic">Ex: Avlocardyl® (Propranolol)</p>
+                             </div>
+                             <div class="space-y-4 text-sm flex-grow">
+                                 <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Bloque les récepteurs bêta-adrénergiques.</p></div>
+                                 <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-orange-600"></i>Indication Anxiété</h5><p class="text-slate-500 pl-6">Ne traite pas l'anxiété "centrale", mais bloque ses <strong>manifestations périphériques</strong> (palpitations, tremblements, sueurs).</p></div>
+                                 <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-circle" class="w-4 h-4 text-red-600"></i>Vigilance</h5><p class="text-slate-500 pl-6">Contre-indications classiques des bêta-bloquants (asthme, BAV...).</p></div>
+                             </div>
+                        </div>
+                        
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="mb-4">
+                                <h4 class="text-xl font-bold text-slate-800">Autres (Anxiété / Sommeil)</h4>
+                                <p class="text-xs text-slate-500 italic">Buspirone, Mélatonine</p>
+                            </div>
+                            <div class="space-y-4 text-sm flex-grow">
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="chevrons-right" class="w-4 h-4 text-amber-700"></i>Buspirone</h5><p class="text-slate-500 pl-6">Agoniste 5-HT1A. Anxiolytique <strong>sans sédation</strong> ni dépendance. Délai d'action lent (1-3 semaines).</p></div>
+                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="chevrons-right" class="w-4 h-4 text-amber-700"></i>Mélatonine</h5><p class="text-slate-500 pl-6">Hormone, resynchronise le cycle veille-sommeil. (Ex: Circadin®, réservé +55 ans).</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Page 5: Risques & Règles -->
+            <div id="risques" class="page hidden">
+                <section class="bg-gradient-to-br from-red-100 to-rose-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-red-500 to-rose-600 bg-clip-text text-transparent">Risques & Règles Clés</span></h3>
+                    <div class="grid lg:grid-cols-3 gap-8">
+                         
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4"><div class="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="alert-triangle" class="text-red-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Triangle du Risque</h4></div>
+                            <p class="text-slate-600 text-sm sm:text-base mb-4">(Concerne BZD et Z-Drugs)</p>
+                            <ul class="list-none space-y-3 text-sm">
+                                <li class="p-3 bg-red-50 rounded-lg"><strong class="text-red-800">1. Tolérance :</strong> Diminution de l'effet, besoin d'augmenter les doses.</li>
+                                <li class="p-3 bg-red-50 rounded-lg"><strong class="text-red-800">2. Dépendance :</strong> Besoin psychique et physique de consommer.</li>
+                                <li class="p-3 bg-red-50 rounded-lg"><strong class="text-red-800">3. Syndrome de Sevrage :</strong> Effet rebond (anxiété, insomnie), tremblements, sueurs... à l'arrêt brutal.</li>
+                            </ul>
+                        </div>
+
+                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4"><div class="bg-rose-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="file-check-2" class="text-rose-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Cadre Légal (France)</h4></div>
+                            <p class="text-slate-600 text-sm sm:text-base mb-4">Pour limiter la dépendance, la prescription est encadrée :</p>
+                            <div class="space-y-4">
+                                <div class="p-4 bg-rose-50 rounded-lg"><h5 class="font-bold text-rose-800 text-lg">Anxiolytiques (BZD) :</h5><p class="text-rose-700 text-xl font-semibold">Max 12 semaines</p></div>
+                                <div class="p-4 bg-rose-50 rounded-lg"><h5 class="font-bold text-rose-800 text-lg">Hypnotiques (BZD, Z-Drugs) :</h5><p class="text-rose-700 text-xl font-semibold">Max 4 semaines</p></div>
+                            </div>
+                            <p class="text-slate-500 text-xs italic mt-4 pt-4 border-t border-rose-200">L'arrêt doit <strong>TOUJOURS</strong> être progressif sur plusieurs semaines ou mois.</p>
+                        </div>
+
+                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4"><div class="bg-pink-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="bed-double" class="text-pink-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Règles Hygiéno-Diététiques</h4></div>
+                            <p class="text-slate-600 text-sm sm:text-base mb-4">Indispensables avant tout traitement de l'insomnie :</p>
+                            <ul class="list-disc list-inside space-y-2 text-sm text-slate-500">
+                                <li>Garder des horaires de réveil fixes.</li>
+                                <li>Pas d'excitants (café, thé, alcool) après 17h.</li>
+                                <li>Éviter le sport intense le soir.</li>
+                                <li>Éviter les écrans (lumière bleue) 1h avant le coucher.</li>
+                                <li>Activité de détente le soir (lecture, relaxation).</li>
+                                <li>Sieste : jamais plus de 30 minutes.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Page 6: Quiz -->
+            <div id="quiz" class="page hidden">
+                <div class="bg-gradient-to-br from-slate-50 to-gray-100 p-6 sm:p-8 md:p-10 rounded-2xl shadow-inner">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-2">Quiz Interactif</h2>
+                    <p class="text-slate-600 mb-8">Testez vos connaissances sur les anxiolytiques et hypnotiques.</p>
+                    
+                    <div id="qcm-container" class="space-y-8">
+                        <!-- Les questions du quiz seront injectées ici par le JavaScript -->
+                    </div>
+
+                    <div id="quiz-footer" class="mt-10 pt-6 border-t-2 border-slate-200 flex flex-wrap justify-between items-center gap-4">
+                        <p id="quiz-score" class="text-xl md:text-2xl font-bold text-slate-800"></p>
+                        <button onclick="resetQuiz()" id="reset-button" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 transform opacity-0 pointer-events-none">
+                            Recommencer
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Pied de page -->
+        <footer id="footer" class="bg-slate-800 text-white p-4 md:p-6 mt-auto rounded-b-xl shadow-inner">
+            <div class="max-w-6xl mx-auto flex items-center justify-center md:justify-end text-center">
+                <p class="font-bold text-slate-300 text-xs sm:text-sm">
+                <span class="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2025
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // --- Données du Nouveau Quiz ---
+        const quizData = [
+            {
+                question: "Quel est l'antidote spécifique en cas de surdosage aux Benzodiazépines (BZD) ?",
+                options: ["Naloxone", "N-acétylcystéine", "Flumazénil", "Propranolol"],
+                correct: 2,
+                feedback: "Le Flumazénil (Anexate®) est l'antagoniste compétitif des récepteurs BZD, utilisé en cas de surdosage ou pour lever une sédation."
+            },
+            {
+                question: "Quelle est la durée maximale de prescription pour un anxiolytique de type BZD en France ?",
+                options: ["4 semaines", "8 semaines", "12 semaines", "6 mois"],
+                correct: 2,
+                feedback: "La prescription d'anxiolytiques BZD est limitée à 12 semaines (3 mois), incluant la période d'arrêt progressif."
+            },
+            {
+                question: "Quelle est la durée maximale de prescription pour un hypnotique de type BZD ou Z-Drug ?",
+                options: ["4 semaines", "8 semaines", "12 semaines", "Pas de limite"],
+                correct: 0,
+                feedback: "La prescription d'hypnotiques est limitée à 4 semaines pour minimiser le risque de dépendance."
+            },
+            {
+                question: "Quel est le risque principal commun aux BZD et aux Z-Drugs (Zolpidem, Zopiclone) ?",
+                options: ["Effets anticholinergiques", "Syndrome sérotoninergique", "Tolérance et dépendance", "Allongement de l'intervalle QT"],
+                correct: 2,
+                feedback: "Les deux classes partagent les mêmes risques majeurs de tolérance (accoutumance) et de dépendance (physique et psychique)."
+            },
+            {
+                question: "Quel médicament est utilisé pour traiter les symptômes *somatiques* de l'anxiété (palpitations, tremblements) ?",
+                options: ["Diazepam (Valium®)", "Zolpidem (Stilnox®)", "Hydroxyzine (Atarax®)", "Propranolol (Avlocardyl®)"],
+                correct: 3,
+                feedback: "Le Propranolol, un bêta-bloquant, agit sur les manifestations périphériques du stress (cœur, muscles) sans être un anxiolytique central."
+            },
+            {
+                question: "Les Z-Drugs (Zolpidem, Zopiclone) ont-ils moins de risques de dépendance que les BZD ?",
+                options: ["Oui, ils sont beaucoup plus sûrs", "Non, ils présentent les mêmes risques de dépendance", "Seulement le Zolpidem est sûr", "Seulement le Zopiclone est sûr"],
+                correct: 1,
+                feedback: "C'est un point clé : bien qu'initialement présentés comme plus sûrs, il est établi que les Z-Drugs partagent les mêmes risques de tolérance et de dépendance que les BZD."
+            },
+            {
+                question: "Quel est l'effet indésirable principal des antihistaminiques (ex: Atarax®, Donormyl®) utilisés comme sédatifs ?",
+                options: ["Effets anticholinergiques", "Risque de chute (myorelaxant)", "Amnésie antérograde", "Goût métallique"],
+                correct: 0,
+                feedback: "Les antihistaminiques H1 sont connus pour leurs effets anticholinergiques (sécheresse buccale, constipation, confusion chez le sujet âgé)."
+            },
+            {
+                question: "Que signifie le 'Triangle du Risque' pour les BZD ?",
+                options: ["Chute, Amnésie, Somnolence", "Tolérance, Dépendance, Sevrage", "Alcool, Conduite, Machines", "Anxiété, Insomnie, Dépression"],
+                correct: 1,
+                feedback: "Le 'Triangle du Risque' décrit le cycle de la Tolérance (accoutumance), de la Dépendance (besoin) et du Syndrome de Sevrage (à l'arrêt brutal)."
+            },
+            {
+                question: "Quelle est l'interaction la plus dangereuse avec les BZD et Z-Drugs ?",
+                options: ["Jus de pamplemousse", "Café", "Alcool", "Paracétamol"],
+                correct: 2,
+                feedback: "L'Alcool majore de façon majeure l'effet sédatif et le risque de dépression respiratoire. C'est une association formellement contre-indiquée."
+            },
+            {
+                question: "Parmi les propositions suivantes, laquelle est une règle hygiéno-diététique clé pour l'insomnie ?",
+                options: ["Faire du sport intense juste avant de dormir", "Regarder la TV au lit pour s'endormir", "Garder une heure de réveil fixe, même le week-end", "Boire une tisane au café le soir"],
+                correct: 2,
+                feedback: "Garder une heure de réveil fixe aide à resynchroniser l'horloge biologique, même si le coucher est retardé."
+            },
+            {
+                question: "Laquelle de ces propriétés n'est PAS l'une des 5 propriétés fondamentales des BZD ?",
+                options: ["Anxiolytique", "Sédative", "Amnésiante", "Anticholinergique"],
+                correct: 3,
+                feedback: "Les 5 propriétés sont Anxiolytique, Sédative, Amnésiante, Myorelaxante, Anti-convulsivante. Les effets anticholinergiques sont typiques des antihistaminiques."
+            },
+            {
+                question: "Quelle est la contre-indication absolue principale des BZD ?",
+                options: ["Insuffisance respiratoire sévère", "Hypertension artérielle", "Diabète", "Insuffisance rénale légère"],
+                correct: 0,
+                feedback: "Les BZD étant des dépresseurs respiratoires, ils sont absolument contre-indiqués en cas d'insuffisance respiratoire sévère ou de syndrome d'apnée du sommeil."
+            }
+        ];
+
+        // --- Logique de Navigation (Adaptée) ---
+        const pages = ['generalites', 'bzd', 'zdrugs', 'autres', 'risques', 'quiz'];
+        
+        // Nouvelles couleurs pour les boutons de navigation
+        const buttonColors = {
+            generalites: 'bg-gradient-to-r from-purple-500 to-pink-600 text-white shadow-md',
+            bzd: 'bg-gradient-to-r from-indigo-500 to-blue-600 text-white shadow-md',
+            zdrugs: 'bg-gradient-to-r from-teal-500 to-cyan-600 text-white shadow-md',
+            autres: 'bg-gradient-to-r from-amber-500 to-orange-600 text-white shadow-md',
+            risques: 'bg-gradient-to-r from-red-500 to-rose-600 text-white shadow-md',
+            quiz: 'bg-gradient-to-r from-slate-500 to-gray-700 text-white shadow-md'
+        };
+
+        // Couleurs de survol pour les boutons inactifs
+        const buttonHoverColors = {
+            generalites: 'hover:bg-purple-100 hover:text-purple-800',
+            bzd: 'hover:bg-indigo-100 hover:text-indigo-800',
+            zdrugs: 'hover:bg-teal-100 hover:text-teal-800',
+            autres: 'hover:bg-amber-100 hover:text-amber-800',
+            risques: 'hover:bg-red-100 hover:text-red-800',
+            quiz: 'hover:bg-slate-300 hover:text-slate-800'
+        };
+
+        function showPage(pageId) {
+            // Cache toutes les pages
+            pages.forEach(id => {
+                const page = document.getElementById(id);
+                if (page) page.classList.add('hidden');
+            });
+            // Affiche la page active
+            const activePage = document.getElementById(pageId);
+            if (activePage) activePage.classList.remove('hidden');
+            
+            // Met à jour les styles des boutons de navigation
+            const navButtons = document.querySelectorAll('.nav-btn');
+            navButtons.forEach(btn => {
+                const page = btn.dataset.page;
+                // Réinitialise les classes
+                btn.className = 'nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm';
+                
+                if (page === pageId) {
+                    // Applique le style actif
+                    btn.classList.add(...buttonColors[page].split(' '));
+                } else {
+                    // Applique le style de survol inactif
+                    btn.classList.add(...buttonHoverColors[page].split(' '));
+                }
+            });
+        }
+
+        // --- Logique du Quiz (Inchangée par rapport au modèle) ---
+       
+       function renderQuiz() {
+            const container = document.getElementById('qcm-container');
+            if (!container) return;
+            container.innerHTML = '';
+            quizData.forEach((item, index) => {
+                // Génération des boutons de réponse
+                const optionsHtml = item.options.map((option, optionIndex) => 
+                    `<button class="qcm-option w-full text-left p-4 rounded-xl bg-white border-2 border-slate-200 hover:bg-slate-100 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200" data-index="${optionIndex}">${option}</button>`
+                ).join('');
+
+                // Génération de la carte de question
+                container.innerHTML += `
+                    <div class="qcm-question bg-slate-100/70 border border-slate-200/80 p-6 rounded-2xl shadow-lg" data-question-index="${index}">
+                        <p class="font-semibold text-lg text-slate-800 mb-4">${index + 1}. ${item.question}</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">${optionsHtml}</div>
+                        <div class="qcm-feedback mt-4 text-sm font-medium"></div>
+                    </div>`;
+            });
+            document.getElementById('quiz-score').textContent = `Prêt ? 0 / ${quizData.length}`;
+            const resetButton = document.getElementById('reset-button');
+            resetButton.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        function setupQuizListeners() {
+            const container = document.getElementById('qcm-container');
+            if (!container) return;
+            container.addEventListener('click', (event) => {
+                if (!event.target.classList.contains('qcm-option')) return;
+                
+                const optionButton = event.target;
+                const questionEl = optionButton.closest('.qcm-question');
+                if (!questionEl || questionEl.classList.contains('answered')) return;
+                
+                questionEl.classList.add('answered');
+                const questionIndex = parseInt(questionEl.dataset.questionIndex, 10);
+                const questionData = quizData[questionIndex];
+                const selectedIndex = parseInt(optionButton.dataset.index, 10);
+                const isCorrect = selectedIndex === questionData.correct;
+                const feedbackEl = questionEl.querySelector('.qcm-feedback');
+
+                if (isCorrect) {
+                    optionButton.classList.add('correct');
+                    feedbackEl.innerHTML = `<div class="text-emerald-700 p-3 bg-emerald-100 rounded-lg"><b class="font-bold">Bravo !</b> ${questionData.feedback || ''}</div>`;
+                } else {
+                    optionButton.classList.add('incorrect');
+                    const correctButton = questionEl.querySelector(`[data-index="${questionData.correct}"]`);
+                    correctButton.classList.add('correct');
+                    feedbackEl.innerHTML = `<div class="text-red-700 p-3 bg-red-100 rounded-lg"><b class="font-bold">Dommage.</b> ${questionData.feedback || ''}</div>`;
+                }
+                
+                questionEl.querySelectorAll('.qcm-option').forEach(btn => {
+                    btn.disabled = true;
+                });
+                updateScore();
+            });
+        }
+
+        function updateScore() {
+            const totalQuestions = quizData.length;
+            let score = 0;
+            
+            document.querySelectorAll('.qcm-question.answered').forEach(questionEl => {
+                const correctOption = questionEl.querySelector('.qcm-option.correct');
+                const incorrectSelected = questionEl.querySelector('.qcm-option.incorrect');
+                
+                // Si une option correcte est marquée ET qu'aucune option incorrecte n'a été sélectionnée
+                if (correctOption && !incorrectSelected) {
+                    score++;
+                }
+            });
+
+            const scoreEl = document.getElementById('quiz-score');
+            if (scoreEl) {
+                const answeredCount = document.querySelectorAll('.qcm-question.answered').length;
+                
+                if (answeredCount < totalQuestions) {
+                    scoreEl.textContent = `Votre score : ${score} / ${answeredCount}`;
+                } else {
+                     scoreEl.textContent = `Score final : ${score} / ${totalQuestions}`;
+                    const percentage = (score / totalQuestions) * 100;
+                    if (percentage >= 80) {
+                        scoreEl.textContent += " - Excellent travail ! 🎉";
+                    } else if (percentage >= 50) {
+                        scoreEl.textContent += " - Pas mal, continuez à réviser ! 💪";
+                    } else {
+                        scoreEl.textContent += " - Encore un effort ! 📚";
+                    }
+                    const resetButton = document.getElementById('reset-button');
+                    resetButton.classList.remove('opacity-0', 'pointer-events-none');
+                }
+            }
+        }
+
+        function resetQuiz() {
+            renderQuiz(); 
+        }
+
+        // --- Initialisation ---
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            showPage('generalites'); // Afficher la première page (nouvelle) par défaut
+            renderQuiz();
+            setupQuizListeners();
+        });
+    </script>
+</body>
+</html>
