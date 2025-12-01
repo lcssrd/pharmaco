@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lcssrd.github.io/pharmaco/sitemap.xml

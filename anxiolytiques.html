@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anxiolytiques & Hypnotiques - IFSI</title>
-    <!-- Tailwind CSS CDN -->
+    
+    <title>Anxiolytiques & Hypnotiques : Cours Pharmacologie IFSI - UE 2.11 S5</title>
+    
+    <meta name="description" content="Fiche de révision IFSI sur les anxiolytiques et hypnotiques : Benzodiazépines, Z-drugs, risques (dépendance, tolérance), règles de prescription et rôle infirmier. UE 2.11 S5.">
+    
+    <meta property="og:title" content="Anxiolytiques & Hypnotiques - Révision Pharmacologie IFSI">
+    <meta property="og:description" content="Tout savoir sur les psychotropes anxiolytiques et hypnotiques. Fiche de révision UE 2.11 S5.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://lcssrd.github.io/pharmaco/anxiolytiques.html">
+    
+    <link rel="canonical" href="https://lcssrd.github.io/pharmaco/anxiolytiques.html" />
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -55,20 +63,15 @@
 <body class="p-2 sm:p-4 md:p-8">
     <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
         
-        <!-- En-tête -->
         <header class="bg-slate-800 text-white p-6 md:p-8 sticky top-0 z-10">
             <div class="flex items-center justify-between">
-                <!-- Titre avec nouveau dégradé -->
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent pb-2">Anxiolytiques & Hypnotiques</h1>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent pb-2">Anxiolytiques & Hypnotiques (Cours IFSI)</h1>
                 <div class="hidden md:flex text-right font-bold text-slate-300 text-sm">
-                    <!-- Auteur basé sur les PDFs -->
                     <p><span class="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2025</p>
                 </div>
             </div>
 
-            <!-- Navigation -->
             <nav class="pt-6">
-                <!-- Grille de navigation adaptée pour 6 éléments -->
                 <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-3 sm:grid-cols-6 gap-2">
                     <button data-page="generalites" onclick="showPage('generalites')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Généralités</button>
                     <button data-page="bzd" onclick="showPage('bzd')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Benzodiazépines</button>
@@ -82,7 +85,6 @@
 
         <main class="p-4 sm:p-6 md:p-8">
 
-            <!-- Page 1: Généralités -->
             <div id="generalites" class="page">
                 <section class="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-6 md:p-12">
                     <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-purple-500 to-pink-600 bg-clip-text text-transparent">Anxiété & Insomnie</span></h3>
@@ -112,7 +114,6 @@
                 </section>
             </div>
             
-            <!-- Page 2: Benzodiazépines (BZD) -->
             <div id="bzd" class="page hidden">
                 <section class="bg-gradient-to-br from-indigo-100 to-blue-100 rounded-2xl p-6 md:p-12">
                     <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-indigo-500 to-blue-600 bg-clip-text text-transparent">Benzodiazépines (BZD)</span></h3>
@@ -167,7 +168,6 @@
                 </section>
             </div>
 
-            <!-- Page 3: Z-Drugs -->
             <div id="zdrugs" class="page hidden">
                 <section class="bg-gradient-to-br from-teal-100 to-cyan-100 rounded-2xl p-6 md:p-12">
                     <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-teal-500 to-cyan-600 bg-clip-text text-transparent">Apparentés "Z-Drugs"</span></h3>
@@ -204,7 +204,6 @@
                 </section>
             </div>
 
-            <!-- Page 4: Autres Traitements -->
             <div id="autres" class="page hidden">
                 <section class="bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl p-6 md:p-12">
                     <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-amber-500 to-orange-600 bg-clip-text text-transparent">Autres Classes</span></h3>
@@ -248,7 +247,6 @@
                 </section>
             </div>
 
-            <!-- Page 5: Risques & Règles -->
             <div id="risques" class="page hidden">
                 <section class="bg-gradient-to-br from-red-100 to-rose-100 rounded-2xl p-6 md:p-12">
                     <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-red-500 to-rose-600 bg-clip-text text-transparent">Risques & Règles Clés</span></h3>
@@ -290,15 +288,13 @@
                 </section>
             </div>
 
-            <!-- Page 6: Quiz -->
             <div id="quiz" class="page hidden">
                 <div class="bg-gradient-to-br from-slate-50 to-gray-100 p-6 sm:p-8 md:p-10 rounded-2xl shadow-inner">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-2">Quiz Interactif</h2>
                     <p class="text-slate-600 mb-8">Testez vos connaissances sur les anxiolytiques et hypnotiques.</p>
                     
                     <div id="qcm-container" class="space-y-8">
-                        <!-- Les questions du quiz seront injectées ici par le JavaScript -->
-                    </div>
+                        </div>
 
                     <div id="quiz-footer" class="mt-10 pt-6 border-t-2 border-slate-200 flex flex-wrap justify-between items-center gap-4">
                         <p id="quiz-score" class="text-xl md:text-2xl font-bold text-slate-800"></p>
@@ -310,7 +306,6 @@
             </div>
         </main>
 
-        <!-- Pied de page -->
         <footer id="footer" class="bg-slate-800 text-white p-4 md:p-6 mt-auto rounded-b-xl shadow-inner">
             <div class="max-w-6xl mx-auto flex items-center justify-center md:justify-end text-center">
                 <p class="font-bold text-slate-300 text-xs sm:text-sm">
