@@ -3,12 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Les Anti-Inflammatoires - IFSI</title>
+    
+    <title>Les Anti-Inflammatoires : Cours Pharmacologie IFSI - UE 2.11 S1</title>
+    
+    <meta name="description" content="Fiche de révision complète sur les anti-inflammatoires pour étudiants infirmiers (IFSI). Processus inflammatoire, AINS, Corticoïdes, effets secondaires et rôle infirmier.">
+    
+    <meta property="og:title" content="Les Anti-Inflammatoires - Révision Pharmacologie IFSI">
+    <meta property="og:description" content="Comprendre l'inflammation, les AINS et les Corticoïdes. Fiche de révision UE 2.11.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://lcssrd.github.io/pharmaco/antiinflam.html">
+    
+    <link rel="canonical" href="https://lcssrd.github.io/pharmaco/antiinflam.html" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- Chart.js is kept for consistency -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         html {
@@ -55,7 +65,7 @@
         
         <header class="bg-slate-800 text-white p-6 md:p-8 sticky top-0 z-20">
             <div class="flex items-center justify-between">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent pb-2">Les Anti-Inflammatoires</h1>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent pb-2">Les Anti-Inflammatoires (Cours IFSI)</h1>
                 <div class="hidden md:flex text-right font-bold text-slate-300 text-sm">
                     <p><span class="bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent">Lucas Séraudie</span> - 2025</p>
                 </div>
@@ -72,12 +82,8 @@
         </header>
 
         
-        <!-- Main Content Area -->
         <main id="main-content" class="p-4 sm:p-6 md:p-8">
 
-            <!-- L'ancienne page 'home' a été supprimée -->
-
-            <!-- Inflammation Page -->
             <div id="inflammation" class="page hidden">
                 <h2 class="text-2xl md:text-3xl font-bold text-purple-500 mb-6">
                     🔥 LE PROCESSUS INFLAMMATOIRE
@@ -86,7 +92,6 @@
                 <div class="space-y-6 text-sm text-slate-700">
                     <p>L'inflammation est une réaction de défense naturelle de l'organisme face à une agression (infection, traumatisme, allergie...).</p>
                     
-                    <!-- Signes Cliniques -->
                     <div class="bg-purple-50 p-4 rounded-xl border-2 border-red-300 shadow-lg">
                         <h3 class="font-semibold text-red-800 text-lg mb-2 border-b border-red-200 pb-1">Les Signes Cliniques</h3>
                         <ul class="list-disc list-inside space-y-1">
@@ -98,7 +103,6 @@
                         </ul>
                     </div>
                     
-                    <!-- Nouveau Bloc : Mécanisme Détaillé -->
                     <div class="bg-red-100 p-5 rounded-xl border-2 border-red-300 shadow-lg">
                         <h3 class="font-bold text-red-800 text-lg mb-3">🔬 La Cascade Biochimique de l'Inflammation</h3>
                         
@@ -135,10 +139,8 @@
                     <p class="text-slate-600 pt-2">En comprenant ce mécanisme, on comprend mieux pourquoi les <strong>Corticoïdes</strong> (qui coupent l'inflammation à la source via PL-A2) ont un pouvoir anti-inflammatoire bien supérieur aux <strong>AINS</strong> (qui bloquent seulement la voie COX).</p>
                 </div>
 
-                <!-- Vidéo d'explication de l'inflammation ajoutée ici -->
                 <div class="mt-8">
                     <h3 class="text-xl font-bold text-red-600 mb-4 border-b pb-2 border-red-300">Vidéo explicative : L'Inflammation en 6 minutes</h3>
-                    <!-- Conteneur responsive pour la vidéo -->
                     <div class="aspect-video w-full rounded-xl overflow-hidden shadow-2xl ring-4 ring-red-300/50">
                         <iframe 
                             src="https://www.youtube.com/embed/mxNUvVj3ixU" 
@@ -149,10 +151,8 @@
                         ></iframe>
                     </div>
                 </div>
-                <!-- Fin de la vidéo -->
-            </div>
+                </div>
 
-            <!-- AINS Page -->
             <div id="ains" class="page hidden">
                 <h2 class="text-2xl md:text-3xl font-bold text-orange-600">Anti-Inflammatoires Non Stéroïdiens (AINS)</h2>
                 <div class="space-y-4 mt-4">
@@ -198,7 +198,6 @@
                 </div>
             </div>
 
-            <!-- Corticoïdes Page -->
             <div id="cortico" class="page hidden">
                 <h2 class="text-2xl md:text-3xl font-bold text-lime-600">Corticoïdes (Glucocorticoïdes)</h2>
                 <div class="space-y-4 mt-4">
@@ -244,15 +243,13 @@
                 </div>
             </div>
 
-            <!-- Quiz Page -->
             <div id="quiz" class="page hidden">
                 <div class="bg-gradient-to-br from-slate-50 to-gray-100 p-6 sm:p-8 md:p-10 rounded-2xl shadow-inner">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-2">Quiz Interactif</h2>
                     <p class="text-slate-600 mb-8">Testez vos connaissances sur les AINS et les Corticoïdes.</p>
                     
                     <div id="qcm-container" class="space-y-8">
-                        <!-- Les questions du quiz seront injectées ici par le JavaScript -->
-                    </div>
+                        </div>
 
                     <div id="quiz-footer" class="mt-10 pt-6 border-t-2 border-slate-200 flex justify-between items-center">
                         <p id="quiz-score" class="text-xl md:text-2xl font-bold text-slate-800"></p>
@@ -265,11 +262,8 @@
             
         </main>
 
-        <!-- Footer (Replicating Header Style) -->
-        <!-- Placé à l'intérieur de l'élément #app pour bénéficier de la bordure et de l'ombre -->
         <footer id="footer" class="bg-slate-800 text-white p-4 md:p-6 mt-auto">
             <div class="flex items-center justify-center md:justify-end text-center">
-                <!-- Mobile/Tablet & Desktop Author Info (Footer) -->
                 <p class="font-bold text-slate-300 text-xs sm:text-sm">
                 <span class="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2025
                 </p>
@@ -507,4 +501,3 @@
     </script>
 </body>
 </html>
-
