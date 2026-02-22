@@ -1,139 +1,213 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Les Anticoagulants : Cours Pharmacologie IFSI - UE 2.11 S1</title>
-    
-    <meta name="description" content="Fiche de révision complète sur les anticoagulants pour étudiants infirmiers (IFSI). Hémostase, Héparines (HNF/HBPM), AVK, AOD, surveillance biologique (INR, TCA) et rôle infirmier.">
-    
-    <meta property="og:title" content="Les Anticoagulants - Révision Pharmacologie IFSI">
-    <meta property="og:description" content="Tout comprendre sur l'hémostase et les traitements anticoagulants. Fiche de révision UE 2.11.">
+
+    <title>Les Antithrombotiques : Cours Pharmacologie IFSI - UE 2.11 S1</title>
+
+    <meta name="description"
+        content="Fiche de révision complète sur les antithrombotiques pour étudiants infirmiers (IFSI). Hémostase, Héparines (HNF/HBPM), AVK, AOD, surveillance biologique (INR, TCA) et rôle infirmier.">
+
+    <meta property="og:title" content="Les Antithrombotiques - Révision Pharmacologie IFSI">
+    <meta property="og:description"
+        content="Tout comprendre sur l'hémostase et les traitements antithrombotiques. Fiche de révision UE 2.11.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lcssrd.github.io/pharmaco/antico.html">
-    
+
     <link rel="canonical" href="https://lcssrd.github.io/pharmaco/antico.html" />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         html {
-            overflow-y: scroll; /* Force the scrollbar to always be visible, preventing layout shifts */
+            overflow-y: scroll;
+            /* Force the scrollbar to always be visible, preventing layout shifts */
         }
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f0f4f8;
         }
+
         /* Animation for page transitions */
         .page {
             animation: fadeIn 0.5s ease-in-out;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         /* Quiz specific styles */
         .qcm-option.correct {
-            background-image: linear-gradient(to right, #4ade80, #16a34a); /* from-green-400 to-green-600 */
+            background-image: linear-gradient(to right, #4ade80, #16a34a);
+            /* from-green-400 to-green-600 */
             color: white;
-            border-color: #15803d; /* green-700 */
+            border-color: #15803d;
+            /* green-700 */
             font-weight: 600;
         }
+
         .qcm-option.incorrect {
-            background-image: linear-gradient(to right, #f87171, #dc2626); /* from-red-400 to-red-600 */
+            background-image: linear-gradient(to right, #f87171, #dc2626);
+            /* from-red-400 to-red-600 */
             color: white;
-            border-color: #b91c1c; /* red-700 */
+            border-color: #b91c1c;
+            /* red-700 */
             font-weight: 600;
         }
+
         .qcm-option:disabled {
             cursor: not-allowed;
         }
+
         .qcm-option:disabled:not(.correct):not(.incorrect) {
-            color: #475569; /* slate-600 */
-            background-color: #f1f5f9; /* slate-100 */
+            color: #475569;
+            /* slate-600 */
+            background-color: #f1f5f9;
+            /* slate-100 */
             opacity: 0.7;
         }
     </style>
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="a71ff4d4-4d84-4066-aa50-313ab8d66b1b"></script>
+    <script defer src="https://cloud.umami.is/script.js"
+        data-website-id="a71ff4d4-4d84-4066-aa50-313ab8d66b1b"></script>
 </head>
+
 <body class="p-2 sm:p-4 md:p-8">
     <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
         <header class="bg-slate-800 text-white p-6 md:p-8">
             <div class="flex items-center justify-between">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent pb-2">Les Anticoagulants (Cours IFSI)</h1>
+                <h1
+                    class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent pb-2">
+                    Les Antithrombotiques (Cours IFSI)</h1>
                 <div class="hidden md:flex text-right font-bold text-slate-300 text-sm">
-                    <p><span class="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2025</p>
+                    <p><span class="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">Lucas
+                            Séraudie</span> - 2025</p>
                 </div>
             </div>
 
             <nav class="pt-6">
                 <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-4 sm:grid-cols-4 md:grid-cols-8 gap-2">
-                   <button data-page="hemostase" onclick="showPage('hemostase')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Hémostase</button>
-                   <button data-page="aap" onclick="showPage('aap')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">AAP</button>
-                   <button data-page="hnf" onclick="showPage('hnf')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">HNF</button>
-                   <button data-page="hbpm" onclick="showPage('hbpm')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">HBPM</button>
-                   <button data-page="aod" onclick="showPage('aod')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">AOD</button>
-                   <button data-page="avk" onclick="showPage('avk')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">AVK</button>
-                   <button data-page="quiz" onclick="showPage('quiz')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Quiz</button>
-                   <button data-page="synthese" onclick="showPage('synthese')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Synthèse</button>
+                    <button data-page="hemostase" onclick="showPage('hemostase')"
+                        class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Hémostase</button>
+                    <button data-page="aap" onclick="showPage('aap')"
+                        class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">AAP</button>
+                    <button data-page="hnf" onclick="showPage('hnf')"
+                        class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">HNF</button>
+                    <button data-page="hbpm" onclick="showPage('hbpm')"
+                        class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">HBPM</button>
+                    <button data-page="aod" onclick="showPage('aod')"
+                        class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">AOD</button>
+                    <button data-page="avk" onclick="showPage('avk')"
+                        class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">AVK</button>
+                    <button data-page="quiz" onclick="showPage('quiz')"
+                        class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Quiz</button>
+                    <button data-page="synthese" onclick="showPage('synthese')"
+                        class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Synthèse</button>
                 </div>
-           </nav>
+            </nav>
         </header>
 
         <main class="p-4 sm:p-6 md:p-8">
 
             <div id="hemostase" class="page">
-                 <section class="bg-gradient-to-br from-red-100 to-orange-100 rounded-2xl p-6 md:p-12">
-                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">🩸<span class="bg-gradient-to-br from-red-500 to-orange-500 bg-clip-text text-transparent">L'HÉMOSTASE</span></h3>
-                    <p class="text-center text-slate-700 mb-8 -mt-8">L'hémostase est le processus physiologique qui permet d'arrêter un saignement. Elle se déroule en trois étapes principales, suivies d'une étape de réparation.</p>
+                <section class="bg-gradient-to-br from-red-100 to-orange-100 rounded-2xl p-6 md:p-12">
+                    <h3
+                        class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        🩸<span
+                            class="bg-gradient-to-br from-red-500 to-orange-500 bg-clip-text text-transparent">L'HÉMOSTASE</span>
+                    </h3>
+                    <p class="text-center text-slate-700 mb-8 -mt-8">L'hémostase est le processus physiologique qui
+                        permet d'arrêter un saignement. Elle se déroule en trois étapes principales, suivies d'une étape
+                        de réparation.</p>
                     <div class="space-y-8">
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-red-800">① L'HÉMOSTASE PRIMAIRE : LE CLOU PLAQUETTAIRE</h4>
-                            <p class="mt-2 text-slate-700">C'est la première réponse à une brèche vasculaire. Elle est rapide mais fragile.</p>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-red-800">① L'HÉMOSTASE PRIMAIRE
+                                : LE CLOU PLAQUETTAIRE</h4>
+                            <p class="mt-2 text-slate-700">C'est la première réponse à une brèche vasculaire. Elle est
+                                rapide mais fragile.</p>
                             <ul class="list-disc list-inside mt-2 space-y-1 text-slate-700">
-                                <li><strong>Vasoconstriction :</strong> Le vaisseau sanguin se contracte pour réduire le débit sanguin.</li>
-                                <li><strong>Adhésion plaquettaire :</strong> Les plaquettes sanguines adhèrent à la paroi du vaisseau endommagé.</li>
-                                <li><strong>Activation et agrégation plaquettaire :</strong> Les plaquettes changent de forme, libèrent des substances qui attirent d'autres plaquettes et s'agglutinent pour former un "bouchon" appelé le clou plaquettaire.</li>
+                                <li><strong>Vasoconstriction :</strong> Le vaisseau sanguin se contracte pour réduire le
+                                    débit sanguin.</li>
+                                <li><strong>Adhésion plaquettaire :</strong> Les plaquettes sanguines adhèrent à la
+                                    paroi du vaisseau endommagé.</li>
+                                <li><strong>Activation et agrégation plaquettaire :</strong> Les plaquettes changent de
+                                    forme, libèrent des substances qui attirent d'autres plaquettes et s'agglutinent
+                                    pour former un "bouchon" appelé le clou plaquettaire.</li>
                             </ul>
-                            <p class="mt-2 italic bg-red-100 p-2 rounded text-slate-800"><strong>Objectif :</strong> Former une barrière temporaire pour limiter la perte de sang.</p>
+                            <p class="mt-2 italic bg-red-100 p-2 rounded text-slate-800"><strong>Objectif :</strong>
+                                Former une barrière temporaire pour limiter la perte de sang.</p>
                         </div>
 
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-red-800">② LA COAGULATION SANGUINE : LE CAILLOT DE FIBRINE</h4>
-                            <p class="mt-2 text-slate-700">C'est la deuxième étape, plus lente mais plus solide. Elle vise à renforcer le clou plaquettaire.</p>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-red-800">② LA COAGULATION
+                                SANGUINE : LE CAILLOT DE FIBRINE</h4>
+                            <p class="mt-2 text-slate-700">C'est la deuxième étape, plus lente mais plus solide. Elle
+                                vise à renforcer le clou plaquettaire.</p>
                             <ul class="list-disc list-inside mt-2 space-y-1 text-slate-700">
-                                <li><strong>Cascade de coagulation :</strong> Une série de réactions en chaîne active des protéines appelées facteurs de coagulation.</li>
-                                <li><strong>Formation de la thrombine :</strong> Cette cascade aboutit à la formation de la thrombine.</li>
-                                <li><strong>Formation de la fibrine :</strong> La thrombine transforme le fibrinogène (soluble) en fibrine (insoluble).</li>
-                                <li><strong>Réseau de fibrine :</strong> La fibrine forme un réseau de filaments qui emprisonne les globules rouges et les plaquettes, créant ainsi un caillot sanguin solide et stable.</li>
+                                <li><strong>Cascade de coagulation :</strong> Une série de réactions en chaîne active
+                                    des protéines appelées facteurs de coagulation.</li>
+                                <li><strong>Formation de la thrombine :</strong> Cette cascade aboutit à la formation de
+                                    la thrombine.</li>
+                                <li><strong>Formation de la fibrine :</strong> La thrombine transforme le fibrinogène
+                                    (soluble) en fibrine (insoluble).</li>
+                                <li><strong>Réseau de fibrine :</strong> La fibrine forme un réseau de filaments qui
+                                    emprisonne les globules rouges et les plaquettes, créant ainsi un caillot sanguin
+                                    solide et stable.</li>
                             </ul>
-                            <p class="mt-2 italic bg-red-100 p-2 rounded text-slate-800"><strong>Objectif :</strong> Consolider le clou plaquettaire et former un caillot sanguin durable.</p>
+                            <p class="mt-2 italic bg-red-100 p-2 rounded text-slate-800"><strong>Objectif :</strong>
+                                Consolider le clou plaquettaire et former un caillot sanguin durable.</p>
                         </div>
 
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                             <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-red-800">③ LA FIBRINOLYSE : LA DISSOLUTION DU CAILLOT</h4>
-                             <p class="mt-2 text-slate-700">Une fois la cicatrisation terminée, le caillot doit être dissous pour rétablir la circulation sanguine.</p>
-                             <ul class="list-disc list-inside mt-2 space-y-1 text-slate-700">
-                                 <li><strong>Activation du plasminogène :</strong> Le plasminogène (inactif) est transformé en plasmine (active).</li>
-                                 <li><strong>Action de la plasmine :</strong> La plasmine dégrade la fibrine, ce qui entraîne la dissolution du caillot.</li>
-                             </ul>
-                             <p class="mt-2 italic bg-red-100 p-2 rounded text-slate-800"><strong>Objectif :</strong> Rétablir l'intégrité du vaisseau sanguin et la fluidité du sang.</p>
-                        </div>
-                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 border-l-4 border-red-400">
-                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-red-800">💡 POINTS CLÉS POUR LA PRATIQUE INFIRMIÈRE</h4>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-red-800">③ LA FIBRINOLYSE : LA
+                                DISSOLUTION DU CAILLOT</h4>
+                            <p class="mt-2 text-slate-700">Une fois la cicatrisation terminée, le caillot doit être
+                                dissous pour rétablir la circulation sanguine.</p>
                             <ul class="list-disc list-inside mt-2 space-y-1 text-slate-700">
-                                <li><strong>Les traitements antiagrégants plaquettaires :</strong> (Aspirine, Clopidogrel) agissent sur l'hémostase primaire.</li>
-                                <li><strong>Les traitements anticoagulants</strong> (Héparine, AVK, AOD) agissent sur la cascade de coagulation.</li>
+                                <li><strong>Activation du plasminogène :</strong> Le plasminogène (inactif) est
+                                    transformé en plasmine (active).</li>
+                                <li><strong>Action de la plasmine :</strong> La plasmine dégrade la fibrine, ce qui
+                                    entraîne la dissolution du caillot.</li>
+                            </ul>
+                            <p class="mt-2 italic bg-red-100 p-2 rounded text-slate-800"><strong>Objectif :</strong>
+                                Rétablir l'intégrité du vaisseau sanguin et la fluidité du sang.</p>
+                        </div>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 border-l-4 border-red-400">
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-red-800">💡 POINTS CLÉS POUR LA
+                                PRATIQUE INFIRMIÈRE</h4>
+                            <ul class="list-disc list-inside mt-2 space-y-1 text-slate-700">
+                                <li><strong>Les traitements antiagrégants plaquettaires :</strong> (Aspirine,
+                                    Clopidogrel) agissent sur l'hémostase primaire.</li>
+                                <li><strong>Les traitements anticoagulants</strong> (Héparine, AVK, AOD) agissent sur la
+                                    cascade de coagulation.</li>
                             </ul>
                         </div>
                         <div class="bg-white p-4 rounded-xl shadow-lg flex justify-center">
                             <div class="w-full max-w-4xl aspect-video">
-                                <iframe class="w-full h-full rounded-lg" src="https://www.youtube.com/embed/cp-A8UwSaFc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <iframe class="w-full h-full rounded-lg" src="https://www.youtube.com/embed/cp-A8UwSaFc"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
@@ -142,43 +216,79 @@
 
             <div id="aap" class="page hidden">
                 <section class="bg-gradient-to-br from-purple-100 to-indigo-100 rounded-2xl p-6 md:p-12">
-                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-purple-500 to-indigo-600 bg-clip-text text-transparent">Antiagrégants plaquettaires (AAP)</span></h3>
+                    <h3
+                        class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        <span
+                            class="bg-gradient-to-br from-purple-500 to-indigo-600 bg-clip-text text-transparent">Antiagrégants
+                            plaquettaires (AAP)</span></h3>
                     <div class="space-y-8">
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-purple-800">💊 Exemples</h4>
                             <table class="w-full text-sm text-left mt-4">
-                                <thead class="bg-purple-100"><tr><th class="p-2 font-semibold text-purple-800">DCI</th><th class="p-2 font-semibold text-purple-800">Nom Commercial</th></tr></thead>
+                                <thead class="bg-purple-100">
+                                    <tr>
+                                        <th class="p-2 font-semibold text-purple-800">DCI</th>
+                                        <th class="p-2 font-semibold text-purple-800">Nom Commercial</th>
+                                    </tr>
+                                </thead>
                                 <tbody class="text-purple-700">
-                                    <tr><td class="p-2">Acide acétylsalicylique</td><td class="p-2">Kardegic®</td></tr>
-                                    <tr class="bg-purple-50"><td class="p-2">Clopidogrel</td><td class="p-2">Plavix®</td></tr>
-                                    <tr><td class="p-2">Prasugrel</td><td class="p-2">Efient®</td></tr>
-                                    <tr class="bg-purple-50"><td class="p-2">Ticagrelor</td><td class="p-2">Brilique®</td></tr>
+                                    <tr>
+                                        <td class="p-2">Acide acétylsalicylique</td>
+                                        <td class="p-2">Kardegic®</td>
+                                    </tr>
+                                    <tr class="bg-purple-50">
+                                        <td class="p-2">Clopidogrel</td>
+                                        <td class="p-2">Plavix®</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2">Prasugrel</td>
+                                        <td class="p-2">Efient®</td>
+                                    </tr>
+                                    <tr class="bg-purple-50">
+                                        <td class="p-2">Ticagrelor</td>
+                                        <td class="p-2">Brilique®</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                           <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-purple-800">⚙️ Mécanisme d'action</h4>
-                           <p class="text-slate-700 mt-2">Inhibent l'activation et l'agrégation des plaquettes, empêchant ainsi la formation du clou plaquettaire.</p>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-purple-800">⚙️ Mécanisme
+                                d'action</h4>
+                            <p class="text-slate-700 mt-2">Inhibent l'activation et l'agrégation des plaquettes,
+                                empêchant ainsi la formation du clou plaquettaire.</p>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                           <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-purple-800">🔬 Surveillance</h4>
-                           <p class="text-slate-700 mt-2">Principalement clinique. Aucune surveillance biologique de routine n'est nécessaire. Surveillance des signes d'hémorragie.</p>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-purple-800">🔬 Surveillance
+                            </h4>
+                            <p class="text-slate-700 mt-2">Principalement clinique. Aucune surveillance biologique de
+                                routine n'est nécessaire. Surveillance des signes d'hémorragie.</p>
                         </div>
-                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-purple-800">⚠️ Points de vigilance</h4>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-purple-800">⚠️ Points de
+                                vigilance</h4>
                             <ul class="list-disc list-inside text-slate-700 mt-2 space-y-1">
-                                <li>Risque d'ulcère élevé, en particulier en cas de saignement digestif. Associer un protecteur gastrique (IPP).</li>
+                                <li>Risque d'ulcère élevé, en particulier en cas de saignement digestif. Associer un
+                                    protecteur gastrique (IPP).</li>
                                 <li>Ne pas associer à des AINS ou d'autres anticoagulants sans avis médical.</li>
-                                <li>Arrêt du traitement avant une intervention chirurgicale selon les protocoles en vigueur.</li>
+                                <li>Arrêt du traitement avant une intervention chirurgicale selon les protocoles en
+                                    vigueur.</li>
                                 <li>Il n'existe pas d'antidote spécifique pour neutraliser leur effet.</li>
                             </ul>
                         </div>
-                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 border-l-4 border-purple-400">
-                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-purple-800">🎓 Éducation Thérapeutique du Patient</h4>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 border-l-4 border-purple-400">
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-purple-800">🎓 Éducation
+                                Thérapeutique du Patient</h4>
                             <ul class="list-disc list-inside text-slate-700 mt-2 space-y-1">
                                 <li>Informer tous les professionnels de santé.</li>
-                                <li>Surveiller les saignements inhabituels (saignement des gencives, hématomes spontanés, saignement de nez).</li>
-                                <li>Ne pas prendre d'autres médicaments, en particulier ceux contenant de l'aspirine, sans en parler à un professionnel.</li>
+                                <li>Surveiller les saignements inhabituels (saignement des gencives, hématomes
+                                    spontanés, saignement de nez).</li>
+                                <li>Ne pas prendre d'autres médicaments, en particulier ceux contenant de l'aspirine,
+                                    sans en parler à un professionnel.</li>
                             </ul>
                         </div>
                     </div>
@@ -187,41 +297,75 @@
 
             <div id="hnf" class="page hidden">
                 <section class="bg-gradient-to-br from-sky-100 to-cyan-100 rounded-2xl p-6 md:p-12">
-                     <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-sky-400 to-cyan-500 bg-clip-text text-transparent">Héparines Non Fractionnées (HNF)</span></h3>
+                    <h3
+                        class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        <span class="bg-gradient-to-br from-sky-400 to-cyan-500 bg-clip-text text-transparent">Héparines
+                            Non Fractionnées (HNF)</span></h3>
                     <div class="space-y-8">
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                           <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-blue-800">💊 Exemples</h4>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-blue-800">💊 Exemples</h4>
                             <table class="w-full text-sm text-left mt-4">
-                                <thead class="bg-blue-100"><tr><th class="p-2 font-semibold text-blue-800">DCI</th><th class="p-2 font-semibold text-blue-800">Nom Commercial</th></tr></thead>
+                                <thead class="bg-blue-100">
+                                    <tr>
+                                        <th class="p-2 font-semibold text-blue-800">DCI</th>
+                                        <th class="p-2 font-semibold text-blue-800">Nom Commercial</th>
+                                    </tr>
+                                </thead>
                                 <tbody class="text-blue-700">
-                                    <tr><td class="p-2">Héparine sodique</td><td class="p-2">Héparine sodique Panpharma®</td></tr>
-                                    <tr class="bg-blue-50"><td class="p-2">Héparine calcique</td><td class="p-2">Calciparine®</td></tr>
+                                    <tr>
+                                        <td class="p-2">Héparine sodique</td>
+                                        <td class="p-2">Héparine sodique Panpharma®</td>
+                                    </tr>
+                                    <tr class="bg-blue-50">
+                                        <td class="p-2">Héparine calcique</td>
+                                        <td class="p-2">Calciparine®</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                           <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-blue-800">⚙️ Mécanisme d'action</h4>
-                           <p class="text-slate-700 mt-2">Potentialisent l'activité de l'antithrombine, inhibant la thrombine (IIa) et le facteur Xa.</p>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-blue-800">⚙️ Mécanisme d'action
+                            </h4>
+                            <p class="text-slate-700 mt-2">Potentialisent l'activité de l'antithrombine, inhibant la
+                                thrombine (IIa) et le facteur Xa.</p>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                           <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-blue-800">🔬 Administration & Surveillance</h4>
-                           <p class="text-slate-700 mt-2"><span class="font-bold">Voies :</span> IV (seringue électrique) ou SC. 
-                           <br><br><span class="font-bold">Risque hémorragique</span>
-                           <br><br><span class="font-bold">Surveillance de l'efficacité :</span> TCA (Temps de Céphaline Activée), cible de 1,5 à 3 fois le temps témoin. <br><span class="font-bold">Surveillance de l'effet indésirable de TIH :</span> Numération plaquettaire (risque de thrombopénie).</p>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-blue-800">🔬 Administration &
+                                Surveillance</h4>
+                            <p class="text-slate-700 mt-2"><span class="font-bold">Voies :</span> IV (seringue
+                                électrique) ou SC.
+                                <br><br><span class="font-bold">Risque hémorragique</span>
+                                <br><br><span class="font-bold">Surveillance de l'efficacité :</span> TCA (Temps de
+                                Céphaline Activée), cible de 1,5 à 3 fois le temps témoin. <br><span
+                                    class="font-bold">Surveillance de l'effet indésirable de TIH :</span> Numération
+                                plaquettaire (risque de thrombopénie).
+                            </p>
                         </div>
-                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-blue-800">⚠️ Points de vigilance</h4>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-blue-800">⚠️ Points de
+                                vigilance</h4>
                             <ul class="list-disc list-inside text-slate-700 mt-2 space-y-1">
                                 <li>Demi-vie courte, nécessite une administration continue en curatif.</li>
                                 <li>Risque de TIH (Thrombopénie Induite par l'Héparine).</li>
                                 <li>Antidote : Sulfate de protamine.</li>
                             </ul>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <h4 class="text-xl sm:text-2xl font-bold text-slate-800 mb-4">📊 Comparaison HNF / HBPM</h4>
                             <div class="md:flex md:items-center md:space-x-6">
                                 <div class="md:w-1/2 lg:w-2/5"><canvas id="heparineChartHNF"></canvas></div>
-                                <div class="md:w-1/2 lg:w-3/5"><p class="text-sm text-slate-600 mt-4 md:mt-0">Ce graphique compare les profils des deux types d'héparines. On voit que les HBPM ont une demi-vie plus longue et une surveillance moins contraignante, ce qui facilite leur usage en ambulatoire. L'HNF, avec sa demi-vie courte, est préférée en situation d'urgence où une réversibilité rapide est nécessaire.</p></div>
+                                <div class="md:w-1/2 lg:w-3/5">
+                                    <p class="text-sm text-slate-600 mt-4 md:mt-0">Ce graphique compare les profils des
+                                        deux types d'héparines. On voit que les HBPM ont une demi-vie plus longue et une
+                                        surveillance moins contraignante, ce qui facilite leur usage en ambulatoire.
+                                        L'HNF, avec sa demi-vie courte, est préférée en situation d'urgence où une
+                                        réversibilité rapide est nécessaire.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -230,75 +374,142 @@
 
             <div id="hbpm" class="page hidden">
                 <section class="bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl p-6 md:p-12">
-                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-blue-600 to-indigo-700 bg-clip-text text-transparent">Héparines de Bas Poids Moléculaire (HBPM)</span></h3>
-                     <div class="space-y-8">
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                    <h3
+                        class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        <span
+                            class="bg-gradient-to-br from-blue-600 to-indigo-700 bg-clip-text text-transparent">Héparines
+                            de Bas Poids Moléculaire (HBPM)</span></h3>
+                    <div class="space-y-8">
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-blue-950">💊 Exemples</h4>
                             <table class="w-full text-sm text-left mt-4">
-                                <thead class="bg-blue-950/20"><tr><th class="p-2 font-semibold text-blue-950">DCI</th><th class="p-2 font-semibold text-blue-950">Nom Commercial</th></tr></thead>
+                                <thead class="bg-blue-950/20">
+                                    <tr>
+                                        <th class="p-2 font-semibold text-blue-950">DCI</th>
+                                        <th class="p-2 font-semibold text-blue-950">Nom Commercial</th>
+                                    </tr>
+                                </thead>
                                 <tbody class="text-blue-950">
-                                    <tr><td class="p-2">Enoxaparine</td><td class="p-2">Lovenox®</td></tr>
-                                    <tr class="bg-blue-900/10"><td class="p-2">Tinzaparine</td><td class="p-2">Innohep®</td></tr>
-                                    <tr><td class="p-2">Deltéparine</td><td class="p-2">Fragmine®</td></tr>
+                                    <tr>
+                                        <td class="p-2">Enoxaparine</td>
+                                        <td class="p-2">Lovenox®</td>
+                                    </tr>
+                                    <tr class="bg-blue-900/10">
+                                        <td class="p-2">Tinzaparine</td>
+                                        <td class="p-2">Innohep®</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2">Deltéparine</td>
+                                        <td class="p-2">Fragmine®</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                           <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-blue-950">⚙️ Mécanisme d'action</h4>
-                           <p class="text-slate-700 mt-2">Activité anti-Xa prédominante. Moins d'effet sur la thrombine.</p>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-blue-950">⚙️ Mécanisme d'action
+                            </h4>
+                            <p class="text-slate-700 mt-2">Activité anti-Xa prédominante. Moins d'effet sur la
+                                thrombine.</p>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                           <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-blue-950">🔬 Administration & Surveillance</h4>
-                           <p class="text-slate-700 mt-2"><span class="font-bold">Voie :</span> Sous-cutanée (SC). <br>
-                           <br><span class="font-bold">Risque hémorragique</span>
-                           <br><br><span class="font-bold">Surveillance de l'efficacité :</span> Activité anti-Xa (si besoin) : cible entre 0,6-1,0 UI/mL. <br><span class="font-bold">Surveillance de l'effet indésirable de TIH :</span> Numération plaquettaire (risque de thrombopénie).</p>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-blue-950">🔬 Administration &
+                                Surveillance</h4>
+                            <p class="text-slate-700 mt-2"><span class="font-bold">Voie :</span> Sous-cutanée (SC). <br>
+                                <br><span class="font-bold">Risque hémorragique</span>
+                                <br><br><span class="font-bold">Surveillance de l'efficacité :</span> Activité anti-Xa
+                                (si besoin) : cible entre 0,6-1,0 UI/mL. <br><span class="font-bold">Surveillance de
+                                    l'effet indésirable de TIH :</span> Numération plaquettaire (risque de
+                                thrombopénie).
+                            </p>
                         </div>
-                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-blue-950">⚠️ Points de vigilance</h4>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-blue-950">⚠️ Points de
+                                vigilance</h4>
                             <ul class="list-disc list-inside text-slate-700 mt-2 space-y-1">
                                 <li>Demi-vie plus longue que les HNF (1 à 2 injections/jour).</li>
                                 <li>Risque de TIH plus faible mais existant.</li>
                                 <li>Élimination rénale : ajustement si insuffisance rénale.</li>
                             </ul>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <h4 class="text-xl sm:text-2xl font-bold text-slate-800 mb-4">📊 Comparaison HNF / HBPM</h4>
                             <div class="md:flex md:items-center md:space-x-6">
                                 <div class="md:w-1/2 lg:w-2/5"><canvas id="heparineChartHBPM"></canvas></div>
-                                <div class="md:w-1/2 lg:w-3/5"><p class="text-sm text-slate-600 mt-4 md:mt-0">Ce graphique compare les profils des deux types d'héparines. On voit que les HBPM ont une demi-vie plus longue et une surveillance moins contraignante, ce qui facilite leur usage en ambulatoire. L'HNF, avec sa demi-vie courte, est préférée en situation d'urgence où une réversibilité rapide est nécessaire.</p></div>
+                                <div class="md:w-1/2 lg:w-3/5">
+                                    <p class="text-sm text-slate-600 mt-4 md:mt-0">Ce graphique compare les profils des
+                                        deux types d'héparines. On voit que les HBPM ont une demi-vie plus longue et une
+                                        surveillance moins contraignante, ce qui facilite leur usage en ambulatoire.
+                                        L'HNF, avec sa demi-vie courte, est préférée en situation d'urgence où une
+                                        réversibilité rapide est nécessaire.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
-            </div>            
-            
+            </div>
+
             <div id="aod" class="page hidden">
                 <section class="bg-gradient-to-br from-amber-100 to-yellow-100 rounded-2xl p-6 md:p-12">
-                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-amber-500 to-yellow-500 bg-clip-text text-transparent">Anticoagulants Oraux Directs (AOD)</span></h3>
+                    <h3
+                        class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        <span
+                            class="bg-gradient-to-br from-amber-500 to-yellow-500 bg-clip-text text-transparent">Anticoagulants
+                            Oraux Directs (AOD)</span></h3>
                     <div class="space-y-8">
-                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-yellow-800">💊 Exemples</h4>
                             <table class="w-full text-sm text-left mt-4">
-                                <thead class="bg-yellow-100"><tr><th class="p-2 font-semibold text-yellow-800">DCI</th><th class="p-2 font-semibold text-yellow-800">Nom Commercial</th></tr></thead>
+                                <thead class="bg-yellow-100">
+                                    <tr>
+                                        <th class="p-2 font-semibold text-yellow-800">DCI</th>
+                                        <th class="p-2 font-semibold text-yellow-800">Nom Commercial</th>
+                                    </tr>
+                                </thead>
                                 <tbody class="text-yellow-700">
-                                    <tr><td class="p-2">Rivaroxaban</td><td class="p-2">Xarelto®</td></tr>
-                                    <tr class="bg-yellow-50"><td class="p-2">Apixaban</td><td class="p-2">Eliquis®</td></tr>
-                                    <tr><td class="p-2">Dabigatran</td><td class="p-2">Pradaxa®</td></tr>
-                                    <tr class="bg-yellow-50"><td class="p-2">Edoxaban</td><td class="p-2">Lixiana®</td></tr>
+                                    <tr>
+                                        <td class="p-2">Rivaroxaban</td>
+                                        <td class="p-2">Xarelto®</td>
+                                    </tr>
+                                    <tr class="bg-yellow-50">
+                                        <td class="p-2">Apixaban</td>
+                                        <td class="p-2">Eliquis®</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2">Dabigatran</td>
+                                        <td class="p-2">Pradaxa®</td>
+                                    </tr>
+                                    <tr class="bg-yellow-50">
+                                        <td class="p-2">Edoxaban</td>
+                                        <td class="p-2">Lixiana®</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                           <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-yellow-800">⚙️ Mécanisme d'action</h4>
-                           <p class="text-slate-700 mt-2">Inhibiteurs directs soit de la thrombine (Dabigatran) soit du facteur Xa (Rivaroxaban, Apixaban).</p>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-yellow-800">⚙️ Mécanisme
+                                d'action</h4>
+                            <p class="text-slate-700 mt-2">Inhibiteurs directs soit de la thrombine (Dabigatran) soit du
+                                facteur Xa (Rivaroxaban, Apixaban).</p>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                           <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-yellow-800">🔬 Surveillance</h4>
-                           <p class="text-slate-700 mt-2">Pas de surveillance biologique de routine. Évaluation de la fonction rénale et hépatique nécessaire.</p>
-                           <br><span class="font-bold">Risque hémorragique</span>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-yellow-800">🔬 Surveillance
+                            </h4>
+                            <p class="text-slate-700 mt-2">Pas de surveillance biologique de routine. Évaluation de la
+                                fonction rénale et hépatique nécessaire.</p>
+                            <br><span class="font-bold">Risque hémorragique</span>
                         </div>
-                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-yellow-800">⚠️ Points de vigilance</h4>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-yellow-800">⚠️ Points de
+                                vigilance</h4>
                             <ul class="list-disc list-inside text-slate-700 mt-2 space-y-1">
                                 <li>Prise fixe, observance primordiale.</li>
                                 <li>Moins d'interactions alimentaires que les AVK.</li>
@@ -306,11 +517,18 @@
                                 <li>Gestion péri-opératoire spécifique.</li>
                             </ul>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <h4 class="text-xl sm:text-2xl font-bold text-slate-800 mb-4">📊 Comparaison AVK / AOD</h4>
                             <div class="md:flex md:items-center md:space-x-6">
                                 <div class="md:w-1/2 lg:w-2/5"><canvas id="oralAnticoagChartAOD"></canvas></div>
-                                <div class="md:w-1/2 lg:w-3/5"><p class="text-sm text-slate-600 mt-4 md:mt-0">Ce graphique met en évidence les différences majeures entre les AVK et les AOD. Les AOD offrent un confort d'utilisation supérieur grâce à un délai d'action rapide, une absence de surveillance biologique de routine, moins d'interactions et des relais simplifiés. Les AVK, plus anciens, nécessitent une gestion plus rigoureuse.</p></div>
+                                <div class="md:w-1/2 lg:w-3/5">
+                                    <p class="text-sm text-slate-600 mt-4 md:mt-0">Ce graphique met en évidence les
+                                        différences majeures entre les AVK et les AOD. Les AOD offrent un confort
+                                        d'utilisation supérieur grâce à un délai d'action rapide, une absence de
+                                        surveillance biologique de routine, moins d'interactions et des relais
+                                        simplifiés. Les AVK, plus anciens, nécessitent une gestion plus rigoureuse.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -319,31 +537,58 @@
 
             <div id="avk" class="page hidden">
                 <section class="bg-gradient-to-br from-red-100 to-orange-100 rounded-2xl p-6 md:p-12">
-                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-red-500 to-orange-500 bg-clip-text text-transparent">Antivitamines K (AVK)</span></h3>
+                    <h3
+                        class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        <span
+                            class="bg-gradient-to-br from-red-500 to-orange-500 bg-clip-text text-transparent">Antivitamines
+                            K (AVK)</span></h3>
                     <div class="space-y-8">
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-red-800">💊 Exemples</h4>
-                             <table class="w-full text-sm text-left mt-4">
-                                <thead class="bg-red-100"><tr><th class="p-2 font-semibold text-red-800">DCI</th><th class="p-2 font-semibold text-red-800">Nom Commercial</th></tr></thead>
+                            <table class="w-full text-sm text-left mt-4">
+                                <thead class="bg-red-100">
+                                    <tr>
+                                        <th class="p-2 font-semibold text-red-800">DCI</th>
+                                        <th class="p-2 font-semibold text-red-800">Nom Commercial</th>
+                                    </tr>
+                                </thead>
                                 <tbody class="text-red-700">
-                                    <tr><td class="p-2">Warfarine</td><td class="p-2">Coumadine®</td></tr>
-                                    <tr class="bg-red-50"><td class="p-2">Fluindione</td><td class="p-2">Préviscan®</td></tr>
-                                    <tr><td class="p-2">Acénocoumarol</td><td class="p-2">Sintrom®</td></tr>
+                                    <tr>
+                                        <td class="p-2">Warfarine</td>
+                                        <td class="p-2">Coumadine®</td>
+                                    </tr>
+                                    <tr class="bg-red-50">
+                                        <td class="p-2">Fluindione</td>
+                                        <td class="p-2">Préviscan®</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2">Acénocoumarol</td>
+                                        <td class="p-2">Sintrom®</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                           <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-red-800">⚙️ Mécanisme d'action</h4>
-                           <p class="text-slate-700 mt-2">Inhibent la synthèse des facteurs de coagulation vitamine K-dépendants (II, VII, IX, X).</p>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-red-800">⚙️ Mécanisme d'action
+                            </h4>
+                            <p class="text-slate-700 mt-2">Inhibent la synthèse des facteurs de coagulation vitamine
+                                K-dépendants (II, VII, IX, X).</p>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                           <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-red-800">🔬 Surveillance Biologique</h4>
-                           <span class="font-bold">Risque hémorragique</span>
-                           <br><br><span class="font-bold">Surveillance de l'efficacité : </span>INR (International Normalized Ratio) - Cible : 2-3 (selon l'indication). 
-                           <br>Contrôles réguliers indispensables.<br></p>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-red-800">🔬 Surveillance
+                                Biologique</h4>
+                            <span class="font-bold">Risque hémorragique</span>
+                            <br><br><span class="font-bold">Surveillance de l'efficacité : </span>INR (International
+                            Normalized Ratio) - Cible : 2-3 (selon l'indication).
+                            <br>Contrôles réguliers indispensables.<br></p>
                         </div>
-                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-red-800">⚠️ Points de vigilance</h4>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-red-800">⚠️ Points de vigilance
+                            </h4>
                             <ul class="list-disc list-inside text-slate-700 mt-2 space-y-1">
                                 <li>Risque hémorragique élevé.</li>
                                 <li>Nombreuses interactions (médicaments, aliments riches en vit. K).</li>
@@ -351,23 +596,33 @@
                                 <li>Antidote : Vitamine K.</li>
                             </ul>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 border-l-4 border-red-400">
-                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-red-800">🎓 Éducation Thérapeutique du Patient</h4>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 border-l-4 border-red-400">
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-800 text-red-800">🎓 Éducation
+                                Thérapeutique du Patient</h4>
                             <ul class="list-disc list-inside text-slate-700 mt-2 space-y-1">
                                 <li>Respecter l'heure de prise (le soir).</li>
                                 <li>Avoir une carte de porteur d'AVK.</li>
                                 <li>Informer tous les professionnels de santé.</li>
                                 <li>Suivre le calendrier des contrôles d'INR.</li>
-                                <li>Surveiller les signes de surdosage (saignements) et sous-dosage (douleur mollet, essoufflement...).</li>
+                                <li>Surveiller les signes de surdosage (saignements) et sous-dosage (douleur mollet,
+                                    essoufflement...).</li>
                                 <li>Pas d'automédication (AINS, aspirine interdits).</li>
                                 <li>Maintenir des apports alimentaires en vitamine K stables.</li>
                             </ul>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <h4 class="text-xl sm:text-2xl font-bold text-slate-800 mb-4">📊 Comparaison AVK / AOD</h4>
                             <div class="md:flex md:items-center md:space-x-6">
                                 <div class="md:w-1/2 lg:w-2/5"><canvas id="oralAnticoagChartAVK"></canvas></div>
-                                <div class="md:w-1/2 lg:w-3/5"><p class="text-sm text-slate-600 mt-4 md:mt-0">Ce graphique met en évidence les différences majeures entre les AVK et les AOD. Les AOD offrent un confort d'utilisation supérieur grâce à un délai d'action rapide, une absence de surveillance biologique de routine, moins d'interactions et des relais simplifiés. Les AVK, plus anciens, nécessitent une gestion plus rigoureuse.</p></div>
+                                <div class="md:w-1/2 lg:w-3/5">
+                                    <p class="text-sm text-slate-600 mt-4 md:mt-0">Ce graphique met en évidence les
+                                        différences majeures entre les AVK et les AOD. Les AOD offrent un confort
+                                        d'utilisation supérieur grâce à un délai d'action rapide, une absence de
+                                        surveillance biologique de routine, moins d'interactions et des relais
+                                        simplifiés. Les AVK, plus anciens, nécessitent une gestion plus rigoureuse.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -377,11 +632,14 @@
             <div id="quiz" class="page hidden">
                 <div class="bg-gradient-to-br from-slate-50 to-gray-100 p-6 sm:p-8 md:p-10 rounded-2xl shadow-inner">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-2">Quiz Interactif</h2>
-                    <p class="text-slate-600 mb-8">Testez vos connaissances et validez vos acquis sur les anticoagulants.</p>
+                    <p class="text-slate-600 mb-8">Testez vos connaissances et validez vos acquis sur les
+                        anticoagulants.</p>
                     <div id="qcm-container" class="space-y-8"></div>
-                    <div id="quiz-footer" class="mt-10 pt-6 border-t-2 border-slate-200 flex justify-between items-center">
+                    <div id="quiz-footer"
+                        class="mt-10 pt-6 border-t-2 border-slate-200 flex justify-between items-center">
                         <p id="quiz-score" class="text-xl md:text-2xl font-bold text-slate-800"></p>
-                        <button onclick="resetQuiz()" id="reset-button" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 transform opacity-0 pointer-events-none">
+                        <button onclick="resetQuiz()" id="reset-button"
+                            class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 transform opacity-0 pointer-events-none">
                             Recommencer
                         </button>
                     </div>
@@ -389,19 +647,25 @@
             </div>
 
             <div id="synthese" class="page hidden">
-                 <section class="bg-gradient-to-br from-gray-100 to-slate-200 rounded-2xl p-6 md:p-12">
-                     <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-gray-500 to-slate-600 bg-clip-text text-transparent">Fiche de Synthèse</span></h3>
+                <section class="bg-gradient-to-br from-gray-100 to-slate-200 rounded-2xl p-6 md:p-12">
+                    <h3
+                        class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        <span class="bg-gradient-to-br from-gray-500 to-slate-600 bg-clip-text text-transparent">Fiche
+                            de Synthèse</span></h3>
                     <div class="bg-white p-4 rounded-xl shadow-lg flex justify-center">
-                        <img src="https://rehost.diberie.com/Picture/Get/f/431909" alt="Fiche de synthèse sur les anticoagulants" class="rounded-lg max-w-full h-auto">
+                        <img src="https://rehost.diberie.com/Picture/Get/f/431909"
+                            alt="Fiche de synthèse sur les anticoagulants" class="rounded-lg max-w-full h-auto">
                     </div>
                 </section>
             </div>
         </main>
-        
+
         <footer id="footer" class="bg-slate-800 text-white p-4 md:p-6 mt-auto">
             <div class="flex items-center justify-center md:justify-end text-center">
                 <p class="font-bold text-slate-300 text-xs sm:text-sm">
-                <span class="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2025
+                    <span
+                        class="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">Lucas
+                        Séraudie</span> - 2025
                 </p>
             </div>
         </footer>
@@ -446,7 +710,7 @@
         function showPage(pageId) {
             document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
             document.getElementById(pageId)?.classList.remove('hidden');
-            
+
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 const page = btn.dataset.page;
                 // Reset classes
@@ -465,23 +729,23 @@
         function createHeparineCharts() {
             const chartData = {
                 labels: [['Usage ambulatoire', 'facile'], ['Action', 'rapide'], ['Demi-vie', 'courte'], ['Surveillance', 'stricte'], ['Réversibilité', 'complète']],
-                datasets: [{ label: 'HNF', data: [2, 5, 5, 5, 5], fill: true, backgroundColor: 'rgba(59, 130, 246, 0.2)', borderColor: 'rgb(59, 130, 246)', pointBackgroundColor: 'rgb(59, 130, 246)', pointBorderColor: '#fff' }, 
-                           { label: 'HBPM', data: [5, 4, 2, 1, 3], fill: true, backgroundColor: 'rgba(30, 58, 138, 0.2)', borderColor: 'rgb(30, 58, 138)', pointBackgroundColor: 'rgb(30, 58, 138)', pointBorderColor: '#fff' }]
+                datasets: [{ label: 'HNF', data: [2, 5, 5, 5, 5], fill: true, backgroundColor: 'rgba(59, 130, 246, 0.2)', borderColor: 'rgb(59, 130, 246)', pointBackgroundColor: 'rgb(59, 130, 246)', pointBorderColor: '#fff' },
+                { label: 'HBPM', data: [5, 4, 2, 1, 3], fill: true, backgroundColor: 'rgba(30, 58, 138, 0.2)', borderColor: 'rgb(30, 58, 138)', pointBackgroundColor: 'rgb(30, 58, 138)', pointBorderColor: '#fff' }]
             };
             const chartOptions = { scales: { r: { suggestedMin: 0, suggestedMax: 5, ticks: { stepSize: 1 }, pointLabels: { font: { size: 10 } } } }, plugins: { legend: { position: 'top' } } };
             ['heparineChartHNF', 'heparineChartHBPM'].forEach(id => {
-                const canvas = document.getElementById(id); if(canvas && !canvas.chart) { canvas.chart = new Chart(canvas.getContext('2d'), { type: 'radar', data: chartData, options: chartOptions }); }
+                const canvas = document.getElementById(id); if (canvas && !canvas.chart) { canvas.chart = new Chart(canvas.getContext('2d'), { type: 'radar', data: chartData, options: chartOptions }); }
             });
         }
         function createOralAnticoagCharts() {
             const chartData = {
                 labels: [["Délai d'action"], ['Surveillance', 'biologique'], ['Interactions', 'alimentaires'], ['Durée du', 'relai']],
-                datasets: [{ label: 'AVK', data: [1, 1, 1, 1], fill: true, backgroundColor: 'rgba(239, 68, 68, 0.2)', borderColor: 'rgb(239, 68, 68)', pointBackgroundColor: 'rgb(239, 68, 68)', pointBorderColor: '#fff' }, 
-                           { label: 'AOD', data: [5, 5, 4, 5], fill: true, backgroundColor: 'rgba(251, 191, 36, 0.2)', borderColor: 'rgb(251, 191, 36)', pointBackgroundColor: 'rgb(251, 191, 36)', pointBorderColor: '#fff' }]
+                datasets: [{ label: 'AVK', data: [1, 1, 1, 1], fill: true, backgroundColor: 'rgba(239, 68, 68, 0.2)', borderColor: 'rgb(239, 68, 68)', pointBackgroundColor: 'rgb(239, 68, 68)', pointBorderColor: '#fff' },
+                { label: 'AOD', data: [5, 5, 4, 5], fill: true, backgroundColor: 'rgba(251, 191, 36, 0.2)', borderColor: 'rgb(251, 191, 36)', pointBackgroundColor: 'rgb(251, 191, 36)', pointBorderColor: '#fff' }]
             };
             const chartOptions = { scales: { r: { suggestedMin: 0, suggestedMax: 5, ticks: { stepSize: 1 }, pointLabels: { font: { size: 10 } } } }, plugins: { legend: { position: 'top' } } };
             ['oralAnticoagChartAVK', 'oralAnticoagChartAOD'].forEach(id => {
-                const canvas = document.getElementById(id); if(canvas && !canvas.chart) { canvas.chart = new Chart(canvas.getContext('2d'), { type: 'radar', data: chartData, options: chartOptions }); }
+                const canvas = document.getElementById(id); if (canvas && !canvas.chart) { canvas.chart = new Chart(canvas.getContext('2d'), { type: 'radar', data: chartData, options: chartOptions }); }
             });
         }
 
@@ -521,7 +785,7 @@
                     questionEl.querySelector(`[data-index="${questionData.correct}"]`).classList.add('correct');
                     feedbackEl.innerHTML = `<p class="text-red-600">Dommage. ${questionData.feedback || ''}</p>`;
                 }
-                
+
                 questionEl.querySelectorAll('.qcm-option').forEach(btn => btn.disabled = true);
                 updateScore();
             });
@@ -529,7 +793,7 @@
 
         function updateScore() {
             const totalQuestions = quizData.length;
-            let correctAnswers = 0; 
+            let correctAnswers = 0;
             document.querySelectorAll('.qcm-question.answered').forEach(questionEl => {
                 if (!questionEl.querySelector('.qcm-option.incorrect')) {
                     correctAnswers++;
@@ -567,4 +831,5 @@
         });
     </script>
 </body>
+
 </html>
