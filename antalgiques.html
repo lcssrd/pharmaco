@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Les Antalgiques : Cours Pharmacologie IFSI - UE 2.11 S1</title>
-    
-    <meta name="description" content="Fiche de révision complète sur les antalgiques pour étudiants infirmiers (IFSI). Paliers OMS 1, 2 et 3, paracétamol, AINS, opioïdes, effets secondaires et rôle infirmier.">
-    
+
+    <meta name="description"
+        content="Fiche de révision complète sur les antalgiques pour étudiants infirmiers (IFSI). Paliers OMS 1, 2 et 3, paracétamol, AINS, opioïdes, effets secondaires et rôle infirmier.">
+
     <meta property="og:title" content="Les Antalgiques - Révision Pharmacologie IFSI">
-    <meta property="og:description" content="Tout savoir sur les antalgiques : Paliers, mécanismes, surveillance infirmière.">
+    <meta property="og:description"
+        content="Tout savoir sur les antalgiques : Paliers, mécanismes, surveillance infirmière.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lcssrd.github.io/pharmaco/antalgiques.html">
-    
+
     <link rel="canonical" href="https://lcssrd.github.io/pharmaco/antalgiques.html" />
 
 
@@ -20,66 +23,104 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <style>
         html {
-            overflow-y: scroll; /* Force the scrollbar to always be visible, preventing layout shifts */
+            overflow-y: scroll;
+            /* Force the scrollbar to always be visible, preventing layout shifts */
         }
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f0f4f8;
         }
+
         /* Animation for page transitions */
         .page {
             animation: fadeIn 0.5s ease-in-out;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         /* Quiz specific styles */
         .qcm-option.correct {
-            background-image: linear-gradient(to right, #4ade80, #16a34a); /* from-green-400 to-green-600 */
+            background-image: linear-gradient(to right, #4ade80, #16a34a);
+            /* from-green-400 to-green-600 */
             color: white;
-            border-color: #15803d; /* green-700 */
+            border-color: #15803d;
+            /* green-700 */
             font-weight: 600;
         }
+
         .qcm-option.incorrect {
-            background-image: linear-gradient(to right, #f87171, #dc2626); /* from-red-400 to-red-600 */
+            background-image: linear-gradient(to right, #f87171, #dc2626);
+            /* from-red-400 to-red-600 */
             color: white;
-            border-color: #b91c1c; /* red-700 */
+            border-color: #b91c1c;
+            /* red-700 */
             font-weight: 600;
         }
+
         .qcm-option:disabled {
             cursor: not-allowed;
         }
+
         .qcm-option:disabled:not(.correct):not(.incorrect) {
-            color: #475569; /* slate-600 */
-            background-color: #f1f5f9; /* slate-100 */
+            color: #475569;
+            /* slate-600 */
+            background-color: #f1f5f9;
+            /* slate-100 */
             opacity: 0.7;
         }
     </style>
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="a71ff4d4-4d84-4066-aa50-313ab8d66b1b"></script>
+    <script defer src="https://cloud.umami.is/script.js"
+        data-website-id="a71ff4d4-4d84-4066-aa50-313ab8d66b1b"></script>
 </head>
+
 <body class="p-2 sm:p-4 md:p-8">
     <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
         <header class="bg-slate-800 text-white p-6 md:p-8 sticky top-0 z-10">
             <div class="flex items-center justify-between">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent pb-2">Les Antalgiques (Cours IFSI)</h1>
+                <h1
+                    class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent pb-2">
+                    Les Antalgiques (Cours IFSI)</h1>
                 <div class="hidden md:flex text-right font-bold text-slate-300 text-sm">
-                    <p><span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2025</p>
+                    <p><span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Lucas
+                            Séraudie</span> - 2025</p>
                 </div>
             </div>
 
             <nav class="pt-6">
                 <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-4 sm:grid-cols-4 md:grid-cols-7 gap-2">
-                    <button data-page="douleur" onclick="showPage('douleur')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">La Douleur</button>
-                    <button data-page="nonopioides" onclick="showPage('nonopioides')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Non-opioïdes</button>
-                    <button data-page="opioidesfaibles" onclick="showPage('opioidesfaibles')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Opioïdes faibles</button>
-                    <button data-page="opioidesforts" onclick="showPage('opioidesforts')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Opioïdes forts</button>
-                    <button data-page="coanalgesiques" onclick="showPage('coanalgesiques')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Co-analgésiques</button>
-                    <button data-page="role" onclick="showPage('role')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Rôle Infirmier</button>
-                    <button data-page="quiz" onclick="showPage('quiz')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Quiz</button>
+                    <button data-page="douleur" onclick="showPage('douleur')"
+                        class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">La
+                        Douleur</button>
+                    <button data-page="nonopioides" onclick="showPage('nonopioides')"
+                        class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Non-opioïdes</button>
+                    <button data-page="opioidesfaibles" onclick="showPage('opioidesfaibles')"
+                        class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Opioïdes
+                        faibles</button>
+                    <button data-page="opioidesforts" onclick="showPage('opioidesforts')"
+                        class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Opioïdes
+                        forts</button>
+                    <button data-page="coanalgesiques" onclick="showPage('coanalgesiques')"
+                        class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Co-analgésiques</button>
+                    <button data-page="role" onclick="showPage('role')"
+                        class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Rôle
+                        Infirmier</button>
+                    <button data-page="quiz" onclick="showPage('quiz')"
+                        class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Quiz</button>
                 </div>
             </nav>
         </header>
@@ -87,61 +128,243 @@
         <main class="p-4 sm:p-6 md:p-8">
             <div id="douleur" class="page">
                 <section class="bg-gradient-to-br from-sky-100 to-cyan-100 rounded-2xl p-6 md:p-12">
-                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-cyan-400 to-blue-600 bg-clip-text text-transparent">Rappels sur la Douleur</span></h3>
+                    <h3
+                        class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        <span class="bg-gradient-to-br from-cyan-400 to-blue-600 bg-clip-text text-transparent">Rappels
+                            sur la Douleur</span>
+                    </h3>
                     <div class="grid grid-cols-1 gap-8">
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"><div class="flex items-center gap-4 mb-4"><div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="quote" class="text-blue-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Définition</h4></div><p class="text-slate-600 italic text-sm sm:text-base">« Expérience sensorielle et émotionnelle désagréable associée à une lésion tissulaire réelle ou potentielle ou décrite dans ces termes. »</p></div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"><div class="flex items-center gap-4 mb-4"><div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="activity" class="text-green-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Caractéristiques de la Douleur</h4></div><div class="grid md:grid-cols-3 gap-4 text-sm"><div class="p-4 bg-green-50 rounded-lg"><h5 class="font-semibold text-green-800">Aiguë (&lt; 6 sem.)</h5><p>Récente, transitoire, liée à une lésion, rôle de protection.</p></div><div class="p-4 bg-orange-50 rounded-lg"><h5 class="font-semibold text-orange-800">Chronique (&gt; 3 mois)</h5><p>Mécanismes autonomes, impact majeur sur la qualité de vie.</p></div><div class="p-4 bg-red-50 rounded-lg"><h5 class="font-semibold text-red-800">Liée aux soins</h5><p>Provoquée par les soins (iatrogène), immédiate ou prolongée.</p></div></div></div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"><div class="flex items-center gap-4 mb-4"><div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="brain-circuit" class="text-purple-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Types de Douleurs</h4></div><div class="grid md:grid-cols-3 gap-4 text-sm"><div class="p-4 bg-purple-50 rounded-lg"><h5 class="font-semibold text-purple-800">Nociceptive</h5><p>Activation des récepteurs à la douleur. Bien localisée, aiguë, pulsatile.</p></div><div class="p-4 bg-indigo-50 rounded-lg"><h5 class="font-semibold text-indigo-800">Neuropathique</h5><p>Lésion du système nerveux. Brûlure, picotements, chocs électriques.</p></div><div class="p-4 bg-pink-50 rounded-lg"><h5 class="font-semibold text-pink-800">Nociplastique</h5><p>Altération de la nociception sans lésion. Diffuse, généralisée.</p></div></div></div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"><div class="flex items-center gap-4 mb-4"><div class="bg-yellow-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="scaling" class="text-yellow-600 w-6 h-6"></i></div><h4 class="text-xl sm:text-2xl font-bold text-slate-800">Évaluation de la Douleur</h4></div><p class="text-slate-600 mb-4 text-sm sm:text-base">La douleur est subjective : son évaluation par le patient est toujours juste. L'intérêt des échelles est de suivre son évolution dans le temps.</p><div class="flex flex-wrap gap-4 text-sm"><div class="flex-1 min-w-[200px] p-4 bg-yellow-50 rounded-lg"><h5 class="font-semibold text-yellow-800">EVA</h5><p>Le patient positionne un curseur sur une réglette.</p></div><div class="flex-1 min-w-[200px] p-4 bg-yellow-50 rounded-lg"><h5 class="font-semibold text-yellow-800">EN</h5><p>Le patient donne une note de 0 à 10.</p></div><div class="flex-1 min-w-[200px] p-4 bg-yellow-50 rounded-lg"><h5 class="font-semibold text-yellow-800">EVS</h5><p>Le patient choisit des mots pour décrire sa douleur.</p></div></div><p class="text-slate-500 text-xs italic mt-4 pt-4 border-t border-yellow-200">Il existe d'autres échelles plus spécifiques, notamment pour les enfants (EVENDOL) ou les personnes âgées non communicantes (ALGOPLUS).</p></div>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div
+                                    class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="quote" class="text-blue-600 w-6 h-6"></i>
+                                </div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Définition</h4>
+                            </div>
+                            <p class="text-slate-600 italic text-sm sm:text-base">« Expérience sensorielle et
+                                émotionnelle désagréable associée à une lésion tissulaire réelle ou potentielle ou
+                                décrite dans ces termes. »</p>
+                        </div>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div
+                                    class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="activity" class="text-green-600 w-6 h-6"></i>
+                                </div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Caractéristiques de la Douleur
+                                </h4>
+                            </div>
+                            <div class="grid md:grid-cols-3 gap-4 text-sm">
+                                <div class="p-4 bg-green-50 rounded-lg">
+                                    <h5 class="font-semibold text-green-800">Aiguë (&lt; 6 sem.)</h5>
+                                    <p>Récente, transitoire, liée à une lésion, rôle de protection.</p>
+                                </div>
+                                <div class="p-4 bg-orange-50 rounded-lg">
+                                    <h5 class="font-semibold text-orange-800">Chronique (&gt; 3 mois)</h5>
+                                    <p>Mécanismes autonomes, impact majeur sur la qualité de vie.</p>
+                                </div>
+                                <div class="p-4 bg-red-50 rounded-lg">
+                                    <h5 class="font-semibold text-red-800">Liée aux soins</h5>
+                                    <p>Provoquée par les soins (iatrogène), immédiate ou prolongée.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div
+                                    class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="brain-circuit" class="text-purple-600 w-6 h-6"></i>
+                                </div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Types de Douleurs</h4>
+                            </div>
+                            <div class="grid md:grid-cols-3 gap-4 text-sm">
+                                <div class="p-4 bg-purple-50 rounded-lg">
+                                    <h5 class="font-semibold text-purple-800">Nociceptive</h5>
+                                    <p>Activation des récepteurs à la douleur. Bien localisée, aiguë, pulsatile.</p>
+                                </div>
+                                <div class="p-4 bg-indigo-50 rounded-lg">
+                                    <h5 class="font-semibold text-indigo-800">Neuropathique</h5>
+                                    <p>Lésion du système nerveux. Brûlure, picotements, chocs électriques.</p>
+                                </div>
+                                <div class="p-4 bg-pink-50 rounded-lg">
+                                    <h5 class="font-semibold text-pink-800">Nociplastique</h5>
+                                    <p>Altération de la nociception sans lésion. Diffuse, généralisée.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div
+                                    class="bg-yellow-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="scaling" class="text-yellow-600 w-6 h-6"></i>
+                                </div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Évaluation de la Douleur</h4>
+                            </div>
+                            <p class="text-slate-600 mb-4 text-sm sm:text-base">La douleur est subjective : son
+                                évaluation par le patient est toujours juste. L'intérêt des échelles est de suivre son
+                                évolution dans le temps.</p>
+                            <div class="flex flex-wrap gap-4 text-sm">
+                                <div class="flex-1 min-w-[200px] p-4 bg-yellow-50 rounded-lg">
+                                    <h5 class="font-semibold text-yellow-800">EVA</h5>
+                                    <p>Le patient positionne un curseur sur une réglette.</p>
+                                </div>
+                                <div class="flex-1 min-w-[200px] p-4 bg-yellow-50 rounded-lg">
+                                    <h5 class="font-semibold text-yellow-800">EN</h5>
+                                    <p>Le patient donne une note de 0 à 10.</p>
+                                </div>
+                                <div class="flex-1 min-w-[200px] p-4 bg-yellow-50 rounded-lg">
+                                    <h5 class="font-semibold text-yellow-800">EVS</h5>
+                                    <p>Le patient choisit des mots pour décrire sa douleur.</p>
+                                </div>
+                            </div>
+                            <p class="text-slate-500 text-xs italic mt-4 pt-4 border-t border-yellow-200">Il existe
+                                d'autres échelles plus spécifiques, notamment pour les enfants (EVENDOL) ou les
+                                personnes âgées non communicantes (ALGOPLUS).</p>
+                        </div>
                     </div>
                 </section>
             </div>
-            
+
             <div id="nonopioides" class="page hidden">
                 <section class="bg-gradient-to-br from-green-100 to-emerald-100 rounded-2xl p-6 md:p-12">
-                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-green-500 to-emerald-700 bg-clip-text text-transparent">Antalgiques non-opioïdes</span></h3>
+                    <h3
+                        class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        <span
+                            class="bg-gradient-to-br from-green-500 to-emerald-700 bg-clip-text text-transparent">Antalgiques
+                            non-opioïdes</span>
+                    </h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Paracétamol</h4>
                                 <p class="text-xs text-slate-500 italic">Ex: Doliprane®, Dafalgan®...</p>
                                 <p class="text-sm text-slate-500 mt-1">Classe : antalgique – antipyrétique</p>
                             </div>
                             <div class="space-y-4 text-sm flex-grow">
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Action centrale sur COX-3 et voies sérotoninergiques.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="timer" class="w-4 h-4 text-cyan-600"></i>Voies & Délai d'action</h5><p class="text-slate-500 pl-6"><b>PO:</b> 30-60 min<br><b>IV:</b> 1h (pic antalgique)<br><b>Rectale:</b> plus lent</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets secondaires</h5><p class="text-slate-500 pl-6">Rares aux doses usuelles. Risque majeur : hépatotoxicité (surdosage).</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="ban" class="w-4 h-4 text-red-600"></i>Contre-indications</h5><p class="text-slate-500 pl-6">Insuffisance hépatocellulaire sévère, alcoolisme chronique.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="flask-conical" class="w-4 h-4 text-green-600"></i>Antidote</h5><p class="text-slate-500 pl-6">N-acétylcystéine.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie max</h5><p class="text-slate-500 pl-6">4 g/j (adulte) → 1 g/prise toutes les 6h.</p></div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5>
+                                    <p class="text-slate-500 pl-6">Inhibition centrale de la synthèse des
+                                        prostaglandines.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="timer" class="w-4 h-4 text-cyan-600"></i>Voies & Délai d'action
+                                    </h5>
+                                    <p class="text-slate-500 pl-6"><b>PO:</b> 30-60 min<br><b>IV:</b> 10
+                                        min<br><b>Rectale:</b> plus lent</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets
+                                        secondaires</h5>
+                                    <p class="text-slate-500 pl-6">Rares aux doses usuelles. Risque majeur :
+                                        hépatotoxicité (surdosage).</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="ban" class="w-4 h-4 text-red-600"></i>Contre-indications</h5>
+                                    <p class="text-slate-500 pl-6">Insuffisance hépatocellulaire sévère, alcoolisme
+                                        chronique.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="flask-conical" class="w-4 h-4 text-green-600"></i>Antidote</h5>
+                                    <p class="text-slate-500 pl-6">N-acétylcystéine.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie
+                                        max</h5>
+                                    <p class="text-slate-500 pl-6">4 g/j (adulte) → 1 g/prise toutes les 6h. (préférer
+                                        3 g/j max)</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">AINS</h4>
                                 <p class="text-xs text-slate-500 italic">Ex: Advil®, Nurofen®, Profénid®...</p>
                                 <p class="text-sm text-slate-500 mt-1">Classe : anti-inflammatoires non stéroïdiens</p>
                             </div>
                             <div class="space-y-4 text-sm flex-grow">
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Inhibition COX-1 et COX-2 → ↓ prostaglandines.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="timer" class="w-4 h-4 text-cyan-600"></i>Voies & Délai d'action</h5><p class="text-slate-500 pl-6"><b>PO:</b> 30-60 min<br><b>IV:</b> 20-30 min</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets secondaires</h5><p class="text-slate-500 pl-6">Gastralgies, ulcère, hémorragie digestive, insuffisance rénale.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="ban" class="w-4 h-4 text-red-600"></i>Contre-indications</h5><p class="text-slate-500 pl-6">Ulcère actif, insuffisance rénale/cardiaque sévère, grossesse T3, association anticoagulants.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie max</h5><p class="text-slate-500 pl-6">Ibuprofène: 1.2–1.8 g/j. Kétoprofène: 200 mg/j.</p></div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5>
+                                    <p class="text-slate-500 pl-6">Inhibition COX-1 et COX-2 → ↓ prostaglandines.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="timer" class="w-4 h-4 text-cyan-600"></i>Voies & Délai d'action
+                                    </h5>
+                                    <p class="text-slate-500 pl-6"><b>PO:</b> 30-60 min<br><b>IV:</b> 20-30 min</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets
+                                        secondaires</h5>
+                                    <p class="text-slate-500 pl-6">Gastralgies, ulcère, hémorragie digestive,
+                                        insuffisance rénale.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="ban" class="w-4 h-4 text-red-600"></i>Contre-indications</h5>
+                                    <p class="text-slate-500 pl-6">Ulcère actif, insuffisance rénale/cardiaque sévère,
+                                        grossesse T3, association anticoagulants.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie
+                                        max</h5>
+                                    <p class="text-slate-500 pl-6">Ibuprofène: 1.2–1.8 g/j. Kétoprofène: 200 mg/j.</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Néfopam</h4>
                                 <p class="text-xs text-slate-500 italic">Ex: Acupan®</p>
                                 <p class="text-sm text-slate-500 mt-1">Classe : antalgique non opioïde</p>
                             </div>
                             <div class="space-y-4 text-sm flex-grow">
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Inhibe recapture sérotonine, dopamine, noradrénaline.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="timer" class="w-4 h-4 text-cyan-600"></i>Voies & Délai d'action</h5><p class="text-slate-500 pl-6"><b>IV/IM:</b> 15-20 min<br><b>PO:</b> 30-60 min</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets secondaires</h5><p class="text-slate-500 pl-6">Tachycardie, sueurs, confusion, hallucinations, nausées.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="ban" class="w-4 h-4 text-red-600"></i>Contre-indications</h5><p class="text-slate-500 pl-6">Épilepsie, rétention urinaire, glaucome.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie max</h5><p class="text-slate-500 pl-6">120 mg/j (per os ou IV).</p></div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5>
+                                    <p class="text-slate-500 pl-6">Inhibe recapture sérotonine, dopamine, noradrénaline.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="timer" class="w-4 h-4 text-cyan-600"></i>Voies & Délai d'action
+                                    </h5>
+                                    <p class="text-slate-500 pl-6"><b>IV/IM:</b> 15-20 min<br><b>PO:</b> 30-60 min</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets
+                                        secondaires</h5>
+                                    <p class="text-slate-500 pl-6">Tachycardie, sueurs, confusion, hallucinations,
+                                        nausées.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="ban" class="w-4 h-4 text-red-600"></i>Contre-indications</h5>
+                                    <p class="text-slate-500 pl-6">Épilepsie, rétention urinaire, glaucome.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie
+                                        max</h5>
+                                    <p class="text-slate-500 pl-6">120 mg/j (per os ou IV).</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -150,36 +373,103 @@
 
             <div id="opioidesfaibles" class="page hidden">
                 <section class="bg-gradient-to-br from-amber-100 to-yellow-100 rounded-2xl p-6 md:p-12">
-                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-amber-500 to-yellow-600 bg-clip-text text-transparent">Opioïdes faibles</span></h3>
+                    <h3
+                        class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        <span
+                            class="bg-gradient-to-br from-amber-500 to-yellow-600 bg-clip-text text-transparent">Opioïdes
+                            faibles</span>
+                    </h3>
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Codéine</h4>
                                 <p class="text-xs text-slate-500 italic">Ex: Klipal®, Codoliprane®</p>
                                 <p class="text-sm text-slate-500 mt-1">Classe : antalgique opioïde faible</p>
                             </div>
                             <div class="space-y-4 text-sm flex-grow">
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Agoniste µ-opioïde faible (pro-drogue de la morphine).</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="timer" class="w-4 h-4 text-cyan-600"></i>Voies & Délai d'action</h5><p class="text-slate-500 pl-6"><b>PO:</b> 30-60 min</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets secondaires</h5><p class="text-slate-500 pl-6">Constipation, nausées, somnolence, risque de dépendance.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="ban" class="w-4 h-4 text-red-600"></i>Contre-indications</h5><p class="text-slate-500 pl-6">Enfants &lt;12 ans, allaitement, insuffisance respiratoire.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="flask-conical" class="w-4 h-4 text-green-600"></i>Antidote</h5><p class="text-slate-500 pl-6">Naloxone (Narcan®).</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie max</h5><p class="text-slate-500 pl-6">120 mg/j (souvent en association).</p></div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5>
+                                    <p class="text-slate-500 pl-6">Agoniste µ-opioïde faible (pro-drogue de la
+                                        morphine).</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="timer" class="w-4 h-4 text-cyan-600"></i>Voies & Délai d'action
+                                    </h5>
+                                    <p class="text-slate-500 pl-6"><b>PO:</b> 30-60 min</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets
+                                        secondaires</h5>
+                                    <p class="text-slate-500 pl-6">Constipation, nausées, somnolence, dépression
+                                        respiratoire, risque de dépendance.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="ban" class="w-4 h-4 text-red-600"></i>Contre-indications</h5>
+                                    <p class="text-slate-500 pl-6">Enfants &lt;12 ans, allaitement, insuffisance
+                                        respiratoire.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="flask-conical" class="w-4 h-4 text-green-600"></i>Antidote</h5>
+                                    <p class="text-slate-500 pl-6">Naloxone (Narcan®).</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie
+                                        max</h5>
+                                    <p class="text-slate-500 pl-6">120 mg/j (souvent en association).</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Tramadol</h4>
                                 <p class="text-xs text-slate-500 italic">Ex: Topalgic®, Ixprim®</p>
                                 <p class="text-sm text-slate-500 mt-1">Classe : antalgique opioïde faible</p>
                             </div>
                             <div class="space-y-4 text-sm flex-grow">
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Agoniste µ-opioïde + inhibiteur recapture sérotonine/noradrénaline.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="timer" class="w-4 h-4 text-cyan-600"></i>Voies & Délai d'action</h5><p class="text-slate-500 pl-6"><b>PO (LI):</b> ~1h<br><b>IV:</b> 5-10 min</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets secondaires</h5><p class="text-slate-500 pl-6">Nausées, vomissements, somnolence, vertiges, risque de syndrome sérotoninergique.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="ban" class="w-4 h-4 text-red-600"></i>Contre-indications</h5><p class="text-slate-500 pl-6">Association IMAO/IRS, épilepsie non contrôlée.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="flask-conical" class="w-4 h-4 text-green-600"></i>Antidote</h5><p class="text-slate-500 pl-6">Naloxone (Narcan®).</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie max</h5><p class="text-slate-500 pl-6">400 mg/j (adulte).</p></div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5>
+                                    <p class="text-slate-500 pl-6">Agoniste µ-opioïde + inhibiteur recapture
+                                        sérotonine/noradrénaline.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="timer" class="w-4 h-4 text-cyan-600"></i>Voies & Délai d'action
+                                    </h5>
+                                    <p class="text-slate-500 pl-6"><b>PO (LI):</b> ~1h<br><b>IV:</b> 5-10 min</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets
+                                        secondaires</h5>
+                                    <p class="text-slate-500 pl-6">Nausées, vomissements, somnolence, vertiges,
+                                        convulsions (abaissement du seuil épileptogène), dépression respiratoire, risque
+                                        de syndrome sérotoninergique.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="ban" class="w-4 h-4 text-red-600"></i>Contre-indications</h5>
+                                    <p class="text-slate-500 pl-6">Association IMAO/IRS, épilepsie non contrôlée.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="flask-conical" class="w-4 h-4 text-green-600"></i>Antidote</h5>
+                                    <p class="text-slate-500 pl-6">Naloxone (Narcan®).</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie
+                                        max</h5>
+                                    <p class="text-slate-500 pl-6">400 mg/j (adulte).</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -188,51 +478,150 @@
 
             <div id="opioidesforts" class="page hidden">
                 <section class="bg-gradient-to-br from-red-100 to-orange-100 rounded-2xl p-6 md:p-12">
-                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-red-500 to-orange-600 bg-clip-text text-transparent">Opioïdes forts</span></h3>
-                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                    <h3
+                        class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        <span
+                            class="bg-gradient-to-br from-red-500 to-orange-600 bg-clip-text text-transparent">Opioïdes
+                            forts</span>
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Morphine</h4>
                                 <p class="text-xs text-slate-500 italic">Ex: Skenan®, Actiskenan®</p>
                                 <p class="text-sm text-slate-500 mt-1">Classe : antalgique opioïde fort</p>
                             </div>
                             <div class="space-y-4 text-sm flex-grow">
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Agoniste récepteur µ → inhibition transmission nociceptive.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="timer" class="w-4 h-4 text-cyan-600"></i>Voies & Délai d'action</h5><p class="text-slate-500 pl-6"><b>PO (LI):</b> 30-60 min<br><b>PO (LP):</b> 2-4h<br><b>IV:</b> 10-15 min<br><b>SC:</b> 15-30 min</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets secondaires</h5><p class="text-slate-500 pl-6">Constipation, nausées, prurit, rétention urinaire, somnolence, dépression respiratoire.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="ban" class="w-4 h-4 text-red-600"></i>Contre-indications</h5><p class="text-slate-500 pl-6">Insuffisance respiratoire/hépatique/rénale sévère, HTIC non contrôlée.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="flask-conical" class="w-4 h-4 text-green-600"></i>Antidote</h5><p class="text-slate-500 pl-6">Naloxone (Narcan®).</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie max</h5><p class="text-slate-500 pl-6">Pas de dose plafond → titration.</p></div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5>
+                                    <p class="text-slate-500 pl-6">Agoniste récepteur µ → inhibition transmission
+                                        nociceptive.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="timer" class="w-4 h-4 text-cyan-600"></i>Voies & Délai d'action
+                                    </h5>
+                                    <p class="text-slate-500 pl-6"><b>PO (LI):</b> 30-60 min<br><b>PO (LP):</b>
+                                        2-4h<br><b>IV:</b> 10-15 min<br><b>SC:</b> 15-30 min</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets
+                                        secondaires</h5>
+                                    <p class="text-slate-500 pl-6">Constipation, nausées, prurit, rétention urinaire,
+                                        somnolence, dépression respiratoire.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="ban" class="w-4 h-4 text-red-600"></i>Contre-indications /
+                                        précautions</h5>
+                                    <p class="text-slate-500 pl-6">Insuffisance respiratoire/hépatique/rénale sévère,
+                                        HTIC non contrôlée.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="flask-conical" class="w-4 h-4 text-green-600"></i>Antidote</h5>
+                                    <p class="text-slate-500 pl-6">Naloxone (Narcan®).</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie
+                                        max</h5>
+                                    <p class="text-slate-500 pl-6">Pas de dose plafond → titration.</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                             <div class="mb-4">
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Fentanyl</h4>
                                 <p class="text-xs text-slate-500 italic">Ex: Durogesic®, Actiq®</p>
                                 <p class="text-sm text-slate-500 mt-1">Classe : antalgique opioïde fort</p>
-                             </div>
-                             <div class="space-y-4 text-sm flex-grow">
-                                 <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Agoniste µ très puissant (100x morphine).</p></div>
-                                 <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="timer" class="w-4 h-4 text-cyan-600"></i>Voies & Délai d'action</h5><p class="text-slate-500 pl-6"><b>IV:</b> 2-3 min<br><b>Transmuqueuse:</b> 5-15 min<br><b>Patch:</b> lent (pic à 12-24h)</p></div>
-                                 <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets secondaires</h5><p class="text-slate-500 pl-6">Idem morphine (dépression respiratoire ++), tolérance rapide.</p></div>
-                                 <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="ban" class="w-4 h-4 text-red-600"></i>Contre-indications</h5><p class="text-slate-500 pl-6">Idem morphine. Prudence chez non-tolérants aux opioïdes.</p></div>
-                                 <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="flask-conical" class="w-4 h-4 text-green-600"></i>Antidote</h5><p class="text-slate-500 pl-6">Naloxone (Narcan®).</p></div>
-                                 <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie max</h5><p class="text-slate-500 pl-6">Dépend de la forme (Patch 25–100 µg/h).</p></div>
-                             </div>
+                            </div>
+                            <div class="space-y-4 text-sm flex-grow">
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5>
+                                    <p class="text-slate-500 pl-6">Agoniste µ très puissant (100x morphine).</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="timer" class="w-4 h-4 text-cyan-600"></i>Voies & Délai d'action
+                                    </h5>
+                                    <p class="text-slate-500 pl-6"><b>IV:</b> 2-3 min<br><b>Transmuqueuse:</b> 5-15
+                                        min<br><b>Patch:</b> lent (pic à 12-24h)</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets
+                                        secondaires</h5>
+                                    <p class="text-slate-500 pl-6">Idem morphine (dépression respiratoire ++), tolérance
+                                        rapide.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="ban" class="w-4 h-4 text-red-600"></i>Contre-indications</h5>
+                                    <p class="text-slate-500 pl-6">Idem morphine. Prudence chez non-tolérants aux
+                                        opioïdes.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="flask-conical" class="w-4 h-4 text-green-600"></i>Antidote</h5>
+                                    <p class="text-slate-500 pl-6">Naloxone (Narcan®).</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie
+                                        max</h5>
+                                    <p class="text-slate-500 pl-6">Dépend de la forme (Patch 25–100 µg/h).</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Oxycodone</h4>
                                 <p class="text-xs text-slate-500 italic">Ex: Oxycontin®, Oxynorm®</p>
                                 <p class="text-sm text-slate-500 mt-1">Classe : antalgique opioïde fort</p>
                             </div>
                             <div class="space-y-4 text-sm flex-grow">
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Agoniste µ et κ.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="timer" class="w-4 h-4 text-cyan-600"></i>Voies & Délai d'action</h5><p class="text-slate-500 pl-6"><b>PO (LI):</b> 15-30 min<br><b>PO (LP):</b> ~1h</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets secondaires</h5><p class="text-slate-500 pl-6">Constipation, somnolence, nausées, dépression respiratoire.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="ban" class="w-4 h-4 text-red-600"></i>Contre-indications</h5><p class="text-slate-500 pl-6">Idem morphine.</p></div>
-                                 <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="flask-conical" class="w-4 h-4 text-green-600"></i>Antidote</h5><p class="text-slate-500 pl-6">Naloxone (Narcan®).</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie max</h5><p class="text-slate-500 pl-6">Variable selon tolérance (souvent 120–160 mg/j per os).</p></div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5>
+                                    <p class="text-slate-500 pl-6">Agoniste µ et κ.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="timer" class="w-4 h-4 text-cyan-600"></i>Voies & Délai d'action
+                                    </h5>
+                                    <p class="text-slate-500 pl-6"><b>PO (LI):</b> 15-30 min<br><b>PO (LP):</b> ~1h</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets
+                                        secondaires</h5>
+                                    <p class="text-slate-500 pl-6">Constipation, somnolence, nausées, dépression
+                                        respiratoire.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="ban" class="w-4 h-4 text-red-600"></i>Contre-indications</h5>
+                                    <p class="text-slate-500 pl-6">Idem morphine.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="flask-conical" class="w-4 h-4 text-green-600"></i>Antidote</h5>
+                                    <p class="text-slate-500 pl-6">Naloxone (Narcan®).</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie
+                                        max</h5>
+                                    <p class="text-slate-500 pl-6">Variable selon tolérance (souvent 120–160 mg/j per
+                                        os).</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -241,34 +630,94 @@
 
             <div id="coanalgesiques" class="page hidden">
                 <section class="bg-gradient-to-br from-purple-100 to-indigo-100 rounded-2xl p-6 md:p-12">
-                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-purple-500 to-indigo-600 bg-clip-text text-transparent">Adjuvants (Co-analgésiques)</span></h3>
+                    <h3
+                        class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        <span
+                            class="bg-gradient-to-br from-purple-500 to-indigo-600 bg-clip-text text-transparent">Adjuvants
+                            (Co-analgésiques)</span>
+                    </h3>
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Gabapentine / Prégabaline</h4>
                                 <p class="text-xs text-slate-500 italic">Ex: Neurontin®, Lyrica®</p>
                                 <p class="text-sm text-slate-500 mt-1">Classe : antiépileptiques</p>
                             </div>
                             <div class="space-y-4 text-sm flex-grow">
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Modulent canaux calciques → ↓ libération neurotransmetteurs excitateurs.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="timer" class="w-4 h-4 text-cyan-600"></i>Voies & Délai d'action</h5><p class="text-slate-500 pl-6"><b>PO:</b> effet progressif sur plusieurs jours à semaines.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets secondaires</h5><p class="text-slate-500 pl-6">Somnolence, vertiges, prise de poids, œdèmes.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="ban" class="w-4 h-4 text-red-600"></i>Contre-indications</h5><p class="text-slate-500 pl-6">Hypersensibilité, prudence en insuffisance rénale.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie max</h5><p class="text-slate-500 pl-6">Gabapentine: 3600 mg/j. Prégabaline: 600 mg/j.</p></div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5>
+                                    <p class="text-slate-500 pl-6">Modulent canaux calciques → ↓ libération
+                                        neurotransmetteurs excitateurs.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="timer" class="w-4 h-4 text-cyan-600"></i>Voies & Délai d'action
+                                    </h5>
+                                    <p class="text-slate-500 pl-6"><b>PO:</b> effet progressif sur plusieurs jours à
+                                        semaines.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets
+                                        secondaires</h5>
+                                    <p class="text-slate-500 pl-6">Somnolence, vertiges, prise de poids, œdèmes.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="ban" class="w-4 h-4 text-red-600"></i>Contre-indications</h5>
+                                    <p class="text-slate-500 pl-6">Hypersensibilité, prudence en insuffisance rénale.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie
+                                        max</h5>
+                                    <p class="text-slate-500 pl-6">Gabapentine: 3600 mg/j. Prégabaline: 600 mg/j.</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Amitriptyline / Duloxétine</h4>
                                 <p class="text-xs text-slate-500 italic">Ex: Laroxyl®, Cymbalta®</p>
                                 <p class="text-sm text-slate-500 mt-1">Classe : antidépresseurs</p>
                             </div>
                             <div class="space-y-4 text-sm flex-grow">
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5><p class="text-slate-500 pl-6">Inhibition recapture sérotonine + noradrénaline → modulation douleur.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="timer" class="w-4 h-4 text-cyan-600"></i>Voies & Délai d'action</h5><p class="text-slate-500 pl-6"><b>PO:</b> effet retardé, ressenti après 1 à 4 semaines.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets secondaires</h5><p class="text-slate-500 pl-6">Sécheresse buccale, constipation (ATC) ; nausées, céphalées (IRSN).</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="ban" class="w-4 h-4 text-red-600"></i>Contre-indications</h5><p class="text-slate-500 pl-6">Glaucome, adénome prostatique (ATC), association IMAO.</p></div>
-                                <div><h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie max</h5><p class="text-slate-500 pl-6">Amitriptyline: 150 mg/j. Duloxétine: 120 mg/j.</p></div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5>
+                                    <p class="text-slate-500 pl-6">Inhibition recapture sérotonine + noradrénaline →
+                                        modulation douleur.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="timer" class="w-4 h-4 text-cyan-600"></i>Voies & Délai d'action
+                                    </h5>
+                                    <p class="text-slate-500 pl-6"><b>PO:</b> effet retardé, ressenti après 1 à 4
+                                        semaines.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="alert-triangle" class="w-4 h-4 text-amber-600"></i>Effets
+                                        secondaires</h5>
+                                    <p class="text-slate-500 pl-6">Sécheresse buccale, constipation (ATC) ; nausées,
+                                        céphalées (IRSN).</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="ban" class="w-4 h-4 text-red-600"></i>Contre-indications</h5>
+                                    <p class="text-slate-500 pl-6">Glaucome, adénome prostatique (ATC), association
+                                        IMAO.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
+                                            data-lucide="gauge-circle" class="w-4 h-4 text-emerald-600"></i>Posologie
+                                        max</h5>
+                                    <p class="text-slate-500 pl-6">Amitriptyline: 150 mg/j. Duloxétine: 120 mg/j.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -277,19 +726,115 @@
 
             <div id="role" class="page hidden">
                 <section class="bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl p-6 md:p-12">
-                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-pink-500 to-rose-600 bg-clip-text text-transparent">Le Rôle Infirmier</span></h3>
+                    <h3
+                        class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        <span class="bg-gradient-to-br from-pink-500 to-rose-600 bg-clip-text text-transparent">Le Rôle
+                            Infirmier</span>
+                    </h3>
                     <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
-                         <div class="lg:col-span-2"><h4 class="text-2xl sm:text-3xl font-bold text-slate-800 mb-4">Un rôle <span class="bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text text-transparent">essentiel</span></h4><p class="text-slate-600 text-sm sm:text-base">L'infirmier(ère) est au cœur de la prise en charge de la douleur. Son action repose sur une approche globale et continue, axée sur le bien-être du patient.</p></div>
-                         <div class="lg:col-span-3 space-y-6"><div class="flex items-start gap-4 sm:gap-6 p-6 bg-white/70 backdrop-blur-sm rounded-xl shadow-lg"><div class="bg-green-100 text-green-700 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex-shrink-0 flex items-center justify-center text-xl sm:text-2xl font-bold">1</div><div><h5 class="font-bold text-lg sm:text-xl text-slate-800 mb-1">Évaluer</h5><p class="text-slate-600 text-sm sm:text-base">Évaluer systématiquement la douleur, en gardant toujours la même échelle.</p></div></div><div class="flex items-start gap-4 sm:gap-6 p-6 bg-white/70 backdrop-blur-sm rounded-xl shadow-lg"><div class="bg-blue-100 text-blue-700 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex-shrink-0 flex items-center justify-center text-xl sm:text-2xl font-bold">2</div><div><h5 class="font-bold text-lg sm:text-xl text-slate-800 mb-1">Administrer</h5><p class="text-slate-600 text-sm sm:text-base">Délivrer les traitements sur prescription et potentialiser l'effet placebo.</p></div></div><div class="flex items-start gap-4 sm:gap-6 p-6 bg-white/70 backdrop-blur-sm rounded-xl shadow-lg"><div class="bg-orange-100 text-orange-700 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex-shrink-0 flex items-center justify-center text-xl sm:text-2xl font-bold">3</div><div><h5 class="font-bold text-lg sm:text-xl text-slate-800 mb-1">Surveiller</h5><p class="text-slate-600 text-sm sm:text-base">Observer l'efficacité du traitement et l'apparition d'effets indésirables.</p></div></div></div>
+                        <div class="lg:col-span-2">
+                            <h4 class="text-2xl sm:text-3xl font-bold text-slate-800 mb-4">Un rôle <span
+                                    class="bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text text-transparent">essentiel</span>
+                            </h4>
+                            <p class="text-slate-600 text-sm sm:text-base">L'infirmier(ère) est au cœur de la prise en
+                                charge de la douleur. Son action repose sur une approche globale et continue, axée sur
+                                le bien-être du patient.</p>
+                        </div>
+                        <div class="lg:col-span-3 space-y-6">
+                            <div
+                                class="flex items-start gap-4 sm:gap-6 p-6 bg-white/70 backdrop-blur-sm rounded-xl shadow-lg">
+                                <div
+                                    class="bg-green-100 text-green-700 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex-shrink-0 flex items-center justify-center text-xl sm:text-2xl font-bold">
+                                    1</div>
+                                <div>
+                                    <h5 class="font-bold text-lg sm:text-xl text-slate-800 mb-1">Évaluer</h5>
+                                    <p class="text-slate-600 text-sm sm:text-base">Évaluer systématiquement la douleur,
+                                        en gardant toujours la même échelle.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start gap-4 sm:gap-6 p-6 bg-white/70 backdrop-blur-sm rounded-xl shadow-lg">
+                                <div
+                                    class="bg-blue-100 text-blue-700 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex-shrink-0 flex items-center justify-center text-xl sm:text-2xl font-bold">
+                                    2</div>
+                                <div>
+                                    <h5 class="font-bold text-lg sm:text-xl text-slate-800 mb-1">Administrer</h5>
+                                    <p class="text-slate-600 text-sm sm:text-base">Délivrer les traitements sur
+                                        prescription et potentialiser l'effet placebo.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start gap-4 sm:gap-6 p-6 bg-white/70 backdrop-blur-sm rounded-xl shadow-lg">
+                                <div
+                                    class="bg-orange-100 text-orange-700 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex-shrink-0 flex items-center justify-center text-xl sm:text-2xl font-bold">
+                                    3</div>
+                                <div>
+                                    <h5 class="font-bold text-lg sm:text-xl text-slate-800 mb-1">Surveiller</h5>
+                                    <p class="text-slate-600 text-sm sm:text-base">Observer l'efficacité du traitement
+                                        et l'apparition d'effets indésirables.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="mt-12">
-                        <h4 class="text-2xl sm:text-3xl font-bold text-slate-800 mb-6 text-center">Recommandations de l'OMS</h4>
+                        <h4 class="text-2xl sm:text-3xl font-bold text-slate-800 mb-6 text-center">Recommandations de
+                            l'OMS</h4>
                         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
-                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-4"><div class="flex items-center gap-3"><div class="bg-rose-100 text-rose-700 w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center font-bold">1</div><div><h5 class="font-semibold text-slate-700">Voie Per Os prioritaire</h5><p class="text-slate-500">Pour le confort et la facilité d'administration.</p></div></div></div>
-                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-4"><div class="flex items-center gap-3"><div class="bg-rose-100 text-rose-700 w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center font-bold">2</div><div><h5 class="font-semibold text-slate-700">Prioriser la prévention</h5><p class="text-slate-500">Administrer à intervalles réguliers.</p></div></div></div>
-                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-4"><div class="flex items-center gap-3"><div class="bg-rose-100 text-rose-700 w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center font-bold">3</div><div><h5 class="font-semibold text-slate-700">Utiliser une approche par étapes</h5><p class="text-slate-500">Commencer avec l'antalgique adapté à l'intensité.</p></div></div></div>
-                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-4"><div class="flex items-center gap-3"><div class="bg-rose-100 text-rose-700 w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center font-bold">4</div><div><h5 class="font-semibold text-slate-700">Individualisation</h5><p class="text-slate-500">Adapter le traitement à chaque patient.</p></div></div></div>
-                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-4"><div class="flex items-center gap-3"><div class="bg-rose-100 text-rose-700 w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center font-bold">5</div><div><h5 class="font-semibold text-slate-700">Ajout de co-analgésiques</h5><p class="text-slate-500">Si nécessaire, surtout pour les douleurs neuro.</p></div></div></div>
+                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="bg-rose-100 text-rose-700 w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center font-bold">
+                                        1</div>
+                                    <div>
+                                        <h5 class="font-semibold text-slate-700">Voie Per Os prioritaire</h5>
+                                        <p class="text-slate-500">Pour le confort et la facilité d'administration.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="bg-rose-100 text-rose-700 w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center font-bold">
+                                        2</div>
+                                    <div>
+                                        <h5 class="font-semibold text-slate-700">Prioriser la prévention</h5>
+                                        <p class="text-slate-500">Administrer à intervalles réguliers.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="bg-rose-100 text-rose-700 w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center font-bold">
+                                        3</div>
+                                    <div>
+                                        <h5 class="font-semibold text-slate-700">Utiliser une approche par étapes</h5>
+                                        <p class="text-slate-500">Commencer avec l'antalgique adapté à l'intensité.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="bg-rose-100 text-rose-700 w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center font-bold">
+                                        4</div>
+                                    <div>
+                                        <h5 class="font-semibold text-slate-700">Individualisation</h5>
+                                        <p class="text-slate-500">Adapter le traitement à chaque patient.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="bg-rose-100 text-rose-700 w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center font-bold">
+                                        5</div>
+                                    <div>
+                                        <h5 class="font-semibold text-slate-700">Ajout de co-analgésiques</h5>
+                                        <p class="text-slate-500">Si nécessaire, surtout pour les douleurs neuro.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -298,14 +843,17 @@
             <div id="quiz" class="page hidden">
                 <div class="bg-gradient-to-br from-slate-50 to-gray-100 p-6 sm:p-8 md:p-10 rounded-2xl shadow-inner">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-2">Quiz Interactif</h2>
-                    <p class="text-slate-600 mb-8">Testez vos connaissances et validez vos acquis sur les antalgiques.</p>
-                    
-                    <div id="qcm-container" class="space-y-8">
-                        </div>
+                    <p class="text-slate-600 mb-8">Testez vos connaissances et validez vos acquis sur les antalgiques.
+                    </p>
 
-                    <div id="quiz-footer" class="mt-10 pt-6 border-t-2 border-slate-200 flex justify-between items-center">
+                    <div id="qcm-container" class="space-y-8">
+                    </div>
+
+                    <div id="quiz-footer"
+                        class="mt-10 pt-6 border-t-2 border-slate-200 flex justify-between items-center">
                         <p id="quiz-score" class="text-xl md:text-2xl font-bold text-slate-800"></p>
-                        <button onclick="resetQuiz()" id="reset-button" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 transform opacity-0 pointer-events-none">
+                        <button onclick="resetQuiz()" id="reset-button"
+                            class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 transform opacity-0 pointer-events-none">
                             Recommencer
                         </button>
                     </div>
@@ -316,7 +864,9 @@
         <footer id="footer" class="bg-slate-800 text-white p-4 md:p-6 mt-auto rounded-b-xl shadow-inner">
             <div class="max-w-6xl mx-auto flex items-center justify-center md:justify-end text-center">
                 <p class="font-bold text-slate-300 text-xs sm:text-sm">
-                <span class="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2025
+                    <span
+                        class="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">Lucas
+                        Séraudie</span> - 2025
                 </p>
             </div>
         </footer>
@@ -437,9 +987,9 @@
             },
             {
                 question: "Quel est le délai d'action approximatif du paracétamol administré par voie intraveineuse pour son effet antalgique ?",
-                options: ["Immédiat", "5 minutes", "30 minutes", "1 heure (pic d'efficacité)"],
-                correct: 3,
-                feedback: "Le pic d'efficacité antalgique du paracétamol IV est atteint en environ 1 heure. L'effet sur la fièvre est plus rapide (30 min)."
+                options: ["1 minute", "10 à 15 minutes", "30 à 40 minutes", "1 heure"],
+                correct: 1,
+                feedback: "Le délai d'action du paracétamol IV est de 10 à 15 minutes, bien que le pic d'efficacité antalgique soit atteint en environ 1 heure."
             },
             {
                 question: "L'un des '5 principes' de l'OMS pour l'administration des antalgiques est 'l'individualisation'. Qu'est-ce que cela signifie ?",
@@ -477,7 +1027,7 @@
             });
             const activePage = document.getElementById(pageId);
             if (activePage) activePage.classList.remove('hidden');
-            
+
             const navButtons = document.querySelectorAll('.nav-btn');
             navButtons.forEach(btn => {
                 const page = btn.dataset.page;
@@ -491,13 +1041,13 @@
         }
 
         // --- Logique du Quiz ---
-       function renderQuiz() {
+        function renderQuiz() {
             const container = document.getElementById('qcm-container');
             if (!container) return;
             container.innerHTML = '';
             quizData.forEach((item, index) => {
                 // Génération des boutons de réponse arrondis et stylisés
-                const optionsHtml = item.options.map((option, optionIndex) => 
+                const optionsHtml = item.options.map((option, optionIndex) =>
                     `<button class="qcm-option w-full text-left p-4 rounded-xl bg-white border-2 border-slate-200 hover:bg-slate-100 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200" data-index="${optionIndex}">${option}</button>`
                 ).join('');
 
@@ -519,11 +1069,11 @@
             if (!container) return;
             container.addEventListener('click', (event) => {
                 if (!event.target.classList.contains('qcm-option')) return;
-                
+
                 const optionButton = event.target;
                 const questionEl = optionButton.closest('.qcm-question');
                 if (!questionEl || questionEl.classList.contains('answered')) return;
-                
+
                 questionEl.classList.add('answered');
                 const questionIndex = parseInt(questionEl.dataset.questionIndex, 10);
                 const questionData = quizData[questionIndex];
@@ -540,7 +1090,7 @@
                     correctButton.classList.add('correct');
                     feedbackEl.innerHTML = `<div class="text-red-700 p-3 bg-red-100 rounded-lg"><b class="font-bold">Dommage.</b> ${questionData.feedback || ''}</div>`;
                 }
-                
+
                 questionEl.querySelectorAll('.qcm-option').forEach(btn => {
                     btn.disabled = true;
                 });
@@ -551,15 +1101,15 @@
         function updateScore() {
             const totalQuestions = quizData.length;
             let score = 0;
-            
+
             document.querySelectorAll('.qcm-question.answered').forEach(questionEl => {
                 if (questionEl.querySelector('.qcm-option.correct[disabled]')) {
-                     const selectedCorrect = questionEl.querySelector('.qcm-option.correct:not(.incorrect)');
-                     if(selectedCorrect && !selectedCorrect.classList.contains('incorrect')){
-                         // If there is no incorrect button, it means the user got it right
-                         const incorrectButton = questionEl.querySelector('.qcm-option.incorrect');
-                         if(!incorrectButton) score++;
-                     }
+                    const selectedCorrect = questionEl.querySelector('.qcm-option.correct:not(.incorrect)');
+                    if (selectedCorrect && !selectedCorrect.classList.contains('incorrect')) {
+                        // If there is no incorrect button, it means the user got it right
+                        const incorrectButton = questionEl.querySelector('.qcm-option.incorrect');
+                        if (!incorrectButton) score++;
+                    }
                 }
             });
 
@@ -568,7 +1118,7 @@
                 const answeredCount = document.querySelectorAll('.qcm-question.answered').length;
                 scoreEl.textContent = `Votre score : ${score} / ${answeredCount}`;
                 if (answeredCount === totalQuestions) {
-                     scoreEl.textContent = `Score final : ${score} / ${totalQuestions}`;
+                    scoreEl.textContent = `Score final : ${score} / ${totalQuestions}`;
                     const percentage = (score / totalQuestions) * 100;
                     if (percentage >= 80) {
                         scoreEl.textContent += " - Excellent travail ! 🎉";
@@ -584,7 +1134,7 @@
         }
 
         function resetQuiz() {
-            renderQuiz(); 
+            renderQuiz();
         }
 
         // --- Initialisation ---
@@ -596,4 +1146,5 @@
         });
     </script>
 </body>
+
 </html>
