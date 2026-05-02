@@ -17,7 +17,7 @@ Les thématiques suivantes sont actuellement disponibles :
 
 ## 👥 Équipe du Projet
 
-*   **Lucas Séraudie** : Auteur principal, conception et développement des supports visuels.
+*   **Lucas Séraudie** : Créateur et auteur principal, conception et développement des supports visuels.
 *   **Thomas Duflot** : Relecture critique et validation de l'exactitude des contenus scientifiques.
 
 ## ⚖️ Licence
