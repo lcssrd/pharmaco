@@ -76,5 +76,4 @@ env/
 *.sqlite
 *.db
 docs/
-.github/
 

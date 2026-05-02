@@ -1,160 +1,218 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Les Anti-Inflammatoires : Cours Pharmacologie IFSI - UE 2.11 S1</title>
-    
-    <meta name="description" content="Fiche de révision complète sur les anti-inflammatoires pour étudiants infirmiers (IFSI). Processus inflammatoire, AINS, Corticoïdes, effets secondaires et rôle infirmier.">
-    
+
+    <meta name="description"
+        content="Fiche de révision complète sur les anti-inflammatoires pour étudiants infirmiers (IFSI). Processus inflammatoire, AINS, Corticoïdes, effets secondaires et rôle infirmier.">
+
     <meta property="og:title" content="Les Anti-Inflammatoires - Révision Pharmacologie IFSI">
-    <meta property="og:description" content="Comprendre l'inflammation, les AINS et les Corticoïdes. Fiche de révision UE 2.11.">
+    <meta property="og:description"
+        content="Comprendre l'inflammation, les AINS et les Corticoïdes. Fiche de révision UE 2.11.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lcssrd.github.io/pharmaco/antiinflam.html">
-    
+
     <link rel="canonical" href="https://lcssrd.github.io/pharmaco/antiinflam.html" />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         html {
-            overflow-y: scroll; /* Prevents layout shift when content length changes */
+            overflow-y: scroll;
+            /* Prevents layout shift when content length changes */
         }
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f1f5f9; /* slate-100 */
+            background-color: #f1f5f9;
+            /* slate-100 */
         }
+
         /* Animation for page transitions */
         .page {
             animation: fadeIn 0.5s ease-in-out;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         /* Quiz specific styles */
         .qcm-option.correct {
-            background-image: linear-gradient(to right, #4ade80, #16a34a); /* from-green-400 to-green-600 */
+            background-image: linear-gradient(to right, #4ade80, #16a34a);
+            /* from-green-400 to-green-600 */
             color: white;
-            border-color: #15803d; /* green-700 */
+            border-color: #15803d;
+            /* green-700 */
             font-weight: 600;
         }
+
         .qcm-option.incorrect {
-            background-image: linear-gradient(to right, #f87171, #dc2626); /* from-red-400 to-red-600 */
+            background-image: linear-gradient(to right, #f87171, #dc2626);
+            /* from-red-400 to-red-600 */
             color: white;
-            border-color: #b91c1c; /* red-700 */
+            border-color: #b91c1c;
+            /* red-700 */
             font-weight: 600;
         }
+
         .qcm-option:disabled {
             cursor: not-allowed;
         }
+
         .qcm-option:disabled:not(.correct):not(.incorrect) {
-            color: #475569; /* slate-600 */
-            background-color: #f1f5f9; /* slate-100 */
+            color: #475569;
+            /* slate-600 */
+            background-color: #f1f5f9;
+            /* slate-100 */
             opacity: 0.7;
         }
     </style>
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="a71ff4d4-4d84-4066-aa50-313ab8d66b1b"></script>
+    <script defer src="https://cloud.umami.is/script.js"
+        data-website-id="a71ff4d4-4d84-4066-aa50-313ab8d66b1b"></script>
 </head>
+
 <body class="p-2 sm:p-4 md:p-8">
     <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
-        
+
         <header class="bg-slate-800 text-white p-6 md:p-8 sticky top-0 z-20">
             <div class="flex items-center justify-between">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent pb-2">Les Anti-Inflammatoires (Cours IFSI)</h1>
+                <h1
+                    class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent pb-2">
+                    Les Anti-Inflammatoires (Cours IFSI)</h1>
                 <div class="hidden md:flex text-right font-bold text-slate-300 text-sm">
-                    <p><span class="bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent">Lucas Séraudie</span> - 2026</p>
+                    <p><span class="bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent">Lucas
+                            Séraudie</span> - 2026</p>
                 </div>
             </div>
 
             <nav id="navbar" class="pt-6">
-                 <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-2 sm:grid-cols-4 gap-2">
-                    <button data-page="inflammation" onclick="showPage('inflammation')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Inflammation</button>
-                    <button data-page="ains" onclick="showPage('ains')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">AINS</button>
-                    <button data-page="cortico" onclick="showPage('cortico')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Corticoïdes</button>
-                    <button data-page="quiz" onclick="showPage('quiz')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Quiz</button>
+                <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-2 sm:grid-cols-4 gap-2">
+                    <button data-page="inflammation" onclick="showPage('inflammation')"
+                        class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Inflammation</button>
+                    <button data-page="ains" onclick="showPage('ains')"
+                        class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">AINS</button>
+                    <button data-page="cortico" onclick="showPage('cortico')"
+                        class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Corticoïdes</button>
+                    <button data-page="quiz" onclick="showPage('quiz')"
+                        class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Quiz</button>
                 </div>
             </nav>
         </header>
 
-        
+
         <main id="main-content" class="p-4 sm:p-6 md:p-8">
 
             <div id="inflammation" class="page hidden">
                 <h2 class="text-2xl md:text-3xl font-bold text-purple-500 mb-6">
                     🔥 LE PROCESSUS INFLAMMATOIRE
                 </h2>
-                
+
                 <div class="space-y-6 text-sm text-slate-700">
-                    <p>L'inflammation est une réaction de défense naturelle de l'organisme face à une agression (infection, traumatisme, allergie...).</p>
-                    
+                    <p>L'inflammation est une réaction de défense naturelle de l'organisme face à une agression
+                        (infection, traumatisme, allergie...).</p>
+
                     <div class="bg-purple-50 p-4 rounded-xl border-2 border-red-300 shadow-lg">
-                        <h3 class="font-semibold text-red-800 text-lg mb-2 border-b border-red-200 pb-1">Les Signes Cliniques</h3>
+                        <h3 class="font-semibold text-red-800 text-lg mb-2 border-b border-red-200 pb-1">Les Signes
+                            Cliniques</h3>
                         <ul class="list-disc list-inside space-y-1">
                             <li><strong>Chaleur :</strong> Augmentation du flux sanguin (vasodilatation).</li>
                             <li><strong>Rougeur :</strong> Augmentation du flux sanguin local.</li>
-                            <li><strong>Œdème/Gonflement :</strong> Sortie de plasma dans l'espace interstitiel due à l'augmentation de la perméabilité capillaire.</li>
-                            <li><strong>Douleur :</strong> Stimulation des terminaisons nerveuses par la pression de l'œdème et par les médiateurs chimiques (notamment les prostaglandines).</li>
-                            <li><strong>Perte de fonction :</strong> Conséquence des autres signes, limitant l'utilisation de la zone touchée.</li>
+                            <li><strong>Œdème/Gonflement :</strong> Sortie de plasma dans l'espace interstitiel due à
+                                l'augmentation de la perméabilité capillaire.</li>
+                            <li><strong>Douleur :</strong> Stimulation des terminaisons nerveuses par la pression de
+                                l'œdème et par les médiateurs chimiques (notamment les prostaglandines).</li>
+                            <li><strong>Perte de fonction :</strong> Conséquence des autres signes, limitant
+                                l'utilisation de la zone touchée.</li>
                         </ul>
                     </div>
-                    
+
                     <div class="bg-red-100 p-5 rounded-xl border-2 border-red-300 shadow-lg">
                         <h3 class="font-bold text-red-800 text-lg mb-3">🔬 La Cascade Biochimique de l'Inflammation</h3>
-                        
+
                         <ol class="list-decimal list-inside space-y-3 pl-2">
                             <li>
                                 <span class="font-semibold text-red-700">Phase Vasculaire et Histamine :</span>
-                                Dès l'agression, les mastocytes libèrent des médiateurs préformés, notamment l'<strong>Histamine</strong>. Celle-ci provoque une <strong>vasodilatation</strong> rapide et une forte augmentation de la <strong>perméabilité capillaire</strong>. C'est l'histamine qui est responsable des signes précoces (rougeur et chaleur) et de l'œdème initial.
+                                Dès l'agression, les mastocytes libèrent des médiateurs préformés, notamment
+                                l'<strong>Histamine</strong>. Celle-ci provoque une <strong>vasodilatation</strong>
+                                rapide et une forte augmentation de la <strong>perméabilité capillaire</strong>. C'est
+                                l'histamine qui est responsable des signes précoces (rougeur et chaleur) et de l'œdème
+                                initial.
                             </li>
                             <li>
                                 <span class="font-semibold text-red-700">Lésion Membranaire et Phospholipide :</span>
-                                Les membranes cellulaires des cellules lésées libèrent des <strong>phospholipides</strong>.
+                                Les membranes cellulaires des cellules lésées libèrent des
+                                <strong>phospholipides</strong>.
                             </li>
                             <li>
                                 <span class="font-semibold text-red-700">Rôle de la Phospholipase A2 (PL-A2) :</span>
-                                L'enzyme <strong>Phospholipase A2</strong> agit sur ces phospholipides pour libérer l'<strong>Acide Arachidonique (AA)</strong>, la molécule clé du processus.
-                                <p class="mt-1 italic text-xs text-red-600">➡️ Cible des Corticoïdes : Ils agissent à ce niveau en inhibant directement la PL-A2, bloquant ainsi l'ensemble de la cascade.</p>
+                                L'enzyme <strong>Phospholipase A2</strong> agit sur ces phospholipides pour libérer
+                                l'<strong>Acide Arachidonique (AA)</strong>, la molécule clé du processus.
+                                <p class="mt-1 italic text-xs text-red-600">➡️ Cible des Corticoïdes : Ils agissent en
+                                    induisant la synthèse de protéines anti-inflammatoires qui vont inhiber la PL-A2,
+                                    bloquant ainsi l'ensemble de la cascade.</p>
                             </li>
                             <li>
-                                <span class="font-semibold text-red-700">Les Deux Voies de Métabolisation de l'AA :</span>
+                                <span class="font-semibold text-red-700">Les Deux Voies de Métabolisation de l'AA
+                                    :</span>
                                 L'Acide Arachidonique est ensuite métabolisé par deux enzymes principales :
                                 <ul class="list-disc list-inside ml-4 mt-1">
                                     <li>
-                                        <span class="font-medium">Voie des Cyclooxygénases (COX-1 et COX-2) :</span> Produit les <strong>Prostaglandines</strong> (responsables de la douleur, de la vasodilatation, de l'œdème et de la fièvre) et les Thromboxanes.
-                                        <p class="italic text-xs text-red-600">➡️ Cible des AINS : Ils inhibent les enzymes COX pour réduire la production de prostaglandines.</p>
+                                        <span class="font-medium">Voie des Cyclooxygénases (COX-1 et COX-2) :</span>
+                                        Produit les <strong>Prostaglandines</strong> (responsables de la douleur, de la
+                                        vasodilatation, de l'œdème et de la fièvre) et les Thromboxanes.
+                                        <p class="italic text-xs text-red-600">➡️ Cible des AINS : Ils inhibent les
+                                            enzymes COX pour réduire la production de prostaglandines.</p>
                                     </li>
                                     <li>
-                                        <span class="font-medium">Voie des Lipooxygénases (LOX) :</span> Produit les <strong>Leucotriènes</strong>, des médiateurs puissants de l'inflammation, notamment impliqués dans l'asthme et les réactions allergiques.
+                                        <span class="font-medium">Voie des Lipooxygénases (LOX) :</span> Produit les
+                                        <strong>Leucotriènes</strong>, des médiateurs puissants de l'inflammation,
+                                        notamment impliqués dans l'asthme et les réactions allergiques.
                                     </li>
                                 </ul>
                             </li>
                         </ol>
                     </div>
 
-                    <p class="text-slate-600 pt-2">En comprenant ce mécanisme, on comprend mieux pourquoi les <strong>Corticoïdes</strong> (qui coupent l'inflammation à la source via PL-A2) ont un pouvoir anti-inflammatoire bien supérieur aux <strong>AINS</strong> (qui bloquent seulement la voie COX).</p>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 mt-6 shadow-sm">
+                        <p class="text-slate-700 leading-relaxed">
+                            <span class="font-bold text-slate-900">💡 Ce qu'il faut retenir :</span> 
+                            L'action des corticoïdes est plus globale que celle des AINS car ils bloquent l'inflammation à sa source. 
+                            Toutefois, leur effet est moins immédiat car ils doivent agir au cœur des cellules (transcription des gènes).
+                        </p>
+                    </div>
                 </div>
 
                 <div class="mt-8">
-                    <h3 class="text-xl font-bold text-red-600 mb-4 border-b pb-2 border-red-300">Vidéo explicative : L'Inflammation en 6 minutes</h3>
+                    <h3 class="text-xl font-bold text-red-600 mb-4 border-b pb-2 border-red-300">Vidéo explicative :
+                        L'Inflammation en 6 minutes</h3>
                     <div class="aspect-video w-full rounded-xl overflow-hidden shadow-2xl ring-4 ring-red-300/50">
-                        <iframe 
-                            src="https://www.youtube.com/embed/mxNUvVj3ixU" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen
-                            class="w-full h-full"
-                        ></iframe>
+                        <iframe src="https://www.youtube.com/embed/mxNUvVj3ixU" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen class="w-full h-full"></iframe>
                     </div>
                 </div>
-                </div>
+            </div>
 
             <div id="ains" class="page hidden">
-                <h2 class="text-2xl md:text-3xl font-bold text-orange-600">Anti-Inflammatoires Non Stéroïdiens (AINS)</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-orange-600">Anti-Inflammatoires Non Stéroïdiens (AINS)
+                </h2>
                 <div class="space-y-4 mt-4">
                     <div class="bg-orange-50 p-4 rounded-lg">
                         <h3 class="font-semibold text-orange-800 mb-2">💊 Exemples</h3>
@@ -166,31 +224,54 @@
                                 </tr>
                             </thead>
                             <tbody class="text-orange-700">
-                                <tr><td class="p-2">Ibuprofène</td><td class="p-2">Advil®, Nurofen®</td></tr>
-                                <tr class="bg-orange-50"><td class="p-2">Kétoprofène</td><td class="p-2">Profénid®</td></tr>
-                                <tr><td class="p-2">Acide acétylsalicylique (à fortes doses)</td><td class="p-2">Aspirine®</td></tr>
-                                <tr class="bg-orange-50"><td class="p-2">Diclofénac</td><td class="p-2">Voltarène®</td></tr>
+                                <tr>
+                                    <td class="p-2">Ibuprofène</td>
+                                    <td class="p-2">Advil®, Nurofen®</td>
+                                </tr>
+                                <tr class="bg-orange-50">
+                                    <td class="p-2">Kétoprofène</td>
+                                    <td class="p-2">Profénid®</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">Acide acétylsalicylique (à fortes doses)</td>
+                                    <td class="p-2">Aspirine®</td>
+                                </tr>
+                                <tr class="bg-orange-50">
+                                    <td class="p-2">Diclofénac</td>
+                                    <td class="p-2">Voltarène®</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="bg-orange-50 p-4 rounded-lg">
                         <h3 class="font-semibold text-orange-800">⚙️ Mécanisme d'action</h3>
-                        <p class="text-orange-700 text-sm">Inhibition de l'enzyme <strong>Cyclooxygénase (COX)</strong>, ce qui bloque la synthèse des prostaglandines (médiateurs de la douleur et de l'inflammation). Certains inhibent COX-1 et COX-2 de manière non sélective, d'autres sont plus sélectifs COX-2 (Coxibs).</p>
+                        <p class="text-orange-700 text-sm">Inhibition de l'enzyme <strong>Cyclooxygénase (COX)</strong>,
+                            ce qui bloque la synthèse des prostaglandines (médiateurs de la douleur et de
+                            l'inflammation). Certains inhibent COX-1 et COX-2 de manière non sélective, d'autres sont
+                            plus sélectifs COX-2 (Coxibs).</p>
                     </div>
                     <div class="bg-orange-50 p-4 rounded-lg">
                         <h3 class="font-semibold text-orange-800">⚠️ Effets Secondaires & Vigilance</h3>
                         <ul class="list-disc list-inside text-orange-700 text-sm space-y-1">
-                            <li><strong>Digestifs (COX-1)</strong> : Risque d'ulcère gastro-duodénal et d'hémorragie digestive. <span class="font-bold">À prendre au milieu d'un repas.</span></li>
-                            <li><strong>Rénaux</strong> : Risque d'insuffisance rénale (surtout chez les patients déshydratés ou âgés).</li>
-                            <li><strong>Cardiovasculaires (COX-2)</strong> : Augmentation du risque thrombotique (infarctus, AVC).</li>
-                            <li><strong>Interactions :</strong> Formellement contre-indiqués avec les <strong>anticoagulants</strong> (augmentation du risque hémorragique) et les <strong>corticoïdes</strong> (augmentation du risque digestif).</li>
-                            <li><strong>Contre-indication :</strong> Grossesse (dès le 6e mois), insuffisance rénale ou hépatique sévère.</li>
+                            <li><strong>Digestifs (COX-1)</strong> : Risque d'ulcère gastro-duodénal et d'hémorragie
+                                digestive. <span class="font-bold">À prendre au milieu d'un repas.</span></li>
+                            <li><strong>Rénaux</strong> : Risque d'insuffisance rénale (surtout chez les patients
+                                déshydratés ou âgés).</li>
+                            <li><strong>Cardiovasculaires (COX-2)</strong> : Augmentation du risque thrombotique
+                                (infarctus, AVC).</li>
+                            <li><strong>Interactions :</strong> Formellement contre-indiqués avec les
+                                <strong>anticoagulants</strong> (augmentation du risque hémorragique) et les
+                                <strong>corticoïdes</strong> (augmentation du risque digestif).
+                            </li>
+                            <li><strong>Contre-indication :</strong> Grossesse (dès le 6e mois), insuffisance rénale ou
+                                hépatique sévère.</li>
                         </ul>
                     </div>
                     <div class="bg-orange-100 p-4 rounded-lg border-l-4 border-orange-400">
                         <h3 class="font-semibold text-orange-800">🎓 Rôle Infirmier Clé</h3>
                         <ul class="list-disc list-inside text-orange-700 text-sm space-y-1 mt-2">
-                            <li>Éduquer le patient à la <strong>prise au milieu des repas</strong> et à l'hydratation.</li>
+                            <li>Éduquer le patient à la <strong>prise au milieu des repas</strong> et à l'hydratation.
+                            </li>
                             <li>Surveiller les signes de saignement digestif (méléna, hématémèse).</li>
                             <li>Vérifier l'absence d'association avec d'autres AINS, anticoagulants ou corticoïdes.</li>
                         </ul>
@@ -211,30 +292,46 @@
                                 </tr>
                             </thead>
                             <tbody class="text-lime-700">
-                                <tr><td class="p-2">Prednisone</td><td class="p-2">Cortancyl®</td></tr>
-                                <tr class="bg-lime-50"><td class="p-2">Prednisolone</td><td class="p-2">Solupred®</td></tr>
-                                <tr><td class="p-2">Dexaméthasone</td><td class="p-2">Decadron®</td></tr>
+                                <tr>
+                                    <td class="p-2">Prednisone</td>
+                                    <td class="p-2">Cortancyl®</td>
+                                </tr>
+                                <tr class="bg-lime-50">
+                                    <td class="p-2">Prednisolone</td>
+                                    <td class="p-2">Solupred®</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">Dexaméthasone</td>
+                                    <td class="p-2">Decadron®</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="bg-lime-50 p-4 rounded-lg">
                         <h3 class="font-semibold text-lime-800">⚙️ Mécanisme d'action</h3>
-                        <p class="text-lime-700 text-sm">Puissant effet anti-inflammatoire en agissant directement sur l'ADN des cellules et en inhibant la <strong>Phospholipase A2</strong>, coupant ainsi la source de l'acide arachidonique et donc la synthèse de tous les médiateurs inflammatoires (prostaglandines et leucotriènes).</p>
+                        <p class="text-lime-700 text-sm">Les corticoïdes vont se fixer sur leur récepteur, rentrer dans
+                            le noyau et induire la transcription et donc la synthèse de composés anti-inflammatoires et
+                            réduire celle de composés pro-inflammatoires.</p>
                     </div>
                     <div class="bg-lime-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-lime-800">⚠️ Effets Secondaires & Vigilance (Traitement au long cours)</h3>
+                        <h3 class="font-semibold text-lime-800">⚠️ Effets Secondaires & Vigilance (Traitement au long
+                            cours)</h3>
                         <ul class="list-disc list-inside text-lime-700 text-sm space-y-1">
-                            <li><strong>Métaboliques :</strong> Hyperglycémie (risque de diabète), rétention hydrosodée (œdèmes, hypertension).</li>
+                            <li><strong>Métaboliques :</strong> Hyperglycémie (risque de diabète), rétention hydrosodée
+                                (œdèmes, hypertension).</li>
                             <li><strong>Osseux :</strong> Ostéoporose.</li>
                             <li><strong>Infectieux :</strong> Immunodépression (masque les signes d'infection).</li>
-                            <li><strong>Digestifs :</strong> Risque d'ulcère gastro-duodénal (d'où l'association fréquente avec un IPP).</li>
-                            <li><strong>Endocriniens :</strong> <strong>Insuffisance surrénale aiguë</strong> si l'arrêt est brutal (nécessité d'un sevrage progressif).</li>
+                            <li><strong>Digestifs :</strong> Risque d'ulcère gastro-duodénal (d'où l'association
+                                fréquente avec un IPP).</li>
+                            <li><strong>Endocriniens :</strong> <strong>Insuffisance surrénale aiguë</strong> si l'arrêt
+                                est brutal (nécessité d'un sevrage progressif).</li>
                         </ul>
                     </div>
                     <div class="bg-lime-100 p-4 rounded-lg border-l-4 border-lime-400">
                         <h3 class="font-semibold text-lime-800">🎓 Rôle Infirmier Clé</h3>
                         <ul class="list-disc list-inside text-lime-700 text-sm space-y-1 mt-2">
-                            <li>Éduquer sur la <strong>prise matinale</strong> (pour respecter le pic de cortisol physiologique).</li>
+                            <li>Éduquer sur la <strong>prise matinale</strong> (pour respecter le pic de cortisol
+                                physiologique).</li>
                             <li>NE JAMAIS arrêter brutalement le traitement (risque d'insuffisance surrénale).</li>
                             <li>Surveiller le poids, la glycémie, la tension artérielle.</li>
                             <li>Informer le patient sur le risque infectieux et les signes à surveiller.</li>
@@ -247,30 +344,34 @@
                 <div class="bg-gradient-to-br from-slate-50 to-gray-100 p-6 sm:p-8 md:p-10 rounded-2xl shadow-inner">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-2">Quiz Interactif</h2>
                     <p class="text-slate-600 mb-8">Testez vos connaissances sur les AINS et les Corticoïdes.</p>
-                    
-                    <div id="qcm-container" class="space-y-8">
-                        </div>
 
-                    <div id="quiz-footer" class="mt-10 pt-6 border-t-2 border-slate-200 flex justify-between items-center">
+                    <div id="qcm-container" class="space-y-8">
+                    </div>
+
+                    <div id="quiz-footer"
+                        class="mt-10 pt-6 border-t-2 border-slate-200 flex justify-between items-center">
                         <p id="quiz-score" class="text-xl md:text-2xl font-bold text-slate-800"></p>
-                        <button onclick="resetQuiz()" id="reset-button" class="bg-gradient-to-r from-teal-500 via-cyan-500 to-blue-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 transform opacity-0 pointer-events-none">
+                        <button onclick="resetQuiz()" id="reset-button"
+                            class="bg-gradient-to-r from-teal-500 via-cyan-500 to-blue-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 transform opacity-0 pointer-events-none">
                             Recommencer
                         </button>
                     </div>
                 </div>
             </div>
-            
+
         </main>
 
         <footer id="footer" class="bg-slate-800 text-white p-4 md:p-6 mt-auto">
             <div class="flex items-center justify-center md:justify-end text-center">
                 <p class="font-bold text-slate-300 text-xs sm:text-sm">
-                <span class="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2026
+                    <span
+                        class="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">Lucas
+                        Séraudie</span> - 2026
                 </p>
             </div>
         </footer>
 
-        
+
     </div>
 
     <script>
@@ -312,12 +413,6 @@
                 feedback: "L'association AINS + <strong>Anticoagulant</strong> multiplie le risque d'hémorragie digestive."
             },
             {
-                question: "Quel médiateur inflammatoire est directement inhibé par les Corticoïdes ?",
-                options: ["L'Histamine", "La Phospholipase A2", "La Cyclooxygénase (COX)", "Les Leucotriènes"],
-                correct: 1,
-                feedback: "Les Corticoïdes agissent en amont en inhibant la <strong>Phospholipase A2</strong>, ce qui bloque la production de prostaglandines ET de leucotriènes."
-            },
-            {
                 question: "Quel effet secondaire à long terme des Corticoïdes justifie un contrôle strict de la glycémie ?",
                 options: ["L'hypoglycémie", "L'hyponatrémie", "L'hyperglycémie", "L'hypocalcémie"],
                 correct: 2,
@@ -357,18 +452,18 @@
             pages.forEach(page => page.classList.add('hidden'));
             const activePage = document.getElementById(pageId);
             if (activePage) activePage.classList.remove('hidden');
-            
+
             // Mise à jour de l'objet gradients : 'home' a été retiré.
             const gradients = {
                 inflammation: ['from-purple-500', 'to-pink-500'],
-                ains: ['from-orange-500', 'to-yellow-500'], 
+                ains: ['from-orange-500', 'to-yellow-500'],
                 cortico: ['from-lime-500', 'to-green-500'],
                 quiz: ['from-slate-500', 'to-gray-700'],
             };
 
             navButtons.forEach(btn => {
                 const btnPageId = btn.getAttribute('onclick').match(/'([^']+)'/)[1];
-                
+
                 // Uniquement les boutons actifs
                 if (gradients[btnPageId]) {
                     Object.values(gradients).flat().forEach(gClass => btn.classList.remove(gClass));
@@ -387,7 +482,7 @@
         function createCharts() {
             // Function maintained for consistency but kept empty as no charts are required.
         }
-        
+
         // --- Dynamic Top Position for Navbar (same as original) ---
         function setNavbarPosition() {
             const header = document.getElementById('header');
@@ -404,7 +499,7 @@
             container.innerHTML = '';
             quizData.forEach((item, index) => {
                 // Use innerHTML for options to allow <strong> tags
-                const optionsHtml = item.options.map((option, optionIndex) => 
+                const optionsHtml = item.options.map((option, optionIndex) =>
                     `<button class="qcm-option w-full text-left p-4 rounded-xl bg-white border-2 border-slate-200 hover:bg-slate-100 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition-all duration-200" data-index="${optionIndex}">${option}</button>`
                 ).join('');
 
@@ -425,11 +520,11 @@
             if (!container) return;
             container.addEventListener('click', (event) => {
                 if (!event.target.classList.contains('qcm-option')) return;
-                
+
                 const optionButton = event.target;
                 const questionEl = optionButton.closest('.qcm-question');
                 if (!questionEl || questionEl.classList.contains('answered')) return;
-                
+
                 questionEl.classList.add('answered');
                 const questionIndex = parseInt(questionEl.dataset.questionIndex, 10);
                 const questionData = quizData[questionIndex];
@@ -448,7 +543,7 @@
                     // Use innerHTML for feedback to allow <strong> tags
                     feedbackEl.innerHTML = `<p class="text-red-600">Dommage. ${questionData.feedback || ''}</p>`;
                 }
-                
+
                 questionEl.querySelectorAll('.qcm-option').forEach(btn => btn.disabled = true);
                 updateScore();
             });
@@ -457,7 +552,7 @@
         function updateScore() {
             const totalQuestions = quizData.length;
             let score = 0;
-            
+
             document.querySelectorAll('.qcm-question.answered').forEach(questionEl => {
                 if (questionEl.querySelector('.qcm-option.correct') && !questionEl.querySelector('.qcm-option.incorrect')) {
                     score++;
@@ -469,24 +564,24 @@
                 const answeredCount = document.querySelectorAll('.qcm-question.answered').length;
                 scoreEl.textContent = `Votre score : ${score} / ${totalQuestions}`;
                 if (answeredCount === totalQuestions) {
-                     const percentage = (score / totalQuestions) * 100;
-                     if (percentage >= 75) {
+                    const percentage = (score / totalQuestions) * 100;
+                    if (percentage >= 75) {
                         scoreEl.textContent += " - Excellent travail ! 🎉";
-                     } else if (percentage >= 50) {
+                    } else if (percentage >= 50) {
                         scoreEl.textContent += " - Pas mal, continuez à réviser ! 💪";
-                     } else {
+                    } else {
                         scoreEl.textContent += " - Encore un effort ! 📚";
-                     }
-                     const resetButton = document.getElementById('reset-button');
-                     resetButton.classList.remove('opacity-0', 'pointer-events-none');
+                    }
+                    const resetButton = document.getElementById('reset-button');
+                    resetButton.classList.remove('opacity-0', 'pointer-events-none');
                 }
             }
         }
-        
+
         function resetQuiz() {
-            renderQuiz(); 
+            renderQuiz();
         }
-        
+
         // --- Initial Load ---
         window.onload = () => {
             showPage('inflammation'); // La page 'inflammation' est maintenant la page par défaut
@@ -500,4 +595,5 @@
 
     </script>
 </body>
+
 </html>
