@@ -1,0 +1,80 @@
+# Dependencies
+node_modules/
+jspm_packages/
+.pnp
+.pnp.js
+skills-lock.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env.local
+
+# Build/Temp
+dist/
+build/
+out/
+.next/
+.cache/
+.parcel-cache/
+.turbo/
+.vercel/
+.npm/
+
+# Testing
+coverage/
+.nyc_output/
+
+# Agent specific (if applicable)
+.agent/scratch/
+.agent/logs/
+.agent/temp/
+.agent/
+.agents/
+
+# Misc
+*.bak
+*.tmp
+*.temp
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+ENV/
+env/
+
+# Data
+*.sqlite
+*.db
+docs/
+.github/
+
