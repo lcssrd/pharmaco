@@ -29,5 +29,5 @@ Vous êtes libre de :
 *   **Adapter** : Remixer, transformer et créer à partir du matériel pour toute utilisation, même commerciale.
 
 Selon les conditions suivantes :
-*   **Attribution** : Vous devez créditer l'œuvre, fournir un lien vers la licence et indiquer si des modifications ont été effectuées.
+*   **Attribution** : Vous devez citer et créditer ce dépot, fournir un lien vers la licence et indiquer si des modifications ont été effectuées.
 *   **Partage dans les Mêmes Conditions** : Si vous modifiez le matériel, vous devez distribuer votre contribution sous la même licence que l'original.
