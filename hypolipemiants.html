@@ -95,12 +95,14 @@
                                 <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="shield-check" class="text-blue-600 w-6 h-6"></i></div>
                                 <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Rôle Physiologique du Cholestérol</h4>
                             </div>
-                            <p class="text-slate-600 mb-4">Essentiel à l'organisme, le cholestérol est un constituant des membranes cellulaires et le précurseur de molécules vitales.</p>
+                            <p class="text-slate-600 mb-4">Essentiel à l'organisme, le cholestérol stabilise les <strong>membranes cellulaires</strong> (intercalé entre les phospholipides), participe au fonctionnement du <strong>système nerveux</strong> et sert de précurseur à de nombreuses molécules vitales.</p>
                              <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-3 text-slate-700 list-inside list-disc">
-                                <li>Hormones stéroïdes</li>
-                                <li>Vitamine D</li>
+                                <li>Hormones stéroïdiennes (cortisol, aldostérone)</li>
+                                <li>Hormones sexuelles (œstrogènes, testostérone)</li>
+                                <li>Vitamine D (cholécalciférol)</li>
                                 <li>Sels biliaires</li>
                             </ul>
+                            <p class="text-slate-500 text-sm mt-4 italic">Molécule hydrophobe, le cholestérol n'est pas soluble dans le sang : son transport est assuré par des lipoprotéines.</p>
                         </div>
 
                         
@@ -111,9 +113,21 @@
                             </div>
                             <p class="text-slate-600 mb-4">Les lipides sont transportés dans le sang par des lipoprotéines.</p>
                             <div class="grid md:grid-cols-2 gap-4 text-sm">
-                                <div class="p-4 bg-red-50 rounded-lg"><h5 class="font-semibold text-red-800">LDL ("Mauvais")</h5><p>Transporte le cholestérol du foie vers les tissus. En excès, il se dépose dans les artères.</p></div>
-                                <div class="p-4 bg-green-50 rounded-lg"><h5 class="font-semibold text-green-800">HDL ("Bon")</h5><p>Ramène le cholestérol excédentaire des tissus vers le foie pour être éliminé.</p></div>
+                                <div class="p-4 bg-red-50 rounded-lg"><h5 class="font-semibold text-red-800">LDL ("Mauvais")</h5><p>Transporte le cholestérol du foie vers les tissus. En excès, il se dépose dans les artères. Porte l'apolipoprotéine <strong>ApoB</strong>.</p></div>
+                                <div class="p-4 bg-green-50 rounded-lg"><h5 class="font-semibold text-green-800">HDL ("Bon")</h5><p>Ramène le cholestérol excédentaire des tissus vers le foie pour être éliminé (effet antiathérogène). Porte l'<strong>ApoA</strong>.</p></div>
                                 <div class="p-4 bg-orange-50 rounded-lg md:col-span-2"><h5 class="font-semibold text-orange-800">Triglycérides (TG)</h5><p>Transportés par les VLDL et les chylomicrons, ils constituent une réserve d'énergie.</p></div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                             <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-cyan-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="arrow-right-left" class="text-cyan-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Les 3 Voies du Métabolisme Lipidique</h4>
+                            </div>
+                            <div class="grid md:grid-cols-3 gap-4 text-sm">
+                                <div class="p-4 bg-cyan-50 rounded-lg"><h5 class="font-semibold text-cyan-800">1. Voie exogène</h5><p>Absorption digestive des lipides alimentaires. Formation des <strong>chylomicrons</strong> dans l'entérocyte, dont les TG sont libérés aux tissus par la lipoprotéine lipase (LPL).</p></div>
+                                <div class="p-4 bg-cyan-50 rounded-lg"><h5 class="font-semibold text-cyan-800">2. Voie endogène</h5><p>Synthèse hépatique des TG et du cholestérol, libérés en <strong>VLDL</strong> puis transformés en <strong>LDL</strong> (riches en cholestérol) captés par les récepteurs hépatiques.</p></div>
+                                <div class="p-4 bg-cyan-50 rounded-lg"><h5 class="font-semibold text-cyan-800">3. Transport inverse</h5><p>Les <strong>HDL</strong> captent le cholestérol des tissus périphériques (estérification par la LCAT) et le ramènent au foie pour élimination.</p></div>
                             </div>
                         </div>
 
@@ -123,6 +137,15 @@
                                 <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Dyslipidémies et Risques</h4>
                             </div>
                             <p class="text-slate-600 mb-4">Une dyslipidémie est une anomalie du profil lipidique (LDL ↑, TG ↑, HDL ↓). L'excès de cholestérol mène à l'<strong>athérosclérose</strong>, un dépôt de plaques dans les artères augmentant le risque d'accidents cardiovasculaires.</p>
+                            <div class="p-4 bg-slate-50 rounded-lg text-sm mb-4">
+                                <h5 class="font-semibold text-slate-800 mb-2">Formation de la plaque d'athérome :</h5>
+                                <ol class="list-decimal list-inside space-y-1 text-slate-700">
+                                    <li>Rétention des <strong>LDL (ApoB)</strong> dans la paroi artérielle (intima).</li>
+                                    <li><strong>Oxydation</strong> des LDL → particules pro-inflammatoires.</li>
+                                    <li>Migration des monocytes → transformation en <strong>macrophages</strong>.</li>
+                                    <li>Captation des LDL oxydées → <strong>cellules spumeuses</strong> → plaque athéromateuse.</li>
+                                </ol>
+                            </div>
                             <div class="grid md:grid-cols-3 gap-4 text-sm mt-4">
                                 <div class="p-4 bg-red-50 rounded-lg"><h5 class="font-semibold text-red-800">AVC</h5></div>
                                 <div class="p-4 bg-red-50 rounded-lg"><h5 class="font-semibold text-red-800">Infarctus du Myocarde</h5></div>
@@ -147,26 +170,78 @@
                                 <div class="bg-yellow-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="list-checks" class="text-yellow-600 w-6 h-6"></i></div>
                                 <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Facteurs de Risque Cardiovasculaire</h4>
                             </div>
-                            <p class="text-slate-600 mb-4">Plusieurs facteurs augmentent le risque de développer une maladie cardiovasculaire.</p>
-                            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-3 text-slate-700 list-inside list-disc">
-                                <li>Âge</li>
-                                <li>Tabagisme</li>
-                                <li>HTA</li>
-                                <li>Diabète</li>
-                                <li>Antécédents familiaux</li>
-                                <li>HDL bas</li>
-                            </ul>
+                            <p class="text-slate-600 mb-4">Les maladies cardiovasculaires sont la <strong>1ère cause de décès mondiale</strong> (&gt; 17 millions de décès en 2022). Plusieurs facteurs augmentent le risque, que l'on distingue selon qu'ils sont modifiables ou non.</p>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
+                                <div class="flex items-center gap-3 p-3 bg-slate-100 rounded-lg border border-slate-200"><i data-lucide="dna" class="text-slate-500 w-5 h-5 flex-shrink-0"></i><span class="font-medium text-slate-700">Génétique / ATCD familiaux</span></div>
+                                <div class="flex items-center gap-3 p-3 bg-slate-100 rounded-lg border border-slate-200"><i data-lucide="hourglass" class="text-slate-500 w-5 h-5 flex-shrink-0"></i><span class="font-medium text-slate-700">Âge</span></div>
+                                <div class="flex items-center gap-3 p-3 bg-slate-100 rounded-lg border border-slate-200"><i data-lucide="user" class="text-slate-500 w-5 h-5 flex-shrink-0"></i><span class="font-medium text-slate-700">Sexe masculin</span></div>
+                                <div class="flex items-center gap-3 p-3 bg-amber-50 rounded-lg border border-amber-200"><i data-lucide="droplet" class="text-amber-600 w-5 h-5 flex-shrink-0"></i><span class="font-medium text-slate-700">Dyslipidémie</span></div>
+                                <div class="flex items-center gap-3 p-3 bg-amber-50 rounded-lg border border-amber-200"><i data-lucide="activity" class="text-amber-600 w-5 h-5 flex-shrink-0"></i><span class="font-medium text-slate-700">HTA</span></div>
+                                <div class="flex items-center gap-3 p-3 bg-amber-50 rounded-lg border border-amber-200"><i data-lucide="syringe" class="text-amber-600 w-5 h-5 flex-shrink-0"></i><span class="font-medium text-slate-700">Diabète</span></div>
+                                <div class="flex items-center gap-3 p-3 bg-amber-50 rounded-lg border border-amber-200"><i data-lucide="cigarette" class="text-amber-600 w-5 h-5 flex-shrink-0"></i><span class="font-medium text-slate-700">Tabac</span></div>
+                                <div class="flex items-center gap-3 p-3 bg-amber-50 rounded-lg border border-amber-200"><i data-lucide="scale" class="text-amber-600 w-5 h-5 flex-shrink-0"></i><span class="font-medium text-slate-700">Obésité</span></div>
+                                <div class="flex items-center gap-3 p-3 bg-amber-50 rounded-lg border border-amber-200"><i data-lucide="armchair" class="text-amber-600 w-5 h-5 flex-shrink-0"></i><span class="font-medium text-slate-700">Sédentarité</span></div>
+                            </div>
+                            <div class="flex flex-wrap gap-4 mt-4 text-xs text-slate-500">
+                                <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-slate-300 inline-block"></span>Non modifiable</span>
+                                <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-amber-300 inline-block"></span>Modifiable</span>
+                            </div>
                         </div>
                         
                         <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="flex items-center gap-4 mb-4">
-                                <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="target" class="text-blue-600 w-6 h-6"></i></div>
-                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Bilan Lipidique et Objectifs</h4>
+                                <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="flask-conical" class="text-blue-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Bilan Lipidique (EAL)</h4>
                             </div>
-                            <p class="text-slate-600 mb-4">Un bilan lipidique à jeun (12h) mesure le Cholestérol Total (CT), LDL-c, HDL-c et les Triglycérides (TG). Les objectifs de LDL-c dépendent du niveau de risque du patient.</p>
-                             <div class="grid md:grid-cols-2 gap-4 text-sm">
-                                <div class="p-4 bg-blue-50 rounded-lg"><h5 class="font-semibold text-blue-800">Sans Facteur de Risque</h5><p>Objectif LDL-c : <strong>&lt; 2,2 g/L</strong></p></div>
-                                <div class="p-4 bg-red-50 rounded-lg"><h5 class="font-semibold text-red-800">Haut Risque Cardiovasculaire</h5><p>Objectif LDL-c : <strong>&lt; 1 g/L</strong></p></div>
+                            <p class="text-slate-600 mb-4">L'Exploration d'une Anomalie Lipidique se fait <strong>à jeun (12h)</strong> et mesure le Cholestérol Total (CT), le HDL-c et les TG. Le LDL-c est calculé par la <strong>formule de Friedewald</strong>, confirmé par 2 dosages.</p>
+                            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                <div class="p-4 bg-blue-50 rounded-lg">
+                                    <h5 class="font-semibold text-blue-800 mb-2">Normes</h5>
+                                    <ul class="list-disc list-inside space-y-1 text-slate-700"><li>LDL-c &lt; 1,6 g/L</li><li>HDL-c &gt; 0,4 g/L</li><li>TG &lt; 1,5 g/L</li></ul>
+                                </div>
+                                <div class="p-4 bg-indigo-50 rounded-lg">
+                                    <h5 class="font-semibold text-indigo-800 mb-2">Classification des dyslipidémies</h5>
+                                    <ul class="list-disc list-inside space-y-1 text-slate-700"><li>Hypercholestérolémie pure (LDL &gt; 1,6)</li><li>Hypertriglycéridémie pure (TG &gt; 1,5)</li><li>Hyperlipidémie mixte</li></ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="gauge" class="text-purple-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Système SCORE & Niveaux de Risque</h4>
+                            </div>
+                            <p class="text-slate-600 mb-4">Le système <strong>SCORE</strong> estime le risque de mortalité cardiovasculaire à 10 ans (âge, sexe, tabagisme, pression artérielle systolique, cholestérol total) chez les sujets apparemment sains. Il définit 4 niveaux de risque.</p>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+                                <div class="p-3 bg-green-50 rounded-lg text-center"><h5 class="font-semibold text-green-800">Faible</h5><p class="text-slate-600">SCORE &lt; 1%</p></div>
+                                <div class="p-3 bg-yellow-50 rounded-lg text-center"><h5 class="font-semibold text-yellow-800">Modéré</h5><p class="text-slate-600">1% ≤ SCORE &lt; 5%</p></div>
+                                <div class="p-3 bg-orange-50 rounded-lg text-center"><h5 class="font-semibold text-orange-800">Haut</h5><p class="text-slate-600">5% ≤ SCORE &lt; 10%</p></div>
+                                <div class="p-3 bg-red-50 rounded-lg text-center"><h5 class="font-semibold text-red-800">Très haut</h5><p class="text-slate-600">SCORE ≥ 10% / prév. secondaire</p></div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="target" class="text-red-600 w-6 h-6"></i></div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Objectifs Thérapeutiques (LDL-c)</h4>
+                            </div>
+                            <p class="text-slate-600 mb-4">La cible de LDL-c est <strong>d'autant plus basse que le risque cardiovasculaire est élevé</strong> (recommandations ESC 2019).</p>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-sm text-left border-collapse">
+                                    <thead>
+                                        <tr class="bg-slate-100 text-slate-800">
+                                            <th class="p-3 rounded-l-lg font-semibold">Niveau de risque</th>
+                                            <th class="p-3 rounded-r-lg font-semibold">Cible LDL-c</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-slate-700">
+                                        <tr class="border-b border-slate-100"><td class="p-3">Faible</td><td class="p-3 font-semibold">&lt; 1,16 g/L</td></tr>
+                                        <tr class="border-b border-slate-100"><td class="p-3">Modéré</td><td class="p-3 font-semibold">&lt; 1,00 g/L</td></tr>
+                                        <tr class="border-b border-slate-100"><td class="p-3">Haut</td><td class="p-3 font-semibold">↓ ≥ 50% <span class="text-slate-400">et</span> &lt; 0,70 g/L</td></tr>
+                                        <tr class="border-b border-slate-100"><td class="p-3">Très haut / prévention secondaire</td><td class="p-3 font-semibold">↓ ≥ 50% <span class="text-slate-400">et</span> &lt; 0,55 g/L</td></tr>
+                                        <tr><td class="p-3">Récidive CV &lt; 2 ans</td><td class="p-3 font-semibold">&lt; 0,40 g/L</td></tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
 
@@ -176,11 +251,13 @@
                                 <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Règles Hygiéno-Diététiques (RHD)</h4>
                             </div>
                             <p class="text-slate-600 mb-4"><strong>Indispensables</strong>, elles constituent la base de la prise en charge et doivent toujours être associées au traitement médicamenteux.</p>
-                            <ul class="list-disc list-inside space-y-2 mt-4 text-slate-700 text-sm">
+                            <p class="text-slate-600 mb-2 text-sm">Le <strong>régime méditerranéen</strong> en est le socle :</p>
+                            <ul class="list-disc list-inside space-y-2 mt-2 text-slate-700 text-sm">
                                 <li>Arrêt du tabac, perte de poids, activité physique régulière.</li>
-                                <li>Réduction des graisses saturées (charcuterie, beurre, fromages gras).</li>
-                                <li>Augmentation de la consommation de fibres, fruits, légumes.</li>
-                                <li>Privilégier les poissons gras riches en oméga 3.</li>
+                                <li>Réduction des graisses saturées (charcuterie, beurre, fromages gras) et du cholestérol alimentaire.</li>
+                                <li>Augmentation des fibres (fruits, légumes, céréales complètes) et des AG poly-insaturés oméga 3.</li>
+                                <li>Privilégier les poissons gras et l'huile d'olive.</li>
+                                <li>Limiter l'alcool, en particulier en cas d'hypertriglycéridémie.</li>
                             </ul>
                         </div>
                     </div>
@@ -191,48 +268,93 @@
                 <section class="bg-gradient-to-br from-sky-100 to-blue-100 rounded-2xl p-6 md:p-12">
                      <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-sky-500 to-blue-600 bg-clip-text text-transparent">Traitements Hypolipémiants</span></h3>
                      <div class="space-y-8">
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                           <h4 class="text-2xl font-bold text-slate-800 mb-2">🔹 1. Statines</h4>
-                           <p class="text-sm text-slate-600 mb-4">Atorvastatine (Tahor®), Rosuvastatine (Crestor®), Simvastatine (Zocor®), Pravastatine (Elisor®)...</p>
-                           <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
-                                <div><h5 class="font-semibold text-sky-800">Mécanisme :</h5><p class="text-sm text-slate-600">Inhibent une enzyme clé (HMG-CoA réductase), diminuant la synthèse du cholestérol par le foie.</p></div>
-                                <div><h5 class="font-semibold text-sky-800">Effets :</h5><p class="text-sm text-slate-600">↓ LDL (30%), ↓ TG (10%), ↑ HDL (&lt;10%).</p></div>
-                                <div class="md:col-span-2"><h5 class="font-semibold text-sky-800">Indications :</h5><p class="text-sm text-slate-600">Hypercholestérolémie, prévention secondaire après IDM ou AVC (traitement "BASIC").</p></div>
-                                <div class="p-4 bg-blue-100 border border-blue-200 rounded-lg"><h5 class="font-bold text-blue-900">Surveillance IDE :</h5><ul class="list-disc list-inside text-sm text-slate-700"><li>Bilan lipidique, Transaminases (ASAT/ALAT), CPK si douleurs musculaires.</li></ul></div>
-                                <div class="p-4 bg-blue-100 border border-blue-200 rounded-lg"><h5 class="font-bold text-blue-900">Éducation Patient :</h5><ul class="list-disc list-inside text-sm text-slate-700"><li>Prise unique le soir. Prévenir si douleurs musculaires, urine foncée, jaunisse. Traitement souvent à vie.</li></ul></div>
-                           </div>
-                        </div>
-                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                           <h4 class="text-2xl font-bold text-slate-800 mb-2">🔹 2. Fibrates</h4>
-                           <p class="text-sm text-slate-600 mb-4">Fénofibrate (Lipanthyl®), Bézafibrate (Befizal®)...</p>
-                           <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
-                                <div><h5 class="font-semibold text-sky-800">Mécanisme :</h5><p class="text-sm text-slate-600">Activent PPARα, ce qui augmente la dégradation des triglycérides.</p></div>
-                                <div><h5 class="font-semibold text-sky-800">Effets :</h5><p class="text-sm text-slate-600">↓ TG (45%), ↓ CT/LDL (10-25%), ↑ HDL (15-25%).</p></div>
-                                <div class="md:col-span-2"><h5 class="font-semibold text-sky-800">Indications :</h5><p class="text-sm text-slate-600">Hypertriglycéridémie, 2ème intention dans l'hypercholestérolémie.</p></div>
-                                <div class="p-4 bg-blue-100 border border-blue-200 rounded-lg"><h5 class="font-bold text-blue-900">Surveillance IDE :</h5><ul class="list-disc list-inside text-sm text-slate-700"><li>Fonction hépatique et rénale. Risque de lithiases biliaires. CPK (myalgies).</li></ul></div>
-                                <div class="p-4 bg-blue-100 border border-blue-200 rounded-lg"><h5 class="font-bold text-blue-900">Éducation Patient :</h5><ul class="list-disc list-inside text-sm text-slate-700"><li>Prise avec repas. Prévenir si douleurs abdominales.</li></ul></div>
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 border-l-4 border-sky-400">
+                           <h4 class="text-2xl font-bold text-slate-800 mb-2">🎯 Dans quel ordre ?</h4>
+                           <p class="text-sm text-slate-600 mb-4">Les règles hygiéno-diététiques accompagnent toujours le traitement. Les médicaments sont ajoutés par étapes si le cholestérol reste trop élevé.</p>
+                           <div class="grid md:grid-cols-3 gap-4 text-sm">
+                                <div class="p-4 bg-sky-50 rounded-lg"><h5 class="font-bold text-sky-900">1ʳᵉ étape</h5><p class="text-slate-700">Une statine.</p></div>
+                                <div class="p-4 bg-sky-50 rounded-lg"><h5 class="font-bold text-sky-900">2ᵉ étape</h5><p class="text-slate-700">Ajout d'ézétimibe si besoin.</p></div>
+                                <div class="p-4 bg-sky-50 rounded-lg"><h5 class="font-bold text-sky-900">3ᵉ étape</h5><p class="text-slate-700">Ajout d'un anti-PCSK9 si besoin.</p></div>
                            </div>
                         </div>
                         <div class="grid md:grid-cols-2 gap-8">
-                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                                <h4 class="text-xl font-bold text-slate-800 mb-2">🔹 3. Résines</h4>
-                                <p class="text-xs text-slate-500 italic mb-2">Cholestyramine (Questran®)</p>
-                                <div class="space-y-2 text-sm"><p><strong>Mécanisme :</strong> Fixent les acides biliaires, forçant le foie à utiliser le cholestérol pour en produire de nouveaux.</p><p><strong>EI :</strong> Constipation, ballonnements.</p><p><strong>IDE :</strong> Administrer 2h avant ou après les autres médicaments (risque de malabsorption).</p></div>
+                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 flex flex-col">
+                                <div class="flex items-center gap-3 mb-1">
+                                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-sky-600 text-white font-bold text-sm flex-shrink-0">1</span>
+                                    <h4 class="text-lg font-bold text-slate-800">Statines</h4>
+                                </div>
+                                <p class="text-xs text-slate-500 italic mb-4">Atorvastatine (Tahor®), Rosuvastatine (Crestor®), Simvastatine (Zocor®)…</p>
+                                <div class="space-y-3 text-sm">
+                                    <div><h5 class="font-semibold text-sky-800 flex items-center gap-1.5"><i data-lucide="pill" class="w-4 h-4"></i> Indications</h5><p class="text-slate-600">Font baisser le mauvais cholestérol (LDL) en réduisant sa fabrication par le foie. C'est le traitement de référence.</p></div>
+                                    <div><h5 class="font-semibold text-sky-800 flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4"></i> Prise</h5><p class="text-slate-600">1 comprimé le soir, tous les jours, sur le long terme (souvent à vie).</p></div>
+                                    <div class="p-3 bg-amber-50 rounded-lg"><h5 class="font-semibold text-amber-800 flex items-center gap-1.5"><i data-lucide="alert-triangle" class="w-4 h-4"></i> Effets indésirables</h5><p class="text-slate-700">Douleurs et crampes musculaires (les plus fréquents). Plus rarement : troubles du foie, troubles digestifs, légère hausse du sucre dans le sang.</p></div>
+                                    <div class="p-3 bg-blue-50 rounded-lg"><h5 class="font-semibold text-blue-900 flex items-center gap-1.5"><i data-lucide="stethoscope" class="w-4 h-4"></i> Surveillance & conseils IDE</h5><p class="text-slate-700">Surveiller les douleurs musculaires (prise de sang : CPK) et le foie. Demander de signaler crampes/douleurs musculaires, urines foncées ou jaunisse. Éviter le jus de pamplemousse.</p></div>
+                                </div>
                             </div>
-                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                                <h4 class="text-xl font-bold text-slate-800 mb-2">🔹 4. Ézétimibe</h4>
-                                <p class="text-xs text-slate-500 italic mb-2">Ézetrol®</p>
-                                <div class="space-y-2 text-sm"><p><strong>Mécanisme :</strong> Inhibe l'absorption intestinale du cholestérol.</p><p><strong>Usage :</strong> Seul si intolérance aux statines, ou en association.</p><p><strong>IDE :</strong> Surveillance de la tolérance digestive et des transaminases.</p></div>
+                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 flex flex-col">
+                                <div class="flex items-center gap-3 mb-1">
+                                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-sky-600 text-white font-bold text-sm flex-shrink-0">2</span>
+                                    <h4 class="text-lg font-bold text-slate-800">Ézétimibe</h4>
+                                </div>
+                                <p class="text-xs text-slate-500 italic mb-4">Ezetrol®</p>
+                                <div class="space-y-3 text-sm">
+                                    <div><h5 class="font-semibold text-sky-800 flex items-center gap-1.5"><i data-lucide="pill" class="w-4 h-4"></i> Indications</h5><p class="text-slate-600">Empêche l'absorption du cholestérol dans l'intestin. Souvent ajouté à une statine quand le cholestérol reste trop haut.</p></div>
+                                    <div><h5 class="font-semibold text-sky-800 flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4"></i> Prise</h5><p class="text-slate-600">1 comprimé par jour, à n'importe quel moment.</p></div>
+                                    <div class="p-3 bg-amber-50 rounded-lg"><h5 class="font-semibold text-amber-800 flex items-center gap-1.5"><i data-lucide="alert-triangle" class="w-4 h-4"></i> Effets indésirables</h5><p class="text-slate-700">Troubles digestifs (douleurs au ventre, diarrhée), parfois douleurs musculaires ou maux de tête. Généralement bien toléré.</p></div>
+                                    <div class="p-3 bg-blue-50 rounded-lg"><h5 class="font-semibold text-blue-900 flex items-center gap-1.5"><i data-lucide="stethoscope" class="w-4 h-4"></i> Surveillance & conseils IDE</h5><p class="text-slate-700">Surveiller la tolérance digestive et le bilan du foie.</p></div>
+                                </div>
                             </div>
-                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                                <h4 class="text-xl font-bold text-slate-800 mb-2">🔹 5. Oméga 3</h4>
-                                <p class="text-xs text-slate-500 italic mb-2">Omacor®</p>
-                                <div class="space-y-2 text-sm"><p><strong>Indication :</strong> Hypertriglycéridémie endogène.</p><p><strong>EI :</strong> Troubles digestifs.</p><p><strong>IDE :</strong> Informer que c'est un médicament sur prescription et non un simple complément alimentaire.</p></div>
+                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 flex flex-col">
+                                <div class="flex items-center gap-3 mb-1">
+                                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-sky-600 text-white font-bold text-sm flex-shrink-0">3</span>
+                                    <h4 class="text-lg font-bold text-slate-800">Inhibiteurs de PCSK9</h4>
+                                </div>
+                                <p class="text-xs text-slate-500 italic mb-4">Alirocumab (Praluent®), Évolocumab (Repatha®), Inclisiran (Leqvio®)</p>
+                                <div class="space-y-3 text-sm">
+                                    <div><h5 class="font-semibold text-sky-800 flex items-center gap-1.5"><i data-lucide="pill" class="w-4 h-4"></i> Indications</h5><p class="text-slate-600">Médicaments récents et puissants pour faire baisser le LDL. Réservés aux formes sévères ou en cas d'intolérance aux statines.</p></div>
+                                    <div><h5 class="font-semibold text-sky-800 flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4"></i> Prise</h5><p class="text-slate-600">Injection sous la peau (ventre, cuisse, bras), toutes les 2 à 4 semaines.</p></div>
+                                    <div class="p-3 bg-amber-50 rounded-lg"><h5 class="font-semibold text-amber-800 flex items-center gap-1.5"><i data-lucide="alert-triangle" class="w-4 h-4"></i> Effets indésirables</h5><p class="text-slate-700">Rougeur ou démangeaison au point d'injection, symptômes type rhume (nez qui coule, mal de gorge), maux de tête. Bonne tolérance générale.</p></div>
+                                    <div class="p-3 bg-blue-50 rounded-lg"><h5 class="font-semibold text-blue-900 flex items-center gap-1.5"><i data-lucide="stethoscope" class="w-4 h-4"></i> Surveillance & conseils IDE</h5><p class="text-slate-700">Éduquer à l'auto-injection (changer de site à chaque fois). Surveiller les réactions au point d'injection.</p></div>
+                                </div>
                             </div>
-                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                                <h4 class="text-xl font-bold text-slate-800 mb-2">🔹 6. Anti-PCSK9</h4>
-                                <p class="text-xs text-slate-500 italic mb-2">Anticorps monoclonaux</p>
-                                <div class="space-y-2 text-sm"><p><strong>Mécanisme :</strong> Thérapie innovante qui augmente massivement la capacité du foie à capter le LDL.</p><p><strong>Usage :</strong> Hypercholestérolémie familiale, intolérance aux statines.</p><p><strong>IDE :</strong> Éducation à l'auto-injection SC (tous les 15j ou 1 mois).</p></div>
+                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 flex flex-col">
+                                <div class="flex items-center gap-3 mb-1">
+                                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-sky-600 text-white font-bold text-sm flex-shrink-0">4</span>
+                                    <h4 class="text-lg font-bold text-slate-800">Fibrates</h4>
+                                </div>
+                                <p class="text-xs text-slate-500 italic mb-4">Fénofibrate (Lipanthyl®), Bézafibrate (Befizal®)…</p>
+                                <div class="space-y-3 text-sm">
+                                    <div><h5 class="font-semibold text-sky-800 flex items-center gap-1.5"><i data-lucide="pill" class="w-4 h-4"></i> Indications</h5><p class="text-slate-600">Font surtout baisser les triglycérides. Utilisés quand les triglycérides sont élevés.</p></div>
+                                    <div><h5 class="font-semibold text-sky-800 flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4"></i> Prise</h5><p class="text-slate-600">1 comprimé pendant le repas.</p></div>
+                                    <div class="p-3 bg-amber-50 rounded-lg"><h5 class="font-semibold text-amber-800 flex items-center gap-1.5"><i data-lucide="alert-triangle" class="w-4 h-4"></i> Effets indésirables</h5><p class="text-slate-700">Troubles digestifs, douleurs musculaires, calculs biliaires et pancréatite (douleurs au ventre), réactions de la peau au soleil.</p></div>
+                                    <div class="p-3 bg-blue-50 rounded-lg"><h5 class="font-semibold text-blue-900 flex items-center gap-1.5"><i data-lucide="stethoscope" class="w-4 h-4"></i> Surveillance & conseils IDE</h5><p class="text-slate-700">Surveiller les douleurs musculaires (CPK), le foie et les reins. Signaler des douleurs au ventre (risque de calculs biliaires / pancréatite).</p></div>
+                                </div>
+                            </div>
+                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 flex flex-col">
+                                <div class="flex items-center gap-3 mb-1">
+                                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-sky-600 text-white font-bold text-sm flex-shrink-0">5</span>
+                                    <h4 class="text-lg font-bold text-slate-800">Acide bempédoïque</h4>
+                                </div>
+                                <p class="text-xs text-slate-500 italic mb-4">Nilemdo®</p>
+                                <div class="space-y-3 text-sm">
+                                    <div><h5 class="font-semibold text-sky-800 flex items-center gap-1.5"><i data-lucide="pill" class="w-4 h-4"></i> Indications</h5><p class="text-slate-600">Réduit la fabrication du cholestérol par le foie. Alternative quand les statines ne sont pas supportées.</p></div>
+                                    <div><h5 class="font-semibold text-sky-800 flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4"></i> Prise</h5><p class="text-slate-600">1 comprimé par jour, par la bouche.</p></div>
+                                    <div class="p-3 bg-amber-50 rounded-lg"><h5 class="font-semibold text-amber-800 flex items-center gap-1.5"><i data-lucide="alert-triangle" class="w-4 h-4"></i> Effets indésirables</h5><p class="text-slate-700">Douleurs musculaires, troubles digestifs, hausse de l'acide urique (risque de crise de goutte).</p></div>
+                                    <div class="p-3 bg-blue-50 rounded-lg"><h5 class="font-semibold text-blue-900 flex items-center gap-1.5"><i data-lucide="stethoscope" class="w-4 h-4"></i> Surveillance & conseils IDE</h5><p class="text-slate-700">Surveiller le bilan lipidique pour vérifier l'efficacité.</p></div>
+                                </div>
+                            </div>
+                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 flex flex-col">
+                                <div class="flex items-center gap-3 mb-1">
+                                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-sky-600 text-white font-bold text-sm flex-shrink-0">6</span>
+                                    <h4 class="text-lg font-bold text-slate-800">Chélateurs d'acides biliaires</h4>
+                                </div>
+                                <p class="text-xs text-slate-500 italic mb-4">Colestyramine (Questran®)</p>
+                                <div class="space-y-3 text-sm">
+                                    <div><h5 class="font-semibold text-sky-800 flex items-center gap-1.5"><i data-lucide="pill" class="w-4 h-4"></i> Indications</h5><p class="text-slate-600">Capturent le cholestérol dans l'intestin pour l'évacuer dans les selles.</p></div>
+                                    <div><h5 class="font-semibold text-sky-800 flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4"></i> Prise</h5><p class="text-slate-600">Poudre à diluer dans l'eau, avant les repas.</p></div>
+                                    <div class="p-3 bg-amber-50 rounded-lg"><h5 class="font-semibold text-amber-800 flex items-center gap-1.5"><i data-lucide="alert-triangle" class="w-4 h-4"></i> Effets indésirables</h5><p class="text-slate-700">Constipation, ballonnements, nausées. Peuvent gêner l'absorption de certaines vitamines.</p></div>
+                                    <div class="p-3 bg-blue-50 rounded-lg"><h5 class="font-semibold text-blue-900 flex items-center gap-1.5"><i data-lucide="stethoscope" class="w-4 h-4"></i> Surveillance & conseils IDE</h5><p class="text-slate-700">Espacer de 2 à 4 h la prise des autres médicaments (sinon mal absorbés). Surveiller la constipation.</p></div>
+                                </div>
                             </div>
                         </div>
                      </div>
@@ -369,6 +491,30 @@
                 options: ["Non, les médicaments suffisent", "Seulement si le patient est en surpoids", "Oui, elles sont indispensables et complémentaires", "Non, sauf si le bilan lipidique reste mauvais"],
                 correct: 2,
                 feedback: "Les règles hygiéno-diététiques sont le pilier de la prise en charge. Elles potentialisent l'effet des médicaments et agissent sur d'autres facteurs de risque."
+            },
+            {
+                question: "Une statine est dite « de haute intensité » lorsqu'elle abaisse le LDL-cholestérol de :",
+                options: ["Moins de 30 %", "30 à 49 %", "Au moins 50 %", "Au moins 70 %"],
+                correct: 2,
+                feedback: "On distingue 3 intensités : faible (< 30 %), modérée (30-49 %) et élevée (≥ 50 %). La prévention secondaire impose d'emblée une statine à haute intensité."
+            },
+            {
+                question: "Quel est le mécanisme d'action de l'acide bempédoïque (Nilemdo®) ?",
+                options: ["Inhibition de l'HMG-CoA réductase", "Inhibition de l'ACLY (ATP citrate lyase)", "Inhibition de la PCSK9", "Activation du récepteur PPARα"],
+                correct: 1,
+                feedback: "L'acide bempédoïque inhibe l'ACLY, en amont de l'HMG-CoA, réduisant la synthèse du cholestérol. C'est une option en cas d'intolérance aux statines."
+            },
+            {
+                question: "Chez un patient en prévention secondaire (très haut risque), quelle est la cible de LDL-cholestérol ?",
+                options: ["< 1,16 g/L", "< 1,00 g/L", "< 0,70 g/L", "< 0,55 g/L (et baisse ≥ 50 %)"],
+                correct: 3,
+                feedback: "Selon l'ESC 2019, le très haut risque (prévention secondaire) vise une baisse ≥ 50 % et un LDL-c < 0,55 g/L (voire < 0,40 g/L en cas de récidive < 2 ans)."
+            },
+            {
+                question: "Quel délai faut-il respecter entre la prise d'un chélateur d'acides biliaires (Questran®) et les autres médicaments ?",
+                options: ["30 minutes", "1 heure", "2 à 4 heures", "Aucun délai nécessaire"],
+                correct: 2,
+                feedback: "Les chélateurs diminuent l'absorption de nombreux médicaments (AVK, hormones thyroïdiennes, contraceptifs...). Il faut décaler les prises de 2 à 4 heures."
             }
         ];
 
