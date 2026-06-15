@@ -434,25 +434,25 @@
         const quizData = [
             {
                 question: "Quel est le principal mécanisme d'action des statines ?",
-                options: ["Inhiber l'absorption intestinale du cholestérol", "Inhiber l'enzyme HMG-CoA réductase", "Fixer les acides biliaires", "Augmenter la dégradation des triglycérides"],
-                correct: 1,
-                feedback: "Les statines bloquent l'HMG-CoA réductase, une enzyme essentielle à la production de cholestérol par le foie."
+                options: ["Réduire la fabrication du cholestérol par le foie", "Empêcher l'absorption du cholestérol dans l'intestin", "Capturer le cholestérol dans l'intestin pour l'éliminer dans les selles", "Faire baisser les triglycérides"],
+                correct: 0,
+                feedback: "Les statines font baisser le mauvais cholestérol (LDL) en réduisant sa fabrication par le foie. C'est le traitement de référence."
             },
             {
-                question: "La surveillance des CPK est nécessaire avec les statines pour dépister quel risque majeur ?",
-                options: ["Une atteinte hépatique", "Une lithiase biliaire", "Une rhabdomyolyse", "Une constipation sévère"],
-                correct: 2,
-                feedback: "Une élévation des CPK (enzymes musculaires) peut signaler une rhabdomyolyse, une destruction musculaire grave, qui est un effet secondaire rare mais possible des statines."
+                question: "La surveillance des CPK chez un patient sous statine permet de dépister quel type d'atteinte ?",
+                options: ["Une atteinte du foie", "Une atteinte des muscles", "Une atteinte des reins", "Une atteinte digestive"],
+                correct: 1,
+                feedback: "Les CPK sont des enzymes musculaires : leur surveillance permet de dépister une atteinte des muscles, signalée par des douleurs ou des crampes."
             },
             {
                 question: "Quelle classe de médicaments est principalement indiquée en cas d'hypertriglycéridémie majeure ?",
-                options: ["Les statines", "Les résines", "L'ézétimibe", "Les fibrates"],
+                options: ["Les statines", "Les chélateurs d'acides biliaires", "L'ézétimibe", "Les fibrates"],
                 correct: 3,
-                feedback: "Les fibrates sont les plus efficaces pour abaisser le taux de triglycérides."
+                feedback: "Les fibrates font surtout baisser les triglycérides : ils sont utilisés quand les triglycérides sont élevés."
             },
             {
                 question: "Quel conseil est primordial pour un patient prenant de la cholestyramine (Questran®) ?",
-                options: ["Prendre le médicament le soir", "Le prendre pendant le repas", "Respecter un délai de 2h avec les autres médicaments", "Arrêter en cas de jaunisse"],
+                options: ["Prendre le médicament le soir", "Le prendre pendant le repas", "Respecter un délai de 2 à 4h avec les autres médicaments", "Arrêter en cas de jaunisse"],
                 correct: 2,
                 feedback: "La cholestyramine peut diminuer l'absorption de nombreux autres médicaments. Il est donc crucial de décaler les prises."
             },
@@ -466,7 +466,7 @@
                 question: "Par quelle voie les anti-PCSK9 sont-ils administrés ?",
                 options: ["Voie orale, le matin", "Injection intra-musculaire", "Perfusion intra-veineuse", "Injection sous-cutanée"],
                 correct: 3,
-                feedback: "Les anti-PCSK9 sont des anticorps monoclonaux qui s'administrent par injection sous-cutanée, tous les 15 jours ou tous les mois."
+                feedback: "Les anti-PCSK9 s'administrent par injection sous la peau (sous-cutanée), toutes les 2 à 4 semaines."
             },
             {
                 question: "Quel est le moment de la journée généralement recommandé pour la prise des statines ?",
@@ -478,7 +478,7 @@
                 question: "En plus des douleurs musculaires, quel autre signe doit alerter un patient sous statine et motiver une consultation ?",
                 options: ["Une toux sèche", "Des urines foncées couleur 'coca-cola'", "Des éruptions cutanées", "Une prise de poids"],
                 correct: 1,
-                feedback: "Des urines foncées peuvent être un signe de rhabdomyolyse (destruction musculaire) et de souffrance rénale, une urgence médicale."
+                feedback: "Des urines foncées peuvent être le signe d'une atteinte musculaire grave et d'une souffrance rénale : c'est une urgence médicale."
             },
             {
                 question: "Quel est l'objectif principal et quantifiable d'un traitement par hypolipémiant ?",
@@ -493,16 +493,16 @@
                 feedback: "Les règles hygiéno-diététiques sont le pilier de la prise en charge. Elles potentialisent l'effet des médicaments et agissent sur d'autres facteurs de risque."
             },
             {
-                question: "Une statine est dite « de haute intensité » lorsqu'elle abaisse le LDL-cholestérol de :",
-                options: ["Moins de 30 %", "30 à 49 %", "Au moins 50 %", "Au moins 70 %"],
-                correct: 2,
-                feedback: "On distingue 3 intensités : faible (< 30 %), modérée (30-49 %) et élevée (≥ 50 %). La prévention secondaire impose d'emblée une statine à haute intensité."
+                question: "Dans quel ordre les traitements hypolipémiants sont-ils généralement instaurés ?",
+                options: ["Anti-PCSK9, puis statine, puis ézétimibe", "Statine, puis ézétimibe, puis anti-PCSK9", "Ézétimibe, puis fibrate, puis statine", "Un fibrate en première intention"],
+                correct: 1,
+                feedback: "On débute par une statine, puis on ajoute l'ézétimibe si besoin, et enfin un anti-PCSK9 si le cholestérol reste trop élevé."
             },
             {
-                question: "Quel est le mécanisme d'action de l'acide bempédoïque (Nilemdo®) ?",
-                options: ["Inhibition de l'HMG-CoA réductase", "Inhibition de l'ACLY (ATP citrate lyase)", "Inhibition de la PCSK9", "Activation du récepteur PPARα"],
+                question: "Dans quelle situation l'acide bempédoïque (Nilemdo®) est-il surtout une option ?",
+                options: ["En première intention chez tous les patients", "En cas d'intolérance aux statines", "Uniquement en cas d'hypertriglycéridémie", "Uniquement chez l'enfant"],
                 correct: 1,
-                feedback: "L'acide bempédoïque inhibe l'ACLY, en amont de l'HMG-CoA, réduisant la synthèse du cholestérol. C'est une option en cas d'intolérance aux statines."
+                feedback: "L'acide bempédoïque réduit la fabrication du cholestérol par le foie. C'est une alternative quand les statines ne sont pas supportées."
             },
             {
                 question: "Chez un patient en prévention secondaire (très haut risque), quelle est la cible de LDL-cholestérol ?",
