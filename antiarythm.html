@@ -437,12 +437,22 @@
         }
         
         // --- Quiz Logic ---
+        // Melange aleatoire (Fisher-Yates) - renvoie une copie melangee du tableau
+        function shuffle(array) {
+            const a = array.slice();
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+
         function renderQuiz() {
             const container = document.getElementById('qcm-container');
             if (!container) return;
             container.innerHTML = '';
             quizData.forEach((item, index) => {
-                const optionsHtml = item.options.map((option, optionIndex) => 
+                const optionsHtml = shuffle(item.options.map((option, optionIndex) => ({ option, optionIndex }))).map(({ option, optionIndex }) => 
                     `<button class="qcm-option w-full text-left p-4 rounded-xl bg-white border-2 border-slate-200 hover:bg-slate-100 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200" data-index="${optionIndex}">${option}</button>`
                 ).join('');
 

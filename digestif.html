@@ -295,11 +295,21 @@
             });
         }
 
+       // Melange aleatoire (Fisher-Yates) - renvoie une copie melangee du tableau
+       function shuffle(array) {
+           const a = array.slice();
+           for (let i = a.length - 1; i > 0; i--) {
+               const j = Math.floor(Math.random() * (i + 1));
+               [a[i], a[j]] = [a[j], a[i]];
+           }
+           return a;
+       }
+
        function renderQuiz() {
             const container = document.getElementById('qcm-container');
             container.innerHTML = '';
             quizData.forEach((item, index) => {
-                const optionsHtml = item.options.map((option, optionIndex) => `<button class="qcm-option w-full text-left p-4 rounded-xl bg-white border-2 border-slate-200 hover:bg-slate-100 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200" data-index="${optionIndex}">${option}</button>`).join('');
+                const optionsHtml = shuffle(item.options.map((option, optionIndex) => ({ option, optionIndex }))).map(({ option, optionIndex }) => `<button class="qcm-option w-full text-left p-4 rounded-xl bg-white border-2 border-slate-200 hover:bg-slate-100 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200" data-index="${optionIndex}">${option}</button>`).join('');
                 container.innerHTML += `<div class="qcm-question bg-slate-100/70 border border-slate-200/80 p-6 rounded-2xl shadow-lg" data-question-index="${index}"><p class="font-semibold text-lg text-slate-800 mb-4">${index + 1}. ${item.question}</p><div class="grid grid-cols-1 sm:grid-cols-2 gap-3">${optionsHtml}</div><div class="qcm-feedback mt-4 text-sm font-medium"></div></div>`;
             });
             document.getElementById('quiz-score').textContent = `Prêt ? 0 / ${quizData.length}`;
