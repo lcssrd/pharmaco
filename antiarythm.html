@@ -16,6 +16,7 @@
     <link rel="canonical" href="https://lcssrd.github.io/pharmaco/antiarythm.html" />
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,48 +25,23 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <style>
-        html {
-            overflow-y: scroll; /* Force the scrollbar to always be visible, preventing layout shifts */
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8; /* A slightly softer background color */
-        }
-        /* Animation for page transitions */
-        .page {
-            animation: fadeIn 0.5s ease-in-out;
-        }
+        html { overflow-y: scroll; }
+        body { font-family: 'Inter', sans-serif; background-color: #f0f4f8; }
+        .page { animation: fadeIn 0.5s ease-in-out; }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        /* Styles for selected quiz options */
-        .qcm-option.correct {
-            background-image: linear-gradient(to right, #4ade80, #16a34a); /* from-green-400 to-green-600 */
-            color: white;
-            border-color: #15803d; /* green-700 */
-            font-weight: 600;
-        }
-        .qcm-option.incorrect {
-            background-image: linear-gradient(to right, #f87171, #dc2626); /* from-red-400 to-red-600 */
-            color: white;
-            border-color: #b91c1c; /* red-700 */
-            font-weight: 600;
-        }
-        .qcm-option:disabled {
-            cursor: not-allowed;
-        }
-        .qcm-option:disabled:not(.correct):not(.incorrect) {
-            color: #475569; /* slate-600 */
-            background-color: #f1f5f9; /* slate-100 */
-            opacity: 0.7;
-        }
+        .qcm-option.correct { background-image: linear-gradient(to right, #4ade80, #16a34a); color: white; border-color: #15803d; font-weight: 600; }
+        .qcm-option.incorrect { background-image: linear-gradient(to right, #f87171, #dc2626); color: white; border-color: #b91c1c; font-weight: 600; }
+        .qcm-option:disabled { cursor: not-allowed; }
+        .qcm-option:disabled:not(.correct):not(.incorrect) { color: #475569; background-color: #f1f5f9; opacity: 0.7; }
     </style>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="a71ff4d4-4d84-4066-aa50-313ab8d66b1b"></script>
 </head>
 <body class="p-2 sm:p-4 md:p-8">
-    <div class="max-w-6xl mx-auto bg-white min-h-screen shadow-2xl rounded-xl overflow-hidden">
-                
+    <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
+        
         <header class="bg-slate-800 text-white p-6 md:p-8 sticky top-0 z-50">
             <div class="flex items-center justify-between">
                 <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-red-500 to-red-800 bg-clip-text text-transparent pb-2">Anti-arythmiques & Digitaliques (Cours IFSI)</h1>
@@ -75,8 +51,9 @@
             </div>
 
             <nav class="pt-6">
-                <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-4 sm:grid-cols-4 md:grid-cols-7 gap-2">
-                    <button onclick="showPage('classe1')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-rose-100 hover:text-rose-800">Stab. Membrane</button>
+                <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-4 sm:grid-cols-4 md:grid-cols-8 gap-2">
+                    <button onclick="showPage('rythme')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-rose-100 hover:text-rose-800">Rythme</button>
+                    <button onclick="showPage('classe1')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-sky-100 hover:text-sky-800">Stab. Membrane</button>
                     <button onclick="showPage('classe2')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-purple-100 hover:text-purple-800">Bêta-bloquants</button>
                     <button onclick="showPage('classe3')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-red-100 hover:text-red-800">Inhib. Potassiques</button>
                     <button onclick="showPage('classe4')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm hover:bg-green-100 hover:text-green-800">Inhib. Calciques</button>
@@ -89,233 +66,374 @@
 
         <main id="main-content" class="p-4 sm:p-6 md:p-8">
 
-            <div id="classe1" class="page">
-                <h2 class="text-2xl md:text-3xl font-bold text-red-600">Classe I : Stabilisants de membrane</h2>
-                <div class="space-y-4 mt-4">
-                    <div class="bg-rose-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-red-800">⚙️ Mécanisme d'action général</h3>
-                        <p class="text-red-700 text-sm">Bloquent les canaux sodiques, ce qui ralentit la dépolarisation des cellules cardiaques. Ils stabilisent la membrane cellulaire pour réduire l'excitabilité cardiaque.</p>
-                    </div>
-                    
-                    <div class="bg-red-100 p-4 rounded-lg">
-                    <h3 class="text-xl font-bold text-red-700 pt-4">Sous-classe Ia (ex: Serecor®, Rythmodan®)</h3>
-                    <div class="bg-red-100 p-4 rounded-lg">
-                        <h4 class="font-semibold text-red-800">🔬 Indications & Effets</h4>
-                        <p class="text-red-700 text-sm">Traitement des troubles supraventriculaires. Accélèrent le rythme et facilitent la conduction auriculo-ventriculaire.</p>
-                    </div>
-                        <div class="p-4 bg-red-200 border border-red-400 rounded-lg">
-                        <h4 class="font-semibold text-red-800">⚠️ Points de vigilance</h4>
-                        <ul class="list-disc list-inside text-red-700 text-sm space-y-1">
-                            <li><strong>Pouvoir arythmogène important :</strong> Risque de torsades de pointes.</li>
-                            <li><strong>Surveillance de la kaliémie :</strong> Une hypokaliémie majore les risques.</li>
-                            <li><strong>Hypersensibilité :</strong> Réactions immédiates (hypotension) ou retardées (cinchonisme).</li>
-                            <li><strong>Effets atropiniques (Disopyramide) :</strong> Bouche sèche, constipation, rétention urinaire.</li>
-                        </ul>
-                    </div>
-                    </div>
-                    
-                    <div class="bg-red-100 p-4 rounded-lg">
-                    <h3 class="text-xl font-bold text-red-700 pt-4">Sous-classe Ib (ex: Xylocard®, Dilantin®)</h3>
-                     <div class="bg-red-100 p-4 rounded-lg">
-                        <h4 class="font-semibold text-red-800">🔬 Indications & Effets</h4>
-                        <p class="text-red-700 text-sm">Traitement des troubles du rythme ventriculaires graves, notamment lors d'intoxication digitalique (Phénytoïne).</p>
-                    </div>
-                        <div class="p-4 bg-red-200 border border-red-400 rounded-lg">
-                        <h4 class="font-semibold text-red-800">⚠️ Points de vigilance</h4>
-                        <ul class="list-disc list-inside text-red-700 text-sm space-y-1">
-                            <li><strong>Administration parentérale stricte (Lidocaïne)</strong> en raison du premier passage hépatique.</li>
-                            <li><strong>Signes de toxicité :</strong> neurotoxicité (agitation, confusion, convulsions) et troubles cardiovasculaires (hypotension, troubles du rythme).</li>
-                        </ul>
-                    </div>
+            <div id="rythme" class="page">
+                <section class="bg-gradient-to-br from-rose-100 to-red-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        <span class="bg-gradient-to-br from-red-500 to-rose-700 bg-clip-text text-transparent">Rappels sur le Rythme Cardiaque</span>
+                    </h3>
+                    <div class="grid grid-cols-1 gap-8">
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-rose-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="activity" class="text-rose-600 w-6 h-6"></i>
+                                </div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Le tissu nodal (Automatisme)</h4>
+                            </div>
+                            <p class="text-slate-600 italic text-sm sm:text-base mb-4">Le cœur est doué d'un automatisme propre grâce au tissu nodal, responsable de l'initiation et de la conduction de l'influx électrique.</p>
+                            <div class="grid md:grid-cols-3 gap-4 text-sm">
+                                <div class="p-4 bg-orange-50 rounded-lg">
+                                    <h5 class="font-semibold text-orange-800">Nœud Sinusal</h5>
+                                    <p>Le chef d'orchestre. Génère l'influx électrique normal (rythme sinusal).</p>
+                                </div>
+                                <div class="p-4 bg-rose-50 rounded-lg">
+                                    <h5 class="font-semibold text-rose-800">Nœud Auriculo-Ventriculaire</h5>
+                                    <p>Relais entre les oreillettes et les ventricules. Ralentit légèrement l'influx.</p>
+                                </div>
+                                <div class="p-4 bg-red-50 rounded-lg">
+                                    <h5 class="font-semibold text-red-800">Faisceau de His & Réseau de Purkinje</h5>
+                                    <p>Distribuent rapidement l'influx aux ventricules pour une contraction synchrone.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="zap" class="text-red-600 w-6 h-6"></i>
+                                </div>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Potentiel d'Action Cellulaire</h4>
+                            </div>
+                            <p class="text-slate-600 text-sm sm:text-base mb-4">L'activité électrique d'une cellule cardiaque repose sur des échanges ioniques à travers sa membrane, ciblés par les médicaments.</p>
+                            <div class="flex flex-wrap gap-4 text-sm">
+                                <div class="flex-1 min-w-[200px] p-4 bg-red-50 rounded-lg">
+                                    <h5 class="font-semibold text-red-800">Sodium (Na+)</h5>
+                                    <p>Responsable de la dépolarisation rapide (contraction).</p>
+                                </div>
+                                <div class="flex-1 min-w-[200px] p-4 bg-red-50 rounded-lg">
+                                    <h5 class="font-semibold text-red-800">Calcium (Ca2+)</h5>
+                                    <p>Maintient le plateau du potentiel d'action et participe à la contraction.</p>
+                                </div>
+                                <div class="flex-1 min-w-[200px] p-4 bg-red-50 rounded-lg">
+                                    <h5 class="font-semibold text-red-800">Potassium (K+)</h5>
+                                    <p>Permet la repolarisation (retour à l'état de repos).</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="bg-red-100 p-4 rounded-lg">
-                    <h3 class="text-xl font-bold text-red-700 pt-4">Sous-classe Ic (ex: Flecaïne®, Rythmol®)</h3>
-                    <div class="bg-red-100 p-4 rounded-lg">
-                        <h4 class="font-semibold text-red-800">🔬 Indications & Effets</h4>
-                        <p class="text-red-700 text-sm">Prévention et traitement des troubles supraventriculaires. Ralentissent fortement la conduction.</p>
+                    <div class="mt-10 flex justify-center">
+                        <a href="cours_rythme.pdf" download class="inline-flex items-center gap-2 bg-gradient-to-r from-red-500 to-rose-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+                            <i data-lucide="download" class="w-5 h-5"></i>
+                            Télécharger le pdf sur les troubles du rythme
+                        </a>
                     </div>
-                        <div class="p-4 bg-red-200 border border-red-400 rounded-lg">
-                        <h4 class="font-semibold text-red-800">⚠️ Points de vigilance</h4>
-                        <ul class="list-disc list-inside text-red-700 text-sm space-y-1">
-                            <li><strong>Effets pro-arythmogènes :</strong> peuvent aggraver des troubles du rythme.</li>
-                            <li><strong>Effets cardiaques :</strong> Poussées d'insuffisance cardiaque, ralentissement de la conduction.</li>
-                            <li><strong>Incompatibilité (Flécaïnide IV) :</strong> Ne pas diluer dans du NaCl, utiliser du sérum glucosé.</li>
-                        </ul>
-                    </div>
-                    </div>
-                </div>
+                </section>
             </div>
-            
+
+            <div id="classe1" class="page hidden">
+                <section class="bg-gradient-to-br from-sky-100 to-blue-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-8 text-center leading-tight text-slate-800">
+                        <span class="bg-gradient-to-br from-sky-500 to-blue-700 bg-clip-text text-transparent">Stabilisants de membrane</span>
+                    </h3>
+                    
+                    <div class="bg-white/80 backdrop-blur-sm rounded-xl shadow-md p-6 mb-8 max-w-3xl mx-auto text-center">
+                        <h4 class="font-bold text-sky-800 mb-2 flex justify-center items-center gap-2"><i data-lucide="cog" class="w-5 h-5"></i>Mécanisme d'action général</h4>
+                        <p class="text-slate-700">Bloquent les canaux sodiques (Na+), ce qui ralentit la dépolarisation des cellules cardiaques. Ils stabilisent la membrane cellulaire pour réduire l'excitabilité cardiaque.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <!-- Sous-classe Ia -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="mb-4 border-b border-sky-200 pb-4">
+                                <h4 class="text-xl font-bold text-slate-800">Sous-classe Ia</h4>
+                                <p class="text-xs text-slate-500 italic mt-1">Ex: Serecor®, Rythmodan®</p>
+                            </div>
+                            <div class="space-y-4 text-sm flex-grow">
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-sky-600"></i>Indications & Effets</h5>
+                                    <p class="text-slate-600 pl-6">Traitement des troubles supraventriculaires. Accélèrent le rythme et facilitent la conduction auriculo-ventriculaire.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-blue-500"></i>Vigilance</h5>
+                                    <ul class="list-disc text-slate-600 pl-10 space-y-1">
+                                        <li>Pouvoir arythmogène important (torsades de pointes).</li>
+                                        <li>Surveillance de la kaliémie.</li>
+                                        <li>Hypersensibilité (cinchonisme).</li>
+                                        <li>Effets atropiniques (bouche sèche, rétention urinaire).</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sous-classe Ib -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="mb-4 border-b border-sky-200 pb-4">
+                                <h4 class="text-xl font-bold text-slate-800">Sous-classe Ib</h4>
+                                <p class="text-xs text-slate-500 italic mt-1">Ex: Xylocard®, Dilantin®</p>
+                            </div>
+                            <div class="space-y-4 text-sm flex-grow">
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-sky-600"></i>Indications & Effets</h5>
+                                    <p class="text-slate-600 pl-6">Traitement des troubles du rythme ventriculaires graves, notamment lors d'intoxication digitalique (Phénytoïne).</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-blue-500"></i>Vigilance</h5>
+                                    <ul class="list-disc text-slate-600 pl-10 space-y-1">
+                                        <li>Administration parentérale stricte (Lidocaïne) en raison du premier passage hépatique.</li>
+                                        <li>Signes de toxicité : neurotoxicité (agitation, confusion, convulsions) et troubles cardiovasculaires.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sous-classe Ic -->
+                        <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="mb-4 border-b border-sky-200 pb-4">
+                                <h4 class="text-xl font-bold text-slate-800">Sous-classe Ic</h4>
+                                <p class="text-xs text-slate-500 italic mt-1">Ex: Flecaïne®, Rythmol®</p>
+                            </div>
+                            <div class="space-y-4 text-sm flex-grow">
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-sky-600"></i>Indications & Effets</h5>
+                                    <p class="text-slate-600 pl-6">Prévention et traitement des troubles supraventriculaires. Ralentissent fortement la conduction.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-blue-500"></i>Vigilance</h5>
+                                    <ul class="list-disc text-slate-600 pl-10 space-y-1">
+                                        <li>Effets pro-arythmogènes : peuvent aggraver des troubles du rythme.</li>
+                                        <li>Poussées d'insuffisance cardiaque, ralentissement de la conduction.</li>
+                                        <li>Incompatibilité (Flécaïnide IV) : Ne pas diluer dans du NaCl, utiliser du sérum glucosé.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
             <div id="classe2" class="page hidden">
-                <h2 class="text-2xl md:text-3xl font-bold text-purple-600">Classe II : Bêta-bloquants</h2>
-                <div class="space-y-4 mt-4">
-                    <div class="bg-purple-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-purple-800 mb-2">💊 Exemples</h3>
-                        <p class="text-purple-700 text-sm">Acébutolol, Aténolol, Métoprolol (VO), Esmolol, Propranolol (IV)...</p>
+                <section class="bg-gradient-to-br from-purple-100 to-indigo-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        <span class="bg-gradient-to-br from-purple-500 to-indigo-700 bg-clip-text text-transparent">Bêta-bloquants</span>
+                    </h3>
+                    <div class="max-w-4xl mx-auto bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 sm:p-8">
+                        <div class="mb-6 border-b border-purple-200 pb-4">
+                            <h4 class="text-2xl font-bold text-slate-800">Les Bêta-bloquants</h4>
+                            <p class="text-sm text-slate-500 italic mt-1">Exemples : Acébutolol, Aténolol, Métoprolol (VO), Esmolol, Propranolol (IV)...</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-8 text-sm">
+                            <div class="space-y-6">
+                                <div>
+                                    <h5 class="font-semibold text-slate-700 mb-2 flex items-center gap-2"><i data-lucide="atom" class="w-5 h-5 text-purple-600"></i>Mécanisme d'action</h5>
+                                    <p class="text-slate-600 pl-7">Bloquent les récepteurs bêta-adrénergiques, ce qui diminue la stimulation sympathique du cœur. Ils réduisent la fréquence cardiaque, la force de contraction et la vitesse de conduction.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-700 mb-2 flex items-center gap-2"><i data-lucide="stethoscope" class="w-5 h-5 text-blue-600"></i>Indications</h5>
+                                    <p class="text-slate-600 pl-7">Ralentissement de la fréquence ventriculaire lors de fibrillation auriculaire. Prévention des arythmies ventriculaires après un infarctus du myocarde.</p>
+                                </div>
+                            </div>
+                            <div class="space-y-6">
+                                <div>
+                                    <h5 class="font-semibold text-slate-700 mb-2 flex items-center gap-2"><i data-lucide="ban" class="w-5 h-5 text-purple-500"></i>Contre-indications</h5>
+                                    <p class="text-slate-600 pl-7">Bradycardie/hypotension sévère, BAV, insuffisance cardiaque décompensée, asthme et BPCO.</p>
+                                </div>
+                                <div class="bg-purple-50 border-l-4 border-purple-400 p-4 rounded-r-lg">
+                                    <h5 class="font-semibold text-purple-800 mb-2 flex items-center gap-2"><i data-lucide="alert-octagon" class="w-5 h-5"></i>Points de vigilance</h5>
+                                    <ul class="list-disc text-slate-700 pl-6 space-y-1">
+                                        <li>Effets indésirables : Bradycardie, fatigue, troubles digestifs, impuissance, masquage des signes d'hypoglycémie chez le diabétique.</li>
+                                        <li class="font-semibold text-purple-600">Ne JAMAIS interrompre brutalement : Risque d'effet rebond (tachycardie, HTA).</li>
+                                        <li>Surveillance : Pouls, tension artérielle.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-purple-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-purple-800">⚙️ Mécanisme d'action</h3>
-                        <p class="text-purple-700 text-sm">Bloquent les récepteurs bêta-adrénergiques, ce qui diminue la stimulation sympathique du cœur. Ils réduisent la fréquence cardiaque, la force de contraction et la vitesse de conduction.</p>
-                    </div>
-                    <div class="bg-purple-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-purple-800">🔬 Indications</h3>
-                        <p class="text-purple-700 text-sm">Ralentissement de la fréquence ventriculaire lors de fibrillation auriculaire. Prévention des arythmies ventriculaires après un infarctus du myocarde.</p>
-                    </div>
-                    <div class="bg-purple-100 p-4 rounded-lg border-l-4 border-purple-400">
-                        <h3 class="font-semibold text-purple-800">⚠️ Points de vigilance & Contre-indications</h3>
-                        <ul class="list-disc list-inside text-purple-700 text-sm space-y-1">
-                            <li><strong>Contre-indications :</strong> Bradycardie/hypotension sévère, BAV, insuffisance cardiaque décompensée, asthme et BPCO.</li>
-                            <li><strong>Effets indésirables :</strong> Bradycardie, fatigue, troubles digestifs, impuissance, masquage des signes d'hypoglycémie chez le diabétique.</li>
-                            <li><strong>Ne JAMAIS interrompre brutalement :</strong> Risque d'effet rebond (tachycardie, HTA).</li>
-                            <li><strong>Surveillance :</strong> Pouls, tension artérielle.</li>
-                        </ul>
-                    </div>
-                </div>
+                </section>
             </div>
 
             <div id="classe3" class="page hidden">
-                <h2 class="text-2xl md:text-3xl font-bold text-red-600">Classe III : Inhibiteurs des canaux potassiques</h2>
-                 <div class="space-y-4 mt-4">
-                    <div class="bg-red-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-red-800 mb-2">💊 Spécialités</h3>
-                        <p class="text-red-700 text-sm">Amiodarone (Cordarone®), Sotalol (Sotalex®)</p>
+                <section class="bg-gradient-to-br from-red-100 to-orange-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        <span class="bg-gradient-to-br from-red-500 to-orange-600 bg-clip-text text-transparent">Inhibiteurs des canaux potassiques</span>
+                    </h3>
+                    <div class="max-w-4xl mx-auto bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 sm:p-8">
+                        <div class="mb-6 border-b border-red-200 pb-4">
+                            <h4 class="text-2xl font-bold text-slate-800">Amiodarone & Sotalol</h4>
+                            <p class="text-sm text-slate-500 italic mt-1">Spécialités : Amiodarone (Cordarone®), Sotalol (Sotalex®)</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-8 text-sm">
+                            <div class="space-y-6">
+                                <div>
+                                    <h5 class="font-semibold text-slate-700 mb-2 flex items-center gap-2"><i data-lucide="atom" class="w-5 h-5 text-red-600"></i>Mécanisme d'action</h5>
+                                    <p class="text-slate-600 pl-7">Allongent la durée du potentiel d'action et la période réfractaire en bloquant les canaux potassiques. Cela ralentit la fréquence cardiaque et diminue l'excitabilité myocardique. Allongent l'espace QT.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-700 mb-2 flex items-center gap-2"><i data-lucide="target" class="w-5 h-5 text-sky-600"></i>Indications</h5>
+                                    <p class="text-slate-600 pl-7">Troubles du rythme graves, ventriculaires et supraventriculaires (ex: fibrillation ventriculaire).</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg h-full">
+                                    <h5 class="font-semibold text-red-800 mb-3 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-5 h-5"></i>Vigilance pour l'Amiodarone</h5>
+                                    <ul class="list-disc text-slate-700 pl-6 space-y-2">
+                                        <li><strong>Effet pro-arythmogène :</strong> Risque majeur de torsade de pointe.</li>
+                                        <li><strong>Troubles thyroïdiens :</strong> Hypo ou hyperthyroïdie (bilan TSH avant et pendant le ttt).</li>
+                                        <li><strong>Toxicité pulmonaire :</strong> Pneumopathies.</li>
+                                        <li><strong>Toxicité oculaire :</strong> Micro-dépôts cornéens (vision de halos colorés).</li>
+                                        <li><strong>Cutanés :</strong> Photosensibilisation (protection solaire indispensable).</li>
+                                        <li><strong>Administration IV :</strong> Uniquement dans du sérum glucosé, jamais en IVD (sauf ACR).</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-red-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-red-800">⚙️ Mécanisme d'action</h3>
-                        <p class="text-red-700 text-sm">Allongent la durée du potentiel d'action et la période réfractaire en bloquant les canaux potassiques. Cela ralentit la fréquence cardiaque et diminue l'excitabilité myocardique. Allongent l'espace QT.</p>
-                    </div>
-                    <div class="bg-red-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-red-800">🔬 Indications</h3>
-                        <p class="text-red-700 text-sm">Troubles du rythme graves, ventriculaires et supraventriculaires (ex: fibrillation ventriculaire).</p>
-                    </div>
-                    <div class="bg-red-100 p-4 rounded-lg border-l-4 border-red-400">
-                        <h3 class="font-semibold text-red-800">⚠️ Points de vigilance pour l'Amiodarone</h3>
-                        <ul class="list-disc list-inside text-red-700 text-sm space-y-1">
-                            <li><strong>Effet pro-arythmogène :</strong> Risque majeur de torsade de pointe.</li>
-                            <li><strong>Troubles thyroïdiens :</strong> Hypo ou hyperthyroïdie (bilan TSH avant et pendant le ttt).</li>
-                            <li><strong>Toxicité pulmonaire :</strong> Pneumopathies.</li>
-                            <li><strong>Toxicité oculaire :</strong> Micro-dépôts cornéens (vision de halos colorés).</li>
-                            <li><strong>Cutanés :</strong> Photosensibilisation (protection solaire indispensable).</li>
-                            <li><strong>Administration IV :</strong> Uniquement dans du sérum glucosé, jamais en IVD (sauf ACR).</li>
-                        </ul>
-                    </div>
-                </div>
+                </section>
             </div>
 
             <div id="classe4" class="page hidden">
-                <h2 class="text-2xl md:text-3xl font-bold text-green-600">Classe IV : Inhibiteurs calciques</h2>
-                 <div class="space-y-4 mt-4">
-                    <div class="bg-green-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-green-800 mb-2">💊 Spécialités (à tropisme cardiaque)</h3>
-                        <p class="text-green-700 text-sm">Vérapamil (Isoptine®), Diltiazem (Tildiem®)</p>
+                <section class="bg-gradient-to-br from-green-100 to-emerald-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        <span class="bg-gradient-to-br from-green-500 to-emerald-700 bg-clip-text text-transparent">Inhibiteurs calciques</span>
+                    </h3>
+                    <div class="max-w-4xl mx-auto bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 sm:p-8">
+                        <div class="mb-6 border-b border-green-200 pb-4">
+                            <h4 class="text-2xl font-bold text-slate-800">Vérapamil & Diltiazem</h4>
+                            <p class="text-sm text-slate-500 italic mt-1">Spécialités (à tropisme cardiaque) : Vérapamil (Isoptine®), Diltiazem (Tildiem®)</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-8 text-sm">
+                            <div class="space-y-6">
+                                <div>
+                                    <h5 class="font-semibold text-slate-700 mb-2 flex items-center gap-2"><i data-lucide="atom" class="w-5 h-5 text-green-600"></i>Mécanisme d'action</h5>
+                                    <p class="text-slate-600 pl-7">Bloquent l'entrée du calcium dans les cellules cardiaques, ce qui diminue la force de contraction (inotropes négatifs), ralentit la fréquence cardiaque (chronotropes négatifs) et ralentit la conduction auriculo-ventriculaire.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-700 mb-2 flex items-center gap-2"><i data-lucide="target" class="w-5 h-5 text-sky-600"></i>Indications</h5>
+                                    <p class="text-slate-600 pl-7">Traitement et prévention des tachycardies supraventriculaires. Également utilisés dans l'HTA et l'angor.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg h-full">
+                                    <h5 class="font-semibold text-green-800 mb-3 flex items-center gap-2"><i data-lucide="alert-circle" class="w-5 h-5"></i>Points de vigilance</h5>
+                                    <ul class="list-disc text-slate-700 pl-6 space-y-2">
+                                        <li><strong>Effets cardiaques :</strong> Bradycardie, hypotension, troubles de la conduction (BAV).</li>
+                                        <li><strong>Vasodilatation :</strong> Céphalées, bouffées de chaleur, œdèmes des membres inférieurs.</li>
+                                        <li><strong>Troubles digestifs :</strong> Constipation marquée avec le Vérapamil.</li>
+                                        <li><strong>Hyperplasie gingivale :</strong> Importance d'une bonne hygiène bucco-dentaire.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-green-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-green-800">⚙️ Mécanisme d'action</h3>
-                        <p class="text-green-700 text-sm">Bloquent l'entrée du calcium dans les cellules cardiaques, ce qui diminue la force de contraction (inotropes négatifs), ralentit la fréquence cardiaque (chronotropes négatifs) et ralentit la conduction auriculo-ventriculaire.</p>
-                    </div>
-                    <div class="bg-green-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-green-800">🔬 Indications</h3>
-                        <p class="text-green-700 text-sm">Traitement et prévention des tachycardies supraventriculaires. Également utilisés dans l'HTA et l'angor.</p>
-                    </div>
-                    <div class="bg-green-100 p-4 rounded-lg border-l-4 border-green-400">
-                        <h3 class="font-semibold text-green-800">⚠️ Points de vigilance</h3>
-                        <ul class="list-disc list-inside text-green-700 text-sm space-y-1">
-                             <li><strong>Effets cardiaques :</strong> Bradycardie, hypotension, troubles de la conduction (BAV).</li>
-                             <li><strong>Vasodilatation :</strong> Céphalées, bouffées de chaleur, œdèmes des membres inférieurs.</li>
-                             <li><strong>Troubles digestifs :</strong> Constipation marquée avec le Vérapamil.</li>
-                             <li><strong>Hyperplasie gingivale :</strong> Importance d'une bonne hygiène bucco-dentaire.</li>
-                        </ul>
-                    </div>
-                </div>
+                </section>
             </div>
 
             <div id="digitaliques" class="page hidden">
-                <h2 class="text-2xl md:text-3xl font-bold text-amber-600">Les Digitaliques</h2>
-                <div class="space-y-4 mt-4">
-                     <div class="bg-amber-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-amber-800 mb-2">💊 Spécialité</h3>
-                        <p class="text-amber-700 text-sm">Digoxine (Digoxine®, Hemigoxine®)</p>
+                <section class="bg-gradient-to-br from-amber-100 to-yellow-100 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        <span class="bg-gradient-to-br from-amber-500 to-yellow-600 bg-clip-text text-transparent">Les Digitaliques</span>
+                    </h3>
+                    <div class="max-w-4xl mx-auto bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 sm:p-8">
+                        <div class="mb-6 border-b border-amber-200 pb-4">
+                            <h4 class="text-2xl font-bold text-slate-800">La Digoxine</h4>
+                            <p class="text-sm text-slate-500 italic mt-1">Spécialités : Digoxine®, Hemigoxine®</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-8 text-sm">
+                            <div class="space-y-6">
+                                <div>
+                                    <h5 class="font-semibold text-slate-700 mb-2 flex items-center gap-2"><i data-lucide="zap" class="w-5 h-5 text-amber-600"></i>Mécanisme : La règle des 3 R</h5>
+                                    <ul class="list-none pl-7 space-y-1 text-slate-600">
+                                        <li><span class="font-bold text-amber-700">R</span>enforce : Augmente la force de contraction (inotrope +)</li>
+                                        <li><span class="font-bold text-amber-700">R</span>alentit : Diminue la fréquence cardiaque (chronotrope -)</li>
+                                        <li><span class="font-bold text-amber-700">R</span>égularise : Ralentit la conduction AV</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-700 mb-2 flex items-center gap-2"><i data-lucide="target" class="w-5 h-5 text-sky-600"></i>Indications</h5>
+                                    <p class="text-slate-600 pl-7">Insuffisance cardiaque, troubles du rythme supra-ventriculaires (fibrillation auriculaire).</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg h-full">
+                                    <h5 class="font-semibold text-amber-800 mb-3 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-5 h-5"></i>Marge thérapeutique étroite !</h5>
+                                    <ul class="list-disc text-slate-700 pl-6 space-y-2">
+                                        <li><strong>Surdosage :</strong> L'intervalle efficacité/toxicité est très faible.</li>
+                                        <li><strong>Intoxication :</strong> troubles digestifs, vision des couleurs (dyschromatopsie), confusion.</li>
+                                        <li><strong>Surveillance biologique :</strong> Kaliémie (hypokaliémie majore la toxicité), digoxinémie.</li>
+                                        <li><strong>ECG :</strong> Aspect "en cupule" du segment ST (imprégnation normale).</li>
+                                        <li><strong>Contre-indications :</strong> Calcium IV, Millepertuis.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-amber-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-amber-800">⚙️ Mécanisme d'action - La règle des 3 R</h3>
-                        <ul class="list-disc list-inside text-amber-700 text-sm space-y-1">
-                            <li><strong>Renforce :</strong> Augmente la force de contraction du cœur (inotropes positifs).</li>
-                            <li><strong>Ralentit :</strong> Diminue la fréquence cardiaque (chronotropes négatifs).</li>
-                            <li><strong>Régularise :</strong> Ralentit la conduction dans le nœud auriculo-ventriculaire.</li>
-                        </ul>
-                    </div>
-                    <div class="bg-amber-50 p-4 rounded-lg">
-                        <h3 class="font-semibold text-amber-800">🔬 Indications</h3>
-                        <p class="text-amber-700 text-sm">Insuffisance cardiaque, troubles du rythme supra-ventriculaires (fibrillation auriculaire).</p>
-                    </div>
-                    <div class="bg-amber-100 p-4 rounded-lg border-l-4 border-amber-400">
-                        <h3 class="font-semibold text-amber-800">⚠️ Points de vigilance : Marge thérapeutique étroite !</h3>
-                        <ul class="list-disc list-inside text-amber-700 text-sm space-y-1">
-                            <li><strong>Risque de surdosage :</strong> L'intervalle entre la dose efficace et la dose toxique est très faible.</li>
-                            <li><strong>Signes d'intoxication :</strong> troubles digestifs (nausées, vomissements), troubles de la vision des couleurs (dyschromatopsie), troubles psy (confusion).</li>
-                            <li><strong>Surveillance biologique :</strong> Kaliémie (l'hypokaliémie majore la toxicité), digoxinémie (après 6 jours de traitement).</li>
-                            <li><strong>ECG :</strong> L'aspect "en cupule" du segment ST est un signe d'imprégnation (normal), pas de surdosage.</li>
-                            <li><strong>Contre-indications :</strong> Calcium IV, Millepertuis.</li>
-                        </ul>
-                    </div>
-                </div>
+                </section>
             </div>
 
             <div id="quiz" class="page hidden">
                 <div class="bg-gradient-to-br from-slate-50 to-gray-100 p-6 sm:p-8 md:p-10 rounded-2xl shadow-inner">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-2">Quiz Interactif</h2>
-                    <p class="text-slate-600 mb-8">Testez vos connaissances sur les anti-arythmiques et les digitaliques.</p>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-2 text-center">Quiz Interactif</h2>
+                    <p class="text-slate-600 mb-10 text-center">Testez vos connaissances sur les anti-arythmiques et les digitaliques.</p>
                     
-                    <div id="qcm-container" class="space-y-8">
-                        </div>
+                    <div id="qcm-container" class="space-y-8 max-w-4xl mx-auto">
+                        <!-- Questions will be injected here -->
+                    </div>
 
-                    <div id="quiz-footer" class="mt-10 pt-6 border-t-2 border-slate-200 flex justify-between items-center">
+                    <div id="quiz-footer" class="max-w-4xl mx-auto mt-10 pt-6 border-t-2 border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-4">
                         <p id="quiz-score" class="text-xl md:text-2xl font-bold text-slate-800"></p>
                         <button onclick="resetQuiz()" id="reset-button" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 transform opacity-0 pointer-events-none">
-                            Recommencer
+                            Recommencer le Quiz
                         </button>
                     </div>
                 </div>
             </div>
 
             <div id="synthese" class="page hidden">
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-700">Tableau de Synthèse</h2>
-                <div class="mt-4 overflow-x-auto">
-                    <table class="w-full text-sm text-left shadow-md rounded-lg">
-                        <thead class="bg-gray-700 text-white">
-                            <tr>
-                                <th class="p-3">Classe</th>
-                                <th class="p-3">Mécanisme Principal</th>
-                                <th class="p-3">Exemple Clé</th>
-                                <th class="p-3">Vigilance Majeure</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-gray-800">
-                            <tr class="bg-rose-50 border-b"><td class="p-3 font-semibold">Classe I</td><td class="p-3">Blocage canaux Na+</td><td class="p-3">Flécaïnide (Flecaïne®)</td><td class="p-3">Effet pro-arythmogène</td></tr>
-                            <tr class="bg-purple-50 border-b"><td class="p-3 font-semibold">Classe II</td><td class="p-3">Bêta-bloquant</td><td class="p-3">Métoprolol</td><td class="p-3">Ne jamais arrêter brutalement, CI (asthme, BAV)</td></tr>
-                            <tr class="bg-red-50 border-b"><td class="p-3 font-semibold">Classe III</td><td class="p-3">Blocage canaux K+</td><td class="p-3">Amiodarone (Cordarone®)</td><td class="p-3">Toxicité multiple (thyroïde, poumon, peau), torsades de pointes</td></tr>
-                            <tr class="bg-green-50 border-b"><td class="p-3 font-semibold">Classe IV</td><td class="p-3">Blocage canaux Ca2+</td><td class="p-3">Vérapamil (Isoptine®)</td><td class="p-3">Bradycardie, BAV, constipation</td></tr>
-                            <tr class="bg-amber-50"><td class="p-3 font-semibold">Digitaliques</td><td class="p-3">Inotrope +, Chronotrope -</td><td class="p-3">Digoxine</td><td class="p-3">Marge thérapeutique étroite, surveillance kaliémie & digoxinémie</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                 <div class="bg-slate-50 p-4 rounded-lg mt-8">
-                        <h3 class="font-semibold text-slate-800 mb-2">📊 Comparaison des Classes d'Anti-arythmiques</h3>
+                <section class="bg-gradient-to-br from-gray-100 to-slate-200 rounded-2xl p-6 md:p-12">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        <span class="bg-gradient-to-br from-gray-600 to-slate-800 bg-clip-text text-transparent">Synthèse Générale</span>
+                    </h3>
+                    
+                    <div class="bg-white/90 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden mb-12 max-w-5xl mx-auto">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left">
+                                <thead class="bg-slate-800 text-white">
+                                    <tr>
+                                        <th class="p-4 font-semibold tracking-wide">Famille</th>
+                                        <th class="p-4 font-semibold tracking-wide">Mécanisme Principal</th>
+                                        <th class="p-4 font-semibold tracking-wide">Exemple Clé</th>
+                                        <th class="p-4 font-semibold tracking-wide">Vigilance Majeure</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-slate-700 divide-y divide-slate-100">
+                                    <tr class="hover:bg-slate-50 transition-colors"><td class="p-4 font-bold text-sky-600">Stabilisants de membrane</td><td class="p-4">Blocage canaux Na+</td><td class="p-4">Flécaïnide (Flecaïne®)</td><td class="p-4">Effet pro-arythmogène</td></tr>
+                                    <tr class="hover:bg-slate-50 transition-colors"><td class="p-4 font-bold text-purple-600">Bêta-bloquants</td><td class="p-4">Bêta-bloquant</td><td class="p-4">Métoprolol</td><td class="p-4">Ne jamais arrêter brutalement, CI (asthme, BAV)</td></tr>
+                                    <tr class="hover:bg-slate-50 transition-colors"><td class="p-4 font-bold text-orange-500">Inhibiteurs potassiques</td><td class="p-4">Blocage canaux K+</td><td class="p-4">Amiodarone (Cordarone®)</td><td class="p-4">Toxicité multiple (thyroïde, poumon, peau), torsades de pointes</td></tr>
+                                    <tr class="hover:bg-slate-50 transition-colors"><td class="p-4 font-bold text-green-600">Inhibiteurs calciques</td><td class="p-4">Blocage canaux Ca2+</td><td class="p-4">Vérapamil (Isoptine®)</td><td class="p-4">Bradycardie, BAV, constipation</td></tr>
+                                    <tr class="hover:bg-slate-50 transition-colors"><td class="p-4 font-bold text-amber-600">Digitaliques</td><td class="p-4">Inotrope +, Chronotrope -</td><td class="p-4">Digoxine</td><td class="p-4">Marge thérapeutique étroite, kaliémie</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-6 sm:p-8 max-w-5xl mx-auto">
+                        <h4 class="font-bold text-slate-800 mb-6 text-center text-xl flex justify-center items-center gap-2">
+                            <i data-lucide="bar-chart-2" class="text-slate-500"></i> Profils Pharmacodynamiques
+                        </h4>
                         <div class="flex justify-center items-center">
-                            <div class="w-full md:w-3/4 lg:w-1/2">
+                            <div class="w-full md:w-3/4 lg:w-2/3 max-w-2xl">
                                 <canvas id="aarChart"></canvas>
                             </div>
                         </div>
                     </div>
+                </section>
             </div>
 
         </main>
 
-        <footer id="footer" class="bg-slate-800 text-white p-4 md:p-6 mt-auto rounded-b-xl shadow-inner">
-            <div class="max-w-6xl mx-auto flex items-center justify-center md:justify-end text-center">
+        <footer class="bg-slate-800 text-white p-4 md:p-6 mt-auto text-center shadow-inner">
+            <div class="max-w-6xl mx-auto flex items-center justify-center md:justify-end">
                 <p class="font-bold text-slate-300 text-xs sm:text-sm">
-                <span class="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2026
+                    <span class="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2026
                 </p>
             </div>
         </footer>
@@ -323,63 +441,20 @@
     </div>
 
     <script>
+        lucide.createIcons();
+
         const quizData = [
-            { 
-                question: "Quelle action infirmière est PRIORITAIRE avant l'administration orale d'un Bêta-bloquant (Classe II) ?", 
-                options: ["Vérifier la dernière selle du patient", "Prendre la glycémie capillaire", "Contrôler la fréquence cardiaque et la tension artérielle", "Vérifier la couleur des urines"], 
-                correct: 2, 
-                feedback: "Les Bêta-bloquants sont bradycardisants et hypotenseurs. L'infirmier(ère) doit toujours vérifier que la fréquence cardiaque est supérieure à 50 battements/min et la TA est acceptable avant l'administration." 
-            },
-            { 
-                question: "Un patient sous Amiodarone (Cordarone®, Classe III) se plaint d'une photosensibilité importante. Quel conseil infirmier doit-on lui donner ?", 
-                options: ["Arrêter immédiatement le traitement", "Prendre l'Amiodarone le soir au coucher", "Utiliser une protection solaire importante", "Boire plus d'eau pour éliminer le produit"], 
-                correct: 2, 
-                feedback: "L'Amiodarone est très photosensibilisante et expose à des brûlures graves. La protection solaire doit être rigoureuse et maintenue pendant plusieurs mois après l'arrêt du traitement." 
-            },
-            { 
-                question: "Quel résultat biologique (ionogramme) majore le risque de toxicité des digitaliques et des anti-arythmiques de Classe Ia et III (pro-arythmogènes) ?", 
-                options: ["Hypernatrémie", "Hypokaliémie", "Hypercalcémie", "Hypermagnésémie"], 
-                correct: 1, 
-                feedback: "L'hypokaliémie (taux de potassium bas) potentialise l'effet de ces médicaments et augmente significativement le risque d'arythmies graves, notamment les torsades de pointes." 
-            },
-            { 
-                question: "Un patient sous Bêta-bloquant doit subir une intervention chirurgicale. Quelle est l'attitude recommandée par rapport au traitement dans la majorité des cas ?", 
-                options: ["L'arrêter brutalement 48h avant l'intervention", "Le remplacer par une dose plus faible d'un inhibiteur calcique", "Le maintenir jusqu'à l'intervention", "L'arrêter progressivement sur une semaine"], 
-                correct: 2, 
-                feedback: "Il est crucial de ne pas interrompre brutalement un Bêta-bloquant pour éviter l'effet rebond. Le traitement est généralement maintenu jusqu'à l'intervention, en étroite collaboration avec l'équipe chirurgicale et l'anesthésiste." 
-            },
-            { 
-                question: "Quelle intervention infirmière est associée à la prévention des œdèmes des membres inférieurs chez un patient sous inhibiteur calcique (Classe IV, comme le Diltiazem) ?", 
-                options: ["Limitation des apports en sel", "Élévation des jambes et port de bas de contention si prescrits", "Administration de diurétiques même sans prescription", "Massage énergique des jambes"], 
-                correct: 1, 
-                feedback: "Les œdèmes sont liés à la vasodilatation artérielle périphérique. L'élévation des membres et le port de bas de contention (si prescrits) sont des mesures physiques adaptées pour faciliter le retour veineux." 
-            },
-            { 
-                question: "Un patient sous Bêta-bloquant se plaint de palpitations et d'une fatigue inhabituelle. Quelle complication cardiaque majeure doit-on redouter en priorité ?", 
-                options: ["Une hypotension artérielle sévère", "Une insuffisance cardiaque ou une bradycardie excessive", "Une hypokaliémie", "Un trouble de la coagulation"], 
-                correct: 1, 
-                feedback: "Les Bêta-bloquants réduisent la contractilité du cœur (inotropes négatifs). La fatigue, la dyspnée et les palpitations peuvent être des signes d'insuffisance cardiaque ou d'une bradycardie mal tolérée." 
-            },
-            { 
-                question: "Lorsqu'un patient sous Digoxine signale une 'vision de halos colorés' (dyschromatopsie), quelle est l'action infirmière IMMÉDIATE ?", 
-                options: ["Rassurer le patient, c'est un effet secondaire normal", "Administrer un collyre sur prescription", "Alerter le médecin, cela signe une intoxication digitalique", "Doubler la dose de Digoxine pour améliorer l'efficacité, sur prescription"], 
-                correct: 2, 
-                feedback: "La dyschromatopsie est un signe classique et tardif d'intoxication digitalique. L'infirmier(ère) doit alerter le médecin pour un éventuel dosage de la digoxinémie et un ajustement/arrêt du traitement." 
-            },
-            { 
-                question: "Un patient asthmatique présente une arythmie nécessitant un traitement. Quel anti-arythmique de Classe II est strictement contre-indiqué chez ce patient ?", 
-                options: ["Vérapamil", "Digoxine", "Métoprolol", "Flécaïnide"], 
-                correct: 2, 
-                feedback: "Le Métoprolol (et les autres Bêta-bloquants) est contre-indiqué chez l'asthmatique car il peut provoquer un bronchospasme par blocage des récepteurs β₂ bronchiques." 
-            },
-            { 
-                question: "Quelle est la signification de la Règle des 3R des digitaliques ?", 
-                options: ["Régularise, Réduit, Remplace", "Ralenti, Rigidifie, Retourne", "Remplace, Retourne, Ralenti", "Régularise, Renforce, Ralenti"], 
-                correct: 3, 
-                feedback: "Renforce : Augmente la force de contraction du cœur (inotropes positifs). Ralentit : Diminue la fréquence cardiaque (chronotropes négatifs). Régularise : Ralentit la conduction dans le nœud auriculo-ventriculaire." 
-            }
+            { question: "Quelle action infirmière est PRIORITAIRE avant l'administration orale d'un Bêta-bloquant ?", options: ["Vérifier la dernière selle du patient", "Prendre la glycémie capillaire", "Contrôler la fréquence cardiaque et la tension artérielle", "Vérifier la couleur des urines"], correct: 2, feedback: "Les Bêta-bloquants sont bradycardisants et hypotenseurs. L'infirmier(ère) doit toujours vérifier que la fréquence cardiaque est > 50 bpm et la TA est acceptable avant l'administration." },
+            { question: "Un patient sous Amiodarone (Cordarone®) se plaint d'une photosensibilité importante. Quel conseil donner ?", options: ["Arrêter immédiatement le traitement", "Prendre l'Amiodarone le soir", "Utiliser une protection solaire importante", "Boire plus d'eau"], correct: 2, feedback: "L'Amiodarone est très photosensibilisante et expose à des brûlures graves. La protection solaire doit être rigoureuse." },
+            { question: "Quel résultat biologique majore le risque de toxicité des digitaliques et des anti-arythmiques (ex: Flécaïnide, Amiodarone) ?", options: ["Hypernatrémie", "Hypokaliémie", "Hypercalcémie", "Hypermagnésémie"], correct: 1, feedback: "L'hypokaliémie potentialise l'effet de ces médicaments et augmente le risque de torsades de pointes." },
+            { question: "Un patient sous Bêta-bloquant doit subir une intervention chirurgicale. Quelle est l'attitude recommandée ?", options: ["L'arrêter brutalement 48h avant", "Le remplacer par un inhibiteur calcique", "Le maintenir jusqu'à l'intervention", "L'arrêter progressivement"], correct: 2, feedback: "Il est crucial de ne pas interrompre brutalement un Bêta-bloquant pour éviter l'effet rebond." },
+            { question: "Quelle intervention infirmière est associée à la prévention des œdèmes sous inhibiteur calcique (ex: Diltiazem) ?", options: ["Limitation des apports en sel", "Élévation des jambes et bas de contention", "Administration de diurétiques sans prescription", "Massage énergique"], correct: 1, feedback: "Les œdèmes sont liés à la vasodilatation. L'élévation des membres et les bas de contention facilitent le retour veineux." },
+            { question: "Un patient sous Bêta-bloquant se plaint de fatigue inhabituelle. Quelle complication cardiaque redouter ?", options: ["Hypotension sévère", "Insuffisance cardiaque ou bradycardie", "Hypokaliémie", "Trouble de la coagulation"], correct: 1, feedback: "Les Bêta-bloquants sont inotropes négatifs. La fatigue peut signaler une insuffisance cardiaque ou une bradycardie excessive." },
+            { question: "Patient sous Digoxine avec 'vision de halos colorés' (dyschromatopsie), action infirmière IMMÉDIATE ?", options: ["Rassurer le patient", "Administrer un collyre", "Alerter le médecin, intoxication possible", "Doubler la dose"], correct: 2, feedback: "La dyschromatopsie est un signe d'intoxication digitalique nécessitant un avis médical pour dosage." },
+            { question: "Quel Bêta-bloquant anti-arythmique est strictement contre-indiqué chez l'asthmatique ?", options: ["Vérapamil", "Digoxine", "Métoprolol", "Flécaïnide"], correct: 2, feedback: "Le Métoprolol (Bêta-bloquant) peut provoquer un bronchospasme par blocage des récepteurs β₂." },
+            { question: "Quelle est la signification de la Règle des 3R des digitaliques ?", options: ["Régularise, Réduit, Remplace", "Ralenti, Rigidifie, Retourne", "Remplace, Retourne, Ralenti", "Renforce, Ralentit, Régularise"], correct: 3, feedback: "Renforce (Inotrope+), Ralentit (Chronotrope-), Régularise (Conduction)." }
         ];
-        // --- Navigation Logic ---
+
         const pages = document.querySelectorAll('.page');
         const navButtons = document.querySelectorAll('.nav-btn');
 
@@ -389,7 +464,8 @@
             if (activePage) activePage.classList.remove('hidden');
             
             const gradients = {
-                classe1: ['from-red-500', 'to-rose-600'],
+                rythme: ['from-red-500', 'to-rose-600'],
+                classe1: ['from-sky-500', 'to-blue-600'],
                 classe2: ['from-purple-500', 'to-indigo-600'],
                 classe3: ['from-red-500', 'to-orange-500'],
                 classe4: ['from-green-500', 'to-emerald-600'],
@@ -400,44 +476,50 @@
 
             const allGradientClasses = Object.values(gradients).flat();
 
+            const hoverClasses = {
+                rythme: ['hover:bg-rose-100', 'hover:text-rose-800'],
+                classe1: ['hover:bg-sky-100', 'hover:text-sky-800'],
+                classe2: ['hover:bg-purple-100', 'hover:text-purple-800'],
+                classe3: ['hover:bg-red-100', 'hover:text-red-800'],
+                classe4: ['hover:bg-green-100', 'hover:text-green-800'],
+                digitaliques: ['hover:bg-amber-100', 'hover:text-amber-800'],
+                quiz: ['hover:bg-slate-300', 'hover:text-slate-800'],
+                synthese: ['hover:bg-gray-200', 'hover:text-gray-800'],
+            };
+
             navButtons.forEach(btn => {
                 const btnPageId = btn.getAttribute('onclick').match(/'([^']+)'/)[1];
                 
-                btn.classList.remove('bg-gradient-to-r', 'text-white', 'shadow-md', ...allGradientClasses);
-                btn.classList.add('text-slate-800');
+                btn.className = 'nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm';
 
                 if (btnPageId === pageId) {
                     btn.classList.add('bg-gradient-to-r', 'text-white', 'shadow-md', ...gradients[pageId]);
                     btn.classList.remove('text-slate-800');
+                } else {
+                    btn.classList.add(...hoverClasses[btnPageId]);
                 }
             });
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // --- Chart Logic ---
         function createAARChart() {
             const chartData = {
                 labels: ['Ralentissement FC', 'Effet Inotrope', 'Ralentissement Conduction AV', 'Risque Pro-arythmogène', 'Effets Extra-Cardiaques'],
                 datasets: [
-                    { label: 'Classe I (Flécaïnide)', data: [3, 2, 5, 5, 1], borderColor: 'rgb(244, 63, 94)', backgroundColor: 'rgba(244, 63, 94, 0.2)' }, 
-                    { label: 'Classe II (BB)', data: [5, 2, 4, 2, 4], borderColor: 'rgb(139, 92, 246)', backgroundColor: 'rgba(139, 92, 246, 0.2)' },
-                    { label: 'Classe III (Amiodarone)', data: [4, 1, 3, 4, 5], borderColor: 'rgb(239, 68, 68)', backgroundColor: 'rgba(239, 68, 68, 0.2)' },
-                    { label: 'Classe IV (Vérapamil)', data: [4, 2, 5, 2, 3], borderColor: 'rgb(34, 197, 94)', backgroundColor: 'rgba(34, 197, 94, 0.2)' },
-                    { label: 'Digitaliques (Digoxine)', data: [5, 5, 4, 3, 4], borderColor: 'rgb(245, 158, 11)', backgroundColor: 'rgba(245, 158, 11, 0.2)' }
+                    { label: 'Stab. Membrane', data: [3, 2, 5, 5, 1], borderColor: 'rgb(244, 63, 94)', backgroundColor: 'rgba(244, 63, 94, 0.2)' }, 
+                    { label: 'Bêta-bloquants', data: [5, 2, 4, 2, 4], borderColor: 'rgb(139, 92, 246)', backgroundColor: 'rgba(139, 92, 246, 0.2)' },
+                    { label: 'Inhib. Potassiques', data: [4, 1, 3, 4, 5], borderColor: 'rgb(239, 68, 68)', backgroundColor: 'rgba(239, 68, 68, 0.2)' },
+                    { label: 'Inhib. Calciques', data: [4, 2, 5, 2, 3], borderColor: 'rgb(34, 197, 94)', backgroundColor: 'rgba(34, 197, 94, 0.2)' },
+                    { label: 'Digitaliques', data: [5, 5, 4, 3, 4], borderColor: 'rgb(245, 158, 11)', backgroundColor: 'rgba(245, 158, 11, 0.2)' }
                 ]
             };
-            const chartOptions = { 
-                scales: { r: { suggestedMin: 0, suggestedMax: 5, ticks: { stepSize: 1 }, pointLabels: { font: { size: 10 } } } }, 
-                plugins: { legend: { position: 'top' } } 
-            };
+            const chartOptions = { scales: { r: { suggestedMin: 0, suggestedMax: 5, ticks: { stepSize: 1 }, pointLabels: { font: { size: 11 } } } }, plugins: { legend: { position: 'top' } } };
             const canvas = document.getElementById('aarChart');
             if(canvas && !canvas.chart) {
                 canvas.chart = new Chart(canvas.getContext('2d'), { type: 'radar', data: chartData, options: chartOptions });
             }
         }
         
-        // --- Quiz Logic ---
-        // Melange aleatoire (Fisher-Yates) - renvoie une copie melangee du tableau
         function shuffle(array) {
             const a = array.slice();
             for (let i = a.length - 1; i > 0; i--) {
@@ -453,19 +535,17 @@
             container.innerHTML = '';
             quizData.forEach((item, index) => {
                 const optionsHtml = shuffle(item.options.map((option, optionIndex) => ({ option, optionIndex }))).map(({ option, optionIndex }) => 
-                    `<button class="qcm-option w-full text-left p-4 rounded-xl bg-white border-2 border-slate-200 hover:bg-slate-100 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200" data-index="${optionIndex}">${option}</button>`
+                    `<button class="qcm-option w-full text-left p-4 rounded-xl bg-white border-2 border-slate-200 hover:bg-slate-50 focus:outline-none transition-all duration-200" data-index="${optionIndex}">${option}</button>`
                 ).join('');
-
                 container.innerHTML += `
-                    <div class="qcm-question bg-slate-100/70 border border-slate-200/80 p-6 rounded-2xl shadow-lg" data-question-index="${index}">
+                    <div class="qcm-question bg-white p-6 rounded-2xl shadow-md border border-slate-100" data-question-index="${index}">
                         <p class="font-semibold text-lg text-slate-800 mb-4">${index + 1}. ${item.question}</p>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">${optionsHtml}</div>
                         <div class="qcm-feedback mt-4 text-sm font-medium"></div>
                     </div>`;
             });
             document.getElementById('quiz-score').textContent = `Prêt ? 0 / ${quizData.length}`;
-            const resetButton = document.getElementById('reset-button');
-            resetButton.classList.add('opacity-0', 'pointer-events-none');
+            document.getElementById('reset-button').classList.add('opacity-0', 'pointer-events-none');
         }
 
         function setupQuizListeners() {
@@ -473,7 +553,6 @@
             if (!container) return;
             container.addEventListener('click', (event) => {
                 if (!event.target.classList.contains('qcm-option')) return;
-                
                 const optionButton = event.target;
                 const questionEl = optionButton.closest('.qcm-question');
                 if (!questionEl || questionEl.classList.contains('answered')) return;
@@ -487,15 +566,15 @@
 
                 if (isCorrect) {
                     optionButton.classList.add('correct');
-                    feedbackEl.innerHTML = `<p class="text-emerald-600">🎉 Bravo ! ${questionData.feedback || ''}</p>`;
+                    feedbackEl.innerHTML = `<p class="text-emerald-600 flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4"></i> ${questionData.feedback}</p>`;
                 } else {
                     optionButton.classList.add('incorrect');
-                    const correctButton = questionEl.querySelector(`[data-index="${questionData.correct}"]`);
-                    correctButton.classList.add('correct');
-                    feedbackEl.innerHTML = `<p class="text-red-600">Dommage. ${questionData.feedback || ''}</p>`;
+                    questionEl.querySelector(`[data-index="${questionData.correct}"]`).classList.add('correct');
+                    feedbackEl.innerHTML = `<p class="text-red-500 flex items-center gap-2"><i data-lucide="x-circle" class="w-4 h-4"></i> ${questionData.feedback}</p>`;
                 }
                 
                 questionEl.querySelectorAll('.qcm-option').forEach(btn => btn.disabled = true);
+                lucide.createIcons();
                 updateScore();
             });
         }
@@ -503,43 +582,27 @@
         function updateScore() {
             const totalQuestions = quizData.length;
             let correctAnswers = 0; 
-            document.querySelectorAll('.qcm-question.answered').forEach(questionEl => {
-                if (!questionEl.querySelector('.qcm-option.incorrect')) {
-                    correctAnswers++;
-                }
+            document.querySelectorAll('.qcm-question.answered').forEach(q => {
+                if (!q.querySelector('.qcm-option.incorrect')) correctAnswers++;
             });
             const answeredCount = document.querySelectorAll('.qcm-question.answered').length;
-
             const scoreEl = document.getElementById('quiz-score');
-            scoreEl.textContent = `Votre score : ${correctAnswers} / ${answeredCount}`;
+            scoreEl.textContent = `Score : ${correctAnswers} / ${answeredCount}`;
 
             if (answeredCount === totalQuestions) {
                 scoreEl.textContent = `Score final : ${correctAnswers} / ${totalQuestions}`;
-                const percentage = (correctAnswers / totalQuestions) * 100;
-                if (percentage >= 80) {
-                    scoreEl.textContent += " - Excellent travail ! 🎉";
-                } else if (percentage >= 50) {
-                    scoreEl.textContent += " - Pas mal, continuez à réviser ! 💪";
-                } else {
-                    scoreEl.textContent += " - Encore un effort ! 📚";
-                }
                 document.getElementById('reset-button').classList.remove('opacity-0', 'pointer-events-none');
             }
         }
 
-        function resetQuiz() {
-            renderQuiz();
-        }
+        function resetQuiz() { renderQuiz(); }
         
-        // --- Initial Load ---
         window.onload = () => {
-            showPage('classe1');
+            showPage('rythme');
             createAARChart();
             renderQuiz();
             setupQuizListeners();
         };
-
     </script>
 </body>
-
 </html>
