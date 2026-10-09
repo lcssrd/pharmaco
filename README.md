@@ -22,7 +22,6 @@ Les thématiques suivantes sont actuellement disponibles :
 *   **Quiz** : questions et réponses mélangées à chaque tentative, meilleur score mémorisé (affiché sur la carte de la fiche à l'accueil), bouton « Refaire mes erreurs ».
 *   **Hors ligne** : le site s'installe comme une application et reste consultable sans réseau après une première visite.
 *   **Mode sombre**, qui suit le réglage du téléphone ou se choisit avec le bouton 🌙.
-*   **Impression** : le bouton 🖨 imprime toute la fiche (toutes les sections, sans le quiz).
 
 Les scores et le thème choisi sont enregistrés uniquement dans le navigateur de l'étudiant (aucun compte, aucune donnée envoyée).
 
@@ -35,7 +34,7 @@ Le site reste un ensemble de pages HTML statiques publiées par GitHub Pages. Un
 | Fichier | Rôle |
 | --- | --- |
 | `*.html` | Les fiches et l'accueil. Le contenu et les questions du quiz (`quizData`, en bas de chaque fiche) se modifient directement ici. |
-| `assets/js/site.js` | Code commun : onglets, quiz, thème, impression, recherche, hors ligne. |
+| `assets/js/site.js` | Code commun : onglets, quiz, thème, recherche, hors ligne. |
 | `assets/css/source.css` | Styles communs. Compilé avec Tailwind dans `assets/css/site.css`. |
 | `tailwind.config.js` | Configuration de Tailwind et des couleurs du mode sombre. |
 | `scripts/build.mjs` | Génère `assets/js/icones.js` (icônes utilisées), `assets/data/recherche.json` (index de recherche) et la liste des fichiers hors ligne dans `sw.js`. |
@@ -64,7 +63,7 @@ Mettre à jour la date en bas de la fiche (`<time datetime="AAAA-MM-JJ">`), dans
 
 ### Ajouter une fiche
 
-1.  Partir d'une fiche existante : garder l'en-tête (boutons « Toutes les fiches », impression, thème), la barre d'onglets et le pied de page.
+1.  Partir d'une fiche existante : garder l'en-tête (boutons « Toutes les fiches » et thème), la barre d'onglets et le pied de page.
 2.  Chaque onglet est un bouton `<button data-page="identifiant" data-actif="from-… to-…" class="nav-btn …">` qui correspond à une section `<div id="identifiant" class="page hidden">`. `data-actif` donne le dégradé du bouton actif, `data-survol` (facultatif) sa couleur au survol.
 3.  Ajouter la carte sur l'accueil (`<a href="fiche.html" data-fiche="fiche" …>`) et l'adresse dans `sitemap.xml`.
 4.  Lancer `npm run build`.
