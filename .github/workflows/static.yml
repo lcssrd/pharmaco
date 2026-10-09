@@ -31,6 +31,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      # Regenerates the compiled CSS, icon subset, search index and offline file list,
+      # so the deployed site is always in sync with the HTML even if a local build was forgotten
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Build
+        run: |
+          npm ci
+          npm run build
+          rm -rf node_modules
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

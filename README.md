@@ -15,6 +15,60 @@ Les thématiques suivantes sont actuellement disponibles :
 *   **Pathologies Spécifiques** : Asthme, Cancer (Anticancéreux), Immunosuppresseurs.
 *   **Système Digestif** : Pathologies et traitements digestifs.
 
+## ✨ Fonctionnalités
+
+*   **Recherche** dans toutes les fiches depuis l'accueil (nom de molécule, nom commercial, mot-clé), avec ouverture directe du bon onglet et surlignage du passage.
+*   **Onglets dans l'adresse** : chaque section a son propre lien (`antico.html#avk`), partageable, et le bouton « Retour » du téléphone revient à l'onglet précédent.
+*   **Quiz** : questions et réponses mélangées à chaque tentative, meilleur score mémorisé (affiché sur la carte de la fiche à l'accueil), bouton « Refaire mes erreurs ».
+*   **Hors ligne** : le site s'installe comme une application et reste consultable sans réseau après une première visite.
+*   **Mode sombre**, qui suit le réglage du téléphone ou se choisit avec le bouton 🌙.
+*   **Impression** : le bouton 🖨 imprime toute la fiche (toutes les sections, sans le quiz).
+
+Les scores et le thème choisi sont enregistrés uniquement dans le navigateur de l'étudiant (aucun compte, aucune donnée envoyée).
+
+## 🛠️ Modifier le site
+
+Le site reste un ensemble de pages HTML statiques publiées par GitHub Pages. Une petite étape de construction génère quelques fichiers à partir des fiches.
+
+### Organisation
+
+| Fichier | Rôle |
+| --- | --- |
+| `*.html` | Les fiches et l'accueil. Le contenu et les questions du quiz (`quizData`, en bas de chaque fiche) se modifient directement ici. |
+| `assets/js/site.js` | Code commun : onglets, quiz, thème, impression, recherche, hors ligne. |
+| `assets/css/source.css` | Styles communs. Compilé avec Tailwind dans `assets/css/site.css`. |
+| `tailwind.config.js` | Configuration de Tailwind et des couleurs du mode sombre. |
+| `scripts/build.mjs` | Génère `assets/js/icones.js` (icônes utilisées), `assets/data/recherche.json` (index de recherche) et la liste des fichiers hors ligne dans `sw.js`. |
+
+Les fichiers `assets/css/site.css`, `assets/js/icones.js`, `assets/data/recherche.json` et la partie générée de `sw.js` ne se modifient pas à la main.
+
+### Commandes
+
+Il faut [Node.js](https://nodejs.org) (version 20 ou plus).
+
+```bash
+npm install
+```
+
+```bash
+npm run build
+```
+
+`npm run dev` recompile le CSS automatiquement à chaque modification d'une fiche (pratique pendant qu'on écrit). Le déploiement GitHub Pages relance `npm run build` à chaque mise en ligne : un oubli en local n'a donc pas de conséquence sur le site publié.
+
+Pour prévisualiser le site en local, il faut un petit serveur (par exemple `python -m http.server`) puis ouvrir `http://localhost:8000`. En local, le mode hors ligne n'est activé qu'en ajoutant `?sw` à l'adresse, pour éviter de voir d'anciennes versions pendant qu'on modifie les fiches.
+
+### Après une modification de contenu
+
+Mettre à jour la date en bas de la fiche (`<time datetime="AAAA-MM-JJ">`), dans le pied de page.
+
+### Ajouter une fiche
+
+1.  Partir d'une fiche existante : garder l'en-tête (boutons « Toutes les fiches », impression, thème), la barre d'onglets et le pied de page.
+2.  Chaque onglet est un bouton `<button data-page="identifiant" data-actif="from-… to-…" class="nav-btn …">` qui correspond à une section `<div id="identifiant" class="page hidden">`. `data-actif` donne le dégradé du bouton actif, `data-survol` (facultatif) sa couleur au survol.
+3.  Ajouter la carte sur l'accueil (`<a href="fiche.html" data-fiche="fiche" …>`) et l'adresse dans `sitemap.xml`.
+4.  Lancer `npm run build`.
+
 ## 👥 Équipe du Projet
 
 *   **Lucas Séraudie** : Créateur et auteur principal, conception et développement des supports visuels. Et c'est peut être pas super bien codé selon les règles de bonnes pratiques... C'est ma faute !

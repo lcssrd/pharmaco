@@ -15,73 +15,73 @@
     
     <link rel="canonical" href="https://lcssrd.github.io/pharmaco/asthme.html" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <meta name="theme-color" content="#1e293b">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="assets/icones/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/icones/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="assets/icones/apple-touch-icon.png">
+
+    <script>
+        // Thème clair/sombre appliqué avant l'affichage, pour éviter un flash blanc
+        (function () {
+            var theme = null;
+            try { theme = JSON.parse(localStorage.getItem('pharmaco:theme')); } catch (e) { }
+            if (theme !== 'dark' && theme !== 'light') {
+                theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        html {
-            overflow-y: scroll; /* Force the scrollbar to always be visible */
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8;
-        }
-        .page {
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .qcm-option.correct {
-            background-image: linear-gradient(to right, #4ade80, #16a34a);
-            color: white;
-            border-color: #15803d;
-            font-weight: 600;
-        }
-        .qcm-option.incorrect {
-            background-image: linear-gradient(to right, #f87171, #dc2626);
-            color: white;
-            border-color: #b91c1c;
-            font-weight: 600;
-        }
-        .qcm-option:disabled {
-            cursor: not-allowed;
-        }
-        .qcm-option:disabled:not(.correct):not(.incorrect) {
-            color: #475569;
-            background-color: #f1f5f9;
-            opacity: 0.7;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <script src="assets/js/icones.js" defer></script>
+    <script src="assets/js/site.js" defer></script>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="a71ff4d4-4d84-4066-aa50-313ab8d66b1b"></script>
 </head>
 <body class="p-2 sm:p-4 md:p-8">
+    <a href="#contenu" class="lien-evitement">Aller au contenu</a>
     <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
         <header class="bg-slate-800 text-white p-6 md:p-8 sticky top-0 z-10">
-            <div class="flex items-center justify-between">
+            <div class="flex flex-col-reverse gap-3 md:flex-row md:items-center md:justify-between">
                 <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-fuchsia-500 to-purple-600 bg-clip-text text-transparent pb-2">Antiasthmatiques & Antihistaminiques (Cours IFSI)</h1>
-                <div class="hidden md:flex text-right font-bold text-slate-300 text-sm">
-                    <p><span class="bg-gradient-to-r from-fuchsia-500 to-purple-600 bg-clip-text text-transparent">Lucas Séraudie</span> - 2026</p>
+                <div class="no-print shrink-0 flex flex-col gap-2 md:items-end">
+                    <div class="flex items-center gap-2">
+                        <a href="index.html" class="bouton-entete mr-auto md:mr-0">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+                            <span>Toutes les fiches</span>
+                        </a>
+                        <button type="button" data-action="imprimer" class="bouton-entete" aria-label="Imprimer la fiche" title="Imprimer la fiche">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+                        </button>
+                        <button type="button" data-action="theme" class="bouton-entete" aria-label="Passer en mode sombre" title="Passer en mode sombre">
+                            <svg class="icone-lune" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                            <svg class="icone-soleil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                        </button>
+                    </div>
+                    <div class="hidden md:flex text-right font-bold text-slate-300 text-sm">
+                        <p><span class="bg-gradient-to-r from-fuchsia-500 to-purple-600 bg-clip-text text-transparent">Lucas Séraudie</span> - 2026</p>
+                    </div>
                 </div>
             </div>
             
             <nav class="pt-6">
                 <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-4 sm:grid-cols-4 md:grid-cols-7 gap-2">
-                    <button data-page="asthme" onclick="showPage('asthme')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">L'Asthme</button>
-                    <button data-page="antihistaminiques" onclick="showPage('antihistaminiques')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Antihistaminiques</button>
-                    <button data-page="beta2" onclick="showPage('beta2')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">β2-mimétiques</button>
-                    <button data-page="corticoides" onclick="showPage('corticoides')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Corticoïdes</button>
-                    <button data-page="autres" onclick="showPage('autres')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Autres Traitements</button>
-                    <button data-page="role" onclick="showPage('role')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Administration</button>
-                    <button data-page="quiz" onclick="showPage('quiz')" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Quiz</button>
+                    <button data-page="asthme" data-actif="from-fuchsia-500 to-purple-600" data-survol="hover:bg-fuchsia-100 hover:text-fuchsia-800" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">L'Asthme</button>
+                    <button data-page="antihistaminiques" data-actif="from-teal-500 to-cyan-600" data-survol="hover:bg-teal-100 hover:text-teal-800" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Antihistaminiques</button>
+                    <button data-page="beta2" data-actif="from-emerald-500 to-green-700" data-survol="hover:bg-emerald-100 hover:text-emerald-800" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">β2-mimétiques</button>
+                    <button data-page="corticoides" data-actif="from-rose-500 to-red-600" data-survol="hover:bg-rose-100 hover:text-rose-800" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Corticoïdes</button>
+                    <button data-page="autres" data-actif="from-sky-500 to-blue-600" data-survol="hover:bg-sky-100 hover:text-sky-800" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Autres Traitements</button>
+                    <button data-page="role" data-actif="from-slate-500 to-gray-600" data-survol="hover:bg-slate-200 hover:text-slate-800" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Administration</button>
+                    <button data-page="quiz" data-actif="from-violet-500 to-indigo-700" data-survol="hover:bg-violet-100 hover:text-violet-800" class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Quiz</button>
                 </div>
             </nav>
         </header>
 
-        <main class="p-4 sm:p-6 md:p-8">
+        <main id="contenu" class="p-4 sm:p-6 md:p-8">
             <div id="asthme" class="page">
                 <section class="bg-gradient-to-br from-fuchsia-50 to-purple-100 rounded-2xl p-6 md:p-12">
                     <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800"><span class="bg-gradient-to-br from-fuchsia-500 to-purple-600 bg-clip-text text-transparent">Physiopathologie de l'Asthme</span></h3>
@@ -309,9 +309,9 @@
                     <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-2">Quiz Interactif</h2>
                     <p class="text-slate-600 mb-8">Testez vos connaissances sur les antiasthmatiques et antihistaminiques.</p>
                     <div id="qcm-container" class="space-y-8"></div>
-                    <div id="quiz-footer" class="mt-10 pt-6 border-t-2 border-slate-200 flex justify-between items-center">
+                    <div id="quiz-footer" class="mt-10 pt-6 border-t-2 border-slate-200 flex flex-wrap gap-4 justify-between items-center">
                         <p id="quiz-score" class="text-xl md:text-2xl font-bold text-slate-800"></p>
-                        <button onclick="resetQuiz()" id="reset-button" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 transform opacity-0 pointer-events-none">
+                        <button type="button" id="reset-button" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 transform invisible">
                             Recommencer
                         </button>
                     </div>
@@ -320,6 +320,10 @@
         </main>
 
         <footer id="footer" class="bg-slate-800 text-white p-4 md:p-6 mt-auto">
+            <div class="max-w-6xl mx-auto mb-4 pb-4 border-b border-slate-700 text-[11px] sm:text-xs text-slate-400 leading-relaxed text-center md:text-left">
+                <p>Dernière mise à jour du contenu : <time datetime="2026-06-16">16 juin 2026</time> · Relecture scientifique : Thomas Duflot</p>
+                <p class="mt-1">Support de révision à visée pédagogique : il ne remplace ni les cours de votre IFSI, ni le résumé des caractéristiques du produit (RCP) des médicaments, ni une prescription médicale.</p>
+            </div>
             <div class="flex items-center justify-center md:justify-end text-center">
                 <p class="font-bold text-slate-300 text-xs sm:text-sm">
                 <span class="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2026
@@ -330,6 +334,10 @@
     </div>
 
     <script>
+        // --- Données du quiz ---
+        // Pour chaque question : l'énoncé, les propositions (« options »), la position de la bonne
+        // réponse dans « options » (« correct », 0 pour la première) et l'explication (« feedback »).
+        // Les onglets, le quiz, le thème et l'impression sont gérés par assets/js/site.js.
         const quizData = [
             {
                 question: "Quel est le traitement de première intention pour une crise d'asthme aiguë ?",
@@ -430,172 +438,6 @@
                 feedback: "Ces biothérapies (Anti-IgE et Anti-cytokines) sont administrées en injection sous-cutanée et sont réservées aux asthmes très sévères qui ne sont pas contrôlés par les corticoïdes inhalés à forte dose."
             }
         ];
-
-        const pages = ['asthme', 'antihistaminiques', 'beta2', 'corticoides', 'autres', 'role', 'quiz'];
-        const buttonColors = {
-            asthme: 'bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white shadow-md',
-            antihistaminiques: 'bg-gradient-to-r from-teal-500 to-cyan-600 text-white shadow-md',
-            beta2: 'bg-gradient-to-r from-emerald-500 to-green-700 text-white shadow-md',
-            corticoides: 'bg-gradient-to-r from-rose-500 to-red-600 text-white shadow-md',
-            autres: 'bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-md',
-            role: 'bg-gradient-to-r from-slate-500 to-gray-600 text-white shadow-md',
-            quiz: 'bg-gradient-to-r from-violet-500 to-indigo-700 text-white shadow-md'
-        };
-        const buttonHoverColors = {
-            asthme: 'hover:bg-fuchsia-100 hover:text-fuchsia-800',
-            antihistaminiques: 'hover:bg-teal-100 hover:text-teal-800',
-            beta2: 'hover:bg-emerald-100 hover:text-emerald-800',
-            corticoides: 'hover:bg-rose-100 hover:text-rose-800',
-            autres: 'hover:bg-sky-100 hover:text-sky-800',
-            role: 'hover:bg-slate-200 hover:text-slate-800',
-            quiz: 'hover:bg-violet-100 hover:text-violet-800'
-        };
-
-        function showPage(pageId) {
-            pages.forEach(id => {
-                const page = document.getElementById(id);
-                if (page) page.classList.add('hidden');
-            });
-            const activePage = document.getElementById(pageId);
-            if (activePage) activePage.classList.remove('hidden');
-            
-            const navButtons = document.querySelectorAll('.nav-btn');
-            navButtons.forEach(btn => {
-                const page = btn.dataset.page;
-                btn.className = 'nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm';
-                if (page === pageId) {
-                    btn.classList.add(...buttonColors[page].split(' '));
-                } else {
-                    btn.classList.add(...buttonHoverColors[page].split(' '));
-                }
-            });
-             window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-        }
-
-        // Melange aleatoire (Fisher-Yates) - renvoie une copie melangee du tableau
-        function shuffle(array) {
-            const a = array.slice();
-            for (let i = a.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [a[i], a[j]] = [a[j], a[i]];
-            }
-            return a;
-        }
-
-        function renderQuiz() {
-            shuffleArray(quizData);
-            const container = document.getElementById('qcm-container');
-            if (!container) return;
-            container.innerHTML = '';
-            quizData.forEach((item, index) => {
-                const correctAnswerText = item.options[item.correct];
-                shuffleArray(item.options);
-                item.correct = item.options.indexOf(correctAnswerText);
-
-                const optionsHtml = shuffle(item.options.map((option, optionIndex) => ({ option, optionIndex }))).map(({ option, optionIndex }) => 
-                    `<button class="qcm-option w-full text-left p-4 rounded-xl bg-white border-2 border-slate-200 hover:bg-slate-100 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200" data-index="${optionIndex}">${option}</button>`
-                ).join('');
-
-                container.innerHTML += `
-                    <div class="qcm-question bg-slate-100/70 border border-slate-200/80 p-6 rounded-2xl shadow-sm" data-question-index="${index}">
-                        <p class="font-semibold text-lg text-slate-800 mb-4">${index + 1}. ${item.question}</p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">${optionsHtml}</div>
-                        <div class="qcm-feedback mt-4 text-sm font-medium"></div>
-                    </div>`;
-            });
-            document.getElementById('quiz-score').textContent = `Prêt ? 0 / ${quizData.length}`;
-            const resetButton = document.getElementById('reset-button');
-            resetButton.classList.add('opacity-0', 'pointer-events-none');
-            resetButton.classList.remove('animate-pulse');
-        }
-
-        function setupQuizListeners() {
-            const container = document.getElementById('qcm-container');
-            if (!container) return;
-            container.addEventListener('click', (event) => {
-                if (!event.target.classList.contains('qcm-option')) return;
-                
-                const optionButton = event.target;
-                const questionEl = optionButton.closest('.qcm-question');
-                if (!questionEl || questionEl.classList.contains('answered')) return;
-                
-                questionEl.classList.add('answered');
-                const questionIndex = parseInt(questionEl.dataset.questionIndex, 10);
-                const questionData = quizData[questionIndex];
-                const selectedIndex = parseInt(optionButton.dataset.index, 10);
-                const isCorrect = selectedIndex === questionData.correct;
-                const feedbackEl = questionEl.querySelector('.qcm-feedback');
-
-                if (isCorrect) {
-                    optionButton.classList.add('correct');
-                    feedbackEl.innerHTML = `<div class="text-emerald-700 p-3 bg-emerald-100 rounded-lg flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5"></i><div><b class="font-bold">Bravo !</b> ${questionData.feedback || ''}</div></div>`;
-                } else {
-                    optionButton.classList.add('incorrect');
-                    const correctButton = questionEl.querySelector(`[data-index="${questionData.correct}"]`);
-                    correctButton.classList.add('correct');
-                    feedbackEl.innerHTML = `<div class="text-red-700 p-3 bg-red-100 rounded-lg flex items-center gap-2"><i data-lucide="x-circle" class="w-5 h-5"></i><div><b class="font-bold">Dommage.</b> ${questionData.feedback || ''}</div></div>`;
-                }
-                
-                lucide.createIcons();
-                questionEl.querySelectorAll('.qcm-option').forEach(btn => {
-                    btn.disabled = true;
-                });
-                updateScore();
-            });
-        }
-
-        function updateScore() {
-            const totalQuestions = quizData.length;
-            let score = 0;
-            const answeredQuestions = document.querySelectorAll('.qcm-question.answered');
-
-            answeredQuestions.forEach(questionEl => {
-                const selectedCorrect = questionEl.querySelector('.qcm-option.correct:disabled');
-                const selectedIncorrect = questionEl.querySelector('.qcm-option.incorrect:disabled');
-                if (selectedCorrect && !selectedIncorrect) {
-                    score++;
-                }
-            });
-
-            const scoreEl = document.getElementById('quiz-score');
-            if (scoreEl) {
-                const answeredCount = answeredQuestions.length;
-                scoreEl.textContent = `Votre score : ${score} / ${answeredCount}`;
-                if (answeredCount === totalQuestions) {
-                    const percentage = (score / totalQuestions) * 100;
-                    let finalMessage = `Score final : ${score} / ${totalQuestions}`;
-                    if (percentage >= 80) {
-                        finalMessage += " - Excellent travail ! 🎉";
-                    } else if (percentage >= 50) {
-                        finalMessage += " - Pas mal, continuez à réviser ! 💪";
-                    } else {
-                        finalMessage += " - Encore un effort ! 📚";
-                    }
-                    scoreEl.textContent = finalMessage;
-                    const resetButton = document.getElementById('reset-button');
-                    resetButton.classList.remove('opacity-0', 'pointer-events-none');
-                    resetButton.classList.add('animate-pulse');
-                }
-            }
-        }
-        
-        function resetQuiz() {
-            renderQuiz();
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-            showPage('asthme');
-            renderQuiz();
-            setupQuizListeners();
-        });
     </script>
 </body>
 </html>
