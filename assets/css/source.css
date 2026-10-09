@@ -1,0 +1,277 @@
+/*
+ * Feuille de style source du site.
+ * Ne pas lier ce fichier directement : il est compilé dans assets/css/site.css
+ * par Tailwind (npm run build:css, ou npm run dev pour recompiler à chaque modification).
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
+
+:root {
+    color-scheme: light;
+    --fond-page: #f0f4f8;
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --fond-page: #020617;
+}
+
+html {
+    /* Garde la barre de défilement visible pour éviter les décalages de mise en page */
+    overflow-y: scroll;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--fond-page);
+}
+
+/* Les photos à fond blanc éblouissent moins en mode sombre */
+:root[data-theme="dark"] main img {
+    filter: brightness(0.88);
+}
+
+/* Lien d'évitement : visible uniquement au clavier */
+.lien-evitement {
+    position: absolute;
+    left: 1rem;
+    top: -4rem;
+    z-index: 100;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    background: #1e293b;
+    color: #fff;
+    font-weight: 600;
+    transition: top 0.2s;
+}
+
+.lien-evitement:focus {
+    top: 1rem;
+}
+
+/* ------------------------------------------------------------------ */
+/* Animations                                                          */
+/* ------------------------------------------------------------------ */
+
+.page {
+    animation: apparition 0.5s ease-in-out;
+}
+
+/* Cartes de l'accueil */
+.card-enter {
+    animation: apparition-carte 0.5s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes apparition-carte {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important;
+    }
+
+    .page,
+    .card-enter {
+        animation: none;
+        opacity: 1;
+    }
+}
+
+.gradient-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* ------------------------------------------------------------------ */
+/* En-tête : boutons Accueil / Imprimer / Thème                        */
+/* ------------------------------------------------------------------ */
+
+.bouton-entete {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 2.25rem;
+    min-width: 2.25rem;
+    padding: 0 0.625rem;
+    border-radius: 0.5rem;
+    background: rgb(255 255 255 / 0.1);
+    color: #e2e8f0;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.bouton-entete:hover {
+    background: rgb(255 255 255 / 0.2);
+    color: #fff;
+}
+
+.bouton-entete:focus-visible,
+.nav-btn:focus-visible,
+.qcm-option:focus-visible {
+    outline: 3px solid #38bdf8;
+    outline-offset: 2px;
+}
+
+.bouton-entete svg {
+    width: 1.125rem;
+    height: 1.125rem;
+    flex-shrink: 0;
+}
+
+/* Icône du bouton de thème : la lune en mode clair, le soleil en mode sombre */
+:root[data-theme="dark"] .icone-lune,
+:root:not([data-theme="dark"]) .icone-soleil {
+    display: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* Quiz                                                                */
+/* ------------------------------------------------------------------ */
+
+.qcm-option.correct {
+    background-image: linear-gradient(to right, #4ade80, #16a34a);
+    color: white;
+    border-color: #15803d;
+    font-weight: 600;
+}
+
+.qcm-option.incorrect {
+    background-image: linear-gradient(to right, #f87171, #dc2626);
+    color: white;
+    border-color: #b91c1c;
+    font-weight: 600;
+}
+
+.qcm-option:disabled {
+    cursor: not-allowed;
+}
+
+.qcm-option:disabled:not(.correct):not(.incorrect) {
+    @apply bg-slate-100 text-slate-600 opacity-70;
+}
+
+/* ------------------------------------------------------------------ */
+/* Recherche (accueil)                                                 */
+/* ------------------------------------------------------------------ */
+
+.resultat-recherche mark {
+    @apply bg-amber-200 text-slate-900 rounded px-0.5;
+}
+
+/* ------------------------------------------------------------------ */
+/* Impression : toutes les sections de la fiche, sans navigation ni quiz */
+/* ------------------------------------------------------------------ */
+
+.seulement-impression {
+    display: none;
+}
+
+/* Classe ajoutée juste avant l'impression pour que les graphiques prennent leur taille */
+html.impression .page.hidden {
+    display: block !important;
+}
+
+html.impression #quiz {
+    display: none !important;
+}
+
+@media print {
+    @page {
+        margin: 12mm;
+    }
+
+    html {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    body {
+        background: #fff !important;
+        padding: 0 !important;
+    }
+
+    body > div {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        max-width: none !important;
+    }
+
+    header {
+        position: static !important;
+    }
+
+    nav,
+    .no-print,
+    .lien-evitement,
+    .cadre-video,
+    #quiz {
+        display: none !important;
+    }
+
+    .seulement-impression {
+        display: block !important;
+    }
+
+    .page.hidden {
+        display: block !important;
+    }
+
+    .page {
+        animation: none !important;
+    }
+
+    .page + .page {
+        break-before: page;
+    }
+
+    * {
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        transition: none !important;
+    }
+
+    /* Évite de couper un encadré en deux pages quand c'est possible */
+    .rounded-xl,
+    .rounded-2xl,
+    tr,
+    img {
+        break-inside: avoid;
+    }
+
+    .hover\:-translate-y-1:hover,
+    .hover\:-translate-y-2:hover {
+        transform: none !important;
+    }
+}

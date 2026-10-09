@@ -18,112 +18,88 @@
 
     <link rel="canonical" href="https://lcssrd.github.io/pharmaco/antico.html" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <meta name="theme-color" content="#1e293b">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="assets/icones/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/icones/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="assets/icones/apple-touch-icon.png">
+
+    <script>
+        // Thème clair/sombre appliqué avant l'affichage, pour éviter un flash blanc
+        (function () {
+            var theme = null;
+            try { theme = JSON.parse(localStorage.getItem('pharmaco:theme')); } catch (e) { }
+            if (theme !== 'dark' && theme !== 'light') {
+                theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        html {
-            overflow-y: scroll;
-            /* Force the scrollbar to always be visible, preventing layout shifts */
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8;
-        }
-
-        /* Animation for page transitions */
-        .page {
-            animation: fadeIn 0.5s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Quiz specific styles */
-        .qcm-option.correct {
-            background-image: linear-gradient(to right, #4ade80, #16a34a);
-            /* from-green-400 to-green-600 */
-            color: white;
-            border-color: #15803d;
-            /* green-700 */
-            font-weight: 600;
-        }
-
-        .qcm-option.incorrect {
-            background-image: linear-gradient(to right, #f87171, #dc2626);
-            /* from-red-400 to-red-600 */
-            color: white;
-            border-color: #b91c1c;
-            /* red-700 */
-            font-weight: 600;
-        }
-
-        .qcm-option:disabled {
-            cursor: not-allowed;
-        }
-
-        .qcm-option:disabled:not(.correct):not(.incorrect) {
-            color: #475569;
-            /* slate-600 */
-            background-color: #f1f5f9;
-            /* slate-100 */
-            opacity: 0.7;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/site.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+    <script src="assets/js/icones.js" defer></script>
+    <script src="assets/js/site.js" defer></script>
     <script defer src="https://cloud.umami.is/script.js"
         data-website-id="a71ff4d4-4d84-4066-aa50-313ab8d66b1b"></script>
 </head>
 
 <body class="p-2 sm:p-4 md:p-8">
+    <a href="#contenu" class="lien-evitement">Aller au contenu</a>
     <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
         <header class="bg-slate-800 text-white p-6 md:p-8">
-            <div class="flex items-center justify-between">
+            <div class="flex flex-col-reverse gap-3 md:flex-row md:items-center md:justify-between">
                 <h1
                     class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent pb-2">
                     Les Antithrombotiques (Cours IFSI)</h1>
-                <div class="hidden md:flex text-right font-bold text-slate-300 text-sm">
-                    <p><span class="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">Lucas
-                            Séraudie</span> - 2026</p>
+                <div class="no-print shrink-0 flex flex-col gap-2 md:items-end">
+                    <div class="flex items-center gap-2">
+                        <a href="index.html" class="bouton-entete mr-auto md:mr-0">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+                            <span>Toutes les fiches</span>
+                        </a>
+                        <button type="button" data-action="imprimer" class="bouton-entete" aria-label="Imprimer la fiche" title="Imprimer la fiche">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+                        </button>
+                        <button type="button" data-action="theme" class="bouton-entete" aria-label="Passer en mode sombre" title="Passer en mode sombre">
+                            <svg class="icone-lune" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                            <svg class="icone-soleil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                        </button>
+                    </div>
+                    <div class="hidden md:flex text-right font-bold text-slate-300 text-sm">
+                        <p><span class="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">Lucas
+                                Séraudie</span> - 2026</p>
+                    </div>
                 </div>
             </div>
 
             <nav class="pt-6">
                 <div class="p-1.5 bg-slate-200/60 rounded-xl grid grid-cols-4 sm:grid-cols-4 md:grid-cols-8 gap-2">
-                    <button data-page="hemostase" onclick="showPage('hemostase')"
+                    <button data-page="hemostase" data-actif="from-red-500 to-orange-500"
                         class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Hémostase</button>
-                    <button data-page="aap" onclick="showPage('aap')"
+                    <button data-page="aap" data-actif="from-purple-500 to-indigo-600"
                         class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">AAP</button>
-                    <button data-page="hnf" onclick="showPage('hnf')"
+                    <button data-page="hnf" data-actif="from-sky-400 to-cyan-500"
                         class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">HNF</button>
-                    <button data-page="hbpm" onclick="showPage('hbpm')"
+                    <button data-page="hbpm" data-actif="from-blue-600 to-indigo-700"
                         class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">HBPM</button>
-                    <button data-page="aod" onclick="showPage('aod')"
+                    <button data-page="aod" data-actif="from-amber-500 to-yellow-500"
                         class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">AOD</button>
-                    <button data-page="avk" onclick="showPage('avk')"
+                    <button data-page="avk" data-actif="from-red-500 to-orange-500"
                         class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">AVK</button>
-                    <button data-page="quiz" onclick="showPage('quiz')"
+                    <button data-page="quiz" data-actif="from-slate-500 to-gray-700"
                         class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Quiz</button>
-                    <button data-page="synthese" onclick="showPage('synthese')"
+                    <button data-page="synthese" data-actif="from-gray-400 to-gray-600"
                         class="nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm">Synthèse</button>
                 </div>
             </nav>
         </header>
 
-        <main class="p-4 sm:p-6 md:p-8">
+        <main id="contenu" class="p-4 sm:p-6 md:p-8">
 
             <div id="hemostase" class="page">
                 <section class="bg-gradient-to-br from-red-100 to-orange-100 rounded-2xl p-6 md:p-12">
@@ -636,10 +612,10 @@
                         anticoagulants.</p>
                     <div id="qcm-container" class="space-y-8"></div>
                     <div id="quiz-footer"
-                        class="mt-10 pt-6 border-t-2 border-slate-200 flex justify-between items-center">
+                        class="mt-10 pt-6 border-t-2 border-slate-200 flex flex-wrap gap-4 justify-between items-center">
                         <p id="quiz-score" class="text-xl md:text-2xl font-bold text-slate-800"></p>
-                        <button onclick="resetQuiz()" id="reset-button"
-                            class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 transform opacity-0 pointer-events-none">
+                        <button type="button" id="reset-button"
+                            class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 transform invisible">
                             Recommencer
                         </button>
                     </div>
@@ -661,6 +637,10 @@
         </main>
 
         <footer id="footer" class="bg-slate-800 text-white p-4 md:p-6 mt-auto">
+            <div class="max-w-6xl mx-auto mb-4 pb-4 border-b border-slate-700 text-[11px] sm:text-xs text-slate-400 leading-relaxed text-center md:text-left">
+                <p>Dernière mise à jour du contenu : <time datetime="2026-06-15">15 juin 2026</time> · Relecture scientifique : Thomas Duflot</p>
+                <p class="mt-1">Support de révision à visée pédagogique : il ne remplace ni les cours de votre IFSI, ni le résumé des caractéristiques du produit (RCP) des médicaments, ni une prescription médicale.</p>
+            </div>
             <div class="flex items-center justify-center md:justify-end text-center">
                 <p class="font-bold text-slate-300 text-xs sm:text-sm">
                     <span
@@ -672,6 +652,10 @@
     </div>
 
     <script>
+        // --- Données du quiz ---
+        // Pour chaque question : l'énoncé, les propositions (« options »), la position de la bonne
+        // réponse dans « options » (« correct », 0 pour la première) et l'explication (« feedback »).
+        // Les onglets, le quiz, le thème et l'impression sont gérés par assets/js/site.js.
         const quizData = [
             { question: "Quel est l'objectif principal des traitements anticoagulants ?", options: ["Arrêter les hémorragies", "Réduire les risques thrombotiques", "Produire des globules rouges", "Augmenter le flux sanguin"], correct: 1, feedback: "Les anticoagulants préviennent la formation de caillots (thrombus) mais ne traitent pas les hémorragies." },
             { question: "Quelle est la principale complication des traitements anticoagulants ?", options: ["La dyspnée", "L'infection", "L'hémorragie", "L'allergie"], correct: 2, feedback: "En fluidifiant le sang, le risque principal est le saignement excessif ou l'hémorragie." },
@@ -694,38 +678,7 @@
             { question: "Quel type de médicament est formellement déconseillé en automédication avec les AVK ?", options: ["Paracétamol", "AINS (Anti-inflammatoires)", "Spasfon", "Vitamine C"], correct: 1, feedback: "Les AINS augmentent considérablement le risque hémorragique lorsqu'ils sont associés aux AVK." }
         ];
 
-        // --- Navigation Logic ---
-        const pages = ['hemostase', 'aap', 'hnf', 'hbpm', 'aod', 'avk', 'quiz', 'synthese'];
-        const buttonColors = {
-            hemostase: 'bg-gradient-to-r from-red-500 to-orange-500 text-white shadow-md',
-            aap: 'bg-gradient-to-r from-purple-500 to-indigo-600 text-white shadow-md',
-            hnf: 'bg-gradient-to-r from-sky-400 to-cyan-500 text-white shadow-md',
-            hbpm: 'bg-gradient-to-r from-blue-600 to-indigo-700 text-white shadow-md',
-            aod: 'bg-gradient-to-r from-amber-500 to-yellow-500 text-white shadow-md',
-            avk: 'bg-gradient-to-r from-red-500 to-orange-500 text-white shadow-md',
-            quiz: 'bg-gradient-to-r from-slate-500 to-gray-700 text-white shadow-md',
-            synthese: 'bg-gradient-to-r from-gray-400 to-gray-600 text-white shadow-md'
-        };
-
-        function showPage(pageId) {
-            document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
-            document.getElementById(pageId)?.classList.remove('hidden');
-
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                const page = btn.dataset.page;
-                // Reset classes
-                btn.classList.remove(...Object.values(buttonColors).join(' ').split(' '));
-                btn.classList.add('text-slate-800');
-
-                if (page === pageId) {
-                    btn.classList.remove('text-slate-800');
-                    btn.classList.add(...buttonColors[page].split(' '));
-                }
-            });
-            window.scrollTo(0, 0);
-        }
-
-        // --- Chart Logic ---
+        // --- Graphiques ---
         function createHeparineCharts() {
             const chartData = {
                 labels: [['Usage ambulatoire', 'facile'], ['Action', 'rapide'], ['Demi-vie', 'courte'], ['Surveillance', 'stricte'], ['Réversibilité', 'complète']],
@@ -737,6 +690,7 @@
                 const canvas = document.getElementById(id); if (canvas && !canvas.chart) { canvas.chart = new Chart(canvas.getContext('2d'), { type: 'radar', data: chartData, options: chartOptions }); }
             });
         }
+
         function createOralAnticoagCharts() {
             const chartData = {
                 labels: [["Délai d'action"], ['Surveillance', 'biologique'], ['Interactions', 'alimentaires'], ['Durée du', 'relai']],
@@ -749,95 +703,9 @@
             });
         }
 
-        // --- Quiz Logic ---
-        // Melange aleatoire (Fisher-Yates) - renvoie une copie melangee du tableau
-        function shuffle(array) {
-            const a = array.slice();
-            for (let i = a.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [a[i], a[j]] = [a[j], a[i]];
-            }
-            return a;
-        }
-
-        function renderQuiz() {
-            const container = document.getElementById('qcm-container');
-            if (!container) return;
-            container.innerHTML = '';
-            quizData.forEach((item, index) => {
-                const optionsHtml = shuffle(item.options.map((option, optionIndex) => ({ option, optionIndex }))).map(({ option, optionIndex }) => `<button class="qcm-option w-full text-left p-4 rounded-xl bg-white border-2 border-slate-200 hover:bg-slate-100 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200" data-index="${optionIndex}">${option}</button>`).join('');
-                container.innerHTML += `<div class="qcm-question bg-slate-100/70 border border-slate-200/80 p-6 rounded-2xl shadow-lg" data-question-index="${index}"><p class="font-semibold text-lg text-slate-800 mb-4">${index + 1}. ${item.question}</p><div class="grid grid-cols-1 sm:grid-cols-2 gap-3">${optionsHtml}</div><div class="qcm-feedback mt-4 text-sm font-medium"></div></div>`;
-            });
-            document.getElementById('quiz-score').textContent = `Prêt ? 0 / ${quizData.length}`;
-            const resetButton = document.getElementById('reset-button');
-            resetButton.classList.add('opacity-0', 'pointer-events-none');
-        }
-
-        function setupQuizListeners() {
-            const container = document.getElementById('qcm-container');
-            if (!container) return;
-            container.addEventListener('click', (event) => {
-                if (!event.target.classList.contains('qcm-option')) return;
-                const optionButton = event.target;
-                const questionEl = optionButton.closest('.qcm-question');
-                if (!questionEl || questionEl.classList.contains('answered')) return;
-                questionEl.classList.add('answered');
-                const questionIndex = parseInt(questionEl.dataset.questionIndex, 10);
-                const questionData = quizData[questionIndex];
-                const selectedIndex = parseInt(optionButton.dataset.index, 10);
-                const isCorrect = selectedIndex === questionData.correct;
-                const feedbackEl = questionEl.querySelector('.qcm-feedback');
-                if (isCorrect) {
-                    optionButton.classList.add('correct');
-                    feedbackEl.innerHTML = `<p class="text-emerald-600">🎉 Bravo ! ${questionData.feedback || ''}</p>`;
-                } else {
-                    optionButton.classList.add('incorrect');
-                    questionEl.querySelector(`[data-index="${questionData.correct}"]`).classList.add('correct');
-                    feedbackEl.innerHTML = `<p class="text-red-600">Dommage. ${questionData.feedback || ''}</p>`;
-                }
-
-                questionEl.querySelectorAll('.qcm-option').forEach(btn => btn.disabled = true);
-                updateScore();
-            });
-        }
-
-        function updateScore() {
-            const totalQuestions = quizData.length;
-            let correctAnswers = 0;
-            document.querySelectorAll('.qcm-question.answered').forEach(questionEl => {
-                if (!questionEl.querySelector('.qcm-option.incorrect')) {
-                    correctAnswers++;
-                }
-            });
-            const answeredCount = document.querySelectorAll('.qcm-question.answered').length;
-
-            const scoreEl = document.getElementById('quiz-score');
-            scoreEl.textContent = `Votre score : ${correctAnswers} / ${answeredCount}`;
-
-            if (answeredCount === totalQuestions) {
-                scoreEl.textContent = `Score final : ${correctAnswers} / ${totalQuestions}`;
-                const percentage = (correctAnswers / totalQuestions) * 100;
-                if (percentage >= 80) {
-                    scoreEl.textContent += " - Excellent travail ! 🎉";
-                } else if (percentage >= 50) {
-                    scoreEl.textContent += " - Pas mal, continuez à réviser ! 💪";
-                } else {
-                    scoreEl.textContent += " - Encore un effort ! 📚";
-                }
-                document.getElementById('reset-button').classList.remove('opacity-0', 'pointer-events-none');
-            }
-        }
-
-        function resetQuiz() { renderQuiz(); }
-
-        // --- Initialisation ---
         document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-            showPage('hemostase');
             createHeparineCharts();
             createOralAnticoagCharts();
-            renderQuiz();
-            setupQuizListeners();
         });
     </script>
 </body>

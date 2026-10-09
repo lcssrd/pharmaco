@@ -1,0 +1,18 @@
+{
+  "name": "pharmaco",
+  "private": true,
+  "description": "Synthèses de pharmacologie pour les étudiants en soins infirmiers (IFSI)",
+  "license": "CC-BY-SA-4.0",
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:css && npm run build:site",
+    "build:css": "tailwindcss -i assets/css/source.css -o assets/css/site.css --minify",
+    "build:site": "node scripts/build.mjs",
+    "dev": "tailwindcss -i assets/css/source.css -o assets/css/site.css --watch"
+  },
+  "devDependencies": {
+    "lucide": "1.47.0",
+    "node-html-parser": "9.0.4",
+    "tailwindcss": "3.4.19"
+  }
+}
