@@ -3,8 +3,7 @@
  *
  *  - Thème clair / sombre (bouton dans l'en-tête, choix mémorisé)
  *  - Fiches : navigation par onglets avec l'onglet dans l'URL (antico.html#avk),
- *    accessibilité clavier, quiz (progression mémorisée, « refaire mes erreurs »),
- *    impression de toute la fiche
+ *    accessibilité clavier, quiz (progression mémorisée, « refaire mes erreurs »)
  *  - Accueil : recherche dans toutes les fiches, scores des quiz sur les cartes
  *  - Hors ligne : enregistrement du service worker (sw.js)
  *
@@ -102,8 +101,6 @@
             const nouveau = themeActuel() === 'dark' ? 'light' : 'dark';
             stockage.ecrire(CLE_THEME, nouveau);
             appliquerTheme(nouveau);
-        } else if (evenement.target.closest('[data-action="imprimer"]')) {
-            window.print();
         }
     });
 
@@ -397,42 +394,6 @@
     if (typeof quizData !== 'undefined' && Array.isArray(quizData)) {
         initialiserQuiz(quizData);
     }
-
-    // ==================================================================
-    // Fiches : impression et vidéos
-    // ==================================================================
-
-    // Les vidéos ne s'impriment pas : on affiche leur lien à la place
-    document.querySelectorAll('iframe[src*="youtube.com/embed/"]').forEach((video) => {
-        const id = video.src.split('/embed/')[1]?.split(/[?#]/)[0];
-        if (!id) return;
-        const cadre = video.parentElement.matches('main, .page') ? video : video.parentElement;
-        cadre.classList.add('cadre-video');
-        const lien = document.createElement('p');
-        lien.className = 'seulement-impression text-sm';
-        lien.textContent = `Vidéo : https://youtu.be/${id}`;
-        cadre.after(lien);
-    });
-
-    // Avant l'impression : thème clair, toutes les sections visibles, graphiques redimensionnés
-    // (un graphique d'un onglet jamais ouvert n'a pas encore de taille). Une animation en cours
-    // reporterait le redimensionnement après l'impression : on l'arrête d'abord.
-    const redimensionnerGraphiques = () => Object.values(window.Chart?.instances || {}).forEach((graphique) => {
-        graphique.stop();
-        graphique.resize();
-    });
-    let themeAvantImpression = null;
-    window.addEventListener('beforeprint', () => {
-        themeAvantImpression = themeActuel();
-        racine.classList.add('impression');
-        if (themeAvantImpression === 'dark') appliquerTheme('light');
-        redimensionnerGraphiques();
-    });
-    window.addEventListener('afterprint', () => {
-        racine.classList.remove('impression');
-        if (themeAvantImpression === 'dark') appliquerTheme('dark');
-        redimensionnerGraphiques();
-    });
 
     // ==================================================================
     // Accueil : scores des quiz sur les cartes
