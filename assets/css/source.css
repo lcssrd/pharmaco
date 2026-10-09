@@ -1,72 +1,153 @@
 /*
- * Feuille de style source du site.
+ * Feuille de style source du site (Tailwind CSS 4).
  * Ne pas lier ce fichier directement : il est compilé dans assets/css/site.css
- * par Tailwind (npm run build:css, ou npm run dev pour recompiler à chaque modification).
+ * (npm run build:css, ou npm run dev pour recompiler à chaque modification).
  */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss" source(none);
+/* Palette et mode sombre, générés par scripts/couleurs.mjs */
+@import "./couleurs.css";
+
+/* Fichiers où Tailwind cherche les classes utilisées */
+@source "../../*.html";
+@source "../js/site.js";
+
+@theme {
+    /* Même pile que la version d'origine : les caractères absents d'Inter (flèches, ①, ✓...)
+       s'affichent avec la même police de secours */
+    --font-sans: "Inter", sans-serif;
+}
 
 /* ------------------------------------------------------------------ */
 /* Base                                                                */
 /* ------------------------------------------------------------------ */
 
-:root {
-    color-scheme: light;
-    --fond-page: #f0f4f8;
-}
+@layer base {
+    :root {
+        color-scheme: light;
+        --fond-page: #f0f4f8;
+    }
 
-:root[data-theme="dark"] {
-    color-scheme: dark;
-    --fond-page: #020617;
-}
+    :root[data-theme="dark"] {
+        color-scheme: dark;
+        --fond-page: #020617;
+    }
 
-html {
-    /* Garde la barre de défilement visible pour éviter les décalages de mise en page */
-    overflow-y: scroll;
-}
+    html {
+        /* Garde la barre de défilement visible pour éviter les décalages de mise en page */
+        overflow-y: scroll;
+    }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--fond-page);
-}
+    body {
+        background-color: var(--fond-page);
+    }
 
-/* Les photos à fond blanc éblouissent moins en mode sombre */
-:root[data-theme="dark"] main img {
-    filter: brightness(0.88);
-}
+    /* Comportements de Tailwind 3 sur lesquels les fiches s'appuient :
+       bordures grises par défaut et curseur « main » sur les boutons */
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--border-color-gray-200);
+    }
 
-/* Lien d'évitement : visible uniquement au clavier */
-.lien-evitement {
-    position: absolute;
-    left: 1rem;
-    top: -4rem;
-    z-index: 100;
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
-    background: #1e293b;
-    color: #fff;
-    font-weight: 600;
-    transition: top 0.2s;
-}
+    button:not(:disabled),
+    [role="button"]:not(:disabled) {
+        cursor: pointer;
+    }
 
-.lien-evitement:focus {
-    top: 1rem;
+    /* Les photos à fond blanc éblouissent moins en mode sombre */
+    :root[data-theme="dark"] main img {
+        filter: brightness(0.88);
+    }
 }
 
 /* ------------------------------------------------------------------ */
-/* Animations                                                          */
+/* Composants (les classes utilitaires des fiches restent prioritaires) */
 /* ------------------------------------------------------------------ */
 
-.page {
-    animation: apparition 0.5s ease-in-out;
-}
+@layer components {
+    /* Lien d'évitement : visible uniquement au clavier */
+    .lien-evitement {
+        position: absolute;
+        left: 1rem;
+        top: -4rem;
+        z-index: 100;
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        background: #1e293b;
+        color: #fff;
+        font-weight: 600;
+        transition: top 0.2s;
+    }
 
-/* Cartes de l'accueil */
-.card-enter {
-    animation: apparition-carte 0.5s ease-in-out forwards;
-    opacity: 0;
+    .lien-evitement:focus {
+        top: 1rem;
+    }
+
+    .page {
+        animation: apparition 0.5s ease-in-out;
+    }
+
+    /* Cartes de l'accueil */
+    .card-enter {
+        animation: apparition-carte 0.5s ease-in-out forwards;
+        opacity: 0;
+    }
+
+    .gradient-text {
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    /* En-tête : boutons « Toutes les fiches », thème, installation */
+    .bouton-entete {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        height: 2.25rem;
+        min-width: 2.25rem;
+        padding: 0 0.625rem;
+        border-radius: 0.5rem;
+        background: rgb(255 255 255 / 0.1);
+        color: #e2e8f0;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        white-space: nowrap;
+        transition: background-color 0.2s, color 0.2s;
+    }
+
+    .bouton-entete:hover {
+        background: rgb(255 255 255 / 0.2);
+        color: #fff;
+    }
+
+    .bouton-entete svg {
+        width: 1.125rem;
+        height: 1.125rem;
+        flex-shrink: 0;
+    }
+
+    .bouton-entete:focus-visible,
+    .nav-btn:focus-visible,
+    .qcm-option:focus-visible {
+        outline: 3px solid #38bdf8;
+        outline-offset: 2px;
+    }
+
+    /* Icône du bouton de thème : la lune en mode clair, le soleil en mode sombre */
+    :root[data-theme="dark"] .icone-lune,
+    :root:not([data-theme="dark"]) .icone-soleil {
+        display: none;
+    }
+
+    /* Passage trouvé par la recherche de l'accueil */
+    .resultat-recherche mark {
+        @apply rounded-sm bg-amber-200 px-0.5 text-slate-900;
+    }
 }
 
 @keyframes apparition {
@@ -105,59 +186,18 @@ body {
     }
 }
 
-.gradient-text {
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+/* En mode sombre, les en-têtes et pieds de page (bg-slate-800) passent un cran plus sombres
+   que les cartes. Ciblé ici plutôt que dans la palette, pour ne pas modifier les dégradés
+   qui se terminent sur slate-800. */
+@layer utilities {
+    :root[data-theme="dark"] .bg-slate-800 {
+        background-color: var(--color-slate-950);
+    }
 }
 
 /* ------------------------------------------------------------------ */
-/* En-tête : boutons Accueil / Imprimer / Thème                        */
-/* ------------------------------------------------------------------ */
-
-.bouton-entete {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    height: 2.25rem;
-    min-width: 2.25rem;
-    padding: 0 0.625rem;
-    border-radius: 0.5rem;
-    background: rgb(255 255 255 / 0.1);
-    color: #e2e8f0;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    white-space: nowrap;
-    transition: background-color 0.2s, color 0.2s;
-}
-
-.bouton-entete:hover {
-    background: rgb(255 255 255 / 0.2);
-    color: #fff;
-}
-
-.bouton-entete:focus-visible,
-.nav-btn:focus-visible,
-.qcm-option:focus-visible {
-    outline: 3px solid #38bdf8;
-    outline-offset: 2px;
-}
-
-.bouton-entete svg {
-    width: 1.125rem;
-    height: 1.125rem;
-    flex-shrink: 0;
-}
-
-/* Icône du bouton de thème : la lune en mode clair, le soleil en mode sombre */
-:root[data-theme="dark"] .icone-lune,
-:root:not([data-theme="dark"]) .icone-soleil {
-    display: none;
-}
-
-/* ------------------------------------------------------------------ */
-/* Quiz                                                                */
+/* Quiz : l'état d'une réponse doit l'emporter sur les classes du bouton */
+/* (bg-white, border-slate-200...), d'où l'absence de couche.           */
 /* ------------------------------------------------------------------ */
 
 .qcm-option.correct {
@@ -179,13 +219,7 @@ body {
 }
 
 .qcm-option:disabled:not(.correct):not(.incorrect) {
-    @apply bg-slate-100 text-slate-600 opacity-70;
-}
-
-/* ------------------------------------------------------------------ */
-/* Recherche (accueil)                                                 */
-/* ------------------------------------------------------------------ */
-
-.resultat-recherche mark {
-    @apply bg-amber-200 text-slate-900 rounded px-0.5;
+    background-color: var(--background-color-slate-100);
+    color: var(--text-color-slate-600);
+    opacity: 0.7;
 }

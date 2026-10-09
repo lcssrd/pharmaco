@@ -54,7 +54,7 @@
         <header class="bg-slate-800 text-white p-6 md:p-8 sticky top-0 z-10">
             <div class="flex flex-col-reverse gap-3 md:flex-row md:items-center md:justify-between">
                 <h1
-                    class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent pb-2">
+                    class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent pb-2">
                     Les Antalgiques (Cours IFSI)</h1>
                 <div class="shrink-0 flex flex-col gap-2 md:items-end">
                     <div class="flex items-center gap-2">
@@ -68,7 +68,7 @@
                         </button>
                     </div>
                     <div class="hidden md:flex text-right font-bold text-slate-300 text-sm">
-                        <p><span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Lucas
+                        <p><span class="bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Lucas
                                 Séraudie</span> - 2026</p>
                     </div>
                 </div>
@@ -100,18 +100,18 @@
 
         <main id="contenu" class="p-4 sm:p-6 md:p-8">
             <div id="douleur" class="page">
-                <section class="bg-gradient-to-br from-sky-100 to-cyan-100 rounded-2xl p-6 md:p-12">
+                <section class="bg-linear-to-br from-sky-100 to-cyan-100 rounded-2xl p-6 md:p-12">
                     <h3
-                        class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
-                        <span class="bg-gradient-to-br from-cyan-400 to-blue-600 bg-clip-text text-transparent">Rappels
+                        class="text-3xl sm:text-4xl/10 md:text-5xl/none font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        <span class="bg-linear-to-br from-cyan-400 to-blue-600 bg-clip-text text-transparent">Rappels
                             sur la Douleur</span>
                     </h3>
                     <div class="grid grid-cols-1 gap-8">
                         <div
-                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            class="bg-white/70 backdrop-blur-xs rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="flex items-center gap-4 mb-4">
                                 <div
-                                    class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                    class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center shrink-0">
                                     <i data-lucide="quote" class="text-blue-600 w-6 h-6"></i>
                                 </div>
                                 <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Définition</h4>
@@ -121,10 +121,10 @@
                                 décrite dans ces termes. »</p>
                         </div>
                         <div
-                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            class="bg-white/70 backdrop-blur-xs rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="flex items-center gap-4 mb-4">
                                 <div
-                                    class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                    class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center shrink-0">
                                     <i data-lucide="activity" class="text-green-600 w-6 h-6"></i>
                                 </div>
                                 <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Caractéristiques de la Douleur
@@ -146,10 +146,10 @@
                             </div>
                         </div>
                         <div
-                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            class="bg-white/70 backdrop-blur-xs rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="flex items-center gap-4 mb-4">
                                 <div
-                                    class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                    class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center shrink-0">
                                     <i data-lucide="brain-circuit" class="text-purple-600 w-6 h-6"></i>
                                 </div>
                                 <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Types de Douleurs</h4>
@@ -170,10 +170,10 @@
                             </div>
                         </div>
                         <div
-                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            class="bg-white/70 backdrop-blur-xs rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="flex items-center gap-4 mb-4">
                                 <div
-                                    class="bg-yellow-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                    class="bg-yellow-100 w-12 h-12 rounded-full flex items-center justify-center shrink-0">
                                     <i data-lucide="scaling" class="text-yellow-600 w-6 h-6"></i>
                                 </div>
                                 <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Évaluation de la Douleur</h4>
@@ -204,22 +204,22 @@
             </div>
 
             <div id="nonopioides" class="page hidden">
-                <section class="bg-gradient-to-br from-green-100 to-emerald-100 rounded-2xl p-6 md:p-12">
+                <section class="bg-linear-to-br from-green-100 to-emerald-100 rounded-2xl p-6 md:p-12">
                     <h3
-                        class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        class="text-3xl sm:text-4xl/10 md:text-5xl/none font-extrabold mb-12 text-center leading-tight text-slate-800">
                         <span
-                            class="bg-gradient-to-br from-green-500 to-emerald-700 bg-clip-text text-transparent">Antalgiques
+                            class="bg-linear-to-br from-green-500 to-emerald-700 bg-clip-text text-transparent">Antalgiques
                             non-opioïdes</span>
                     </h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <div
-                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            class="bg-white/70 backdrop-blur-xs rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Paracétamol</h4>
                                 <p class="text-xs text-slate-500 italic">Ex: Doliprane®, Dafalgan®...</p>
                                 <p class="text-sm text-slate-500 mt-1">Classe : antalgique – antipyrétique</p>
                             </div>
-                            <div class="space-y-4 text-sm flex-grow">
+                            <div class="space-y-4 text-sm grow">
                                 <div>
                                     <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
                                             data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5>
@@ -261,13 +261,13 @@
                             </div>
                         </div>
                         <div
-                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            class="bg-white/70 backdrop-blur-xs rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">AINS</h4>
                                 <p class="text-xs text-slate-500 italic">Ex: Advil®, Nurofen®, Profénid®...</p>
                                 <p class="text-sm text-slate-500 mt-1">Classe : anti-inflammatoires non stéroïdiens</p>
                             </div>
-                            <div class="space-y-4 text-sm flex-grow">
+                            <div class="space-y-4 text-sm grow">
                                 <div>
                                     <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
                                             data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5>
@@ -301,13 +301,13 @@
                             </div>
                         </div>
                         <div
-                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            class="bg-white/70 backdrop-blur-xs rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Néfopam</h4>
                                 <p class="text-xs text-slate-500 italic">Ex: Acupan®</p>
                                 <p class="text-sm text-slate-500 mt-1">Classe : antalgique non opioïde</p>
                             </div>
-                            <div class="space-y-4 text-sm flex-grow">
+                            <div class="space-y-4 text-sm grow">
                                 <div>
                                     <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
                                             data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5>
@@ -345,22 +345,22 @@
             </div>
 
             <div id="opioidesfaibles" class="page hidden">
-                <section class="bg-gradient-to-br from-amber-100 to-yellow-100 rounded-2xl p-6 md:p-12">
+                <section class="bg-linear-to-br from-amber-100 to-yellow-100 rounded-2xl p-6 md:p-12">
                     <h3
-                        class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        class="text-3xl sm:text-4xl/10 md:text-5xl/none font-extrabold mb-12 text-center leading-tight text-slate-800">
                         <span
-                            class="bg-gradient-to-br from-amber-500 to-yellow-600 bg-clip-text text-transparent">Opioïdes
+                            class="bg-linear-to-br from-amber-500 to-yellow-600 bg-clip-text text-transparent">Opioïdes
                             faibles</span>
                     </h3>
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <div
-                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            class="bg-white/70 backdrop-blur-xs rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Codéine</h4>
                                 <p class="text-xs text-slate-500 italic">Ex: Klipal®, Codoliprane®</p>
                                 <p class="text-sm text-slate-500 mt-1">Classe : antalgique opioïde faible</p>
                             </div>
-                            <div class="space-y-4 text-sm flex-grow">
+                            <div class="space-y-4 text-sm grow">
                                 <div>
                                     <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
                                             data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5>
@@ -400,13 +400,13 @@
                             </div>
                         </div>
                         <div
-                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            class="bg-white/70 backdrop-blur-xs rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Tramadol</h4>
                                 <p class="text-xs text-slate-500 italic">Ex: Topalgic®, Ixprim®</p>
                                 <p class="text-sm text-slate-500 mt-1">Classe : antalgique opioïde faible</p>
                             </div>
-                            <div class="space-y-4 text-sm flex-grow">
+                            <div class="space-y-4 text-sm grow">
                                 <div>
                                     <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
                                             data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5>
@@ -450,22 +450,22 @@
             </div>
 
             <div id="opioidesforts" class="page hidden">
-                <section class="bg-gradient-to-br from-red-100 to-orange-100 rounded-2xl p-6 md:p-12">
+                <section class="bg-linear-to-br from-red-100 to-orange-100 rounded-2xl p-6 md:p-12">
                     <h3
-                        class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        class="text-3xl sm:text-4xl/10 md:text-5xl/none font-extrabold mb-12 text-center leading-tight text-slate-800">
                         <span
-                            class="bg-gradient-to-br from-red-500 to-orange-600 bg-clip-text text-transparent">Opioïdes
+                            class="bg-linear-to-br from-red-500 to-orange-600 bg-clip-text text-transparent">Opioïdes
                             forts</span>
                     </h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <div
-                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            class="bg-white/70 backdrop-blur-xs rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Morphine</h4>
                                 <p class="text-xs text-slate-500 italic">Ex: Skenan®, Actiskenan®</p>
                                 <p class="text-sm text-slate-500 mt-1">Classe : antalgique opioïde fort</p>
                             </div>
-                            <div class="space-y-4 text-sm flex-grow">
+                            <div class="space-y-4 text-sm grow">
                                 <div>
                                     <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
                                             data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5>
@@ -507,13 +507,13 @@
                             </div>
                         </div>
                         <div
-                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            class="bg-white/70 backdrop-blur-xs rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Fentanyl</h4>
                                 <p class="text-xs text-slate-500 italic">Ex: Durogesic®, Actiq®</p>
                                 <p class="text-sm text-slate-500 mt-1">Classe : antalgique opioïde fort</p>
                             </div>
-                            <div class="space-y-4 text-sm flex-grow">
+                            <div class="space-y-4 text-sm grow">
                                 <div>
                                     <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
                                             data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5>
@@ -553,13 +553,13 @@
                             </div>
                         </div>
                         <div
-                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            class="bg-white/70 backdrop-blur-xs rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Oxycodone</h4>
                                 <p class="text-xs text-slate-500 italic">Ex: Oxycontin®, Oxynorm®</p>
                                 <p class="text-sm text-slate-500 mt-1">Classe : antalgique opioïde fort</p>
                             </div>
-                            <div class="space-y-4 text-sm flex-grow">
+                            <div class="space-y-4 text-sm grow">
                                 <div>
                                     <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
                                             data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5>
@@ -602,22 +602,22 @@
             </div>
 
             <div id="coanalgesiques" class="page hidden">
-                <section class="bg-gradient-to-br from-purple-100 to-indigo-100 rounded-2xl p-6 md:p-12">
+                <section class="bg-linear-to-br from-purple-100 to-indigo-100 rounded-2xl p-6 md:p-12">
                     <h3
-                        class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        class="text-3xl sm:text-4xl/10 md:text-5xl/none font-extrabold mb-12 text-center leading-tight text-slate-800">
                         <span
-                            class="bg-gradient-to-br from-purple-500 to-indigo-600 bg-clip-text text-transparent">Adjuvants
+                            class="bg-linear-to-br from-purple-500 to-indigo-600 bg-clip-text text-transparent">Adjuvants
                             (Co-analgésiques)</span>
                     </h3>
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <div
-                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            class="bg-white/70 backdrop-blur-xs rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Gabapentine / Prégabaline</h4>
                                 <p class="text-xs text-slate-500 italic">Ex: Neurontin®, Lyrica®</p>
                                 <p class="text-sm text-slate-500 mt-1">Classe : antiépileptiques</p>
                             </div>
-                            <div class="space-y-4 text-sm flex-grow">
+                            <div class="space-y-4 text-sm grow">
                                 <div>
                                     <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
                                             data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5>
@@ -652,13 +652,13 @@
                             </div>
                         </div>
                         <div
-                            class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            class="bg-white/70 backdrop-blur-xs rounded-xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="mb-4">
                                 <h4 class="text-xl font-bold text-slate-800">Amitriptyline / Duloxétine</h4>
                                 <p class="text-xs text-slate-500 italic">Ex: Laroxyl®, Cymbalta®</p>
                                 <p class="text-sm text-slate-500 mt-1">Classe : antidépresseurs</p>
                             </div>
-                            <div class="space-y-4 text-sm flex-grow">
+                            <div class="space-y-4 text-sm grow">
                                 <div>
                                     <h5 class="font-semibold text-slate-600 mb-1 flex items-center gap-2"><i
                                             data-lucide="atom" class="w-4 h-4 text-sky-600"></i>Mécanisme</h5>
@@ -698,16 +698,16 @@
             </div>
 
             <div id="role" class="page hidden">
-                <section class="bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl p-6 md:p-12">
+                <section class="bg-linear-to-br from-pink-100 to-rose-100 rounded-2xl p-6 md:p-12">
                     <h3
-                        class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 text-center leading-tight text-slate-800">
-                        <span class="bg-gradient-to-br from-pink-500 to-rose-600 bg-clip-text text-transparent">Le Rôle
+                        class="text-3xl sm:text-4xl/10 md:text-5xl/none font-extrabold mb-12 text-center leading-tight text-slate-800">
+                        <span class="bg-linear-to-br from-pink-500 to-rose-600 bg-clip-text text-transparent">Le Rôle
                             Infirmier</span>
                     </h3>
                     <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
                         <div class="lg:col-span-2">
                             <h4 class="text-2xl sm:text-3xl font-bold text-slate-800 mb-4">Un rôle <span
-                                    class="bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text text-transparent">essentiel</span>
+                                    class="bg-linear-to-r from-purple-500 to-indigo-500 bg-clip-text text-transparent">essentiel</span>
                             </h4>
                             <p class="text-slate-600 text-sm sm:text-base">L'infirmier(ère) est au cœur de la prise en
                                 charge de la douleur. Son action repose sur une approche globale et continue, axée sur
@@ -715,9 +715,9 @@
                         </div>
                         <div class="lg:col-span-3 space-y-6">
                             <div
-                                class="flex items-start gap-4 sm:gap-6 p-6 bg-white/70 backdrop-blur-sm rounded-xl shadow-lg">
+                                class="flex items-start gap-4 sm:gap-6 p-6 bg-white/70 backdrop-blur-xs rounded-xl shadow-lg">
                                 <div
-                                    class="bg-green-100 text-green-700 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex-shrink-0 flex items-center justify-center text-xl sm:text-2xl font-bold">
+                                    class="bg-green-100 text-green-700 w-12 h-12 sm:w-16 sm:h-16 rounded-full shrink-0 flex items-center justify-center text-xl sm:text-2xl font-bold">
                                     1</div>
                                 <div>
                                     <h5 class="font-bold text-lg sm:text-xl text-slate-800 mb-1">Évaluer</h5>
@@ -726,9 +726,9 @@
                                 </div>
                             </div>
                             <div
-                                class="flex items-start gap-4 sm:gap-6 p-6 bg-white/70 backdrop-blur-sm rounded-xl shadow-lg">
+                                class="flex items-start gap-4 sm:gap-6 p-6 bg-white/70 backdrop-blur-xs rounded-xl shadow-lg">
                                 <div
-                                    class="bg-blue-100 text-blue-700 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex-shrink-0 flex items-center justify-center text-xl sm:text-2xl font-bold">
+                                    class="bg-blue-100 text-blue-700 w-12 h-12 sm:w-16 sm:h-16 rounded-full shrink-0 flex items-center justify-center text-xl sm:text-2xl font-bold">
                                     2</div>
                                 <div>
                                     <h5 class="font-bold text-lg sm:text-xl text-slate-800 mb-1">Administrer</h5>
@@ -737,9 +737,9 @@
                                 </div>
                             </div>
                             <div
-                                class="flex items-start gap-4 sm:gap-6 p-6 bg-white/70 backdrop-blur-sm rounded-xl shadow-lg">
+                                class="flex items-start gap-4 sm:gap-6 p-6 bg-white/70 backdrop-blur-xs rounded-xl shadow-lg">
                                 <div
-                                    class="bg-orange-100 text-orange-700 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex-shrink-0 flex items-center justify-center text-xl sm:text-2xl font-bold">
+                                    class="bg-orange-100 text-orange-700 w-12 h-12 sm:w-16 sm:h-16 rounded-full shrink-0 flex items-center justify-center text-xl sm:text-2xl font-bold">
                                     3</div>
                                 <div>
                                     <h5 class="font-bold text-lg sm:text-xl text-slate-800 mb-1">Surveiller</h5>
@@ -753,10 +753,10 @@
                         <h4 class="text-2xl sm:text-3xl font-bold text-slate-800 mb-6 text-center">Recommandations de
                             l'OMS</h4>
                         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
-                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-4">
+                            <div class="bg-white/70 backdrop-blur-xs rounded-xl shadow-lg p-4">
                                 <div class="flex items-center gap-3">
                                     <div
-                                        class="bg-rose-100 text-rose-700 w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center font-bold">
+                                        class="bg-rose-100 text-rose-700 w-8 h-8 rounded-full shrink-0 flex items-center justify-center font-bold">
                                         1</div>
                                     <div>
                                         <h5 class="font-semibold text-slate-700">Voie Per Os prioritaire</h5>
@@ -764,10 +764,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-4">
+                            <div class="bg-white/70 backdrop-blur-xs rounded-xl shadow-lg p-4">
                                 <div class="flex items-center gap-3">
                                     <div
-                                        class="bg-rose-100 text-rose-700 w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center font-bold">
+                                        class="bg-rose-100 text-rose-700 w-8 h-8 rounded-full shrink-0 flex items-center justify-center font-bold">
                                         2</div>
                                     <div>
                                         <h5 class="font-semibold text-slate-700">Prioriser la prévention</h5>
@@ -775,10 +775,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-4">
+                            <div class="bg-white/70 backdrop-blur-xs rounded-xl shadow-lg p-4">
                                 <div class="flex items-center gap-3">
                                     <div
-                                        class="bg-rose-100 text-rose-700 w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center font-bold">
+                                        class="bg-rose-100 text-rose-700 w-8 h-8 rounded-full shrink-0 flex items-center justify-center font-bold">
                                         3</div>
                                     <div>
                                         <h5 class="font-semibold text-slate-700">Utiliser une approche par étapes</h5>
@@ -786,10 +786,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-4">
+                            <div class="bg-white/70 backdrop-blur-xs rounded-xl shadow-lg p-4">
                                 <div class="flex items-center gap-3">
                                     <div
-                                        class="bg-rose-100 text-rose-700 w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center font-bold">
+                                        class="bg-rose-100 text-rose-700 w-8 h-8 rounded-full shrink-0 flex items-center justify-center font-bold">
                                         4</div>
                                     <div>
                                         <h5 class="font-semibold text-slate-700">Individualisation</h5>
@@ -797,10 +797,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-4">
+                            <div class="bg-white/70 backdrop-blur-xs rounded-xl shadow-lg p-4">
                                 <div class="flex items-center gap-3">
                                     <div
-                                        class="bg-rose-100 text-rose-700 w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center font-bold">
+                                        class="bg-rose-100 text-rose-700 w-8 h-8 rounded-full shrink-0 flex items-center justify-center font-bold">
                                         5</div>
                                     <div>
                                         <h5 class="font-semibold text-slate-700">Ajout de co-analgésiques</h5>
@@ -814,7 +814,7 @@
             </div>
 
             <div id="quiz" class="page hidden">
-                <div class="bg-gradient-to-br from-slate-50 to-gray-100 p-6 sm:p-8 md:p-10 rounded-2xl shadow-inner">
+                <div class="bg-linear-to-br from-slate-50 to-gray-100 p-6 sm:p-8 md:p-10 rounded-2xl shadow-inner">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-2">Quiz Interactif</h2>
                     <p class="text-slate-600 mb-8">Testez vos connaissances et validez vos acquis sur les antalgiques.
                     </p>
@@ -826,7 +826,7 @@
                         class="mt-10 pt-6 border-t-2 border-slate-200 flex flex-wrap gap-4 justify-between items-center">
                         <p id="quiz-score" class="text-xl md:text-2xl font-bold text-slate-800"></p>
                         <button type="button" id="reset-button"
-                            class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 transform invisible">
+                            class="bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 transform invisible">
                             Recommencer
                         </button>
                     </div>
@@ -842,7 +842,7 @@
             <div class="max-w-6xl mx-auto flex items-center justify-center md:justify-end text-center">
                 <p class="font-bold text-slate-300 text-xs sm:text-sm">
                     <span
-                        class="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">Lucas
+                        class="bg-linear-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">Lucas
                         Séraudie</span> - 2026
                 </p>
             </div>
