@@ -27,7 +27,9 @@ Les scores et le thème choisi sont enregistrés uniquement dans le navigateur d
 
 ## 🛠️ Modifier le site
 
-Le site reste un ensemble de pages HTML statiques publiées par GitHub Pages. Une petite étape de construction génère quelques fichiers à partir des fiches.
+Le site reste un ensemble de pages HTML statiques publiées par GitHub Pages, mis en forme avec [Tailwind CSS 4](https://tailwindcss.com). Une petite étape de construction génère quelques fichiers à partir des fiches.
+
+Tailwind 4 s'appuie sur des fonctions CSS récentes : le site s'affiche correctement à partir de Safari 16.4 (iOS 16.4, 2023), Chrome 111 et Firefox 128. Sur un appareil plus ancien, le contenu reste accessible mais la mise en page peut être dégradée.
 
 ### Organisation
 
@@ -35,11 +37,11 @@ Le site reste un ensemble de pages HTML statiques publiées par GitHub Pages. Un
 | --- | --- |
 | `*.html` | Les fiches et l'accueil. Le contenu et les questions du quiz (`quizData`, en bas de chaque fiche) se modifient directement ici. |
 | `assets/js/site.js` | Code commun : onglets, quiz, thème, recherche, hors ligne. |
-| `assets/css/source.css` | Styles communs. Compilé avec Tailwind dans `assets/css/site.css`. |
-| `tailwind.config.js` | Configuration de Tailwind et des couleurs du mode sombre. |
+| `assets/css/source.css` | Styles communs et configuration de Tailwind. Compilé dans `assets/css/site.css`. |
+| `scripts/couleurs.mjs` | Génère `assets/css/couleurs.css` : la palette du site et ses variantes pour le mode sombre (réglages en haut du fichier). |
 | `scripts/build.mjs` | Génère `assets/js/icones.js` (icônes utilisées), `assets/data/recherche.json` (index de recherche) et la liste des fichiers hors ligne dans `sw.js`. |
 
-Les fichiers `assets/css/site.css`, `assets/js/icones.js`, `assets/data/recherche.json` et la partie générée de `sw.js` ne se modifient pas à la main.
+Les fichiers `assets/css/site.css`, `assets/css/couleurs.css`, `assets/js/icones.js`, `assets/data/recherche.json` et la partie générée de `sw.js` ne se modifient pas à la main.
 
 ### Commandes
 
@@ -55,6 +57,8 @@ npm run build
 
 `npm run dev` recompile le CSS automatiquement à chaque modification d'une fiche (pratique pendant qu'on écrit). Le déploiement GitHub Pages relance `npm run build` à chaque mise en ligne : un oubli en local n'a donc pas de conséquence sur le site publié.
 
+`npm audit` doit afficher « 0 vulnerabilities ». S'il signale un jour une alerte, **ne pas lancer `npm audit fix --force`** : cette commande peut installer une nouvelle version majeure d'un outil et casser la construction. Mieux vaut regarder de quelle dépendance il s'agit (`npm ls nom-du-paquet`) ; ces outils ne servent qu'à construire le site et ne sont jamais envoyés aux étudiants.
+
 Pour prévisualiser le site en local, il faut un petit serveur (par exemple `python -m http.server`) puis ouvrir `http://localhost:8000`. En local, le mode hors ligne n'est activé qu'en ajoutant `?sw` à l'adresse, pour éviter de voir d'anciennes versions pendant qu'on modifie les fiches.
 
 ### Après une modification de contenu
@@ -64,7 +68,7 @@ Mettre à jour la date en bas de la fiche (`<time datetime="AAAA-MM-JJ">`), dans
 ### Ajouter une fiche
 
 1.  Partir d'une fiche existante : garder l'en-tête (boutons « Toutes les fiches » et thème), la barre d'onglets et le pied de page.
-2.  Chaque onglet est un bouton `<button data-page="identifiant" data-actif="from-… to-…" class="nav-btn …">` qui correspond à une section `<div id="identifiant" class="page hidden">`. `data-actif` donne le dégradé du bouton actif, `data-survol` (facultatif) sa couleur au survol.
+2.  Les classes Tailwind s'écrivent en version 4 (par exemple `bg-linear-to-r` pour un dégradé, `shrink-0`, `grow`). Chaque onglet est un bouton `<button data-page="identifiant" data-actif="from-… to-…" class="nav-btn …">` qui correspond à une section `<div id="identifiant" class="page hidden">`. `data-actif` donne le dégradé du bouton actif, `data-survol` (facultatif) sa couleur au survol.
 3.  Ajouter la carte sur l'accueil (`<a href="fiche.html" data-fiche="fiche" …>`) et l'adresse dans `sitemap.xml`.
 4.  Lancer `npm run build`.
 

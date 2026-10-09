@@ -145,7 +145,7 @@
         boutonsOnglets.forEach((bouton) => {
             const actif = bouton.dataset.page === id;
             const classes = [bouton.dataset.classesBase];
-            if (actif) classes.push('bg-gradient-to-r text-white shadow-md', bouton.dataset.actif || 'from-slate-500 to-gray-700');
+            if (actif) classes.push('bg-linear-to-r text-white shadow-md', bouton.dataset.actif || 'from-slate-500 to-gray-700');
             else classes.push('text-slate-800', bouton.dataset.survol || '');
             bouton.className = classes.join(' ').trim();
             bouton.setAttribute('aria-selected', String(actif));
@@ -410,7 +410,7 @@
         pastille.className = `inline-flex items-center gap-1 mt-2 px-2 py-0.5 rounded-full border text-[11px] font-semibold ${couleur}`;
         pastille.textContent = `Quiz : ${donnees.meilleur} / ${donnees.total}`;
         pastille.title = 'Votre meilleur score au quiz de cette fiche';
-        carte.querySelector('.flex-grow')?.append(pastille);
+        carte.querySelector('.grow')?.append(pastille);
     });
 
     // ==================================================================

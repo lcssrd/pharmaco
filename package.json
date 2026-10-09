@@ -6,13 +6,20 @@
   "type": "module",
   "scripts": {
     "build": "npm run build:css && npm run build:site",
-    "build:css": "tailwindcss -i assets/css/source.css -o assets/css/site.css --minify",
+    "build:css": "node scripts/couleurs.mjs && tailwindcss -i assets/css/source.css -o assets/css/site.css --minify",
     "build:site": "node scripts/build.mjs",
-    "dev": "tailwindcss -i assets/css/source.css -o assets/css/site.css --watch"
+    "dev": "node scripts/couleurs.mjs && tailwindcss -i assets/css/source.css -o assets/css/site.css --watch"
   },
   "devDependencies": {
+    "@tailwindcss/cli": "4.3.3",
     "lucide": "1.47.0",
     "node-html-parser": "9.0.4",
-    "tailwindcss": "3.4.19"
+    "tailwindcss": "4.3.3"
+  },
+  "overrides": {
+    "@parcel/watcher": "2.6.0"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }
