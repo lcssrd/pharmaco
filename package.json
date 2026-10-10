@@ -6,9 +6,9 @@
   "type": "module",
   "scripts": {
     "build": "npm run build:css && npm run build:site",
-    "build:css": "node scripts/couleurs.mjs && tailwindcss -i assets/css/source.css -o assets/css/site.css --minify",
+    "build:css": "tailwindcss -i assets/css/source.css -o assets/css/site.css --minify",
     "build:site": "node scripts/build.mjs",
-    "dev": "node scripts/couleurs.mjs && tailwindcss -i assets/css/source.css -o assets/css/site.css --watch"
+    "dev": "tailwindcss -i assets/css/source.css -o assets/css/site.css --watch"
   },
   "devDependencies": {
     "@tailwindcss/cli": "4.3.3",

@@ -21,9 +21,8 @@ Les thématiques suivantes sont actuellement disponibles :
 *   **Onglets dans l'adresse** : chaque section a son propre lien (`antico.html#avk`), partageable, et le bouton « Retour » du téléphone revient à l'onglet précédent.
 *   **Quiz** : questions et réponses mélangées à chaque tentative, meilleur score mémorisé (affiché sur la carte de la fiche à l'accueil), bouton « Refaire mes erreurs ».
 *   **Hors ligne** : le site reste consultable sans réseau après une première visite, et peut être ajouté à l'écran d'accueil du téléphone (menu du navigateur).
-*   **Mode sombre**, qui suit le réglage du téléphone ou se choisit avec le bouton 🌙.
 
-Les scores et le thème choisi sont enregistrés uniquement dans le navigateur de l'étudiant (aucun compte, aucune donnée envoyée).
+Les scores des quiz sont enregistrés uniquement dans le navigateur de l'étudiant (aucun compte, aucune donnée envoyée).
 
 ## 🛠️ Modifier le site
 
@@ -36,12 +35,12 @@ Tailwind 4 s'appuie sur des fonctions CSS récentes : le site s'affiche correcte
 | Fichier | Rôle |
 | --- | --- |
 | `*.html` | Les fiches et l'accueil. Le contenu et les questions du quiz (`quizData`, en bas de chaque fiche) se modifient directement ici. |
-| `assets/js/site.js` | Code commun : onglets, quiz, thème, recherche, hors ligne. |
+| `assets/js/site.js` | Code commun : onglets, quiz, recherche, hors ligne. |
 | `assets/css/source.css` | Styles communs et configuration de Tailwind. Compilé dans `assets/css/site.css`. |
-| `scripts/couleurs.mjs` | Génère `assets/css/couleurs.css` : la palette du site et ses variantes pour le mode sombre (réglages en haut du fichier). |
+| `assets/css/couleurs.css` | Palette de couleurs du site (celle d'origine, conservée lors du passage à Tailwind 4). |
 | `scripts/build.mjs` | Génère `assets/js/icones.js` (icônes utilisées), `assets/data/recherche.json` (index de recherche) et la liste des fichiers hors ligne dans `sw.js`. |
 
-Les fichiers `assets/css/site.css`, `assets/css/couleurs.css`, `assets/js/icones.js`, `assets/data/recherche.json` et la partie générée de `sw.js` ne se modifient pas à la main.
+Les fichiers `assets/css/site.css`, `assets/js/icones.js`, `assets/data/recherche.json` et la partie générée de `sw.js` ne se modifient pas à la main.
 
 ### Commandes
 
@@ -69,7 +68,7 @@ Mettre à jour la date en bas de la fiche (`<time datetime="AAAA-MM-JJ">`), dans
 
 ### Ajouter une fiche
 
-1.  Partir d'une fiche existante : garder l'en-tête (boutons « Toutes les fiches » et thème), la barre d'onglets et le pied de page.
+1.  Partir d'une fiche existante : garder l'en-tête (bouton « Toutes les fiches »), la barre d'onglets et le pied de page.
 2.  Les classes Tailwind s'écrivent en version 4 (par exemple `bg-linear-to-r` pour un dégradé, `shrink-0`, `grow`). Chaque onglet est un bouton `<button data-page="identifiant" data-actif="from-… to-…" class="nav-btn …">` qui correspond à une section `<div id="identifiant" class="page hidden">`. `data-actif` donne le dégradé du bouton actif, `data-survol` (facultatif) sa couleur au survol.
 3.  Ajouter la carte sur l'accueil (`<a href="fiche.html" data-fiche="fiche" …>`) et l'adresse dans `sitemap.xml`.
 4.  Lancer `npm run build`.

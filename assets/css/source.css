@@ -5,7 +5,7 @@
  */
 
 @import "tailwindcss" source(none);
-/* Palette et mode sombre, générés par scripts/couleurs.mjs */
+/* Palette d'origine du site */
 @import "./couleurs.css";
 
 /* Fichiers où Tailwind cherche les classes utilisées */
@@ -23,23 +23,13 @@
 /* ------------------------------------------------------------------ */
 
 @layer base {
-    :root {
-        color-scheme: light;
-        --fond-page: #f0f4f8;
-    }
-
-    :root[data-theme="dark"] {
-        color-scheme: dark;
-        --fond-page: #020617;
-    }
-
     html {
         /* Garde la barre de défilement visible pour éviter les décalages de mise en page */
         overflow-y: scroll;
     }
 
     body {
-        background-color: var(--fond-page);
+        background-color: #f0f4f8;
     }
 
     /* Comportements de Tailwind 3 sur lesquels les fiches s'appuient :
@@ -49,17 +39,12 @@
     ::before,
     ::backdrop,
     ::file-selector-button {
-        border-color: var(--border-color-gray-200);
+        border-color: var(--color-gray-200);
     }
 
     button:not(:disabled),
     [role="button"]:not(:disabled) {
         cursor: pointer;
-    }
-
-    /* Les photos à fond blanc éblouissent moins en mode sombre */
-    :root[data-theme="dark"] main img {
-        filter: brightness(0.88);
     }
 }
 
@@ -102,7 +87,7 @@
         color: transparent;
     }
 
-    /* En-tête : boutons « Toutes les fiches » et thème */
+    /* En-tête : bouton « Toutes les fiches » */
     .bouton-entete {
         display: inline-flex;
         align-items: center;
@@ -136,12 +121,6 @@
     .qcm-option:focus-visible {
         outline: 3px solid #38bdf8;
         outline-offset: 2px;
-    }
-
-    /* Icône du bouton de thème : la lune en mode clair, le soleil en mode sombre */
-    :root[data-theme="dark"] .icone-lune,
-    :root:not([data-theme="dark"]) .icone-soleil {
-        display: none;
     }
 
     /* Passage trouvé par la recherche de l'accueil */
@@ -186,15 +165,6 @@
     }
 }
 
-/* En mode sombre, les en-têtes et pieds de page (bg-slate-800) passent un cran plus sombres
-   que les cartes. Ciblé ici plutôt que dans la palette, pour ne pas modifier les dégradés
-   qui se terminent sur slate-800. */
-@layer utilities {
-    :root[data-theme="dark"] .bg-slate-800 {
-        background-color: var(--color-slate-950);
-    }
-}
-
 /* ------------------------------------------------------------------ */
 /* Quiz : l'état d'une réponse doit l'emporter sur les classes du bouton */
 /* (bg-white, border-slate-200...), d'où l'absence de couche.           */
@@ -219,7 +189,7 @@
 }
 
 .qcm-option:disabled:not(.correct):not(.incorrect) {
-    background-color: var(--background-color-slate-100);
-    color: var(--text-color-slate-600);
+    background-color: var(--color-slate-100);
+    color: var(--color-slate-600);
     opacity: 0.7;
 }

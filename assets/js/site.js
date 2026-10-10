@@ -1,7 +1,6 @@
 /*
  * Script commun à toutes les pages du site.
  *
- *  - Thème clair / sombre (bouton dans l'en-tête, choix mémorisé)
  *  - Fiches : navigation par onglets avec l'onglet dans l'URL (antico.html#avk),
  *    accessibilité clavier, quiz (progression mémorisée, « refaire mes erreurs »)
  *  - Accueil : recherche dans toutes les fiches, scores des quiz sur les cartes
@@ -14,7 +13,6 @@
     'use strict';
 
     const FICHE = decodeURIComponent(location.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '') || 'index';
-    const CLE_THEME = 'pharmaco:theme';
     const cleQuiz = (fiche) => `pharmaco:quiz:${fiche}`;
 
     // localStorage peut être indisponible (navigation privée, stockage bloqué) :
@@ -48,71 +46,6 @@
         }
         return copie;
     };
-
-    // ==================================================================
-    // Thème clair / sombre
-    // ==================================================================
-    // Le thème initial est posé par le petit script en tête de chaque page
-    // (avant l'affichage, pour éviter un flash blanc).
-
-    const racine = document.documentElement;
-    const themeActuel = () => (racine.dataset.theme === 'dark' ? 'dark' : 'light');
-
-    function appliquerTheme(theme) {
-        racine.dataset.theme = theme;
-        document.querySelectorAll('[data-action="theme"]').forEach((bouton) => {
-            const sombre = theme === 'dark';
-            bouton.setAttribute('aria-pressed', String(sombre));
-            bouton.setAttribute('aria-label', sombre ? 'Passer en mode clair' : 'Passer en mode sombre');
-            bouton.title = bouton.getAttribute('aria-label');
-        });
-        mettreAJourGraphiques();
-    }
-
-    // Couleurs des graphiques Chart.js selon le thème
-    function mettreAJourGraphiques() {
-        if (!window.Chart) return;
-        const sombre = themeActuel() === 'dark';
-        const texte = sombre ? '#cbd5e1' : '#475569';
-        const grille = sombre ? 'rgba(148, 163, 184, 0.25)' : 'rgba(0, 0, 0, 0.1)';
-        const fondGraduations = sombre ? 'rgba(15, 23, 42, 0.75)' : 'rgba(255, 255, 255, 0.75)';
-        // Graphiques créés ensuite
-        Chart.defaults.color = texte;
-        Chart.defaults.borderColor = grille;
-        // Graphiques déjà affichés : Chart.js fige les options des axes à leur création
-        Object.values(Chart.instances || {}).forEach((graphique) => {
-            const options = graphique.config.options;
-            options.scales ||= {};
-            Object.keys(graphique.scales).forEach((id) => {
-                const echelle = (options.scales[id] ||= {});
-                echelle.ticks = { ...echelle.ticks, color: texte, backdropColor: fondGraduations };
-                echelle.pointLabels = { ...echelle.pointLabels, color: texte };
-                echelle.grid = { ...echelle.grid, color: grille };
-                echelle.angleLines = { ...echelle.angleLines, color: grille };
-            });
-            options.plugins ||= {};
-            options.plugins.legend = { ...options.plugins.legend, labels: { ...options.plugins.legend?.labels, color: texte } };
-            graphique.update('none');
-        });
-    }
-
-    document.addEventListener('click', (evenement) => {
-        if (evenement.target.closest('[data-action="theme"]')) {
-            const nouveau = themeActuel() === 'dark' ? 'light' : 'dark';
-            stockage.ecrire(CLE_THEME, nouveau);
-            appliquerTheme(nouveau);
-        }
-    });
-
-    // Sans choix explicite, on suit le réglage du système
-    const preferenceSysteme = window.matchMedia?.('(prefers-color-scheme: dark)');
-    preferenceSysteme?.addEventListener?.('change', (e) => {
-        if (!stockage.lire(CLE_THEME)) appliquerTheme(e.matches ? 'dark' : 'light');
-    });
-
-    appliquerTheme(themeActuel());
-    // Les graphiques des fiches sont créés au chargement de la page (DOMContentLoaded)
-    document.addEventListener('DOMContentLoaded', mettreAJourGraphiques);
 
     // ==================================================================
     // Fiches : navigation par onglets
