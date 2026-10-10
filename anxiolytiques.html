@@ -21,17 +21,6 @@
     <link rel="icon" href="assets/icones/favicon-32.png" sizes="32x32" type="image/png">
     <link rel="apple-touch-icon" href="assets/icones/apple-touch-icon.png">
 
-    <script>
-        // Thème clair/sombre appliqué avant l'affichage, pour éviter un flash blanc
-        (function () {
-            var theme = null;
-            try { theme = JSON.parse(localStorage.getItem('pharmaco:theme')); } catch (e) { }
-            if (theme !== 'dark' && theme !== 'light') {
-                theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            }
-            document.documentElement.setAttribute('data-theme', theme);
-        })();
-    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,10 +44,6 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
                             <span>Toutes les fiches</span>
                         </a>
-                        <button type="button" data-action="theme" class="bouton-entete" aria-label="Passer en mode sombre" title="Passer en mode sombre">
-                            <svg class="icone-lune" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-                            <svg class="icone-soleil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-                        </button>
                     </div>
                     <div class="hidden md:flex text-right font-bold text-slate-300 text-sm">
                         <p><span class="bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Lucas Séraudie</span> - 2026</p>
