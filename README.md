@@ -20,7 +20,7 @@ Les thématiques suivantes sont actuellement disponibles :
 *   **Recherche** dans toutes les fiches depuis l'accueil (nom de molécule, nom commercial, mot-clé), avec ouverture directe du bon onglet et surlignage du passage.
 *   **Onglets dans l'adresse** : chaque section a son propre lien (`antico.html#avk`), partageable, et le bouton « Retour » du téléphone revient à l'onglet précédent.
 *   **Quiz** : questions et réponses mélangées à chaque tentative, meilleur score mémorisé (affiché sur la carte de la fiche à l'accueil), bouton « Refaire mes erreurs ».
-*   **Hors ligne** : le site s'installe comme une application et reste consultable sans réseau après une première visite.
+*   **Hors ligne** : le site reste consultable sans réseau après une première visite, et peut être ajouté à l'écran d'accueil du téléphone (menu du navigateur).
 *   **Mode sombre**, qui suit le réglage du téléphone ou se choisit avec le bouton 🌙.
 
 Les scores et le thème choisi sont enregistrés uniquement dans le navigateur de l'étudiant (aucun compte, aucune donnée envoyée).
@@ -58,6 +58,8 @@ npm run build
 `npm run dev` recompile le CSS automatiquement à chaque modification d'une fiche (pratique pendant qu'on écrit). Le déploiement GitHub Pages relance `npm run build` à chaque mise en ligne : un oubli en local n'a donc pas de conséquence sur le site publié.
 
 `npm audit` doit afficher « 0 vulnerabilities ». S'il signale un jour une alerte, **ne pas lancer `npm audit fix --force`** : cette commande peut installer une nouvelle version majeure d'un outil et casser la construction. Mieux vaut regarder de quelle dépendance il s'agit (`npm ls nom-du-paquet`) ; ces outils ne servent qu'à construire le site et ne sont jamais envoyés aux étudiants.
+
+Pour intégrer une vidéo YouTube, copier le code d'intégration complet proposé par YouTube (bouton « Partager » puis « Intégrer ») : il contient `referrerpolicy="strict-origin-when-cross-origin"`, sans lequel certains navigateurs affichent « Erreur 153 ».
 
 Pour prévisualiser le site en local, il faut un petit serveur (par exemple `python -m http.server`) puis ouvrir `http://localhost:8000`. En local, le mode hors ligne n'est activé qu'en ajoutant `?sw` à l'adresse, pour éviter de voir d'anciennes versions pendant qu'on modifie les fiches.
 

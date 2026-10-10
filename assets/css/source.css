@@ -102,7 +102,7 @@
         color: transparent;
     }
 
-    /* En-tête : boutons « Toutes les fiches », thème, installation */
+    /* En-tête : boutons « Toutes les fiches » et thème */
     .bouton-entete {
         display: inline-flex;
         align-items: center;

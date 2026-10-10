@@ -546,23 +546,8 @@
     }
 
     // ==================================================================
-    // Application installable et consultation hors ligne
+    // Consultation hors ligne
     // ==================================================================
-
-    const boutonInstaller = document.querySelector('[data-action="installer"]');
-    let invitationInstallation = null;
-    window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        invitationInstallation = e;
-        boutonInstaller?.classList.remove('hidden');
-    });
-    boutonInstaller?.addEventListener('click', async () => {
-        if (!invitationInstallation) return;
-        invitationInstallation.prompt();
-        await invitationInstallation.userChoice;
-        invitationInstallation = null;
-        boutonInstaller.classList.add('hidden');
-    });
 
     // En local, le service worker n'est activé qu'avec ?sw dans l'adresse (pour le tester),
     // afin de ne pas servir d'anciennes copies pendant qu'on modifie les fiches.
