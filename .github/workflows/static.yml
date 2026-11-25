@@ -31,7 +31,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      # Regenerates the compiled CSS, icon subset, search index and offline file list,
+      # Regenerates the compiled CSS, icon subset, and search index,
       # so the deployed site is always in sync with the HTML even if a local build was forgotten
       - name: Setup Node
         uses: actions/setup-node@v4

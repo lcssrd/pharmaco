@@ -20,7 +20,7 @@ Les thématiques suivantes sont actuellement disponibles :
 *   **Recherche** dans toutes les fiches depuis l'accueil (nom de molécule, nom commercial, mot-clé), avec ouverture directe du bon onglet et surlignage du passage.
 *   **Onglets dans l'adresse** : chaque section a son propre lien (`antico.html#avk`), partageable, et le bouton « Retour » du téléphone revient à l'onglet précédent.
 *   **Quiz** : questions et réponses mélangées à chaque tentative, meilleur score mémorisé (affiché sur la carte de la fiche à l'accueil), bouton « Refaire mes erreurs ».
-*   **Hors ligne** : le site reste consultable sans réseau après une première visite, et peut être ajouté à l'écran d'accueil du téléphone (menu du navigateur).
+*   **Écran d'accueil** : le site peut être ajouté à l'écran d'accueil du téléphone (menu du navigateur). Il n'a pas de version hors ligne : une connexion reste nécessaire.
 
 Les scores des quiz sont enregistrés uniquement dans le navigateur de l'étudiant (aucun compte, aucune donnée envoyée).
 
@@ -35,12 +35,13 @@ Tailwind 4 s'appuie sur des fonctions CSS récentes : le site s'affiche correcte
 | Fichier | Rôle |
 | --- | --- |
 | `*.html` | Les fiches et l'accueil. Le contenu et les questions du quiz (`quizData`, en bas de chaque fiche) se modifient directement ici. |
-| `assets/js/site.js` | Code commun : onglets, quiz, recherche, hors ligne. |
+| `assets/js/site.js` | Code commun : onglets, quiz, recherche ; désinstalle aussi l'ancienne version hors ligne. |
 | `assets/css/source.css` | Styles communs et configuration de Tailwind. Compilé dans `assets/css/site.css`. |
 | `assets/css/couleurs.css` | Palette de couleurs du site (celle d'origine, conservée lors du passage à Tailwind 4). |
-| `scripts/build.mjs` | Génère `assets/js/icones.js` (icônes utilisées), `assets/data/recherche.json` (index de recherche) et la liste des fichiers hors ligne dans `sw.js`. |
+| `scripts/build.mjs` | Génère `assets/js/icones.js` (icônes utilisées), `assets/data/recherche.json` (index de recherche). |
+| `sw.js` | Ne sert plus qu'à désinstaller l'ancienne version hors ligne chez les visiteurs qui l'avaient ; à garder quelques mois, puis à supprimer. |
 
-Les fichiers `assets/css/site.css`, `assets/js/icones.js`, `assets/data/recherche.json` et la partie générée de `sw.js` ne se modifient pas à la main.
+Les fichiers `assets/css/site.css`, `assets/js/icones.js`, `assets/data/recherche.json` ne se modifient pas à la main.
 
 ### Commandes
 
@@ -60,7 +61,7 @@ npm run build
 
 Pour intégrer une vidéo YouTube, copier le code d'intégration complet proposé par YouTube (bouton « Partager » puis « Intégrer ») : il contient `referrerpolicy="strict-origin-when-cross-origin"`, sans lequel certains navigateurs affichent « Erreur 153 ».
 
-Pour prévisualiser le site en local, il faut un petit serveur (par exemple `python -m http.server`) puis ouvrir `http://localhost:8000`. En local, le mode hors ligne n'est activé qu'en ajoutant `?sw` à l'adresse, pour éviter de voir d'anciennes versions pendant qu'on modifie les fiches.
+Pour prévisualiser le site en local, il faut un petit serveur (par exemple `python -m http.server`) puis ouvrir `http://localhost:8000`.
 
 ### Après une modification de contenu
 

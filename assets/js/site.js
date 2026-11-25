@@ -4,7 +4,7 @@
  *  - Fiches : navigation par onglets avec l'onglet dans l'URL (antico.html#avk),
  *    accessibilité clavier, quiz (progression mémorisée, « refaire mes erreurs »)
  *  - Accueil : recherche dans toutes les fiches, scores des quiz sur les cartes
- *  - Hors ligne : enregistrement du service worker (sw.js)
+ *  - Désinstallation de l'ancienne version hors ligne (service worker sw.js)
  *
  * Les données propres à chaque fiche (questions du quiz, graphiques) restent
  * dans le <script> en bas de la fiche.
@@ -66,7 +66,7 @@
         }
     };
 
-    function afficherOnglet(id, { historique = 'ajouter', defiler = true, animer = true } = {}) {
+    function afficherOnglet(id, { historique = 'ajouter', defiler = true } = {}) {
         if (!idsOnglets.includes(id)) id = idsOnglets[0];
         if (id === ongletActif) return;
         ongletActif = id;
@@ -74,9 +74,6 @@
         idsOnglets.forEach((idPage) => {
             document.getElementById(idPage)?.classList.toggle('hidden', idPage !== id);
         });
-        // Animation d'apparition au changement d'onglet seulement (pas au chargement de la
-        // page). La classe reste ensuite : l'animation rejoue à chaque réaffichage.
-        if (animer) document.getElementById(id)?.classList.add('apparition');
 
         boutonsOnglets.forEach((bouton) => {
             const actif = bouton.dataset.page === id;
@@ -140,7 +137,7 @@
         window.addEventListener('hashchange', suivreUrl);
 
         const initial = ongletDepuisUrl();
-        afficherOnglet(initial, { historique: idsOnglets.includes(initial) || !initial ? 'aucun' : 'remplacer', defiler: false, animer: false });
+        afficherOnglet(initial, { historique: idsOnglets.includes(initial) || !initial ? 'aucun' : 'remplacer', defiler: false });
 
         // Avec antico.html#avk, le navigateur fait défiler jusqu'à la section, qui se retrouve
         // sous l'en-tête : on revient en haut de page. (Un passage surligné depuis la recherche
@@ -482,16 +479,20 @@
     }
 
     // ==================================================================
-    // Consultation hors ligne
+    // Ancienne version hors ligne : désinstallation
     // ==================================================================
 
-    // En local, le service worker n'est activé qu'avec ?sw dans l'adresse (pour le tester),
-    // afin de ne pas servir d'anciennes copies pendant qu'on modifie les fiches.
-    const enLigne = location.protocol === 'https:';
-    const testLocal = ['localhost', '127.0.0.1'].includes(location.hostname) && new URLSearchParams(location.search).has('sw');
-    if ('serviceWorker' in navigator && (enLigne || testLocal)) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('sw.js').catch(() => { /* hors ligne indisponible */ });
-        });
+    // Le site n'a plus de version hors ligne. Les navigateurs qui l'avaient installée lors d'une
+    // visite précédente gardent un service worker et une copie des fichiers : on les retire.
+    // (sw.js fait de même de son côté.) Peut être supprimé quand plus aucun visiteur ne l'a.
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations()
+            .then((inscriptions) => Promise.all(inscriptions.map((inscription) => inscription.unregister())))
+            .catch(() => { /* rien à désinstaller */ });
+    }
+    if ('caches' in window) {
+        caches.keys()
+            .then((noms) => Promise.all(noms.filter((nom) => nom.startsWith('pharmaco-')).map((nom) => caches.delete(nom))))
+            .catch(() => { /* rien à effacer */ });
     }
 })();

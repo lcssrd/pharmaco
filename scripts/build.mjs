@@ -4,10 +4,7 @@
 //  1. assets/js/icones.js      : uniquement les icônes Lucide utilisées dans les fiches
 //                                (au lieu de charger toute la bibliothèque, ~400 Ko)
 //  2. assets/data/recherche.json : le texte de chaque onglet, pour la recherche de l'accueil
-//  3. sw.js                     : la liste des fichiers à garder pour la consultation hors
-//                                ligne, et un numéro de version qui change avec le contenu
 
-import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync, readdirSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -124,39 +121,4 @@ for (const fichier of fiches) {
 }
 ecrire('assets/data/recherche.json', JSON.stringify(entrees));
 
-// ----------------------------------------------------------------------
-// 3. Service worker : fichiers disponibles hors ligne
-// ----------------------------------------------------------------------
-
-const lister = (dossier, extensions) => readdirSync(chemin(dossier))
-    .filter((f) => extensions.some((e) => f.endsWith(e)))
-    .map((f) => (dossier === '.' ? f : `${dossier}/${f}`))
-    .sort();
-
-const fichiersHorsLigne = [
-    ...pages,
-    'manifest.webmanifest',
-    ...lister('assets/css', ['site.css']),
-    ...lister('assets/js', ['.js']),
-    ...lister('assets/data', ['.json']),
-    ...lister('assets/icones', ['.png', '.svg']),
-    // Police : seul le jeu latin (celui des fiches) est gardé d'office ; le jeu latin étendu
-    // est rarement utile et reste en cache s'il a été téléchargé en ligne
-    'assets/polices/inter-latin-wght-normal.woff2',
-    ...lister('.', ['.jpg', '.png', '.webp']),
-];
-
-const empreinte = createHash('sha256');
-for (const fichier of fichiersHorsLigne) empreinte.update(fichier).update(readFileSync(chemin(fichier)));
-const version = empreinte.digest('hex').slice(0, 12);
-
-const sw = lire('sw.js').replace(
-    /\/\/ <genere>[\s\S]*?\/\/ <\/genere>/,
-    `// <genere> (par scripts/build.mjs, ne pas modifier à la main)
-const VERSION = '${version}';
-const FICHIERS = ${JSON.stringify(['./', ...fichiersHorsLigne], null, 4)};
-// </genere>`,
-);
-ecrire('sw.js', sw);
-
-console.log(`✓ ${Object.keys(icones).length} icônes, ${entrees.length} onglets indexés, ${fichiersHorsLigne.length} fichiers hors ligne (version ${version})`);
+console.log(`✓ ${Object.keys(icones).length} icônes, ${entrees.length} onglets indexés`);

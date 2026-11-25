@@ -1,7 +1,7 @@
 {
     "name": "Les essentiels en pharmacologie - IFSI",
     "short_name": "Pharmaco IFSI",
-    "description": "Fiches de révision de pharmacologie pour les étudiants en soins infirmiers (UE 2.11), consultables hors ligne.",
+    "description": "Fiches de révision de pharmacologie pour les étudiants en soins infirmiers (UE 2.11).",
     "lang": "fr",
     "dir": "ltr",
     "start_url": "./index.html",
