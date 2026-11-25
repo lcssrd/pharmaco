@@ -79,6 +79,12 @@ Mettre à jour la date en bas de la fiche (`<time datetime="AAAA-MM-JJ">`), dans
 *   **Lucas Séraudie** : Créateur et auteur principal, conception et développement des supports visuels. Et c'est peut être pas super bien codé selon les règles de bonnes pratiques... C'est ma faute !
 *   **Thomas Duflot** : Relecture critique et validation de l'exactitude des contenus scientifiques.
 
+## 🔎 Sources et relecture
+
+Les informations sur les médicaments (noms commerciaux, état de commercialisation, posologies, contre-indications, interactions) ont été relues en novembre 2026 avec la [Base de données publique des médicaments](https://base-donnees-publique.medicaments.gouv.fr/) (ANSM), à partir des résumés des caractéristiques du produit (RCP). Le détail de cette relecture se trouve dans [`RAPPORT_VERIFICATION_BDPM.md`](RAPPORT_VERIFICATION_BDPM.md).
+
+Les notions qui ne figurent pas dans cette base (physiopathologie, seuils diagnostiques, recommandations de la HAS ou des sociétés savantes) restent à valider par la relecture scientifique.
+
 ## ⚖️ Licence
 
 Le contenu de ce projet est mis à disposition selon les termes de la licence [Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).

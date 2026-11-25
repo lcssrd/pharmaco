@@ -187,15 +187,27 @@
                         <div class="bg-white/70 backdrop-blur-xs rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <div class="flex items-center gap-4 mb-4">
                                 <div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center shrink-0"><i data-lucide="gauge" class="text-purple-600 w-6 h-6"></i></div>
-                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Système SCORE & Niveaux de Risque</h4>
+                                <h4 class="text-xl sm:text-2xl font-bold text-slate-800">Système SCORE2 & Niveaux de Risque</h4>
                             </div>
-                            <p class="text-slate-600 mb-4">Le système <strong>SCORE</strong> estime le risque de mortalité cardiovasculaire à 10 ans (âge, sexe, tabagisme, pression artérielle systolique, cholestérol total) chez les sujets apparemment sains. Il définit 4 niveaux de risque.</p>
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-                                <div class="p-3 bg-green-50 rounded-lg text-center"><h5 class="font-semibold text-green-800">Faible</h5><p class="text-slate-600">SCORE &lt; 1%</p></div>
-                                <div class="p-3 bg-yellow-50 rounded-lg text-center"><h5 class="font-semibold text-yellow-800">Modéré</h5><p class="text-slate-600">1% ≤ SCORE &lt; 5%</p></div>
-                                <div class="p-3 bg-orange-50 rounded-lg text-center"><h5 class="font-semibold text-orange-800">Haut</h5><p class="text-slate-600">5% ≤ SCORE &lt; 10%</p></div>
-                                <div class="p-3 bg-red-50 rounded-lg text-center"><h5 class="font-semibold text-red-800">Très haut</h5><p class="text-slate-600">SCORE ≥ 10% / prév. secondaire</p></div>
+                            <p class="text-slate-600 mb-4">Le système <strong>SCORE2</strong> (ESC 2021) estime le risque d'accident cardiovasculaire <strong>mortel ou non</strong> (infarctus, AVC) à 10 ans, à partir de l'âge, du sexe, du tabagisme, de la pression artérielle systolique et du cholestérol non-HDL, chez les sujets apparemment sains de 40 à 69 ans. Après 70 ans, on utilise <strong>SCORE2-OP</strong>. Les seuils dépendent de l'âge :</p>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-sm text-center border-collapse">
+                                    <thead>
+                                        <tr class="bg-slate-100 text-slate-800">
+                                            <th class="p-3 rounded-l-lg font-semibold text-left">Âge</th>
+                                            <th class="p-3 font-semibold text-green-800">Faible à modéré</th>
+                                            <th class="p-3 font-semibold text-orange-800">Élevé</th>
+                                            <th class="p-3 rounded-r-lg font-semibold text-red-800">Très élevé</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-slate-700">
+                                        <tr><td class="p-3 text-left font-medium">&lt; 50 ans</td><td class="p-3 bg-green-50">&lt; 2,5 %</td><td class="p-3 bg-orange-50">2,5 à &lt; 7,5 %</td><td class="p-3 bg-red-50">≥ 7,5 %</td></tr>
+                                        <tr><td class="p-3 text-left font-medium">50 à 69 ans</td><td class="p-3 bg-green-50">&lt; 5 %</td><td class="p-3 bg-orange-50">5 à &lt; 10 %</td><td class="p-3 bg-red-50">≥ 10 %</td></tr>
+                                        <tr><td class="p-3 text-left font-medium">≥ 70 ans (SCORE2-OP)</td><td class="p-3 bg-green-50">&lt; 7,5 %</td><td class="p-3 bg-orange-50">7,5 à &lt; 15 %</td><td class="p-3 bg-red-50">≥ 15 %</td></tr>
+                                    </tbody>
+                                </table>
                             </div>
+                            <p class="text-slate-600 text-sm mt-4">SCORE2 ne s'utilise pas chez les patients déjà classés à haut ou très haut risque : maladie cardiovasculaire avérée (prévention secondaire), diabète, insuffisance rénale chronique, hypercholestérolémie familiale.</p>
                         </div>
 
                         <div class="bg-white/70 backdrop-blur-xs rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
@@ -264,7 +276,7 @@
                                 <p class="text-xs text-slate-500 italic mb-4">Atorvastatine (Tahor®), Rosuvastatine (Crestor®), Simvastatine (Zocor®)…</p>
                                 <div class="space-y-3 text-sm">
                                     <div><h5 class="font-semibold text-sky-800 flex items-center gap-1.5"><i data-lucide="pill" class="w-4 h-4"></i> Indications</h5><p class="text-slate-600">Font baisser le mauvais cholestérol (LDL) en réduisant sa fabrication par le foie. C'est le traitement de référence.</p></div>
-                                    <div><h5 class="font-semibold text-sky-800 flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4"></i> Prise</h5><p class="text-slate-600">1 comprimé le soir, tous les jours, sur le long terme (souvent à vie).</p></div>
+                                    <div><h5 class="font-semibold text-sky-800 flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4"></i> Prise</h5><p class="text-slate-600">1 comprimé par jour, à heure fixe, sur le long terme (souvent à vie). Simvastatine : le soir ; atorvastatine et rosuvastatine : à n'importe quel moment de la journée.</p></div>
                                     <div class="p-3 bg-amber-50 rounded-lg"><h5 class="font-semibold text-amber-800 flex items-center gap-1.5"><i data-lucide="alert-triangle" class="w-4 h-4"></i> Effets indésirables</h5><p class="text-slate-700">Douleurs et crampes musculaires (les plus fréquents). Plus rarement : troubles du foie, troubles digestifs, légère hausse du sucre dans le sang.</p></div>
                                     <div class="p-3 bg-blue-50 rounded-lg"><h5 class="font-semibold text-blue-900 flex items-center gap-1.5"><i data-lucide="stethoscope" class="w-4 h-4"></i> Surveillance & conseils IDE</h5><p class="text-slate-700">Surveiller les douleurs musculaires (prise de sang : CPK) et le foie. Demander de signaler crampes/douleurs musculaires, urines foncées ou jaunisse. Éviter le jus de pamplemousse.</p></div>
                                 </div>
@@ -287,12 +299,12 @@
                                     <span class="flex items-center justify-center w-8 h-8 rounded-full bg-sky-600 text-white font-bold text-sm shrink-0">3</span>
                                     <h4 class="text-lg font-bold text-slate-800">Inhibiteurs de PCSK9</h4>
                                 </div>
-                                <p class="text-xs text-slate-500 italic mb-4">Alirocumab (Praluent®), Évolocumab (Repatha®), Inclisiran (Leqvio®)</p>
+                                <p class="text-xs text-slate-500 italic mb-4">Anticorps monoclonaux : Alirocumab (Praluent®), Évolocumab (Repatha®). Petit ARN interférent : Inclisiran (Leqvio®)</p>
                                 <div class="space-y-3 text-sm">
                                     <div><h5 class="font-semibold text-sky-800 flex items-center gap-1.5"><i data-lucide="pill" class="w-4 h-4"></i> Indications</h5><p class="text-slate-600">Médicaments récents et puissants pour faire baisser le LDL. Réservés aux formes sévères ou en cas d'intolérance aux statines.</p></div>
-                                    <div><h5 class="font-semibold text-sky-800 flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4"></i> Prise</h5><p class="text-slate-600">Injection sous la peau (ventre, cuisse, bras), toutes les 2 à 4 semaines.</p></div>
+                                    <div><h5 class="font-semibold text-sky-800 flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4"></i> Prise</h5><p class="text-slate-600">Praluent®, Repatha® : auto-injection sous la peau (ventre, cuisse, bras), toutes les 2 à 4 semaines. Leqvio® : injection sous-cutanée par un professionnel de santé à J0, à 3 mois, puis tous les 6 mois.</p></div>
                                     <div class="p-3 bg-amber-50 rounded-lg"><h5 class="font-semibold text-amber-800 flex items-center gap-1.5"><i data-lucide="alert-triangle" class="w-4 h-4"></i> Effets indésirables</h5><p class="text-slate-700">Rougeur ou démangeaison au point d'injection, symptômes type rhume (nez qui coule, mal de gorge), maux de tête. Bonne tolérance générale.</p></div>
-                                    <div class="p-3 bg-blue-50 rounded-lg"><h5 class="font-semibold text-blue-900 flex items-center gap-1.5"><i data-lucide="stethoscope" class="w-4 h-4"></i> Surveillance & conseils IDE</h5><p class="text-slate-700">Éduquer à l'auto-injection (changer de site à chaque fois). Surveiller les réactions au point d'injection.</p></div>
+                                    <div class="p-3 bg-blue-50 rounded-lg"><h5 class="font-semibold text-blue-900 flex items-center gap-1.5"><i data-lucide="stethoscope" class="w-4 h-4"></i> Surveillance & conseils IDE</h5><p class="text-slate-700">Éduquer à l'auto-injection pour Praluent® et Repatha® (changer de site à chaque fois). Surveiller les réactions au point d'injection.</p></div>
                                 </div>
                             </div>
                             <div class="bg-white/70 backdrop-blur-xs rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 flex flex-col">
@@ -329,9 +341,9 @@
                                 <p class="text-xs text-slate-500 italic mb-4">Colestyramine (Questran®)</p>
                                 <div class="space-y-3 text-sm">
                                     <div><h5 class="font-semibold text-sky-800 flex items-center gap-1.5"><i data-lucide="pill" class="w-4 h-4"></i> Indications</h5><p class="text-slate-600">Capturent le cholestérol dans l'intestin pour l'évacuer dans les selles.</p></div>
-                                    <div><h5 class="font-semibold text-sky-800 flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4"></i> Prise</h5><p class="text-slate-600">Poudre à diluer dans l'eau, avant les repas.</p></div>
+                                    <div><h5 class="font-semibold text-sky-800 flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4"></i> Prise</h5><p class="text-slate-600">Poudre à diluer dans l'eau, au moment des repas.</p></div>
                                     <div class="p-3 bg-amber-50 rounded-lg"><h5 class="font-semibold text-amber-800 flex items-center gap-1.5"><i data-lucide="alert-triangle" class="w-4 h-4"></i> Effets indésirables</h5><p class="text-slate-700">Constipation, ballonnements, nausées. Peuvent gêner l'absorption de certaines vitamines.</p></div>
-                                    <div class="p-3 bg-blue-50 rounded-lg"><h5 class="font-semibold text-blue-900 flex items-center gap-1.5"><i data-lucide="stethoscope" class="w-4 h-4"></i> Surveillance & conseils IDE</h5><p class="text-slate-700">Espacer de 2 à 4 h la prise des autres médicaments (sinon mal absorbés). Surveiller la constipation.</p></div>
+                                    <div class="p-3 bg-blue-50 rounded-lg"><h5 class="font-semibold text-blue-900 flex items-center gap-1.5"><i data-lucide="stethoscope" class="w-4 h-4"></i> Surveillance & conseils IDE</h5><p class="text-slate-700">Prendre les autres médicaments 1 à 2 h avant ou 4 h après (sinon mal absorbés). Surveiller la constipation.</p></div>
                                 </div>
                             </div>
                         </div>
@@ -401,7 +413,7 @@
 
         <footer id="footer" class="bg-slate-800 text-white p-4 md:p-6 mt-auto">
             <div class="max-w-6xl mx-auto mb-4 pb-4 border-b border-slate-700 text-[11px] sm:text-xs text-slate-400 leading-relaxed text-center md:text-left">
-                <p>Dernière mise à jour du contenu : <time datetime="2026-06-15">15 juin 2026</time></p>
+                <p>Dernière mise à jour du contenu : <time datetime="2026-11-25">25 novembre 2026</time></p>
                 <p class="mt-1">Support de révision à visée pédagogique : il ne remplace ni les cours de votre IFSI, ni le résumé des caractéristiques du produit (RCP) des médicaments, ni une prescription médicale.</p>
             </div>
             <div class="flex items-center justify-center md:justify-end text-center">
@@ -438,7 +450,7 @@
             },
             {
                 question: "Quel conseil est primordial pour un patient prenant de la cholestyramine (Questran®) ?",
-                options: ["Prendre le médicament le soir", "Le prendre pendant le repas", "Respecter un délai de 2 à 4h avec les autres médicaments", "Arrêter en cas de jaunisse"],
+                options: ["Prendre le médicament le soir", "Le prendre en même temps que ses autres médicaments", "Prendre les autres médicaments à distance (1 à 2 h avant ou 4 h après)", "Arrêter en cas de jaunisse"],
                 correct: 2,
                 feedback: "La cholestyramine peut diminuer l'absorption de nombreux autres médicaments. Il est donc crucial de décaler les prises."
             },
@@ -452,13 +464,13 @@
                 question: "Par quelle voie les anti-PCSK9 sont-ils administrés ?",
                 options: ["Voie orale, le matin", "Injection intra-musculaire", "Perfusion intra-veineuse", "Injection sous-cutanée"],
                 correct: 3,
-                feedback: "Les anti-PCSK9 s'administrent par injection sous la peau (sous-cutanée), toutes les 2 à 4 semaines."
+                feedback: "Les anti-PCSK9 s'administrent par injection sous la peau (sous-cutanée) : toutes les 2 à 4 semaines pour Praluent® et Repatha®, tous les 6 mois (après J0 et M3) pour l'inclisiran (Leqvio®)."
             },
             {
-                question: "Quel est le moment de la journée généralement recommandé pour la prise des statines ?",
-                options: ["Le matin à jeun", "Le midi pendant le repas", "Le soir au coucher", "N'importe quand"],
+                question: "À quel moment de la journée faut-il prendre la simvastatine (Zocor®) ?",
+                options: ["Le matin à jeun", "Le midi pendant le repas", "Le soir", "Toutes les 2 semaines"],
                 correct: 2,
-                feedback: "La synthèse du cholestérol par le foie est maximale la nuit, la prise le soir optimise donc l'efficacité des statines."
+                feedback: "La simvastatine se prend le soir, en une prise. L'atorvastatine (Tahor®) et la rosuvastatine (Crestor®) peuvent se prendre à n'importe quel moment de la journée, à heure fixe."
             },
             {
                 question: "En plus des douleurs musculaires, quel autre signe doit alerter un patient sous statine et motiver une consultation ?",
@@ -498,9 +510,9 @@
             },
             {
                 question: "Quel délai faut-il respecter entre la prise d'un chélateur d'acides biliaires (Questran®) et les autres médicaments ?",
-                options: ["30 minutes", "1 heure", "2 à 4 heures", "Aucun délai nécessaire"],
+                options: ["30 minutes", "1 heure", "Les autres médicaments 1 à 2 h avant ou 4 h après", "Aucun délai nécessaire"],
                 correct: 2,
-                feedback: "Les chélateurs diminuent l'absorption de nombreux médicaments (AVK, hormones thyroïdiennes, contraceptifs...). Il faut décaler les prises de 2 à 4 heures."
+                feedback: "Les chélateurs diminuent l'absorption de nombreux médicaments (AVK, hormones thyroïdiennes, contraceptifs...). Il faut prendre les autres médicaments 1 à 2 heures avant ou 4 heures après."
             }
         ];
     </script>
