@@ -11,7 +11,7 @@
  */
 
 // <genere> (par scripts/build.mjs, ne pas modifier à la main)
-const VERSION = 'cfc8e1662b6d';
+const VERSION = '1ea8af56cd09';
 const FICHIERS = [
     "./",
     "antalgiques.html",
@@ -39,6 +39,7 @@ const FICHIERS = [
     "assets/icones/icone-192.png",
     "assets/icones/icone-512.png",
     "assets/icones/icone-maskable-512.png",
+    "assets/polices/inter-latin-wght-normal.woff2",
     "atherose.jpg",
     "chambre.jpg",
     "diskus.jpg",
@@ -49,11 +50,11 @@ const FICHIERS = [
 
 const CACHE = `pharmaco-${VERSION}`;
 const CACHE_EXTERNE = 'pharmaco-externe-v1';
-const HOTES_EXTERNES = ['cdn.jsdelivr.net', 'unpkg.com', 'fonts.googleapis.com', 'fonts.gstatic.com'];
+// (La police Inter est hébergée sur le site : elle fait partie des FICHIERS ci-dessus.)
+const HOTES_EXTERNES = ['cdn.jsdelivr.net', 'unpkg.com'];
 const RESSOURCES_EXTERNES = [
     'https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js',
     'https://unpkg.com/@phosphor-icons/web@2.1.2/src/bold/style.css',
-    'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap',
 ];
 
 self.addEventListener('install', (evenement) => {
