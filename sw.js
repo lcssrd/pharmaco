@@ -11,7 +11,7 @@
  */
 
 // <genere> (par scripts/build.mjs, ne pas modifier à la main)
-const VERSION = '0b4ac6b67942';
+const VERSION = 'cfc8e1662b6d';
 const FICHIERS = [
     "./",
     "antalgiques.html",

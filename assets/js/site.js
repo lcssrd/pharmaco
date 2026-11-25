@@ -66,7 +66,7 @@
         }
     };
 
-    function afficherOnglet(id, { historique = 'ajouter', defiler = true } = {}) {
+    function afficherOnglet(id, { historique = 'ajouter', defiler = true, animer = true } = {}) {
         if (!idsOnglets.includes(id)) id = idsOnglets[0];
         if (id === ongletActif) return;
         ongletActif = id;
@@ -74,6 +74,9 @@
         idsOnglets.forEach((idPage) => {
             document.getElementById(idPage)?.classList.toggle('hidden', idPage !== id);
         });
+        // Animation d'apparition au changement d'onglet seulement (pas au chargement de la
+        // page). La classe reste ensuite : l'animation rejoue à chaque réaffichage.
+        if (animer) document.getElementById(id)?.classList.add('apparition');
 
         boutonsOnglets.forEach((bouton) => {
             const actif = bouton.dataset.page === id;
@@ -137,7 +140,7 @@
         window.addEventListener('hashchange', suivreUrl);
 
         const initial = ongletDepuisUrl();
-        afficherOnglet(initial, { historique: idsOnglets.includes(initial) || !initial ? 'aucun' : 'remplacer', defiler: false });
+        afficherOnglet(initial, { historique: idsOnglets.includes(initial) || !initial ? 'aucun' : 'remplacer', defiler: false, animer: false });
 
         // Avec antico.html#avk, le navigateur fait défiler jusqu'à la section, qui se retrouve
         // sous l'en-tête : on revient en haut de page. (Un passage surligné depuis la recherche

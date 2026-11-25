@@ -71,14 +71,11 @@
         top: 1rem;
     }
 
-    .page {
+    /* Onglet des fiches : animé seulement quand on change d'onglet (classe posée par
+       site.js), jamais au chargement, où le contenu partait d'une opacité nulle et
+       donnait l'impression d'un clignotement */
+    .page.apparition {
         animation: apparition 0.5s ease-in-out;
-    }
-
-    /* Cartes de l'accueil */
-    .card-enter {
-        animation: apparition-carte 0.5s ease-in-out forwards;
-        opacity: 0;
     }
 
     .gradient-text {
@@ -141,16 +138,10 @@
     }
 }
 
-@keyframes apparition-carte {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Passage d'une page à l'autre du site : fondu enchaîné au lieu d'un écran blanc
+   (Chrome/Edge 126+, Safari 18.2+ ; ignoré ailleurs, sans conséquence) */
+@view-transition {
+    navigation: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -158,10 +149,12 @@
         scroll-behavior: auto !important;
     }
 
-    .page,
-    .card-enter {
+    .page.apparition {
         animation: none;
-        opacity: 1;
+    }
+
+    @view-transition {
+        navigation: none;
     }
 }
 
