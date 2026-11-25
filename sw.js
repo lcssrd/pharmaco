@@ -11,7 +11,7 @@
  */
 
 // <genere> (par scripts/build.mjs, ne pas modifier à la main)
-const VERSION = '1ea8af56cd09';
+const VERSION = 'b0af80e39408';
 const FICHIERS = [
     "./",
     "antalgiques.html",
@@ -50,11 +50,11 @@ const FICHIERS = [
 
 const CACHE = `pharmaco-${VERSION}`;
 const CACHE_EXTERNE = 'pharmaco-externe-v1';
-// (La police Inter est hébergée sur le site : elle fait partie des FICHIERS ci-dessus.)
-const HOTES_EXTERNES = ['cdn.jsdelivr.net', 'unpkg.com'];
+// (La police Inter est hébergée sur le site et les icônes de l'accueil sont dans la page :
+// elles font partie des FICHIERS ci-dessus.)
+const HOTES_EXTERNES = ['cdn.jsdelivr.net'];
 const RESSOURCES_EXTERNES = [
     'https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js',
-    'https://unpkg.com/@phosphor-icons/web@2.1.2/src/bold/style.css',
 ];
 
 self.addEventListener('install', (evenement) => {
