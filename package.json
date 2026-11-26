@@ -21,7 +21,7 @@
         "verify": "npm run format:check && npm run lint && npm run check && npm run test && npm run build"
     },
     "dependencies": {
-        "chart.js": "4.5.1"
+        "chart.js": "4.6.2"
     },
     "devDependencies": {
         "@astrojs/check": "0.9.12",
@@ -29,11 +29,11 @@
         "@tailwindcss/vite": "4.3.5",
         "astro": "7.4.13",
         "eslint": "10.15.0",
-        "eslint-plugin-astro": "3.2.1",
+        "eslint-plugin-astro": "3.2.2",
         "eslint-plugin-jsx-a11y-x": "0.2.0",
         "globals": "17.14.0",
-        "lucide": "1.61.0",
-        "node-html-parser": "9.0.5",
+        "lucide": "1.81.0",
+        "node-html-parser": "9.0.7",
         "prettier": "3.10.1",
         "prettier-plugin-astro": "1.1.2",
         "tailwindcss": "4.3.5",
