@@ -14,17 +14,100 @@
                 le bien-être du patient.</p>
         </div>
         <div class="lg:col-span-3 space-y-6">
-            <div
-                class="flex items-start gap-4 sm:gap-6 p-6 bg-white/70 backdrop-blur-xs rounded-xl shadow-lg">
-                <div
-                    class="bg-green-100 text-green-700 w-12 h-12 sm:w-16 sm:h-16 rounded-full shrink-0 flex items-center justify-center text-xl sm:text-2xl font-bold">
-                    1</div>
-                <div>
-                    <h4 class="font-bold text-lg sm:text-xl text-slate-800 mb-1">Évaluer</h4>
-                    <p class="text-slate-600 text-sm sm:text-base">Évaluer systématiquement la douleur,
-                        en gardant toujours la même échelle.</p>
+            <details
+                class="depliant group bg-white/70 backdrop-blur-xs rounded-xl shadow-lg ring-1 ring-transparent transition-shadow duration-300 hover:shadow-xl hover:ring-rose-200 open:ring-rose-200">
+                <summary class="block cursor-pointer select-none rounded-xl">
+                    <div class="flex items-start gap-4 sm:gap-6 p-6 pb-5">
+                        <div
+                            class="bg-green-100 text-green-700 w-12 h-12 sm:w-16 sm:h-16 rounded-full shrink-0 flex items-center justify-center text-xl sm:text-2xl font-bold">
+                            1</div>
+                        <div>
+                            <h4 class="font-bold text-lg sm:text-xl text-slate-800 mb-1">Évaluer</h4>
+                            <p class="text-slate-600 text-sm sm:text-base">Évaluer systématiquement la douleur,
+                                en gardant toujours la même échelle.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center justify-between gap-3 px-6 py-3 border-t border-rose-100 rounded-b-xl text-sm font-semibold text-rose-600 transition-colors duration-200 group-hover:bg-rose-50 group-open:rounded-none">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="list-checks" class="w-4 h-4 shrink-0"></i>
+                            <span class="group-open:hidden">Caractériser la douleur avec la méthode TILT</span>
+                            <span class="hidden group-open:inline">Masquer la méthode TILT</span>
+                        </span>
+                        <span class="bg-rose-100 w-7 h-7 rounded-full shrink-0 flex items-center justify-center transition-colors duration-200 group-hover:bg-rose-600 group-hover:text-white">
+                            <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300 group-open:rotate-180"></i>
+                        </span>
+                    </div>
+                </summary>
+                <div class="depliant-contenu px-6 pt-5 pb-6 border-t border-rose-100">
+                    <p class="text-slate-600 text-sm mb-4"><span class="font-semibold text-slate-800">TILT</span> : quatre
+                        repères pour décrire précisément la douleur du patient.</p>
+                    <div class="grid sm:grid-cols-2 gap-3">
+                        <div class="rounded-lg bg-white border border-slate-200 shadow-sm p-4">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="bg-linear-to-br from-pink-500 to-rose-600 text-white w-9 h-9 rounded-lg shrink-0 flex items-center justify-center text-lg font-bold shadow-sm" aria-hidden="true">T</span>
+                                <div>
+                                    <h5 class="font-semibold text-slate-800 leading-tight">Temps</h5>
+                                    <p class="text-xs font-medium text-rose-600">Quand ?</p>
+                                </div>
+                            </div>
+                            <ul class="space-y-1.5 text-sm text-slate-600">
+                                <li class="flex gap-2"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-rose-400 shrink-0"></span>Depuis quand ? Début brutal ou progressif.</li>
+                                <li class="flex gap-2"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-rose-400 shrink-0"></span>Continue ou par crises, durée des épisodes.</li>
+                                <li class="flex gap-2"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-rose-400 shrink-0"></span>Moment de survenue : nuit, mouvement, soins.</li>
+                            </ul>
+                        </div>
+                        <div class="rounded-lg bg-white border border-slate-200 shadow-sm p-4">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="bg-linear-to-br from-pink-500 to-rose-600 text-white w-9 h-9 rounded-lg shrink-0 flex items-center justify-center text-lg font-bold shadow-sm" aria-hidden="true">I</span>
+                                <div>
+                                    <h5 class="font-semibold text-slate-800 leading-tight">Intensité</h5>
+                                    <p class="text-xs font-medium text-rose-600">Combien ?</p>
+                                </div>
+                            </div>
+                            <ul class="space-y-1.5 text-sm text-slate-600">
+                                <li class="flex gap-2"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-rose-400 shrink-0"></span>Cotée avec une échelle validée : EVA, EN, EVS.</li>
+                                <li class="flex gap-2"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-rose-400 shrink-0"></span>Au repos et à la mobilisation.</li>
+                                <li class="flex gap-2"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-rose-400 shrink-0"></span>Toujours la même échelle pour comparer.</li>
+                            </ul>
+                        </div>
+                        <div class="rounded-lg bg-white border border-slate-200 shadow-sm p-4">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="bg-linear-to-br from-pink-500 to-rose-600 text-white w-9 h-9 rounded-lg shrink-0 flex items-center justify-center text-lg font-bold shadow-sm" aria-hidden="true">L</span>
+                                <div>
+                                    <h5 class="font-semibold text-slate-800 leading-tight">Localisation</h5>
+                                    <p class="text-xs font-medium text-rose-600">Où ?</p>
+                                </div>
+                            </div>
+                            <ul class="space-y-1.5 text-sm text-slate-600">
+                                <li class="flex gap-2"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-rose-400 shrink-0"></span>Faire montrer la zone douloureuse.</li>
+                                <li class="flex gap-2"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-rose-400 shrink-0"></span>Localisée ou diffuse.</li>
+                                <li class="flex gap-2"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-rose-400 shrink-0"></span>Irradiation vers une autre zone ?</li>
+                            </ul>
+                        </div>
+                        <div class="rounded-lg bg-white border border-slate-200 shadow-sm p-4">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="bg-linear-to-br from-pink-500 to-rose-600 text-white w-9 h-9 rounded-lg shrink-0 flex items-center justify-center text-lg font-bold shadow-sm" aria-hidden="true">T</span>
+                                <div>
+                                    <h5 class="font-semibold text-slate-800 leading-tight">Type</h5>
+                                    <p class="text-xs font-medium text-rose-600">Comment ?</p>
+                                </div>
+                            </div>
+                            <ul class="space-y-1.5 text-sm text-slate-600">
+                                <li class="flex gap-2"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-rose-400 shrink-0"></span>Les mots du patient : brûlure, décharge, coup de poignard, serrement…</li>
+                                <li class="flex gap-2"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-rose-400 shrink-0"></span>Oriente vers une douleur nociceptive ou neuropathique.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="mt-4 pt-4 border-t border-rose-100 flex items-start gap-2 text-sm text-slate-600">
+                        <i data-lucide="clipboard-pen" class="w-4 h-4 text-rose-500 shrink-0 mt-0.5"></i>
+                        <span>À compléter par les <span class="font-semibold text-slate-700">facteurs aggravants et
+                            soulageants</span> et le <span class="font-semibold text-slate-700">retentissement</span> (sommeil,
+                            appétit, moral, autonomie). Tracer dans le dossier de soins et réévaluer après chaque
+                            administration.</span>
+                    </p>
                 </div>
-            </div>
+            </details>
             <div
                 class="flex items-start gap-4 sm:gap-6 p-6 bg-white/70 backdrop-blur-xs rounded-xl shadow-lg">
                 <div

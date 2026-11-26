@@ -9,7 +9,7 @@ const fiche: Fiche = {
         ogTitre: 'Les Antalgiques - Révision Pharmacologie IFSI',
         ogDescription: 'Tout savoir sur les antalgiques : Paliers, mécanismes, surveillance infirmière.',
     },
-    miseAJour: '2026-11-25',
+    miseAJour: '2026-11-26',
     carte: {
         titre: 'Antalgiques',
         sousTitre: 'Paliers OMS, Morphine, AINS',

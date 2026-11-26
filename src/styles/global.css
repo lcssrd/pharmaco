@@ -150,6 +150,41 @@
         outline-offset: 2px;
     }
 
+    /* Bloc dépliable (<details class="depliant">) : sans le triangle natif, ouverture animée
+       (hauteur : Chrome/Edge 131+, ailleurs ouverture directe ; contenu : fondu partout) */
+    .depliant {
+        interpolate-size: allow-keywords;
+    }
+
+    .depliant > summary {
+        list-style: none;
+    }
+
+    .depliant > summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .depliant > summary:focus-visible {
+        outline: 3px solid var(--color-sky-400);
+        outline-offset: 2px;
+    }
+
+    .depliant::details-content {
+        block-size: 0;
+        overflow: hidden;
+        transition:
+            block-size 0.35s ease,
+            content-visibility 0.35s allow-discrete;
+    }
+
+    .depliant[open]::details-content {
+        block-size: auto;
+    }
+
+    .depliant[open] .depliant-contenu {
+        animation: apparition 0.4s ease-out;
+    }
+
     /* Passage trouvé par la recherche de l'accueil */
     .resultat-recherche mark {
         @apply rounded-sm bg-amber-200 px-0.5 text-slate-900;
@@ -192,9 +227,14 @@
     }
 
     .page,
-    .card-enter {
+    .card-enter,
+    .depliant[open] .depliant-contenu {
         animation: none;
         opacity: 1;
+    }
+
+    .depliant::details-content {
+        transition: none;
     }
 
     @view-transition {
