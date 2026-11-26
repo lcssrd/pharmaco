@@ -3,7 +3,7 @@ export const SITE = {
     nom: 'Les essentiels en pharmacologie',
     auteur: 'Lucas Séraudie',
     annee: 2026,
-    version: 'V5',
+    version: 'V6',
     couleurTheme: '#1e293b',
     licence: {
         nom: 'CC BY-SA 4.0',
