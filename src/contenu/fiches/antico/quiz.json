@@ -1,0 +1,146 @@
+[
+    {
+        "question": "Quel est l'objectif principal des traitements anticoagulants ?",
+        "options": [
+            "Arrêter les hémorragies",
+            "Réduire les risques thrombotiques",
+            "Produire des globules rouges",
+            "Augmenter le flux sanguin"
+        ],
+        "correct": 1,
+        "feedback": "Les anticoagulants préviennent la formation de caillots (thrombus) mais ne traitent pas les hémorragies."
+    },
+    {
+        "question": "Quelle est la principale complication des traitements anticoagulants ?",
+        "options": ["La dyspnée", "L'infection", "L'hémorragie", "L'allergie"],
+        "correct": 2,
+        "feedback": "En fluidifiant le sang, le risque principal est le saignement excessif ou l'hémorragie."
+    },
+    {
+        "question": "Sur quelle phase de l'hémostase les antiagrégants plaquettaires agissent-ils ?",
+        "options": [
+            "L'hémostase primaire",
+            "La coagulation sanguine",
+            "La fibrinolyse",
+            "La formation des globules rouges"
+        ],
+        "correct": 0,
+        "feedback": "Les AAP empêchent les plaquettes de s'agréger, ce qui est le mécanisme central de l'hémostase primaire."
+    },
+    {
+        "question": "Quel est l'antidote des héparines (HNF et dans une moindre mesure HBPM) ?",
+        "options": ["Vitamine K", "Sulfate de protamine", "Facteur Xa recombinant", "Il n'y en a pas"],
+        "correct": 1,
+        "feedback": "Le sulfate de protamine neutralise l'effet de l'héparine. La vitamine K est l'antidote des AVK."
+    },
+    {
+        "question": "Quelle est la cible thérapeutique de l'INR pour la plupart des patients sous AVK ?",
+        "options": ["Moins de 1", "Entre 1 et 1.5", "Entre 2 et 3", "Supérieur à 4"],
+        "correct": 2,
+        "feedback": "Un INR entre 2 et 3 est généralement la cible pour assurer une anticoagulation efficace sans risque hémorragique excessif."
+    },
+    {
+        "question": "Quelle surveillance biologique est recommandée pour un traitement par HBPM à dose curative ?",
+        "options": ["INR", "TCA", "Activité anti-Xa", "Numération plaquettaire seule"],
+        "correct": 2,
+        "feedback": "L'activité anti-Xa mesure spécifiquement l'effet des HBPM, bien qu'elle ne soit pas réalisée systématiquement."
+    },
+    {
+        "question": "Quel est le délai d'action approximatif des AVK ?",
+        "options": ["Immédiat", "6 heures", "24 heures", "72 heures"],
+        "correct": 3,
+        "feedback": "Les AVK agissent en plusieurs jours, le temps que les facteurs de coagulation vitamine K-dépendants soient éliminés."
+    },
+    {
+        "question": "Par quel examen biologique la surveillance des HNF est-elle effectuée ?",
+        "options": ["INR", "TP", "TCA", "Activité anti-Xa"],
+        "correct": 2,
+        "feedback": "Le Temps de Céphaline Activée (TCA) est l'examen de référence pour surveiller un traitement par HNF."
+    },
+    {
+        "question": "Quel est le conseil alimentaire primordial pour un patient sous AVK ?",
+        "options": [
+            "Éviter totalement le sel",
+            "Supprimer les sucres",
+            "Maintenir des apports stables en vitamine K",
+            "Boire beaucoup d'eau"
+        ],
+        "correct": 2,
+        "feedback": "Des variations importantes d'apports en vitamine K (choux, épinards...) peuvent déséquilibrer l'INR."
+    },
+    {
+        "question": "Parmi les aliments suivants, lequel peut diminuer l'efficacité des AVK si consommé en grande quantité ?",
+        "options": ["Les produits laitiers", "Les agrumes", "Les pommes de terre", "Les choux"],
+        "correct": 3,
+        "feedback": "Les choux sont très riches en vitamine K, qui s'oppose à l'action des AVK."
+    },
+    {
+        "question": "Quel est l'avantage principal des AOD par rapport aux AVK ?",
+        "options": [
+            "Leur coût moins élevé",
+            "Leur efficacité supérieure",
+            "L'absence de surveillance biologique de routine",
+            "Leur longue demi-vie"
+        ],
+        "correct": 2,
+        "feedback": "Les AOD ne nécessitent pas de contrôles sanguins réguliers comme l'INR pour les AVK, ce qui simplifie grandement le traitement."
+    },
+    {
+        "question": "Quel est l'antidote de la Warfarine (Coumadine®) ?",
+        "options": ["Vitamine K", "Paracétamol", "Aspirine", "Ibuprofène"],
+        "correct": 0,
+        "feedback": "La Warfarine est un AVK, son antidote est donc la Vitamine K."
+    },
+    {
+        "question": "Le taux normal de prothrombine (TP) pour un patient SANS traitement anticoagulant est de :",
+        "options": ["75%", "100%", "125%", "50%"],
+        "correct": 1,
+        "feedback": "Un TP normal est de 100%. Il diminue chez les patients sous AVK."
+    },
+    {
+        "question": "Quel examen biologique permet de surveiller l'efficacité d'un traitement par Warfarine (AVK) ?",
+        "options": ["Le TCA", "L'INR", "L'activité anti-Xa", "La numération plaquettaire"],
+        "correct": 1,
+        "feedback": "Le suivi des AVK se fait par l'INR (et non par le TP), avec une cible habituelle entre 2 et 3."
+    },
+    {
+        "question": "Lequel de ces médicaments est un Antiagrégant Plaquetaire (AAP) ?",
+        "options": ["Xarelto®", "Lovenox®", "Plavix®", "Coumadine®"],
+        "correct": 2,
+        "feedback": "Plavix® (Clopidogrel) est un AAP. Les autres sont des anticoagulants (AOD, HBPM, AVK)."
+    },
+    {
+        "question": "Quel est le risque spécifique, bien que rare, associé aux héparines (HNF et HBPM) ?",
+        "options": [
+            "Insuffisance rénale",
+            "Thrombopénie Induite par l'Héparine (TIH)",
+            "Réaction allergique cutanée",
+            "Augmentation de la tension"
+        ],
+        "correct": 1,
+        "feedback": "La TIH est une complication grave mais rare où le corps réagit à l'héparine en détruisant les plaquettes."
+    },
+    {
+        "question": "Quel est le mécanisme d'action du Dabigatran (Pradaxa®) ?",
+        "options": [
+            "Inhibiteur de la vitamine K",
+            "Inhibiteur direct de la thrombine",
+            "Inhibiteur du facteur Xa",
+            "Inhibiteur de l'agrégation plaquettaire"
+        ],
+        "correct": 1,
+        "feedback": "Le Dabigatran est un AOD qui inhibe directement la thrombine (facteur IIa)."
+    },
+    {
+        "question": "Quelle est la dernière étape du processus d'hémostase, qui dissout le caillot ?",
+        "options": ["Vasoconstriction", "Coagulation", "Hémostase primaire", "Fibrinolyse"],
+        "correct": 3,
+        "feedback": "La fibrinolyse est le processus naturel de dissolution des caillots de fibrine une fois la cicatrisation terminée."
+    },
+    {
+        "question": "Quel type de médicament est formellement déconseillé en automédication avec les AVK ?",
+        "options": ["Paracétamol", "AINS (Anti-inflammatoires)", "Spasfon", "Vitamine C"],
+        "correct": 1,
+        "feedback": "Les AINS augmentent considérablement le risque hémorragique lorsqu'ils sont associés aux AVK."
+    }
+]

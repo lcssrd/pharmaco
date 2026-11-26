@@ -1,0 +1,48 @@
+---
+/**
+ * Barre d'onglets d'une fiche (motif « onglets » des WAI-ARIA Authoring Practices).
+ * L'apparence de l'onglet actif découle de aria-selected : le script n'a qu'à changer cet attribut.
+ */
+import type { Onglet } from '../../types/fiche';
+
+interface Props {
+    onglets: Onglet[];
+    /** Classes de colonnes de la grille */
+    grille: string;
+}
+
+const { onglets, grille } = Astro.props;
+---
+
+<div class="pt-6">
+    <div
+        role="tablist"
+        aria-label="Sections de la fiche"
+        class:list={['p-1.5 bg-slate-200/60 rounded-xl grid gap-2', grille]}
+        data-onglets>
+        {onglets.map((onglet, i) => (
+            <button
+                type="button"
+                role="tab"
+                id={`onglet-${onglet.id}`}
+                aria-controls={onglet.id}
+                aria-selected={i === 0 ? 'true' : 'false'}
+                tabindex={i === 0 ? 0 : -1}
+                class:list={[
+                    'nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm',
+                    'aria-selected:bg-linear-to-r aria-selected:text-white aria-selected:shadow-md',
+                    onglet.actif,
+                    onglet.survol,
+                ]}>
+                {onglet.libelle}
+            </button>
+        ))}
+    </div>
+</div>
+
+<script>
+    import { initialiserOnglets } from '../../scripts/onglets';
+
+    const liste = document.querySelector<HTMLElement>('[data-onglets]');
+    if (liste) initialiserOnglets(liste);
+</script>

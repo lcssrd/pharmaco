@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://pharma.eidos-simul.fr/sitemap.xml

@@ -1,0 +1,98 @@
+[
+    {
+        "question": "Selon la tétrade de Celse, quels sont les signes locaux CARDINAUX de l'inflammation aiguë ?",
+        "options": [
+            "Fièvre, frissons, tachycardie, hypotension",
+            "Chaleur, rougeur, douleur, œdème",
+            "Céphalée, nausée, vomissement, dyspnée",
+            "Pâleur, cyanose, sueurs, polypnée"
+        ],
+        "correct": 1,
+        "feedback": "Les quatre signes cardinaux de l'inflammation sont la <strong>chaleur</strong>, la <strong>rougeur</strong>, l'<strong>œdème</strong> et la <strong>douleur</strong>. Ils sont le résultat de la vasodilatation et de l'exsudation plasmatique."
+    },
+    {
+        "question": "Quel est l'effet secondaire majeur à surveiller chez un patient sous AINS ?",
+        "options": [
+            "L'insuffisance surrénale",
+            "L'ulcère gastro-duodénal",
+            "La rétention hydrosodée",
+            "L'hypotension orthostatique"
+        ],
+        "correct": 1,
+        "feedback": "Les AINS inhibent COX-1, réduisant la protection de la muqueuse gastrique, d'où le risque d'ulcère et d'hémorragie digestive."
+    },
+    {
+        "question": "Quel est le risque principal d'un arrêt brutal des Corticoïdes après un traitement prolongé ?",
+        "options": [
+            "Un syndrome de Cushing",
+            "Une crise d'asthme",
+            "Une Insuffisance Surrénale Aiguë",
+            "Une hypersécrétion de cortisol"
+        ],
+        "correct": 2,
+        "feedback": "L'arrêt brutal empêche l'axe hypothalamo-hypophyso-surrénalien de reprendre sa production de cortisol, entraînant un risque mortel d'<strong>insuffisance surrénale aiguë</strong>."
+    },
+    {
+        "question": "Quel est le mécanisme d'action des AINS ?",
+        "options": [
+            "Inhibition de la Phospholipase A2",
+            "Inhibition de la Cyclooxygénase (COX)",
+            "Inhibition du Facteur Xa",
+            "Stabilisation des membranes cellulaires"
+        ],
+        "correct": 1,
+        "feedback": "Les AINS inhibent les COX, bloquant la transformation de l'acide arachidonique en prostaglandines."
+    },
+    {
+        "question": "Quel est le moment optimal de la prise d'un Corticoïde (Glucocorticoïde) oral ?",
+        "options": ["Le soir au coucher", "À jeun", "Le matin au petit-déjeuner", "Au milieu de la nuit"],
+        "correct": 2,
+        "feedback": "La prise <strong>matinale</strong> respecte le pic physiologique de cortisol et diminue le risque d'insomnie et d'effets endocriniens."
+    },
+    {
+        "question": "Quelle association de médicaments est formellement déconseillée avec des AINS en raison du risque hémorragique ?",
+        "options": ["Paracétamol", "Anticoagulant oral (AVK ou AOD)", "Anti-hypertenseur", "Probiotiques"],
+        "correct": 1,
+        "feedback": "L'association AINS + <strong>Anticoagulant</strong> multiplie le risque d'hémorragie digestive."
+    },
+    {
+        "question": "Quel effet secondaire à long terme des Corticoïdes justifie un contrôle strict de la glycémie ?",
+        "options": ["L'hypoglycémie", "L'hyponatrémie", "L'hyperglycémie", "L'hypocalcémie"],
+        "correct": 2,
+        "feedback": "Les glucocorticoïdes ont un effet <strong>hyper-glycémiant</strong>, pouvant entraîner un diabète cortisonique chez les patients prédisposés."
+    },
+    {
+        "question": "Pourquoi les AINS sont-ils contre-indiqués à partir du 6e mois de grossesse ?",
+        "options": [
+            "Risque d'anomalies osseuses chez le fœtus",
+            "Risque de fermeture prématurée du canal artériel",
+            "Risque de malformations cardiaques",
+            "Risque d'insuffisance surrénale maternelle"
+        ],
+        "correct": 1,
+        "feedback": "La prise d'AINS est strictement contre-indiquée dès le début du 6e mois (24 SA) en raison du risque de toxicité cardio-pulmonaire fœtale, notamment la <strong>fermeture prématurée du canal artériel</strong>."
+    },
+    {
+        "question": "Quel est le principal risque infectieux ou immunologique associé à un traitement corticoïde au long cours ?",
+        "options": [
+            "Augmentation des lymphocytes",
+            "Sévérité accrue des infections",
+            "Activation des anticorps",
+            "Diminution de la vitesse de sédimentation"
+        ],
+        "correct": 1,
+        "feedback": "Les corticoïdes sont immunosuppresseurs et anti-inflammatoires, ce qui masque les signes cliniques d'infection et en augmente la gravité."
+    },
+    {
+        "question": "Chez un patient âgé et/ou déshydraté, quel organe est particulièrement à risque d'être touché par la prise d'AINS ?",
+        "options": ["Le Foie", "Le Cœur", "Le Rein", "Le Pancréas"],
+        "correct": 2,
+        "feedback": "Les AINS diminuent la perfusion rénale (via les prostaglandines), ce qui peut entraîner une <strong>insuffisance rénale aiguë</strong>, surtout en cas de terrain fragile (âgé, déshydraté, insuffisance cardiaque)."
+    },
+    {
+        "question": "L'un des effets secondaires métaboliques des corticoïdes est la rétention hydrosodée. Quelle complication clinique majeure cela peut-il entraîner ?",
+        "options": ["L'hypoglycémie", "L'hypotension", "L'hypertension artérielle", "La déshydratation"],
+        "correct": 2,
+        "feedback": "La rétention de sel et d'eau due à l'effet minéralocorticoïde des corticoïdes augmente la volémie et conduit à l'<strong>hypertension artérielle</strong> et aux œdèmes."
+    }
+]

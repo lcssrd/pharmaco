@@ -4,80 +4,104 @@
 
 Ce dépôt centralise un ensemble de fiches de synthèse structurées portant sur les principales classes médicamenteuses abordées dans le cursus des Études en Soins Infirmiers (IFSI). Chaque synthèse est conçue pour offrir une vision claire, académique et rapide des points essentiels à maîtriser.
 
+Cette version (Pharmaco2) est une réécriture complète de la première version du site, avec un affichage et un fonctionnement identiques : mêmes pages, mêmes adresses (`antico.html#avk`), même apparence, mêmes scores de quiz mémorisés.
+
 ## 📚 Sommaire des Synthèses
 
-Les thématiques suivantes sont actuellement disponibles :
-
-*   **Douleur & Inflammation** : Antalgiques, Anti-inflammatoires.
-*   **Système Cardiovasculaire** : Antihypertenseurs (Anti-HTA), Anticoagulants, Antiarythmiques, Hypolipémiants.
-*   **Système Nerveux & Psychiatrie** : Psychotropes, Anxiolytiques.
-*   **Métabolisme & Endocrinologie** : Antidiabétiques.
-*   **Pathologies Spécifiques** : Asthme, Cancer (Anticancéreux), Immunosuppresseurs.
-*   **Système Digestif** : Pathologies et traitements digestifs.
+- **Douleur & Inflammation** : Antalgiques, Anti-inflammatoires.
+- **Système Cardiovasculaire** : Antihypertenseurs (Anti-HTA), Anticoagulants, Antiarythmiques, Hypolipémiants.
+- **Système Nerveux & Psychiatrie** : Psychotropes, Anxiolytiques.
+- **Métabolisme & Endocrinologie** : Antidiabétiques.
+- **Pathologies Spécifiques** : Asthme, Cancer (Anticancéreux), Immunosuppresseurs.
+- **Système Digestif** : Pathologies et traitements digestifs.
 
 ## ✨ Fonctionnalités
 
-*   **Recherche** dans toutes les fiches depuis l'accueil (nom de molécule, nom commercial, mot-clé), avec ouverture directe du bon onglet et surlignage du passage.
-*   **Onglets dans l'adresse** : chaque section a son propre lien (`antico.html#avk`), partageable, et le bouton « Retour » du téléphone revient à l'onglet précédent.
-*   **Quiz** : questions et réponses mélangées à chaque tentative, meilleur score mémorisé (affiché sur la carte de la fiche à l'accueil), bouton « Refaire mes erreurs ».
-*   **Écran d'accueil** : le site peut être ajouté à l'écran d'accueil du téléphone (menu du navigateur). Il n'a pas de version hors ligne : une connexion reste nécessaire.
+- **Recherche** dans toutes les fiches depuis l'accueil (nom de molécule, nom commercial, mot-clé), avec ouverture directe du bon onglet et surlignage du passage.
+- **Onglets dans l'adresse** : chaque section a son propre lien (`antico.html#avk`), partageable, et le bouton « Retour » du téléphone revient à l'onglet précédent.
+- **Quiz** : questions et réponses mélangées à chaque tentative, meilleur score mémorisé (affiché sur la carte de la fiche à l'accueil), bouton « Refaire mes erreurs ».
+- **Écran d'accueil** : le site peut être ajouté à l'écran d'accueil du téléphone. Il n'a pas de version hors ligne.
+- **Sans JavaScript**, les fiches restent lisibles : tous les onglets s'affichent les uns sous les autres.
 
 Les scores des quiz sont enregistrés uniquement dans le navigateur de l'étudiant (aucun compte, aucune donnée envoyée).
 
 ## 🛠️ Modifier le site
 
-Le site reste un ensemble de pages HTML statiques publiées par GitHub Pages, mis en forme avec [Tailwind CSS 4](https://tailwindcss.com). Une petite étape de construction génère quelques fichiers à partir des fiches.
-
-Tailwind 4 s'appuie sur des fonctions CSS récentes : le site s'affiche correctement à partir de Safari 16.4 (iOS 16.4, 2023), Chrome 111 et Firefox 128. Sur un appareil plus ancien, le contenu reste accessible mais la mise en page peut être dégradée.
+Le site est construit avec [Astro](https://astro.build) (pages statiques), [Tailwind CSS 4](https://tailwindcss.com) et TypeScript. Il s'affiche correctement à partir de Safari 16.4 (iOS 16.4), Chrome 111 et Firefox 128.
 
 ### Organisation
 
-| Fichier | Rôle |
-| --- | --- |
-| `*.html` | Les fiches et l'accueil. Le contenu et les questions du quiz (`quizData`, en bas de chaque fiche) se modifient directement ici. |
-| `assets/js/site.js` | Code commun : onglets, quiz, recherche ; désinstalle aussi l'ancienne version hors ligne. |
-| `assets/css/source.css` | Styles communs et configuration de Tailwind. Compilé dans `assets/css/site.css`. |
-| `assets/css/couleurs.css` | Palette de couleurs du site (celle d'origine, conservée lors du passage à Tailwind 4). |
-| `scripts/build.mjs` | Génère `assets/js/icones.js` (icônes utilisées), `assets/data/recherche.json` (index de recherche). |
-| `sw.js` | Ne sert plus qu'à désinstaller l'ancienne version hors ligne chez les visiteurs qui l'avaient ; à garder quelques mois, puis à supprimer. |
+| Dossier ou fichier                | Rôle                                                                                                                                                                                 |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `src/contenu/fiches/<fiche>/`     | **Le contenu d'une fiche** : c'est ici qu'on travaille au quotidien (voir ci-dessous).                                                                                               |
+| `src/contenu/ordre-accueil.json`  | Ordre des fiches sur l'accueil (et dans le plan du site).                                                                                                                            |
+| `src/components/`, `src/layouts/` | Mise en page commune : en-tête, onglets, quiz, pied de page, cartes de l'accueil.                                                                                                    |
+| `src/scripts/`                    | Code exécuté dans le navigateur : onglets, quiz, recherche, graphiques.                                                                                                              |
+| `src/lib/`                        | Règles indépendantes de la page (quiz, recherche, texte), couvertes par les tests ; `src/lib/serveur/` ne sert qu'à la construction (chargement et vérification des fiches, icônes). |
+| `src/pages/`                      | Les pages produites : accueil, une page par fiche, index de recherche, plan du site.                                                                                                 |
+| `src/styles/`                     | Styles communs et palette de couleurs (celle d'origine).                                                                                                                             |
+| `src/data/`                       | Informations du site (auteur, version, liens externes, couleurs des cartes).                                                                                                         |
+| `public/`                         | Fichiers publiés tels quels : icônes, images, PDF, `manifest.webmanifest`, `CNAME`…                                                                                                  |
+| `tests/`                          | Tests automatiques (`npm test`).                                                                                                                                                     |
 
-Les fichiers `assets/css/site.css`, `assets/js/icones.js`, `assets/data/recherche.json` ne se modifient pas à la main.
+#### Une fiche
+
+Chaque fiche a son dossier, dont le nom donne l'adresse de la page (`antico` → `antico.html`) :
+
+| Fichier         | Contenu                                                                                                                                                                                                                                  |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `fiche.ts`      | Titre, description pour les moteurs de recherche, date de mise à jour, carte de l'accueil, couleurs, liste des onglets, texte du quiz. Chaque champ est décrit dans `src/types/fiche.ts` ; l'éditeur le complète et signale les erreurs. |
+| `<onglet>.html` | Le contenu d'un onglet (un fichier par onglet, du nom de son identifiant). HTML avec les classes Tailwind.                                                                                                                               |
+| `quiz.json`     | Les questions : `question`, `options` (propositions), `correct` (position de la bonne réponse, 0 pour la première), `feedback` (explication).                                                                                            |
+| `graphiques.ts` | Facultatif : graphiques Chart.js, rattachés à un `<canvas id="…">` du contenu.                                                                                                                                                           |
+
+Dans le contenu, une icône [Lucide](https://lucide.dev/icons) s'écrit `<i data-lucide="pill" class="w-4 h-4"></i>` : elle est remplacée par l'image de l'icône lors de la construction.
+
+Les images vont dans `public/images/` (`<img src="images/…" width="…" height="…" loading="lazy" alt="…">`).
 
 ### Commandes
 
-Il faut [Node.js](https://nodejs.org) (version 20 ou plus).
+Il faut [Node.js](https://nodejs.org) 22 ou plus.
 
 ```bash
-npm install
+npm install        # une fois, pour installer les outils
+npm run dev        # aperçu local, rechargé à chaque modification : http://localhost:4321/index.html
+npm test           # vérifie le contenu des fiches et les règles du quiz et de la recherche
+npm run build      # construit le site dans dist/
+npm run preview    # aperçu du site construit
+npm run verify     # tout vérifier comme lors du déploiement (format, lint, types, tests, construction)
+npm run format     # remet en forme le code (le HTML des fiches n'est pas touché)
 ```
 
-```bash
-npm run build
-```
+La construction **s'arrête avec un message clair** si une fiche est incomplète : onglet sans fichier, fichier sans onglet, question dont la bonne réponse n'existe pas, icône inconnue, fiche absente de `ordre-accueil.json`…
 
-`npm run dev` recompile le CSS automatiquement à chaque modification d'une fiche (pratique pendant qu'on écrit). Le déploiement GitHub Pages relance `npm run build` à chaque mise en ligne : un oubli en local n'a donc pas de conséquence sur le site publié.
+`npm audit` doit afficher « 0 vulnerabilities ». S'il signale une alerte, **ne pas lancer `npm audit fix --force`** (risque d'installer une version majeure incompatible) : regarder de quelle dépendance il s'agit avec `npm ls nom-du-paquet`. Ces outils ne servent qu'à construire le site et ne sont jamais envoyés aux étudiants.
 
-`npm audit` doit afficher « 0 vulnerabilities ». S'il signale un jour une alerte, **ne pas lancer `npm audit fix --force`** : cette commande peut installer une nouvelle version majeure d'un outil et casser la construction. Mieux vaut regarder de quelle dépendance il s'agit (`npm ls nom-du-paquet`) ; ces outils ne servent qu'à construire le site et ne sont jamais envoyés aux étudiants.
-
-Pour intégrer une vidéo YouTube, copier le code d'intégration complet proposé par YouTube (bouton « Partager » puis « Intégrer ») : il contient `referrerpolicy="strict-origin-when-cross-origin"`, sans lequel certains navigateurs affichent « Erreur 153 ».
-
-Pour prévisualiser le site en local, il faut un petit serveur (par exemple `python -m http.server`) puis ouvrir `http://localhost:8000`.
+Pour intégrer une vidéo YouTube, copier le code d'intégration complet proposé par YouTube (« Partager » puis « Intégrer ») : il contient `referrerpolicy="strict-origin-when-cross-origin"`, sans lequel certains navigateurs affichent « Erreur 153 ». Ajouter `loading="lazy"`.
 
 ### Après une modification de contenu
 
-Mettre à jour la date en bas de la fiche (`<time datetime="AAAA-MM-JJ">`), dans le pied de page.
+Mettre à jour `miseAJour` dans le `fiche.ts` de la fiche (date affichée en bas de la page).
 
 ### Ajouter une fiche
 
-1.  Partir d'une fiche existante : garder l'en-tête (bouton « Toutes les fiches »), la barre d'onglets et le pied de page.
-2.  Les classes Tailwind s'écrivent en version 4 (par exemple `bg-linear-to-r` pour un dégradé, `shrink-0`, `grow`). Chaque onglet est un bouton `<button data-page="identifiant" data-actif="from-… to-…" class="nav-btn …">` qui correspond à une section `<div id="identifiant" class="page hidden">`. `data-actif` donne le dégradé du bouton actif, `data-survol` (facultatif) sa couleur au survol.
-3.  Ajouter la carte sur l'accueil (`<a href="fiche.html" data-fiche="fiche" …>`) et l'adresse dans `sitemap.xml`.
-4.  Lancer `npm run build`.
+1.  Copier le dossier d'une fiche existante dans `src/contenu/fiches/` et le renommer (ce nom sera l'adresse de la page).
+2.  Adapter `fiche.ts` (onglets, couleurs, carte de l'accueil), un fichier `.html` par onglet, et `quiz.json`.
+3.  Ajouter le nom du dossier dans `src/contenu/ordre-accueil.json`.
+4.  Lancer `npm test` puis `npm run dev` pour vérifier.
+
+La carte de l'accueil, l'index de recherche et le plan du site (`sitemap.xml`) se mettent à jour d'eux-mêmes.
+
+### Mise en ligne
+
+Le site est publié par GitHub Pages (`.github/workflows/deploy.yml`) : à chaque mise à jour de la branche `main`, tout est vérifié puis seul le dossier `dist/` est publié. Une proposition de modification (pull request) est vérifiée sans être publiée.
+
+Dans les réglages du dépôt GitHub, « Pages » doit avoir pour source « GitHub Actions ».
 
 ## 👥 Équipe du Projet
 
-*   **Lucas Séraudie** : Créateur et auteur principal, conception et développement des supports visuels. Et c'est peut être pas super bien codé selon les règles de bonnes pratiques... C'est ma faute !
-*   **Thomas Duflot** : Relecture critique et validation de l'exactitude des contenus scientifiques.
+- **Lucas Séraudie** : Créateur et auteur principal, conception et développement des supports visuels.
+- **Thomas Duflot** : Relecture critique et validation de l'exactitude des contenus scientifiques.
 
 ## 🔎 Sources et relecture
 
@@ -90,9 +114,11 @@ Les notions qui ne figurent pas dans cette base (physiopathologie, seuils diagno
 Le contenu de ce projet est mis à disposition selon les termes de la licence [Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
 
 Vous êtes libre de :
-*   **Partager** : Copier et redistribuer le matériel sous n'importe quel format.
-*   **Adapter** : Remixer, transformer et créer à partir du matériel pour toute utilisation, même commerciale.
+
+- **Partager** : Copier et redistribuer le matériel sous n'importe quel format.
+- **Adapter** : Remixer, transformer et créer à partir du matériel pour toute utilisation, même commerciale.
 
 Selon les conditions suivantes :
-*   **Attribution** : Vous devez citer et créditer ce dépot, fournir un lien vers la licence et indiquer si des modifications ont été effectuées.
-*   **Partage dans les Mêmes Conditions** : Si vous modifiez le matériel, vous devez distribuer votre contribution sous la même licence que l'original.
+
+- **Attribution** : Vous devez citer et créditer ce dépot, fournir un lien vers la licence et indiquer si des modifications ont été effectuées.
+- **Partage dans les Mêmes Conditions** : Si vous modifiez le matériel, vous devez distribuer votre contribution sous la même licence que l'original.

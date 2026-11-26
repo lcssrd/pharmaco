@@ -1,0 +1,162 @@
+[
+    {
+        "question": "La survenue d'une fièvre > 38,3°C chez un patient sous chimiothérapie est une urgence absolue. Comment nomme-t-on ce syndrome ?",
+        "options": [
+            "Un choc septique",
+            "Une réaction allergique",
+            "Un syndrome de lyse tumorale",
+            "Une neutropénie fébrile"
+        ],
+        "correct": 3,
+        "feedback": "La neutropénie fébrile est une complication grave. Le patient doit consulter en urgence pour une antibiothérapie probabiliste."
+    },
+    {
+        "question": "Avant d'injecter une chimiothérapie dans une chambre implantable, quelle vérification est IMPÉRATIVE ?",
+        "options": [
+            "La présence d'un retour veineux franc",
+            "La date de la dernière radio pulmonaire",
+            "La pression artérielle du patient",
+            "La température du produit"
+        ],
+        "correct": 0,
+        "feedback": "L'absence de retour veineux doit faire suspecter une obstruction. Injecter sans ce contrôle expose à un risque majeur d'extravasation."
+    },
+    {
+        "question": "Un patient sous Paclitaxel se plaint soudainement de dyspnée et de prurit. Quelle est votre priorité ?",
+        "options": [
+            "Arrêter immédiatement la perfusion et alerter le médecin",
+            "Augmenter le débit de la perfusion",
+            "Rassurer le patient",
+            "Administrer un antalgique"
+        ],
+        "correct": 0,
+        "feedback": "Il s'agit de signes clairs d'une réaction d'hypersensibilité, une urgence vitale. Le premier geste est d'arrêter l'agent causal."
+    },
+    {
+        "question": "Quelle est la toxicité majeure et spécifique du Cisplatine ?",
+        "options": [
+            "Diarrhées sévères",
+            "Néphrotoxicité et ototoxicité",
+            "Neuropathies périphériques",
+            "Cardiotoxicité"
+        ],
+        "correct": 1,
+        "feedback": "Le Cisplatine est très toxique pour les reins et l'audition, nécessitant hyperhydratation et surveillance de la fonction rénale."
+    },
+    {
+        "question": "Quel est le premier geste infirmier à effectuer en cas de suspicion d'extravasation d'un produit vésicant ?",
+        "options": [
+            "Retirer immédiatement l'aiguille",
+            "Injecter du sérum physiologique",
+            "Appliquer une poche de glace",
+            "Arrêter la perfusion sans retirer l'aiguille"
+        ],
+        "correct": 3,
+        "feedback": "Il faut arrêter la perfusion mais laisser l'aiguille en place pour tenter d'aspirer le maximum de produit extravasé et limiter les lésions."
+    },
+    {
+        "question": "Les effets secondaires de l'immunothérapie sont principalement de nature :",
+        "options": ["Hématologique", "Auto-immune", "Neurologique", "Rénale"],
+        "correct": 1,
+        "feedback": "En stimulant le système immunitaire, l'immunothérapie peut provoquer des réactions où le corps attaque ses propres organes (colite, etc.)."
+    },
+    {
+        "question": "Quel conseil essentiel donnez-vous à un patient souffrant de mucite de grade 3 (ulcérations douloureuses) ?",
+        "options": [
+            "Privilégier une alimentation mixée ou liquide et des soins de bouche antalgiques",
+            "Utiliser un bain de bouche à base d'alcool fort",
+            "Manger des aliments très chauds pour cautériser",
+            "Arrêter de s'alimenter pendant 24h"
+        ],
+        "correct": 0,
+        "feedback": "La priorité est de maintenir une hydratation et une nutrition suffisantes tout en calmant la douleur pour éviter la dénutrition."
+    },
+    {
+        "question": "Quelle est la principale surveillance infirmière pour un patient sous Irinotécan ?",
+        "options": [
+            "La fonction cardiaque",
+            "L'apparition de mucites",
+            "La surveillance cutanée",
+            "La gestion des diarrhées"
+        ],
+        "correct": 3,
+        "feedback": "L'Irinotécan provoque fréquemment des diarrhées, parfois très sévères (syndrome cholinergique), qui doivent être anticipées et gérées."
+    },
+    {
+        "question": "Laquelle de ces classes est principalement responsable de neuropathies périphériques ?",
+        "options": [
+            "Les antimétabolites",
+            "Les agents alkylants",
+            "Les poisons du fuseau (Taxanes, Vinca-alcaloïdes)",
+            "Les anticorps monoclonaux"
+        ],
+        "correct": 2,
+        "feedback": "Les poisons du fuseau altèrent les microtubules, essentiels au transport axonal, provoquant des atteintes nerveuses sensitives et motrices."
+    },
+    {
+        "question": "Le 'double contrôle infirmier' avant administration d'une chimiothérapie est une étape de :",
+        "options": [
+            "Confort pour le patient",
+            "Traçabilité administrative",
+            "Sécurisation du circuit du médicament",
+            "Formation des nouveaux infirmiers"
+        ],
+        "correct": 2,
+        "feedback": "Cette ultime vérification par deux professionnels est une barrière de sécurité essentielle pour prévenir les erreurs médicamenteuses."
+    },
+    {
+        "question": "Quels EPI sont indispensables pour l'infirmier(e) qui administre une chimiothérapie ?",
+        "options": [
+            "Sur-blouse imperméable, double paire de gants, lunettes",
+            "Blouse, sur-blouse, charlotte",
+            "Uniquement des gants simples",
+            "Un masque chirurgical seul"
+        ],
+        "correct": 0,
+        "feedback": "La protection contre les risques chimiques inclut une protection cutanée (sur-blouse, gants) et oculaire (lunettes)."
+    },
+    {
+        "question": "Quel est le mécanisme d'action de l'immunothérapie (ex: anti-PD-1) ?",
+        "options": [
+            "Bloquer la synthèse de l'ADN tumoral",
+            "Affamer la tumeur en bloquant ses vaisseaux",
+            "Bloquer les récepteurs hormonaux",
+            "Aider le système immunitaire à attaquer la tumeur"
+        ],
+        "correct": 3,
+        "feedback": "L'immunothérapie lève les 'freins' du système immunitaire, lui permettant de reconnaître et de détruire les cellules cancéreuses."
+    },
+    {
+        "question": "Un patient sous hormonothérapie se plaint de bouffées de chaleur. Que lui expliquez-vous ?",
+        "options": [
+            "C'est un signe d'allergie au traitement",
+            "Il doit immédiatement arrêter son traitement",
+            "C'est un effet secondaire normal lié à la carence hormonale",
+            "C'est un signe que le traitement ne fonctionne pas"
+        ],
+        "correct": 2,
+        "feedback": "L'éducation thérapeutique consiste à expliquer les effets attendus pour dédramatiser et améliorer l'adhésion au traitement."
+    },
+    {
+        "question": "Les thérapies ciblées se terminant par '-mab' (ex: Trastuzumab) sont des...",
+        "options": [
+            "Inhibiteurs de tyrosine kinase",
+            "Anticorps monoclonaux",
+            "Antimétabolites",
+            "Hormones de synthèse"
+        ],
+        "correct": 1,
+        "feedback": "Le suffixe '-mab' signifie Monoclonal AntiBody. Ce sont de grosses molécules administrées par voie IV qui ciblent des récepteurs à la surface des cellules."
+    },
+    {
+        "question": "Pourquoi la fatigue liée au cancer doit-elle être systématiquement évaluée par l'infirmier(e) ?",
+        "options": [
+            "Car c'est un symptôme majeur impactant la qualité de vie qui nécessite des conseils spécifiques",
+            "Pour ajuster les doses de chimiothérapie",
+            "Pour décider d'une hospitalisation",
+            "Car elle est toujours le signe d'une anémie sévère"
+        ],
+        "correct": 0,
+        "feedback": "La fatigue est multifactorielle et souvent sous-estimée. L'évaluer permet de la reconnaître comme un vrai symptôme et de proposer des stratégies de gestion non-médicamenteuses."
+    }
+]

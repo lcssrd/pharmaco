@@ -1,0 +1,83 @@
+---
+/** Mise en page d'une fiche : en-tête et onglets, contenu des onglets, quiz, pied de page */
+import BaseLayout from './BaseLayout.astro';
+import EnteteFiche from '../components/fiche/EnteteFiche.astro';
+import PanneauOnglet from '../components/fiche/PanneauOnglet.astro';
+import PiedFiche from '../components/fiche/PiedFiche.astro';
+import Quiz from '../components/fiche/Quiz.astro';
+import type { FicheChargee } from '../lib/serveur/fiches';
+import { ONGLET_QUIZ } from '../lib/serveur/fiches';
+import { enJsonPourHtml } from '../lib/serveur/json';
+
+interface Props {
+    fiche: FicheChargee;
+}
+
+const { fiche } = Astro.props;
+const { apparence } = fiche;
+const aDesGraphiques = Object.keys(fiche.graphiques).length > 0;
+---
+
+<BaseLayout
+    titre={fiche.seo.titre}
+    description={fiche.seo.description}
+    ogTitre={fiche.seo.ogTitre}
+    ogDescription={fiche.seo.ogDescription}
+    ogType="article"
+    page={`${fiche.slug}.html`}
+    classeHtml="scroll-smooth">
+    <!-- Sans JavaScript, tous les onglets sont affichés les uns sous les autres (sauf le quiz).
+         Dans la couche « base » de Tailwind : c'est là qu'est la règle [hidden] à contrer. -->
+    <noscript slot="head">
+        <style is:inline>
+            @layer base {
+                .page[hidden] {
+                    display: block !important;
+                }
+                [role='tablist'],
+                #quiz {
+                    display: none !important;
+                }
+            }
+        </style>
+    </noscript>
+
+    <div
+        class:list={[
+            'max-w-6xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden',
+            { 'min-h-screen flex flex-col': apparence.pleineHauteur },
+        ]}>
+        <EnteteFiche fiche={fiche} />
+
+        <main id="contenu" class:list={['p-4 sm:p-6 md:p-8', { grow: apparence.pleineHauteur }]}>
+            {fiche.onglets.map((onglet, i) => (
+                <PanneauOnglet id={onglet.id} visible={i === 0}>
+                    {onglet.id === ONGLET_QUIZ ? (
+                        <Quiz
+                            fiche={fiche.slug}
+                            questions={fiche.questions}
+                            intro={fiche.quiz.intro}
+                            centre={fiche.quiz.centre}
+                            bouton={fiche.quiz.bouton}
+                        />
+                    ) : (
+                        <Fragment set:html={fiche.contenus[onglet.id]} />
+                    )}
+                </PanneauOnglet>
+            ))}
+        </main>
+
+        <PiedFiche fiche={fiche} />
+    </div>
+
+    {aDesGraphiques && (
+        <script is:inline type="application/json" id="donnees-graphiques" set:html={enJsonPourHtml(fiche.graphiques)} />
+    )}
+
+    <script>
+        import { initialiserGraphiques } from '../scripts/graphiques';
+
+        const donnees = document.getElementById('donnees-graphiques');
+        if (donnees) void initialiserGraphiques(donnees);
+    </script>
+</BaseLayout>

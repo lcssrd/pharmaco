@@ -1,0 +1,38 @@
+<section class="bg-linear-to-br from-gray-100 to-slate-200 rounded-2xl p-6 md:p-12">
+    <h2 class="text-3xl sm:text-4xl/10 md:text-5xl/none font-extrabold mb-12 text-center leading-tight text-slate-800">
+        <span class="bg-linear-to-br from-gray-600 to-slate-800 bg-clip-text text-transparent">Synthèse Générale</span>
+    </h2>
+
+    <div class="bg-white/90 backdrop-blur-xs rounded-xl shadow-lg overflow-hidden mb-12 max-w-5xl mx-auto">
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm text-left">
+                <thead class="bg-slate-800 text-white">
+                    <tr>
+                        <th class="p-4 font-semibold tracking-wide">Famille</th>
+                        <th class="p-4 font-semibold tracking-wide">Mécanisme Principal</th>
+                        <th class="p-4 font-semibold tracking-wide">Exemple Clé</th>
+                        <th class="p-4 font-semibold tracking-wide">Vigilance Majeure</th>
+                    </tr>
+                </thead>
+                <tbody class="text-slate-700 divide-y divide-slate-100">
+                    <tr class="hover:bg-slate-50 transition-colors"><td class="p-4 font-bold text-sky-600">Stabilisants de membrane</td><td class="p-4">Blocage canaux Na+</td><td class="p-4">Flécaïnide (Flecaïne®)</td><td class="p-4">Effet pro-arythmogène</td></tr>
+                    <tr class="hover:bg-slate-50 transition-colors"><td class="p-4 font-bold text-purple-600">Bêta-bloquants</td><td class="p-4">Bêta-bloquant</td><td class="p-4">Métoprolol</td><td class="p-4">Ne jamais arrêter brutalement, CI (asthme, BAV)</td></tr>
+                    <tr class="hover:bg-slate-50 transition-colors"><td class="p-4 font-bold text-orange-500">Inhibiteurs potassiques</td><td class="p-4">Blocage canaux K+</td><td class="p-4">Amiodarone (Cordarone®)</td><td class="p-4">Toxicité multiple (thyroïde, poumon, peau), torsades de pointes</td></tr>
+                    <tr class="hover:bg-slate-50 transition-colors"><td class="p-4 font-bold text-green-600">Inhibiteurs calciques</td><td class="p-4">Blocage canaux Ca2+</td><td class="p-4">Vérapamil (Isoptine®)</td><td class="p-4">Bradycardie, BAV, constipation</td></tr>
+                    <tr class="hover:bg-slate-50 transition-colors"><td class="p-4 font-bold text-amber-600">Digitaliques</td><td class="p-4">Inotrope&nbsp;+, Chronotrope&nbsp;-</td><td class="p-4">Digoxine</td><td class="p-4">Marge thérapeutique étroite, kaliémie</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="bg-white/90 backdrop-blur-xs rounded-xl shadow-lg p-6 sm:p-8 max-w-5xl mx-auto">
+        <h3 class="font-bold text-slate-800 mb-6 text-center text-xl flex justify-center items-center gap-2">
+            <i data-lucide="bar-chart-2" class="text-slate-500"></i> Profils Pharmacodynamiques
+        </h3>
+        <div class="flex justify-center items-center">
+            <div class="w-full md:w-3/4 lg:w-2/3 max-w-2xl">
+                <canvas id="aarChart"></canvas>
+            </div>
+        </div>
+    </div>
+</section>

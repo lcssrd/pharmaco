@@ -1,0 +1,17 @@
+---
+/** « Lucas Séraudie - 2026 », le nom en dégradé */
+import { SITE } from '../data/site';
+
+interface Props {
+    /** Classes du nom (dégradé) */
+    classe: string;
+    /** Ajoute le numéro de version (« - V5 ») */
+    version?: boolean;
+}
+
+const { classe, version = false } = Astro.props;
+const suite = ` - ${SITE.annee}${version ? ` - ${SITE.version}` : ''}`;
+---
+
+<span class={classe}>{SITE.auteur}</span>
+{suite}

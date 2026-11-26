@@ -1,79 +1,27 @@
-# Dependencies
+# Dépendances et fichiers produits
 node_modules/
-jspm_packages/
-.pnp
-.pnp.js
-skills-lock.json
+dist/
+.astro/
 
-# Logs
-logs
+# Journaux
 *.log
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-# OS Files
+# Système et éditeurs
 .DS_Store
 Thumbs.db
 desktop.ini
-
-# IDEs and Editors
-.vscode/
+.vscode/*
+!.vscode/extensions.json
 .idea/
-*.swp
-*.swo
-*.sublime-project
-*.sublime-workspace
 
-# Environment Variables
+# Variables d'environnement
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-*.env.local
+.env.*
 
-# Build/Temp
-dist/
-build/
-out/
-.next/
-.cache/
-.parcel-cache/
-.turbo/
-.vercel/
-.npm/
-
-# Testing
-coverage/
-.nyc_output/
-
-# Agent specific (if applicable)
-.agent/scratch/
-.agent/logs/
-.agent/temp/
+# Outils d'assistance
+.claude/settings.local.json
 .agent/
 .agents/
-
-# Misc
-*.bak
-*.tmp
-*.temp
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-.pytest_cache/
-.venv/
-venv/
-ENV/
-env/
-
-# Data
-*.sqlite
-*.db
+skills-lock.json
 docs/
-

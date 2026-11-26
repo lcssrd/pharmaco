@@ -1,0 +1,89 @@
+[
+    {
+        "question": "Quel neurotransmetteur est principalement ciblé par les antidépresseurs de type ISRS (ex: Seroplex) ?",
+        "options": ["La Dopamine", "Le GABA", "La Sérotonine", "L'Acétylcholine"],
+        "correct": 2,
+        "feedback": "ISRS signifie Inhibiteur Sélectif de la Recapture de la Sérotonine. Ils augmentent le taux de sérotonine."
+    },
+    {
+        "question": "Quel est le risque majeur au début d'un traitement antidépresseur (J1 à J20) ?",
+        "options": ["La prise de poids", "La levée d'inhibition suicidaire", "L'hypertension", "L'addiction immédiate"],
+        "correct": 1,
+        "feedback": "L'énergie motrice revient avant l'amélioration de l'humeur, ce qui permet au patient de passer à l'acte."
+    },
+    {
+        "question": "Quel est l'antidote spécifique des benzodiazépines ?",
+        "options": ["La Naloxone", "Le Flumazénil", "L'Atropine", "Le Glucagon"],
+        "correct": 1,
+        "feedback": "Le Flumazénil inverse les effets sédatifs des benzodiazépines. La Naloxone concerne les opiacés."
+    },
+    {
+        "question": "Un patient sous Haldol® (Neuroleptique) présente une fièvre à 40°C et une rigidité musculaire. Que suspectez-vous ?",
+        "options": [
+            "Une grippe",
+            "Un syndrome malin des neuroleptiques",
+            "Un syndrome sérotoninergique",
+            "Une allergie simple"
+        ],
+        "correct": 1,
+        "feedback": "C'est une urgence vitale absolue. Il faut arrêter le traitement et appeler le médecin immédiatement."
+    },
+    {
+        "question": "Laquelle de ces propriétés NE fait PAS partie des effets des benzodiazépines ?",
+        "options": ["Antidépresseur", "Anxiolytique", "Myorelaxant", "Anticonvulsivant"],
+        "correct": 0,
+        "feedback": "Les BZD calment l'angoisse mais ne traitent pas la dépression de fond. Elles peuvent même aggraver un état dépressif."
+    },
+    {
+        "question": "Pour un dosage de la lithiémie (traitement par Téralithe®), quand doit être fait le prélèvement ?",
+        "options": ["N'importe quand", "Juste après la prise", "12 heures après la dernière prise", "24 heures après"],
+        "correct": 2,
+        "feedback": "Le prélèvement se fait le matin, 12 h après la prise du soir et juste avant la prise du matin (taux résiduel)."
+    },
+    {
+        "question": "Quel effet secondaire est fréquent avec les neuroleptiques et se manifeste par des tremblements ?",
+        "options": ["Le syndrome extrapyramidal", "Le syndrome de Cushing", "La rétention urinaire", "L'hypokaliémie"],
+        "correct": 0,
+        "feedback": "Ce syndrome ressemble à la maladie de Parkinson (tremblements, rigidité). On peut le corriger avec des correcteurs (ex: Lepticur)."
+    },
+    {
+        "question": "Quelle association est déconseillée avec le Lithium, car elle augmente sa toxicité ?",
+        "options": ["Le paracétamol", "Les antibiotiques", "L'Ibuprofène (AINS)", "La vitamine C"],
+        "correct": 2,
+        "feedback": "Les AINS comme l'ibuprofène augmentent la lithiémie et peuvent provoquer un surdosage grave. Si l'association ne peut être évitée, la lithiémie doit être surveillée étroitement."
+    },
+    {
+        "question": "Quel est le délai d'action moyen pour ressentir les effets bénéfiques d'un antidépresseur ?",
+        "options": ["Immédiat (1 heure)", "24 à 48 heures", "2 à 4 semaines", "3 mois"],
+        "correct": 2,
+        "feedback": "Il y a un délai de latence de 2 à 4 semaines avant que l'humeur ne s'améliore, d'où l'importance de l'éducation thérapeutique."
+    },
+    {
+        "question": "La Clozapine (Leponex®) nécessite une surveillance particulière, laquelle ?",
+        "options": [
+            "ECG tous les jours",
+            "NFS régulière (risque d'agranulocytose)",
+            "Radio pulmonaire",
+            "Dosage de la glycémie"
+        ],
+        "correct": 1,
+        "feedback": "Elle peut provoquer une chute brutale des globules blancs (agranulocytose). Un carnet de suivi NFS est obligatoire."
+    },
+    {
+        "question": "Quel conseil donnez-vous à un patient âgé sous somnifère (hypnotique/BZD) ?",
+        "options": [
+            "De se lever rapidement",
+            "Attention au risque de chute la nuit",
+            "De doubler la dose si réveil",
+            "De conduire sans problème"
+        ],
+        "correct": 1,
+        "feedback": "L'effet myorelaxant et sédatif persiste souvent la nuit, augmentant considérablement le risque de chute."
+    },
+    {
+        "question": "Quel médicament est tératogène (dangereux pour le fœtus) et nécessite un protocole strict chez la femme ?",
+        "options": ["Le Paracétamol", "La Dépakine® (Valproate)", "Le Spasfon", "L'Amoxicilline"],
+        "correct": 1,
+        "feedback": "Le Valproate provoque des malformations graves. Il est interdit pendant la grossesse sauf nécessité absolue."
+    }
+]

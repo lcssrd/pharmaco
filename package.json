@@ -1,25 +1,49 @@
 {
-  "name": "pharmaco",
-  "private": true,
-  "description": "Synthèses de pharmacologie pour les étudiants en soins infirmiers (IFSI)",
-  "license": "CC-BY-SA-4.0",
-  "type": "module",
-  "scripts": {
-    "build": "npm run build:css && npm run build:site",
-    "build:css": "tailwindcss -i assets/css/source.css -o assets/css/site.css --minify",
-    "build:site": "node scripts/build.mjs",
-    "dev": "tailwindcss -i assets/css/source.css -o assets/css/site.css --watch"
-  },
-  "devDependencies": {
-    "@tailwindcss/cli": "4.3.3",
-    "lucide": "1.61.0",
-    "node-html-parser": "9.0.5",
-    "tailwindcss": "4.3.3"
-  },
-  "overrides": {
-    "@parcel/watcher": "2.6.0"
-  },
-  "engines": {
-    "node": ">=20"
-  }
+    "name": "pharmaco2",
+    "version": "6.0.0",
+    "private": true,
+    "description": "Synthèses de pharmacologie pour les étudiants en soins infirmiers (IFSI)",
+    "license": "CC-BY-SA-4.0",
+    "type": "module",
+    "engines": {
+        "node": ">=22.12.0"
+    },
+    "scripts": {
+        "dev": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "check": "astro check",
+        "lint": "eslint .",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "verify": "npm run format:check && npm run lint && npm run check && npm run test && npm run build"
+    },
+    "dependencies": {
+        "chart.js": "4.5.1"
+    },
+    "devDependencies": {
+        "@astrojs/check": "0.9.12",
+        "@eslint/js": "10.0.1",
+        "@tailwindcss/vite": "4.3.5",
+        "astro": "7.4.13",
+        "eslint": "10.15.0",
+        "eslint-plugin-astro": "3.2.1",
+        "eslint-plugin-jsx-a11y-x": "0.2.0",
+        "globals": "17.14.0",
+        "lucide": "1.61.0",
+        "node-html-parser": "9.0.5",
+        "prettier": "3.10.1",
+        "prettier-plugin-astro": "1.1.2",
+        "tailwindcss": "4.3.5",
+        "typescript": "6.0.3",
+        "typescript-eslint": "8.74.0",
+        "vitest": "5.1.2"
+    },
+    "overrides": {
+        "eslint-plugin-jsx-a11y-x": {
+            "minimatch": "11.0.9"
+        }
+    }
 }

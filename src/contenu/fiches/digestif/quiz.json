@@ -1,0 +1,92 @@
+[
+    {
+        "question": "À quel moment est-il préférable d'administrer un Inhibiteur de la Pompe à Protons (IPP) ?",
+        "options": ["30 minutes avant le repas", "Pendant le repas", "Juste après le repas", "Au coucher"],
+        "correct": 0,
+        "feedback": "Les IPP sont plus efficaces lorsque les pompes à protons sont activées par l'anticipation d'un repas. Il faut donc les prendre avant."
+    },
+    {
+        "question": "Quel est le risque principal associé au Métoclopramide (Primpéran®), surtout chez les jeunes et les personnes âgées ?",
+        "options": ["Hypertension", "Symptômes extrapyramidaux", "Hypoglycémie", "Insuffisance rénale"],
+        "correct": 1,
+        "feedback": "Le blocage des récepteurs dopaminergiques peut causer des mouvements anormaux (dyskinésies, crises oculogyres), ce qui impose une surveillance stricte."
+    },
+    {
+        "question": "Pourquoi faut-il prendre les pansements gastriques (type Smecta®, Gaviscon®) à distance des autres médicaments ?",
+        "options": [
+            "Pour éviter les nausées",
+            "Car ils diminuent l'absorption des autres molécules",
+            "Pour augmenter leur propre efficacité",
+            "Car ils inactivent les autres médicaments"
+        ],
+        "correct": 1,
+        "feedback": "Les pansements tapissent la muqueuse et peuvent adsorber d'autres médicaments, réduisant ainsi leur passage dans la circulation sanguine."
+    },
+    {
+        "question": "Quelle classe de laxatifs est considérée comme la plus sûre pour un usage au long cours ?",
+        "options": ["Laxatifs stimulants", "Laxatifs lubrifiants", "Lavements", "Laxatifs osmotiques"],
+        "correct": 3,
+        "feedback": "Les laxatifs osmotiques (Macrogol) ne créent pas de dépendance et sont généralement bien tolérés, ce qui les rend adaptés à un usage chronique."
+    },
+    {
+        "question": "Dans quel cas le Lopéramide (Imodiumcaps®) est-il formellement contre-indiqué ?",
+        "options": [
+            "Diarrhée avec fièvre élevée et présence de sang",
+            "Diarrhée du voyageur simple",
+            "Gastro-entérite virale sans fièvre",
+            "Diarrhée post-antibiothérapie"
+        ],
+        "correct": 0,
+        "feedback": "En cas de diarrhée infectieuse (bactérienne invasive), ralentir le transit risque d'enfermer le pathogène et d'aggraver l'infection, pouvant mener à une colectasie."
+    },
+    {
+        "question": "Quel antiémétique est connu pour pouvoir allonger l'intervalle QT sur l'ECG ?",
+        "options": ["Métoclopramide", "Dompéridone", "Ondansétron", "Dimenhydrinate"],
+        "correct": 2,
+        "feedback": "Les sétrons, comme l'Ondansétron, nécessitent une prudence particulière chez les patients ayant des troubles cardiaques préexistants."
+    },
+    {
+        "question": "L'échelle de Bristol est un outil utilisé par les infirmiers pour évaluer :",
+        "options": [
+            "L'intensité de la douleur abdominale",
+            "Le risque d'escarres",
+            "La consistance des selles",
+            "Le niveau de nausée"
+        ],
+        "correct": 2,
+        "feedback": "L'échelle de Bristol classe les selles en 7 types, de la constipation sévère (type 1) à la diarrhée sévère (type 7). C'est un outil objectif de surveillance du transit."
+    },
+    {
+        "question": "Le Racécadotril (Tiorfan®) est un antidiarrhéique qui agit en :",
+        "options": [
+            "Ralentissant le transit intestinal",
+            "Absorbant les toxines",
+            "Diminuant l'hypersécrétion d'eau",
+            "Détruisant les bactéries"
+        ],
+        "correct": 2,
+        "feedback": "Son mécanisme antisécrétoire permet de réduire le volume des selles sans affecter la motilité intestinale, ce qui est un avantage majeur."
+    },
+    {
+        "question": "Un patient sous laxatifs stimulants (ex: Séné) au long cours risque de développer :",
+        "options": [
+            "Une insuffisance hépatique",
+            "Une dépendance (maladie des laxatifs)",
+            "Une hypertension artérielle",
+            "Des ulcères gastriques"
+        ],
+        "correct": 1,
+        "feedback": "L'intestin devient 'paresseux' et ne fonctionne plus sans la stimulation, créant un cercle vicieux et une dépendance au traitement."
+    },
+    {
+        "question": "Quel est le rôle principal des fibres alimentaires (Psyllium, etc.) dans le traitement de la constipation ?",
+        "options": [
+            "Augmenter le volume des selles (laxatif de lest)",
+            "Lubrifier les selles",
+            "Stimuler chimiquement l'intestin",
+            "Neutraliser l'acidité"
+        ],
+        "correct": 0,
+        "feedback": "Les fibres augmentent le volume et la teneur en eau des selles, ce qui facilite leur évacuation. On les appelle laxatifs de lest."
+    }
+]

@@ -1,0 +1,92 @@
+[
+    {
+        "question": "Quelle est la première mesure thérapeutique à mettre en place pour un diabète de type II nouvellement diagnostiqué ?",
+        "options": ["Insulinothérapie", "Metformine", "Règles hygiéno-diététiques", "Sulfamides hypoglycémiants"],
+        "correct": 2,
+        "feedback": "La prise en charge du DT2 débute toujours par des mesures hygiéno-diététiques (alimentation, activité physique) pendant 3 à 6 mois."
+    },
+    {
+        "question": "Quel est le principal risque associé aux sulfamides hypoglycémiants (ex: Diamicron®) ?",
+        "options": ["Hypoglycémie", "Acidose lactique", "Infections urinaires", "Troubles digestifs"],
+        "correct": 0,
+        "feedback": "Les sulfamides stimulent la sécrétion d'insuline, ce qui expose à un risque majeur d'hypoglycémie, surtout chez la personne âgée ou en cas de jeûne."
+    },
+    {
+        "question": "La metformine (Glucophage®) est contre-indiquée en cas de :",
+        "options": ["Hypertension artérielle", "Hypercholestérolémie", "Asthme", "Insuffisance rénale sévère"],
+        "correct": 3,
+        "feedback": "L'insuffisance rénale sévère est une contre-indication absolue car elle majore le risque d'acidose lactique, un effet secondaire rare mais très grave de la metformine."
+    },
+    {
+        "question": "Quelle insuline est conçue pour mimer la sécrétion basale du pancréas sur 24h, sans pic d'action marqué ?",
+        "options": [
+            "Insuline ultra-rapide (Novorapid®)",
+            "Insuline intermédiaire (NPH)",
+            "Analogue lent (Lantus®)",
+            "Mélange d'insulines (Novomix®)"
+        ],
+        "correct": 2,
+        "feedback": "Les analogues lents comme la glargine (Lantus®) ou le détémir (Levemir®) ont une durée d'action de 24h et un profil plat pour assurer une couverture basale."
+    },
+    {
+        "question": "Un patient diabétique de type I, inconscient, est en hypoglycémie sévère. Quel est le traitement d'urgence ?",
+        "options": [
+            "Lui donner un jus de fruit",
+            "Injection de Glucagon en IM/SC",
+            "Injection d'insuline rapide",
+            "Attendre qu'il se réveille"
+        ],
+        "correct": 1,
+        "feedback": "Chez un patient inconscient, la voie orale est proscrite. Le glucagon, hormone hyperglycémiante, est le traitement de choix en situation extra-hospitalière."
+    },
+    {
+        "question": "Qu'est-ce que l'hémoglobine glyquée (HbA1c) mesure ?",
+        "options": [
+            "La glycémie à un instant T",
+            "La moyenne des glycémies sur les 3 derniers mois",
+            "Le taux d'insuline dans le sang",
+            "Le nombre de corps cétoniques"
+        ],
+        "correct": 1,
+        "feedback": "L'HbA1c est le reflet de l'équilibre glycémique sur le long terme (environ 3 mois), c'est l'examen de référence pour le suivi du diabète."
+    },
+    {
+        "question": "Qu'est-ce qu'une lipodystrophie et comment la prévenir ?",
+        "options": [
+            "Une infection au point d'injection, prévenue par l'asepsie",
+            "Une fonte des graisses, prévenue par la rotation des sites d'injection",
+            "Une hyperglycémie, prévenue par l'insuline",
+            "Une réaction allergique, prévenue par un test cutané"
+        ],
+        "correct": 1,
+        "feedback": "La lipodystrophie est une modification du tissu sous-cutané due aux injections répétées au même endroit. La rotation des sites est essentielle pour la prévenir."
+    },
+    {
+        "question": "Comment agissent les gliflozines (ex: Invokana®) ?",
+        "options": [
+            "Elles stimulent le pancréas",
+            "Elles diminuent l'absorption intestinale du sucre",
+            "Elles augmentent l'élimination du sucre dans les urines",
+            "Elles améliorent la sensibilité à l'insuline"
+        ],
+        "correct": 2,
+        "feedback": "Les gliflozines inhibent le transporteur SGLT2 au niveau du rein, ce qui empêche la réabsorption du glucose et augmente son élimination urinaire (glycosurie)."
+    },
+    {
+        "question": "Quel est le signe clinique caractéristique de l'acidocétose diabétique ?",
+        "options": ["La bradycardie", "La dyspnée de Kussmaul", "L'hypothermie", "Les sueurs froides"],
+        "correct": 1,
+        "feedback": "La dyspnée de Kussmaul (respiration ample, rapide et bruyante) est un mécanisme compensatoire pour éliminer le CO2 et lutter contre l'acidose métabolique."
+    },
+    {
+        "question": "Pendant la grossesse, quel est le traitement de référence si les mesures diététiques ne suffisent pas à équilibrer la glycémie ?",
+        "options": [
+            "La metformine uniquement",
+            "Les sulfamides à faible dose",
+            "Aucun, on attend l'accouchement",
+            "L'insuline"
+        ],
+        "correct": 3,
+        "feedback": "L'insuline est le traitement de référence pendant la grossesse : elle ne traverse pas la barrière placentaire. La metformine peut être envisagée en appoint ou en alternative quand c'est justifié ; les autres antidiabétiques oraux sont à éviter."
+    }
+]

@@ -1,0 +1,243 @@
+/*
+ * Feuille de style du site (Tailwind CSS 4), importée par src/layouts/BaseLayout.astro.
+ * Tailwind génère les classes qu'il trouve dans src/ (composants, contenu des fiches, scripts).
+ */
+
+@import 'tailwindcss' source('..');
+/* Palette d'origine du site (Tailwind 3), conservée pour ne pas changer l'apparence */
+@import './couleurs.css';
+
+@theme {
+    /* Les caractères absents d'Inter (flèches, ①, ✓...) s'affichent avec la police de secours */
+    --font-sans: 'Inter', sans-serif;
+}
+
+/* Police Inter hébergée avec le site (version variable 100-900, @fontsource-variable/inter
+   5.3.0, licence SIL OFL 1.1 : src/assets/polices/LICENSE-Inter.txt). Le jeu latin est préchargé
+   par chaque page ; le jeu latin étendu n'est téléchargé que si un caractère en a besoin. */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100 900;
+    src: url('../assets/polices/inter-latin-ext-wght-normal.woff2') format('woff2');
+    unicode-range:
+        U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF,
+        U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100 900;
+    src: url('../assets/polices/inter-latin-wght-normal.woff2') format('woff2');
+    unicode-range:
+        U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F,
+        U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
+
+@layer base {
+    html {
+        /* Garde la barre de défilement visible pour éviter les décalages de mise en page */
+        overflow-y: scroll;
+    }
+
+    body {
+        background-color: var(--color-fond-page);
+    }
+
+    /* Comportements de Tailwind 3 sur lesquels les fiches s'appuient :
+       bordures grises par défaut et curseur « main » sur les boutons */
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200);
+    }
+
+    button:not(:disabled),
+    [role='button']:not(:disabled) {
+        cursor: pointer;
+    }
+}
+
+@theme {
+    /* Fond de la page, autour de la carte blanche (aussi dans manifest.webmanifest) */
+    --color-fond-page: #f0f4f8;
+}
+
+/* ------------------------------------------------------------------ */
+/* Composants (les classes utilitaires restent prioritaires)           */
+/* ------------------------------------------------------------------ */
+
+@layer components {
+    /* Lien d'évitement : visible uniquement au clavier */
+    .lien-evitement {
+        position: absolute;
+        left: 1rem;
+        top: -4rem;
+        z-index: 100;
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        background: var(--color-slate-800);
+        color: var(--color-white);
+        font-weight: 600;
+        transition: top 0.2s;
+    }
+
+    .lien-evitement:focus {
+        top: 1rem;
+    }
+
+    /* Onglet affiché : apparition en fondu */
+    .page {
+        animation: apparition 0.5s ease-in-out;
+    }
+
+    /* Cartes de l'accueil */
+    .card-enter {
+        animation: apparition-carte 0.5s ease-in-out forwards;
+        opacity: 0;
+    }
+
+    .gradient-text {
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    /* En-tête des fiches : bouton « Toutes les fiches » */
+    .bouton-entete {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        height: 2.25rem;
+        min-width: 2.25rem;
+        padding: 0 0.625rem;
+        border-radius: 0.5rem;
+        background: rgb(255 255 255 / 0.1);
+        color: var(--color-slate-200);
+        font-size: 0.8125rem;
+        font-weight: 600;
+        white-space: nowrap;
+        transition:
+            background-color 0.2s,
+            color 0.2s;
+    }
+
+    .bouton-entete:hover {
+        background: rgb(255 255 255 / 0.2);
+        color: var(--color-white);
+    }
+
+    .bouton-entete svg {
+        width: 1.125rem;
+        height: 1.125rem;
+        flex-shrink: 0;
+    }
+
+    .bouton-entete:focus-visible,
+    .nav-btn:focus-visible,
+    .qcm-option:focus-visible {
+        outline: 3px solid var(--color-sky-400);
+        outline-offset: 2px;
+    }
+
+    /* Passage trouvé par la recherche de l'accueil */
+    .resultat-recherche mark {
+        @apply rounded-sm bg-amber-200 px-0.5 text-slate-900;
+    }
+}
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes apparition-carte {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Passage d'une page à l'autre du site : fondu enchaîné au lieu d'un écran blanc
+   (Chrome/Edge 126+, Safari 18.2+ ; ignoré ailleurs, sans conséquence) */
+@view-transition {
+    navigation: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important;
+    }
+
+    .page,
+    .card-enter {
+        animation: none;
+        opacity: 1;
+    }
+
+    @view-transition {
+        navigation: none;
+    }
+}
+
+/* ------------------------------------------------------------------ */
+/* Quiz : l'état d'une réponse doit l'emporter sur les classes du bouton */
+/* (bg-white, border-slate-200...), d'où l'absence de couche.           */
+/* ------------------------------------------------------------------ */
+
+.qcm-option.correct {
+    background-image: linear-gradient(to right, var(--color-green-400), var(--color-green-600));
+    color: var(--color-white);
+    border-color: var(--color-green-700);
+    font-weight: 600;
+}
+
+.qcm-option.incorrect {
+    background-image: linear-gradient(to right, var(--color-red-400), var(--color-red-600));
+    color: var(--color-white);
+    border-color: var(--color-red-700);
+    font-weight: 600;
+}
+
+.qcm-option:disabled {
+    cursor: not-allowed;
+}
+
+.qcm-option:disabled:not(.correct, .incorrect) {
+    background-color: var(--color-slate-100);
+    color: var(--color-slate-600);
+    opacity: 0.7;
+}
+
+/* ------------------------------------------------------------------ */
+/* Onglets : les couleurs de survol (« survol » dans fiche.ts) ne      */
+/* concernent que les onglets inactifs ; l'onglet actif garde son       */
+/* dégradé et son texte blanc. Hors couche pour l'emporter sur hover:.  */
+/* ------------------------------------------------------------------ */
+
+.nav-btn[aria-selected='true']:hover {
+    background-color: transparent;
+    color: var(--color-white);
+}

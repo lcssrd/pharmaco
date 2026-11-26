@@ -1,0 +1,13 @@
+---
+/** Une page par dossier de src/contenu/fiches/ (antico -> antico.html) */
+import type { GetStaticPaths } from 'astro';
+import FicheLayout from '../layouts/FicheLayout.astro';
+import { toutesLesFiches } from '../lib/serveur/fiches';
+
+export const getStaticPaths = (() =>
+    toutesLesFiches().map((fiche) => ({ params: { fiche: fiche.slug }, props: { fiche } }))) satisfies GetStaticPaths;
+
+const { fiche } = Astro.props;
+---
+
+<FicheLayout fiche={fiche} />

@@ -1,0 +1,132 @@
+---
+/**
+ * Quiz d'une fiche : les questions (quiz.json) sont transmises en JSON à src/scripts/quiz.ts,
+ * qui les mélange et les affiche à partir des modèles <template> ci-dessous.
+ */
+import type { QuestionQuiz } from '../../types/fiche';
+import { enJsonPourHtml } from '../../lib/serveur/json';
+
+interface Props {
+    /** Identifiant de la fiche (clé de mémorisation des scores) */
+    fiche: string;
+    questions: QuestionQuiz[];
+    intro: string;
+    centre: boolean;
+    /** Dégradé du bouton « Recommencer » */
+    bouton: string;
+}
+
+const { fiche, questions, intro, centre, bouton } = Astro.props;
+---
+
+<div class="bg-linear-to-br from-slate-50 to-gray-100 p-6 sm:p-8 md:p-10 rounded-2xl shadow-inner" data-quiz={fiche}>
+    <h2 class:list={['text-3xl md:text-4xl font-extrabold text-slate-800 mb-2', { 'text-center': centre }]}>
+        Quiz Interactif
+    </h2>
+    <p class:list={['text-slate-600', centre ? 'mb-10 text-center' : 'mb-8']}>{intro}</p>
+
+    <div data-quiz-bilan></div>
+    <div class:list={['space-y-8', { 'max-w-4xl mx-auto': centre }]} data-quiz-questions></div>
+
+    <div
+        class:list={[
+            'mt-10 pt-6 border-t-2 border-slate-200 flex flex-wrap gap-4 justify-between items-center',
+            { 'max-w-4xl mx-auto flex-col sm:flex-row': centre },
+        ]}>
+        <p class="text-xl md:text-2xl font-bold text-slate-800" aria-live="polite" data-quiz-score></p>
+        <div class="flex flex-wrap gap-3">
+            <button
+                type="button"
+                class="bg-white border-2 border-slate-300 text-slate-800 font-semibold py-3 px-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 transform"
+                hidden
+                data-quiz-erreurs></button>
+            <button
+                type="button"
+                class:list={[
+                    'bg-linear-to-r text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 transform invisible',
+                    bouton,
+                ]}
+                data-quiz-recommencer>
+                Recommencer tout le quiz
+            </button>
+        </div>
+    </div>
+
+    <script is:inline type="application/json" data-quiz-donnees set:html={enJsonPourHtml(questions)} />
+    <template data-modele="question">
+        <div class="qcm-question bg-slate-100/70 border border-slate-200/80 p-6 rounded-2xl shadow-lg" role="group">
+            <p class="font-semibold text-lg text-slate-800 mb-4" data-enonce></p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" data-propositions></div>
+            <div class="qcm-feedback mt-4 text-sm font-medium" aria-live="polite" data-retour></div>
+        </div>
+    </template>
+
+    <template data-modele="proposition">
+        <button
+            type="button"
+            class="qcm-option w-full text-left p-4 rounded-xl bg-white border-2 border-slate-200 hover:bg-slate-100 hover:border-slate-300 transition-all duration-200"></button>
+    </template>
+
+    <template data-modele="juste">
+        <div class="text-emerald-700 p-3 bg-emerald-100 rounded-lg flex items-start gap-2">
+            <svg
+                class="w-5 h-5 shrink-0"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="m9 12 2 2 4-4"></path>
+            </svg>
+            <div data-explication>
+                <b class="font-bold">Bravo !</b>
+            </div>
+        </div>
+    </template>
+
+    <template data-modele="faux">
+        <div class="text-red-700 p-3 bg-red-100 rounded-lg flex items-start gap-2">
+            <svg
+                class="w-5 h-5 shrink-0"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="m15 9-6 6"></path>
+                <path d="m9 9 6 6"></path>
+            </svg>
+            <div data-explication>
+                <b class="font-bold">Dommage.</b>
+            </div>
+        </div>
+    </template>
+
+    <template data-modele="bilan">
+        <div class="mb-6 p-4 rounded-xl bg-white border border-slate-200 text-sm text-slate-700 flex flex-wrap items-center gap-x-4 gap-y-2">
+            <span>
+                🏆 Meilleur score : <strong data-meilleur></strong>
+            </span>
+            <span class="text-slate-500" data-date>
+                Dernière tentative le <span data-valeur></span>
+            </span>
+            <button
+                type="button"
+                class="font-semibold underline underline-offset-2 hover:no-underline text-indigo-700"
+                data-revoir></button>
+        </div>
+    </template>
+</div>
+
+<script>
+    import { initialiserQuiz } from '../../scripts/quiz';
+
+    const racine = document.querySelector<HTMLElement>('[data-quiz]');
+    if (racine) initialiserQuiz(racine);
+</script>

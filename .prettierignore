@@ -1,0 +1,16 @@
+dist/
+.astro/
+node_modules/
+package-lock.json
+public/
+
+# Contenu des fiches : HTML rédigé à la main, dont les espaces et retours à la ligne
+# comptent pour l'affichage. Le reformater changerait le rendu.
+src/contenu/fiches/**/*.html
+
+# Outils d'assistance (non versionnés)
+.claude/
+.agent/
+.agents/
+docs/
+skills-lock.json

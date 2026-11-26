@@ -1,0 +1,94 @@
+[
+    {
+        "question": "Quel est l'effet secondaire le plus caractéristique des IEC (Inhibiteurs de l'Enzyme de Conversion) ?",
+        "options": ["Bradycardie", "Œdèmes des chevilles", "Toux sèche", "Hyperkaliémie"],
+        "correct": 2,
+        "feedback": "La toux sèche est un effet secondaire très fréquent et spécifique des IEC, dû à l'accumulation de bradykinine."
+    },
+    {
+        "question": "Quelle classe de médicaments est souvent prescrite en remplacement des IEC en cas de toux ?",
+        "options": ["Les bêtabloquants", "Les ARA II", "Les diurétiques", "Les inhibiteurs calciques"],
+        "correct": 1,
+        "feedback": "Les ARA II ont un mécanisme d'action similaire sur le SRAA mais ne provoquent pas de toux. C'est l'alternative de choix."
+    },
+    {
+        "question": "Quel ion doit être surveillé attentivement lors d'un traitement par IEC ou ARA II ?",
+        "options": ["Le sodium", "Le calcium", "Le potassium", "Le magnésium"],
+        "correct": 2,
+        "feedback": "Ces deux classes de médicaments peuvent provoquer une hyperkaliémie, surtout en cas d'insuffisance rénale associée."
+    },
+    {
+        "question": "Quel est le principal mécanisme d'action des inhibiteurs calciques ?",
+        "options": [
+            "Blocage du système sympathique",
+            "Vasodilatation artérielle",
+            "Augmentation de l'élimination d'eau",
+            "Blocage du SRAA"
+        ],
+        "correct": 1,
+        "feedback": "Les inhibiteurs calciques provoquent une relaxation des muscles lisses des artères, entraînant une vasodilatation et une baisse des résistances périphériques."
+    },
+    {
+        "question": "Parmi ces médicaments, lequel est un bêtabloquant ?",
+        "options": ["Ramipril (Triatec®)", "Amlodipine (Amlor®)", "Bisoprolol (Cardensiel®)", "Furosémide (Lasilix®)"],
+        "correct": 2,
+        "feedback": "Le Bisoprolol est un bêtabloquant cardiosélectif. Le Ramipril est un IEC, l'Amlodipine un inhibiteur calcique et le Furosémide un diurétique."
+    },
+    {
+        "question": "Quelle est la principale contre-indication des bêtabloquants NON cardiosélectifs ?",
+        "options": ["L'insuffisance rénale", "L'asthme", "L'ulcère gastrique", "L'hypercholestérolémie"],
+        "correct": 1,
+        "feedback": "Les bêtabloquants non sélectifs peuvent provoquer une bronchoconstriction, ce qui est dangereux pour un patient asthmatique."
+    },
+    {
+        "question": "Quel conseil donnez-vous à un patient qui débute un traitement par diurétique ?",
+        "options": [
+            "De prendre son médicament le soir",
+            "De boire moins d'eau",
+            "De prendre son médicament le matin",
+            "De manger très salé"
+        ],
+        "correct": 2,
+        "feedback": "Prendre le diurétique le matin permet d'éviter la nycturie (besoin d'uriner la nuit) qui perturberait le sommeil."
+    },
+    {
+        "question": "Un patient traité par Furosémide (Lasilix®) se plaint de crampes. À quel déséquilibre électrolytique pensez-vous en premier ?",
+        "options": ["Hyperkaliémie", "Hypokaliémie", "Hypernatrémie", "Hyponatrémie"],
+        "correct": 1,
+        "feedback": "Les diurétiques de l'anse comme le Furosémide sont de grands pourvoyeurs d'hypokaliémie, qui se manifeste souvent par des crampes et une faiblesse musculaire."
+    },
+    {
+        "question": "Lequel de ces diurétiques présente un risque d'hyperkaliémie ?",
+        "options": ["Hydrochlorothiazide", "Furosémide", "Indapamide", "Spironolactone"],
+        "correct": 3,
+        "feedback": "La Spironolactone (Aldactone®) est un diurétique 'épargneur de potassium'. Il bloque l'action de l'aldostérone et retient le potassium."
+    },
+    {
+        "question": "L'œdème des membres inférieurs est un effet secondaire fréquent de quelle classe d'antihypertenseurs ?",
+        "options": ["Les IEC", "Les bêtabloquants", "Les inhibiteurs calciques", "Les ARA II"],
+        "correct": 2,
+        "feedback": "Les inhibiteurs calciques, en particulier les dihydropyridines comme l'Amlodipine, provoquent souvent des œdèmes par vasodilatation capillaire."
+    },
+    {
+        "question": "Pourquoi ne faut-il jamais arrêter brutalement un traitement par bêtabloquant ?",
+        "options": [
+            "Risque d'hypotension sévère",
+            "Risque d'effet rebond (tachycardie, HTA)",
+            "Risque de toux",
+            "Risque de déshydratation"
+        ],
+        "correct": 1,
+        "feedback": "L'arrêt brutal peut entraîner un effet rebond avec une hyperstimulation sympathique, provoquant tachycardie, poussée hypertensive voire un infarctus."
+    },
+    {
+        "question": "Le système Rénine-Angiotensine-Aldostérone (SRAA) est la cible principale de quelles classes de médicaments ?",
+        "options": [
+            "Bêtabloquants et Diurétiques",
+            "IEC et ARA II",
+            "Inhibiteurs calciques et Bêtabloquants",
+            "Diurétiques et Inhibiteurs calciques"
+        ],
+        "correct": 1,
+        "feedback": "Les IEC et les ARA II sont les deux grandes classes qui bloquent le SRAA à des niveaux différents pour faire baisser la tension."
+    }
+]

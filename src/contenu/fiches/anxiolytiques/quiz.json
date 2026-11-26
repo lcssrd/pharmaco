@@ -1,0 +1,104 @@
+[
+    {
+        "question": "Quel est l'antidote spécifique en cas de surdosage aux Benzodiazépines (BZD) ?",
+        "options": ["Naloxone", "N-acétylcystéine", "Flumazénil", "Propranolol"],
+        "correct": 2,
+        "feedback": "Le Flumazénil est l'antagoniste compétitif des récepteurs BZD, utilisé en cas de surdosage ou pour lever une sédation."
+    },
+    {
+        "question": "Quelle est la durée maximale de prescription pour un anxiolytique de type BZD en France ?",
+        "options": ["4 semaines", "8 semaines", "12 semaines", "6 mois"],
+        "correct": 2,
+        "feedback": "La prescription d'anxiolytiques BZD est limitée à 12 semaines (3 mois), incluant la période d'arrêt progressif."
+    },
+    {
+        "question": "Quelle est la durée maximale de prescription pour un hypnotique de type BZD ou Z-Drug ?",
+        "options": ["4 semaines", "8 semaines", "12 semaines", "Pas de limite"],
+        "correct": 0,
+        "feedback": "La prescription d'hypnotiques est limitée à 4 semaines pour minimiser le risque de dépendance."
+    },
+    {
+        "question": "Quel est le risque principal commun aux BZD et aux Z-Drugs (Zolpidem, Zopiclone) ?",
+        "options": [
+            "Effets anticholinergiques",
+            "Syndrome sérotoninergique",
+            "Tolérance et dépendance",
+            "Allongement de l'intervalle QT"
+        ],
+        "correct": 2,
+        "feedback": "Les deux classes partagent les mêmes risques majeurs de tolérance (accoutumance) et de dépendance (physique et psychique)."
+    },
+    {
+        "question": "Quel médicament est utilisé pour traiter les symptômes *somatiques* de l'anxiété (palpitations, tremblements) ?",
+        "options": ["Diazepam (Valium®)", "Zolpidem (Stilnox®)", "Hydroxyzine (Atarax®)", "Propranolol"],
+        "correct": 3,
+        "feedback": "Le Propranolol, un bêta-bloquant, agit sur les manifestations périphériques du stress (cœur, muscles) sans être un anxiolytique central."
+    },
+    {
+        "question": "Les Z-Drugs (Zolpidem, Zopiclone) ont-ils moins de risques de dépendance que les BZD ?",
+        "options": [
+            "Oui, ils sont beaucoup plus sûrs",
+            "Non, ils présentent les mêmes risques de dépendance",
+            "Seulement le Zolpidem est sûr",
+            "Seulement le Zopiclone est sûr"
+        ],
+        "correct": 1,
+        "feedback": "C'est un point clé : bien qu'initialement présentés comme plus sûrs, il est établi que les Z-Drugs partagent les mêmes risques de tolérance et de dépendance que les BZD."
+    },
+    {
+        "question": "Quel est l'effet indésirable principal des antihistaminiques (ex: Atarax®, Donormyl®) utilisés comme sédatifs ?",
+        "options": [
+            "Effets anticholinergiques",
+            "Risque de chute (myorelaxant)",
+            "Amnésie antérograde",
+            "Goût métallique"
+        ],
+        "correct": 0,
+        "feedback": "Les antihistaminiques H1 sont connus pour leurs effets anticholinergiques (sécheresse buccale, constipation, confusion chez le sujet âgé)."
+    },
+    {
+        "question": "Que signifie le 'Triangle du Risque' pour les BZD ?",
+        "options": [
+            "Chute, Amnésie, Somnolence",
+            "Tolérance, Dépendance, Sevrage",
+            "Alcool, Conduite, Machines",
+            "Anxiété, Insomnie, Dépression"
+        ],
+        "correct": 1,
+        "feedback": "Le 'Triangle du Risque' décrit le cycle de la Tolérance (accoutumance), de la Dépendance (besoin) et du Syndrome de Sevrage (à l'arrêt brutal)."
+    },
+    {
+        "question": "Quelle est l'interaction la plus dangereuse avec les BZD et Z-Drugs ?",
+        "options": ["Jus de pamplemousse", "Café", "Alcool", "Paracétamol"],
+        "correct": 2,
+        "feedback": "L'Alcool majore de façon majeure l'effet sédatif et le risque de dépression respiratoire. C'est une association formellement contre-indiquée."
+    },
+    {
+        "question": "Parmi les propositions suivantes, laquelle est une règle hygiéno-diététique clé pour l'insomnie ?",
+        "options": [
+            "Faire du sport intense juste avant de dormir",
+            "Regarder la TV au lit pour s'endormir",
+            "Garder une heure de réveil fixe, même le week-end",
+            "Boire une tisane au café le soir"
+        ],
+        "correct": 2,
+        "feedback": "Garder une heure de réveil fixe aide à resynchroniser l'horloge biologique, même si le coucher est retardé."
+    },
+    {
+        "question": "Laquelle de ces propriétés n'est PAS l'une des 5 propriétés fondamentales des BZD ?",
+        "options": ["Anxiolytique", "Sédative", "Amnésiante", "Anticholinergique"],
+        "correct": 3,
+        "feedback": "Les 5 propriétés sont Anxiolytique, Sédative, Amnésiante, Myorelaxante, Anti-convulsivante. Les effets anticholinergiques sont typiques des antihistaminiques."
+    },
+    {
+        "question": "Quelle est la contre-indication absolue principale des BZD ?",
+        "options": [
+            "Insuffisance respiratoire sévère",
+            "Hypertension artérielle",
+            "Diabète",
+            "Insuffisance rénale légère"
+        ],
+        "correct": 0,
+        "feedback": "Les BZD étant des dépresseurs respiratoires, ils sont absolument contre-indiqués en cas d'insuffisance respiratoire sévère ou de syndrome d'apnée du sommeil."
+    }
+]

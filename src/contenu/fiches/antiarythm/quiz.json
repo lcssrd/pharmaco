@@ -1,0 +1,91 @@
+[
+    {
+        "question": "Quelle action infirmière est PRIORITAIRE avant l'administration orale d'un Bêta-bloquant ?",
+        "options": [
+            "Vérifier la dernière selle du patient",
+            "Prendre la glycémie capillaire",
+            "Contrôler la fréquence cardiaque et la tension artérielle",
+            "Vérifier la couleur des urines"
+        ],
+        "correct": 2,
+        "feedback": "Les Bêta-bloquants sont bradycardisants et hypotenseurs. L'infirmier(ère) doit toujours vérifier que la fréquence cardiaque est > 50 bpm et la TA est acceptable avant l'administration."
+    },
+    {
+        "question": "Un patient sous Amiodarone (Cordarone®) se plaint d'une photosensibilité importante. Quel conseil donner ?",
+        "options": [
+            "Arrêter immédiatement le traitement",
+            "Prendre l'Amiodarone le soir",
+            "Utiliser une protection solaire importante",
+            "Boire plus d'eau"
+        ],
+        "correct": 2,
+        "feedback": "L'Amiodarone est très photosensibilisante et expose à des brûlures graves. La protection solaire doit être rigoureuse."
+    },
+    {
+        "question": "Quel résultat biologique majore le risque de toxicité des digitaliques et des anti-arythmiques (ex: Flécaïnide, Amiodarone) ?",
+        "options": ["Hypernatrémie", "Hypokaliémie", "Hypercalcémie", "Hypermagnésémie"],
+        "correct": 1,
+        "feedback": "L'hypokaliémie potentialise l'effet de ces médicaments et augmente le risque de torsades de pointes."
+    },
+    {
+        "question": "Un patient sous Bêta-bloquant doit subir une intervention chirurgicale. Quelle est l'attitude recommandée ?",
+        "options": [
+            "L'arrêter brutalement 48h avant",
+            "Le remplacer par un inhibiteur calcique",
+            "Le maintenir jusqu'à l'intervention",
+            "L'arrêter progressivement"
+        ],
+        "correct": 2,
+        "feedback": "Il est crucial de ne pas interrompre brutalement un Bêta-bloquant pour éviter l'effet rebond."
+    },
+    {
+        "question": "Quelle intervention infirmière est associée à la prévention des œdèmes sous inhibiteur calcique (ex: Diltiazem) ?",
+        "options": [
+            "Limitation des apports en sel",
+            "Élévation des jambes et bas de contention",
+            "Administration de diurétiques sans prescription",
+            "Massage énergique"
+        ],
+        "correct": 1,
+        "feedback": "Les œdèmes sont liés à la vasodilatation. L'élévation des membres et les bas de contention facilitent le retour veineux."
+    },
+    {
+        "question": "Un patient sous Bêta-bloquant se plaint de fatigue inhabituelle. Quelle complication cardiaque redouter ?",
+        "options": [
+            "Hypotension sévère",
+            "Insuffisance cardiaque ou bradycardie",
+            "Hypokaliémie",
+            "Trouble de la coagulation"
+        ],
+        "correct": 1,
+        "feedback": "Les Bêta-bloquants sont inotropes négatifs. La fatigue peut signaler une insuffisance cardiaque ou une bradycardie excessive."
+    },
+    {
+        "question": "Patient sous Digoxine avec 'vision de halos colorés' (dyschromatopsie), action infirmière IMMÉDIATE ?",
+        "options": [
+            "Rassurer le patient",
+            "Administrer un collyre",
+            "Alerter le médecin, intoxication possible",
+            "Doubler la dose"
+        ],
+        "correct": 2,
+        "feedback": "La dyschromatopsie est un signe d'intoxication digitalique nécessitant un avis médical pour dosage."
+    },
+    {
+        "question": "Quel Bêta-bloquant anti-arythmique est strictement contre-indiqué chez l'asthmatique ?",
+        "options": ["Vérapamil", "Digoxine", "Métoprolol", "Flécaïnide"],
+        "correct": 2,
+        "feedback": "Le Métoprolol (Bêta-bloquant) peut provoquer un bronchospasme par blocage des récepteurs β₂."
+    },
+    {
+        "question": "Quelle est la signification de la Règle des 3R des digitaliques ?",
+        "options": [
+            "Régularise, Réduit, Remplace",
+            "Ralenti, Rigidifie, Retourne",
+            "Remplace, Retourne, Ralenti",
+            "Renforce, Ralentit, Régularise"
+        ],
+        "correct": 3,
+        "feedback": "Renforce (Inotrope+), Ralentit (Chronotrope-), Régularise (Conduction)."
+    }
+]

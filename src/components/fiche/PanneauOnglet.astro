@@ -1,0 +1,13 @@
+---
+/** Contenu d'un onglet ; seul le premier est affiché tant que le script n'a pas lu l'adresse */
+interface Props {
+    id: string;
+    visible: boolean;
+}
+
+const { id, visible } = Astro.props;
+---
+
+<div id={id} role="tabpanel" aria-labelledby={`onglet-${id}`} class="page" hidden={!visible}>
+    <slot />
+</div>

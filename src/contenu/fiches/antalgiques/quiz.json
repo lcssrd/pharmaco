@@ -1,0 +1,162 @@
+[
+    {
+        "question": "Quel est l'antidote du paracétamol en cas de surdosage ?",
+        "options": ["Naloxone", "N-acétylcystéine", "Sulfate de protamine", "Vitamine K"],
+        "correct": 1,
+        "feedback": "La N-acétylcystéine est l'antidote spécifique pour l'hépatotoxicité induite par un surdosage de paracétamol."
+    },
+    {
+        "question": "Quel est le risque principal associé à la prise d'Anti-Inflammatoires Non Stéroïdiens (AINS) ?",
+        "options": [
+            "Hépatotoxicité",
+            "Dépression respiratoire",
+            "Lésions gastro-intestinales",
+            "Syndrome sérotoninergique"
+        ],
+        "correct": 2,
+        "feedback": "Les AINS inhibent les prostaglandines qui protègent la muqueuse gastrique, augmentant le risque d'ulcères et d'hémorragies digestives."
+    },
+    {
+        "question": "La codéine est une pro-drogue. En quelle substance active est-elle métabolisée dans le corps ?",
+        "options": ["Tramadol", "Morphine", "Fentanyl", "Oxycodone"],
+        "correct": 1,
+        "feedback": "La codéine est métabolisée en morphine par le foie, ce qui lui confère son effet analgésique."
+    },
+    {
+        "question": "Quel opioïde fort est connu pour être environ 100 fois plus puissant que la morphine ?",
+        "options": ["Tramadol", "Néfopam", "Fentanyl", "Oxycodone"],
+        "correct": 2,
+        "feedback": "Le fentanyl est un opioïde de synthèse extrêmement puissant, utilisé pour les douleurs intenses."
+    },
+    {
+        "question": "Quelle est la contre-indication absolue commune à tous les opioïdes forts ?",
+        "options": [
+            "Hypertension artérielle",
+            "Insuffisance respiratoire sévère",
+            "Diabète",
+            "Allergie au paracétamol"
+        ],
+        "correct": 1,
+        "feedback": "Les opioïdes peuvent provoquer une dépression respiratoire, leur usage est donc contre-indiqué en cas d'insuffisance respiratoire sévère."
+    },
+    {
+        "question": "Quel est l'antidote universel pour les surdosages aux opioïdes (morphine, fentanyl, etc.) ?",
+        "options": ["N-acétylcystéine", "Charbon activé", "Adrénaline", "Naloxone"],
+        "correct": 3,
+        "feedback": "La naloxone (Narcan®) est un antagoniste des récepteurs opioïdes qui inverse rapidement leurs effets, notamment la dépression respiratoire."
+    },
+    {
+        "question": "Pour quel type de douleur les co-analgésiques comme la gabapentine (Neurontin®) sont-ils principalement utilisés ?",
+        "options": [
+            "Douleurs nociceptives",
+            "Douleurs neuropathiques",
+            "Douleurs post-opératoires aiguës",
+            "Céphalées de tension"
+        ],
+        "correct": 1,
+        "feedback": "Les antiépileptiques comme la gabapentine sont particulièrement efficaces pour les douleurs liées à une lésion du système nerveux (neuropathiques)."
+    },
+    {
+        "question": "Quel est le délai d'action d'un patch transdermique de Fentanyl pour atteindre son efficacité optimale ?",
+        "options": ["5-10 minutes", "1 heure", "12-24 heures", "72 heures"],
+        "correct": 2,
+        "feedback": "La diffusion transdermique est lente. L'effet optimal n'est atteint qu'après 12 à 24 heures, ce qui le réserve aux douleurs chroniques stables."
+    },
+    {
+        "question": "Quelle est la posologie maximale journalière de paracétamol pour un adulte sans insuffisance hépatique ?",
+        "options": ["2 g/jour", "3 g/jour", "4 g/jour", "6 g/jour"],
+        "correct": 1,
+        "feedback": "La dose maximale habituelle est de 3 g par jour (1 g par prise, au moins 4 heures entre deux prises). Elle peut être portée à 4 g par jour uniquement sur avis médical."
+    },
+    {
+        "question": "Le tramadol (Topalgic®) a un double mécanisme d'action. Lequel ?",
+        "options": [
+            "Agoniste opioïde et AINS",
+            "Agoniste opioïde et inhibiteur de la recapture de la sérotonine/noradrénaline",
+            "Antagoniste opioïde et antipyrétique",
+            "AINS et anxiolytique"
+        ],
+        "correct": 1,
+        "feedback": "Le tramadol agit sur les récepteurs µ-opioïdes et inhibe la recapture de neurotransmetteurs, ce qui le rend utile pour certaines douleurs neuropathiques."
+    },
+    {
+        "question": "L'Acupan® (Néfopam) est contre-indiqué en cas de :",
+        "options": ["Asthme", "Hypertension", "Diabète", "Épilepsie"],
+        "correct": 3,
+        "feedback": "Le Néfopam peut abaisser le seuil épileptogène, il est donc contre-indiqué chez les patients épileptiques."
+    },
+    {
+        "question": "Quel effet secondaire est quasi systématique avec les traitements opioïdes au long cours et doit être anticipé ?",
+        "options": ["La diarrhée", "La constipation", "Les hallucinations", "La tachycardie"],
+        "correct": 1,
+        "feedback": "Les opioïdes ralentissent le transit intestinal, provoquant une constipation qui nécessite souvent un traitement laxatif préventif."
+    },
+    {
+        "question": "L'échelle EVS pour évaluer la douleur est une échelle...",
+        "options": [
+            "Numérique (de 0 à 10)",
+            "Visuelle Analogique (avec un curseur)",
+            "Verbale Simple (avec des mots)",
+            "Comportementale"
+        ],
+        "correct": 2,
+        "feedback": "L'EVS (Échelle Verbale Simple) propose au patient de choisir des mots pour qualifier sa douleur (absente, faible, modérée, intense)."
+    },
+    {
+        "question": "L'amitriptyline (Laroxyl®) est un co-analgésique appartenant à quelle classe de médicaments ?",
+        "options": ["Antiépileptiques", "Antidépresseurs", "AINS", "Anxiolytiques"],
+        "correct": 1,
+        "feedback": "L'amitriptyline est un antidépresseur tricyclique utilisé à plus faible dose pour son effet sur les douleurs chroniques, notamment neuropathiques."
+    },
+    {
+        "question": "Quel est le principal avantage de l'oxycodone à libération immédiate (Oxynorm®) par rapport à sa forme à libération prolongée (Oxycontin®) ?",
+        "options": [
+            "Moins d'effets secondaires",
+            "Un délai d'action plus rapide",
+            "Une durée d'action de 24h",
+            "Pas de risque de dépendance"
+        ],
+        "correct": 1,
+        "feedback": "La forme à libération immédiate (LI) agit rapidement (15-30 min) et est utilisée pour les pics douloureux (interdoses)."
+    },
+    {
+        "question": "Selon l'OMS, quelle voie d'administration doit être privilégiée pour les antalgiques ?",
+        "options": [
+            "La voie intraveineuse (IV)",
+            "La voie intramusculaire (IM)",
+            "La voie per os (PO)",
+            "La voie sous-cutanée (SC)"
+        ],
+        "correct": 2,
+        "feedback": "La voie orale (Per Os) est la plus simple, la moins invasive et la plus confortable pour le patient."
+    },
+    {
+        "question": "Une douleur décrite comme une 'brûlure' ou des 'chocs électriques' est typique d'une douleur...",
+        "options": ["Nociceptive", "Neuropathique", "Nociplastique", "Aiguë"],
+        "correct": 1,
+        "feedback": "Ces descriptions sont caractéristiques d'une atteinte du système nerveux, donc d'une douleur neuropathique."
+    },
+    {
+        "question": "Parmi ces médicaments, lequel n'est PAS un opioïde ?",
+        "options": ["Codéine", "Néfopam", "Morphine", "Tramadol"],
+        "correct": 1,
+        "feedback": "Le Néfopam (Acupan®) est un antalgique central non opioïde."
+    },
+    {
+        "question": "Quel est le délai d'action approximatif du paracétamol administré par voie intraveineuse pour son effet antalgique ?",
+        "options": ["1 minute", "5 à 10 minutes", "30 à 40 minutes", "1 heure"],
+        "correct": 1,
+        "feedback": "Le soulagement débute 5 à 10 minutes après le début de la perfusion de paracétamol IV ; le pic d'efficacité antalgique est atteint en environ 1 heure."
+    },
+    {
+        "question": "L'un des '5 principes' de l'OMS pour l'administration des antalgiques est 'l'individualisation'. Qu'est-ce que cela signifie ?",
+        "options": [
+            "Donner le même traitement à tout le monde",
+            "Adapter le traitement à chaque patient",
+            "Utiliser uniquement des co-analgésiques",
+            "Commencer toujours par un opioïde fort"
+        ],
+        "correct": 1,
+        "feedback": "L'individualisation consiste à adapter le choix de la molécule, la posologie et la voie d'administration en fonction du patient, de sa douleur et de sa tolérance."
+    }
+]

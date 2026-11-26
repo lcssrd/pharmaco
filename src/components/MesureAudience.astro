@@ -1,0 +1,14 @@
+---
+/**
+ * Mesure d'audience Umami : respectueuse de la vie privée (pas de cookie, pas de donnée
+ * personnelle), comptée uniquement sur les domaines de production.
+ */
+import { MESURE_AUDIENCE } from '../data/site';
+---
+
+<script
+    is:inline
+    defer
+    src={MESURE_AUDIENCE.script}
+    data-website-id={MESURE_AUDIENCE.idSite}
+    data-domains={MESURE_AUDIENCE.domaines}></script>

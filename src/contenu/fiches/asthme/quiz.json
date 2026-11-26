@@ -1,0 +1,148 @@
+[
+    {
+        "question": "Quel est le traitement de première intention pour une crise d'asthme aiguë ?",
+        "options": [
+            "Un corticoïde inhalé",
+            "Un β2-mimétique d'action rapide (SABA)",
+            "Un antihistaminique de 2ème génération",
+            "La théophylline"
+        ],
+        "correct": 1,
+        "feedback": "Les β2-mimétiques d'action rapide comme le Salbutamol (Ventoline®) agissent en quelques minutes pour lever la bronchoconstriction."
+    },
+    {
+        "question": "Quel conseil est essentiel après l'inhalation d'un corticoïde ?",
+        "options": [
+            "Boire un grand verre d'eau",
+            "Se rincer la bouche",
+            "Faire de l'exercice",
+            "S'allonger pendant 10 minutes"
+        ],
+        "correct": 1,
+        "feedback": "Se rincer la bouche prévient le risque de candidose buccale (muguet), un effet secondaire local fréquent."
+    },
+    {
+        "question": "Un β2-mimétique d'action prolongée (LABA) doit toujours être associé à :",
+        "options": ["Un SABA", "Un corticoïde inhalé", "Un anti-leucotriène", "Un antihistaminique"],
+        "correct": 1,
+        "feedback": "Les LABA ne traitent pas l'inflammation sous-jacente. Utilisés seuls, ils masquent l'aggravation et augmentent le risque de crise grave. Ils doivent donc toujours être associés à un corticoïde inhalé."
+    },
+    {
+        "question": "Quel est l'effet secondaire principal des antihistaminiques de 1ère génération qui les différencie de la 2ème génération ?",
+        "options": ["L'effet sédatif (somnolence)", "Le risque d'hypertension", "La sécheresse cutanée", "Les nausées"],
+        "correct": 0,
+        "feedback": "Les antihistaminiques de 1ère génération passent la barrière hémato-encéphalique, provoquant une sédation notable, contrairement à ceux de 2ème génération."
+    },
+    {
+        "question": "La théophylline est un médicament peu utilisé en raison de :",
+        "options": [
+            "Son coût très élevé",
+            "Son administration uniquement IV",
+            "Son index thérapeutique étroit",
+            "Son inefficacité"
+        ],
+        "correct": 2,
+        "feedback": "L'index thérapeutique étroit signifie que la dose efficace est très proche de la dose toxique, ce qui la rend difficile à manipuler et dangereuse."
+    },
+    {
+        "question": "Quel effet secondaire peut être causé par les β2-mimétiques à forte dose, ainsi que par les corticoïdes et la théophylline ?",
+        "options": ["Une hyperkaliémie", "Une hypoglycémie", "Une hypokaliémie", "Une hyperthermie"],
+        "correct": 2,
+        "feedback": "L'hypokaliémie (baisse du potassium sanguin) est un effet secondaire commun à ces trois classes de médicaments, pouvant entraîner des troubles du rythme cardiaque."
+    },
+    {
+        "question": "Quelle est la technique d'inspiration correcte pour un inhalateur de poudre sèche (Diskus®, Turbuhaler®) ?",
+        "options": [
+            "Lente et douce",
+            "Rapide et profonde",
+            "Normale, comme au repos",
+            "En plusieurs petites inspirations"
+        ],
+        "correct": 1,
+        "feedback": "Pour les poudres sèches, une inspiration rapide et profonde est nécessaire pour 'aspirer' le médicament et le faire parvenir jusqu'aux poumons."
+    },
+    {
+        "question": "Pour un jeune enfant qui a du mal à utiliser un aérosol-doseur, quel dispositif est indispensable ?",
+        "options": ["Un nébuliseur", "Un inhalateur de poudre", "Une chambre d'inhalation", "Un dosage en sirop"],
+        "correct": 2,
+        "feedback": "La chambre d'inhalation (ou espaceur) élimine le problème de coordination main-bouche, assurant que le médicament est correctement inhalé par l'enfant."
+    },
+    {
+        "question": "L'Omalizumab (Xolair®) est une biothérapie réservée à quel type d'asthme ?",
+        "options": [
+            "L'asthme d'effort léger",
+            "L'asthme allergique persistant sévère",
+            "Toutes les formes d'asthme",
+            "L'asthme intermittent"
+        ],
+        "correct": 1,
+        "feedback": "Xolair® est un traitement d'exception pour l'asthme allergique sévère qui n'est pas contrôlé par les traitements standards (corticoïdes haute dose + LABA)."
+    },
+    {
+        "question": "Quel est un effet secondaire systémique majeur d'une corticothérapie orale au long cours ?",
+        "options": ["Perte de poids", "Ostéoporose", "Hypotension", "Diarrhée"],
+        "correct": 1,
+        "feedback": "Les corticoïdes systémiques au long cours diminuent la densité minérale osseuse, augmentant significativement le risque d'ostéoporose et de fractures."
+    },
+    {
+        "question": "L'Ipratropium (Atrovent®) appartient à quelle classe de médicaments ?",
+        "options": ["Agoniste β2", "Corticoïde", "Antagoniste muscarinique", "Antihistaminique"],
+        "correct": 2,
+        "feedback": "C'est un anticholinergique (ou antagoniste muscarinique) qui provoque une bronchodilatation."
+    },
+    {
+        "question": "La crise d'asthme est une obstruction bronchique. Quels sont les trois mécanismes physiopathologiques principaux ?",
+        "options": [
+            "Toux, fièvre, expectorations",
+            "Bronchoconstriction, inflammation, hypersécrétion de mucus",
+            "Hypertension, tachycardie, anxiété",
+            "Fatigue, céphalées, vertiges"
+        ],
+        "correct": 1,
+        "feedback": "La crise d'asthme combine une contraction des muscles bronchiques (bronchoconstriction), un gonflement de la paroi (inflammation/œdème) et une production excessive de mucus."
+    },
+    {
+        "question": "Quel est le traitement de fond pour un asthme persistant léger (niveau 2) ?",
+        "options": [
+            "β2-mimétiques d'action rapide à la demande uniquement",
+            "Corticoïdes inhalés à faible dose au quotidien",
+            "Corticoïdes par voie orale",
+            "Théophylline seule"
+        ],
+        "correct": 1,
+        "feedback": "Le traitement de fond de l'asthme persistant commence par une corticothérapie inhalée à faible dose pour contrôler l'inflammation chronique."
+    },
+    {
+        "question": "Quel dispositif est privilégié aux urgences pour l'administration de fortes doses de bronchodilatateurs lors d'une crise d'asthme sévère ?",
+        "options": [
+            "Un aérosol-doseur simple",
+            "Un inhalateur de poudre sèche (Turbuhaler®)",
+            "La nébulisation",
+            "Une injection intramusculaire"
+        ],
+        "correct": 2,
+        "feedback": "La nébulisation permet d'administrer de fortes doses de médicaments (associant souvent un β2-mimétique et l'Ipratropium) sur une durée de 10-15 minutes, souvent couplée à l'oxygène."
+    },
+    {
+        "question": "Face à une crise d'asthme, quel signe clinique traduit une 'Zone Rouge' (détresse respiratoire sévère) nécessitant une intervention immédiate ?",
+        "options": [
+            "Une toux nocturne",
+            "Une dyspnée empêchant de parler (phrases courtes)",
+            "Un sifflement à l'expiration",
+            "Une fréquence respiratoire à 18/min"
+        ],
+        "correct": 1,
+        "feedback": "La dyspnée à la parole est un signe clinique de sévérité extrême. La FR sera typiquement supérieure à 25/min et la Saturation O2 inférieure à 92%."
+    },
+    {
+        "question": "Les anticorps monoclonaux (comme le Mépolizumab ou le Dupilumab) sont de nouvelles biothérapies. Dans quel cas sont-ils indiqués ?",
+        "options": [
+            "Pour toute crise d'asthme",
+            "En première intention dans l'asthme léger",
+            "Dans l'asthme sévère résistant (avec composante allergique ou à éosinophiles)",
+            "Uniquement chez l'enfant de moins de 6 ans"
+        ],
+        "correct": 2,
+        "feedback": "Ces biothérapies (Anti-IgE et Anti-cytokines) sont administrées en injection sous-cutanée et sont réservées aux asthmes très sévères qui ne sont pas contrôlés par les corticoïdes inhalés à forte dose."
+    }
+]

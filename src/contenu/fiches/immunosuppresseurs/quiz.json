@@ -1,0 +1,97 @@
+[
+    {
+        "question": "Quelle est la principale indication des immunosuppresseurs en transplantation d'organe ?",
+        "options": [
+            "Traiter les infections post-opératoires",
+            "Prévenir le rejet du greffon",
+            "Diminuer la douleur",
+            "Améliorer la cicatrisation"
+        ],
+        "correct": 1,
+        "feedback": "Le but principal est d'empêcher le système immunitaire du receveur d'attaquer et de détruire l'organe greffé, considéré comme un corps étranger."
+    },
+    {
+        "question": "Le tacrolimus (Prograf®) et la ciclosporine (Neoral®) appartiennent à quelle classe ?",
+        "options": ["Antiprolifératifs", "Corticoïdes", "Inhibiteurs de la calcineurine", "Biothérapies"],
+        "correct": 2,
+        "feedback": "Ce sont les deux principaux inhibiteurs de la calcineurine, des médicaments clés dans la prévention du rejet de greffe."
+    },
+    {
+        "question": "Quel est le risque majeur et commun à tous les traitements immunosuppresseurs ?",
+        "options": ["L'hypertension artérielle", "La prise de poids", "Le risque infectieux", "L'insuffisance rénale"],
+        "correct": 2,
+        "feedback": "En diminuant les défenses de l'organisme, tous ces traitements augmentent la susceptibilité aux infections bactériennes, virales ou fongiques."
+    },
+    {
+        "question": "Pourquoi est-il crucial de réaliser des dosages sanguins pour des médicaments comme le tacrolimus ?",
+        "options": [
+            "Pour vérifier que le patient prend bien son traitement",
+            "Car ils ont une marge thérapeutique étroite",
+            "Pour ajuster la dose en fonction du poids",
+            "Pour dépister une allergie"
+        ],
+        "correct": 1,
+        "feedback": "Ces médicaments ont une marge thérapeutique étroite : une dose trop faible est inefficace (risque de rejet), une dose trop forte est toxique. Le dosage permet de rester dans la bonne fourchette."
+    },
+    {
+        "question": "Quel conseil d'ETP est fondamental pour un patient traité par un inhibiteur de la calcineurine ?",
+        "options": [
+            "Éviter le pamplemousse",
+            "Manger plus de fibres",
+            "Faire du sport à jeun",
+            "Prendre le traitement avec du lait"
+        ],
+        "correct": 0,
+        "feedback": "Le jus de pamplemousse est un inhibiteur enzymatique qui peut augmenter dangereusement les concentrations sanguines de ces médicaments."
+    },
+    {
+        "question": "Les médicaments se terminant par '-mab' (ex: Adalimumab) appartiennent généralement à quelle catégorie ?",
+        "options": ["Corticoïdes", "Inhibiteurs de mTOR", "Anticorps monoclonaux (Biothérapies)", "Antiprolifératifs"],
+        "correct": 2,
+        "feedback": "Le suffixe '-mab' signifie 'Monoclonal AntiBody'. Ce sont des thérapies ciblées qui visent une molécule précise de l'inflammation."
+    },
+    {
+        "question": "La surveillance de la NFS (Numération Formule Sanguine) est particulièrement importante avec les antiprolifératifs (ex: Azathioprine) pour dépister :",
+        "options": [
+            "Une anémie",
+            "Une leucopénie (baisse des globules blancs)",
+            "Une thrombopénie (baisse des plaquettes)",
+            "Toutes ces réponses sont correctes"
+        ],
+        "correct": 3,
+        "feedback": "Les antiprolifératifs peuvent avoir une toxicité sur la moelle osseuse, affectant la production de toutes les lignées cellulaires sanguines."
+    },
+    {
+        "question": "Face à un patient sous immunosuppresseur qui présente une fièvre à 38.5°C, quelle est la conduite à tenir ?",
+        "options": [
+            "Lui donner du paracétamol et réévaluer dans 24h",
+            "Le rassurer, c'est probablement un rhume",
+            "Considérer que c'est une urgence et contacter un médecin rapidement",
+            "Lui conseiller de bien s'hydrater"
+        ],
+        "correct": 2,
+        "feedback": "Chez un patient immunodéprimé, toute fièvre doit être considérée comme le signe d'une infection potentiellement grave jusqu'à preuve du contraire. Une évaluation médicale urgente est nécessaire."
+    },
+    {
+        "question": "Quel type de vaccin est généralement contre-indiqué chez un patient fortement immunodéprimé ?",
+        "options": [
+            "Les vaccins inactivés (ex: grippe)",
+            "Les vaccins vivants atténués (ex: ROR, fièvre jaune)",
+            "Tous les vaccins sont contre-indiqués",
+            "Les rappels de vaccin"
+        ],
+        "correct": 1,
+        "feedback": "Les vaccins vivants contiennent une version affaiblie du pathogène qui pourrait provoquer la maladie chez un patient dont le système immunitaire ne peut pas le contrôler."
+    },
+    {
+        "question": "En plus du risque infectieux, les immunosuppresseurs au long cours augmentent le risque de développer :",
+        "options": [
+            "Du diabète",
+            "Certains types de cancers",
+            "De l'ostéoporose",
+            "Toutes ces réponses sont correctes"
+        ],
+        "correct": 3,
+        "feedback": "En effet, le risque de cancers (cutanés, lymphomes), de diabète (surtout avec les corticoïdes et anti-calcineurines) et d'ostéoporose (corticoïdes) est augmenté."
+    }
+]

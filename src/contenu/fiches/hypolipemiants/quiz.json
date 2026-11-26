@@ -1,0 +1,136 @@
+[
+    {
+        "question": "Quel est le principal mécanisme d'action des statines ?",
+        "options": [
+            "Réduire la fabrication du cholestérol par le foie",
+            "Empêcher l'absorption du cholestérol dans l'intestin",
+            "Capturer le cholestérol dans l'intestin pour l'éliminer dans les selles",
+            "Faire baisser les triglycérides"
+        ],
+        "correct": 0,
+        "feedback": "Les statines font baisser le mauvais cholestérol (LDL) en réduisant sa fabrication par le foie. C'est le traitement de référence."
+    },
+    {
+        "question": "La surveillance des CPK chez un patient sous statine permet de dépister quel type d'atteinte ?",
+        "options": [
+            "Une atteinte du foie",
+            "Une atteinte des muscles",
+            "Une atteinte des reins",
+            "Une atteinte digestive"
+        ],
+        "correct": 1,
+        "feedback": "Les CPK sont des enzymes musculaires : leur surveillance permet de dépister une atteinte des muscles, signalée par des douleurs ou des crampes."
+    },
+    {
+        "question": "Quelle classe de médicaments est principalement indiquée en cas d'hypertriglycéridémie majeure ?",
+        "options": ["Les statines", "Les chélateurs d'acides biliaires", "L'ézétimibe", "Les fibrates"],
+        "correct": 3,
+        "feedback": "Les fibrates font surtout baisser les triglycérides : ils sont utilisés quand les triglycérides sont élevés."
+    },
+    {
+        "question": "Quel conseil est primordial pour un patient prenant de la cholestyramine (Questran®) ?",
+        "options": [
+            "Prendre le médicament le soir",
+            "Le prendre en même temps que ses autres médicaments",
+            "Prendre les autres médicaments à distance (1 à 2 h avant ou 4 h après)",
+            "Arrêter en cas de jaunisse"
+        ],
+        "correct": 2,
+        "feedback": "La cholestyramine peut diminuer l'absorption de nombreux autres médicaments. Il est donc crucial de décaler les prises."
+    },
+    {
+        "question": "Quel médicament inhibe spécifiquement l'absorption intestinale du cholestérol ?",
+        "options": ["Fénofibrate (Lipanthyl®)", "Atorvastatine (Tahor®)", "Ézétimibe (Ezetrol®)", "Anti-PCSK9"],
+        "correct": 2,
+        "feedback": "L'ézétimibe agit au niveau de la bordure en brosse de l'intestin pour bloquer l'absorption du cholestérol alimentaire et biliaire."
+    },
+    {
+        "question": "Par quelle voie les anti-PCSK9 sont-ils administrés ?",
+        "options": [
+            "Voie orale, le matin",
+            "Injection intra-musculaire",
+            "Perfusion intra-veineuse",
+            "Injection sous-cutanée"
+        ],
+        "correct": 3,
+        "feedback": "Les anti-PCSK9 s'administrent par injection sous la peau (sous-cutanée) : toutes les 2 à 4 semaines pour Praluent® et Repatha®, tous les 6 mois (après J0 et M3) pour l'inclisiran (Leqvio®)."
+    },
+    {
+        "question": "À quel moment de la journée faut-il prendre la simvastatine (Zocor®) ?",
+        "options": ["Le matin à jeun", "Le midi pendant le repas", "Le soir", "Toutes les 2 semaines"],
+        "correct": 2,
+        "feedback": "La simvastatine se prend le soir, en une prise. L'atorvastatine (Tahor®) et la rosuvastatine (Crestor®) peuvent se prendre à n'importe quel moment de la journée, à heure fixe."
+    },
+    {
+        "question": "En plus des douleurs musculaires, quel autre signe doit alerter un patient sous statine et motiver une consultation ?",
+        "options": [
+            "Une toux sèche",
+            "Des urines foncées couleur 'coca-cola'",
+            "Des éruptions cutanées",
+            "Une prise de poids"
+        ],
+        "correct": 1,
+        "feedback": "Des urines foncées peuvent être le signe d'une atteinte musculaire grave et d'une souffrance rénale : c'est une urgence médicale."
+    },
+    {
+        "question": "Quel est l'objectif principal et quantifiable d'un traitement par hypolipémiant ?",
+        "options": [
+            "Augmenter le HDL-cholestérol",
+            "Diminuer les triglycérides",
+            "Diminuer le LDL-cholestérol",
+            "Perdre du poids"
+        ],
+        "correct": 2,
+        "feedback": "L'objectif thérapeutique principal est d'atteindre une valeur cible de LDL-cholestérol, qui est le principal facteur de risque de l'athérosclérose."
+    },
+    {
+        "question": "L'éducation sur les règles hygiéno-diététiques est-elle encore nécessaire si le patient prend un traitement médicamenteux efficace ?",
+        "options": [
+            "Non, les médicaments suffisent",
+            "Seulement si le patient est en surpoids",
+            "Oui, elles sont indispensables et complémentaires",
+            "Non, sauf si le bilan lipidique reste mauvais"
+        ],
+        "correct": 2,
+        "feedback": "Les règles hygiéno-diététiques sont le pilier de la prise en charge. Elles potentialisent l'effet des médicaments et agissent sur d'autres facteurs de risque."
+    },
+    {
+        "question": "Dans quel ordre les traitements hypolipémiants sont-ils généralement instaurés ?",
+        "options": [
+            "Anti-PCSK9, puis statine, puis ézétimibe",
+            "Statine, puis ézétimibe, puis anti-PCSK9",
+            "Ézétimibe, puis fibrate, puis statine",
+            "Un fibrate en première intention"
+        ],
+        "correct": 1,
+        "feedback": "On débute par une statine, puis on ajoute l'ézétimibe si besoin, et enfin un anti-PCSK9 si le cholestérol reste trop élevé."
+    },
+    {
+        "question": "Dans quelle situation l'acide bempédoïque (Nilemdo®) est-il surtout une option ?",
+        "options": [
+            "En première intention chez tous les patients",
+            "En cas d'intolérance aux statines",
+            "Uniquement en cas d'hypertriglycéridémie",
+            "Uniquement chez l'enfant"
+        ],
+        "correct": 1,
+        "feedback": "L'acide bempédoïque réduit la fabrication du cholestérol par le foie. C'est une alternative quand les statines ne sont pas supportées."
+    },
+    {
+        "question": "Chez un patient en prévention secondaire (très haut risque), quelle est la cible de LDL-cholestérol ?",
+        "options": ["< 1,16 g/L", "< 1,00 g/L", "< 0,70 g/L", "< 0,55 g/L (et baisse ≥ 50 %)"],
+        "correct": 3,
+        "feedback": "Selon l'ESC 2019, le très haut risque (prévention secondaire) vise une baisse ≥ 50 % et un LDL-c < 0,55 g/L (voire < 0,40 g/L en cas de récidive < 2 ans)."
+    },
+    {
+        "question": "Quel délai faut-il respecter entre la prise d'un chélateur d'acides biliaires (Questran®) et les autres médicaments ?",
+        "options": [
+            "30 minutes",
+            "1 heure",
+            "Les autres médicaments 1 à 2 h avant ou 4 h après",
+            "Aucun délai nécessaire"
+        ],
+        "correct": 2,
+        "feedback": "Les chélateurs diminuent l'absorption de nombreux médicaments (AVK, hormones thyroïdiennes, contraceptifs...). Il faut prendre les autres médicaments 1 à 2 heures avant ou 4 heures après."
+    }
+]
