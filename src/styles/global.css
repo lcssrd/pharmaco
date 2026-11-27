@@ -151,7 +151,7 @@
         opacity: 0;
     }
 
-    /* Signature « par Eidos-Simul.fr » (accueil, barre des fiches), précédée d'un petit trait
+    /* Signature « par Eidos-Simul.fr » sous le titre de l'accueil, précédée d'un petit trait
        d'amorce comme sous le titre de Skopéo */
     .signature-amorce::before {
         content: '';

@@ -1,11 +1,10 @@
 ---
 /**
  * En-tête d'une fiche, au dessin d'Eidos-Simul : barre blanche collante (retour à l'accueil,
- * « par Eidos-Simul.fr », menu des autres sites), puis le titre de la fiche et la barre d'onglets.
+ * menu des autres sites), puis le titre de la fiche et la barre d'onglets.
  */
 import type { FicheChargee } from '../../lib/serveur/fiches';
 import MenuSites from '../MenuSites.astro';
-import ParEidosSimul from '../ParEidosSimul.astro';
 import ListeOnglets from './ListeOnglets.astro';
 
 interface Props {
@@ -35,9 +34,6 @@ const { apparence } = fiche;
             </span>
             <span>Toutes les fiches</span>
         </a>
-        <p class="signature-amorce hidden md:block text-sm whitespace-nowrap">
-            <ParEidosSimul />
-        </p>
         <MenuSites />
     </div>
 </header>
