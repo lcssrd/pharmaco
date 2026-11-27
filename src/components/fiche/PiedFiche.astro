@@ -1,5 +1,6 @@
 ---
 import type { FicheChargee } from '../../lib/serveur/fiches';
+import PiedDePage from '../PiedDePage.astro';
 import Signature from '../Signature.astro';
 
 interface Props {
@@ -7,7 +8,6 @@ interface Props {
 }
 
 const { fiche } = Astro.props;
-const { apparence } = fiche;
 
 // Date écrite en AAAA-MM-JJ, affichée « 25 novembre 2026 » (en UTC : pas de décalage d'un jour)
 const dateLisible = new Date(`${fiche.miseAJour}T00:00:00Z`).toLocaleDateString('fr-FR', {
@@ -18,20 +18,15 @@ const dateLisible = new Date(`${fiche.miseAJour}T00:00:00Z`).toLocaleDateString(
 });
 ---
 
-<footer
-    class:list={['bg-slate-800 text-white p-4 md:p-6 mt-auto', { 'rounded-b-xl shadow-inner': apparence.ombrePied }]}>
-    <div class="max-w-6xl mx-auto mb-4 pb-4 border-b border-slate-700 text-[11px] sm:text-xs text-slate-400 leading-relaxed text-center md:text-left">
-        <p>
-            Dernière mise à jour du contenu : <time datetime={fiche.miseAJour}>{dateLisible}</time>
-        </p>
-        <p class="mt-1">
-            Support de révision à visée pédagogique : il ne remplace ni les cours de votre IFSI, ni le résumé des
-            caractéristiques du produit (RCP) des médicaments, ni une prescription médicale.
-        </p>
-    </div>
-    <div class="flex items-center justify-center md:justify-end text-center">
-        <p class="font-bold text-slate-300 text-xs sm:text-sm">
-            <Signature classe={`bg-linear-to-r bg-clip-text text-transparent ${apparence.auteurPied}`} />
-        </p>
-    </div>
-</footer>
+<PiedDePage>
+    <p class="text-sm font-medium text-encre">
+        Dernière mise à jour du contenu : <time datetime={fiche.miseAJour}>{dateLisible}</time>
+    </p>
+    <p class="mt-1.5 max-w-2xl text-xs leading-relaxed text-attenue">
+        Support de révision à visée pédagogique : il ne remplace ni les cours de votre IFSI, ni le résumé des
+        caractéristiques du produit (RCP) des médicaments, ni une prescription médicale.
+    </p>
+    <p slot="droite" class="text-sm">
+        <Signature />
+    </p>
+</PiedDePage>

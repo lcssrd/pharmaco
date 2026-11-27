@@ -19,12 +19,8 @@ const fiche: Fiche = {
     },
     apparence: {
         titre: 'from-purple-500 to-pink-600',
-        auteurEntete: 'from-purple-500 to-pink-600',
-        auteurPied: 'from-sky-400 via-violet-500 to-pink-500',
         grilleOnglets: 'grid-cols-2 sm:grid-cols-4',
-        enteteCollant: 'z-20',
         pleineHauteur: false,
-        ombrePied: false,
     },
     onglets: [
         {

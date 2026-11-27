@@ -20,12 +20,8 @@ const fiche: Fiche = {
     },
     apparence: {
         titre: 'from-blue-400 to-blue-700',
-        auteurEntete: 'from-cyan-400 to-blue-500',
-        auteurPied: 'from-sky-400 via-violet-500 to-pink-500',
         grilleOnglets: 'grid-cols-3 sm:grid-cols-6',
-        enteteCollant: 'z-10',
         pleineHauteur: false,
-        ombrePied: true,
     },
     onglets: [
         {

@@ -1,17 +1,19 @@
 ---
-/** « Lucas Séraudie - 2026 », le nom en dégradé */
+/**
+ * « Lucas Séraudie - 2026 » (avec « - V6 » sur demande) : le nom en Parkinsans, comme le nom
+ * du site dans la signature « par Eidos-Simul.fr » de Skopéo ; la version en bleu Pharmaco.
+ */
 import { SITE } from '../data/site';
 
 interface Props {
-    /** Classes du nom (dégradé) */
-    classe: string;
     /** Ajoute le numéro de version (« - V6 ») */
     version?: boolean;
 }
 
-const { classe, version = false } = Astro.props;
-const suite = ` - ${SITE.annee}${version ? ` - ${SITE.version}` : ''}`;
+const { version = false } = Astro.props;
+const suite = ` - ${SITE.annee}${version ? ' - ' : ''}`;
 ---
 
-<span class={classe}>{SITE.auteur}</span>
-{suite}
+<span class="font-titre font-semibold text-encre">{SITE.auteur}</span>
+<span class="text-attenue">{suite}</span>
+{version && <span class="font-titre font-semibold text-pharma">{SITE.version}</span>}

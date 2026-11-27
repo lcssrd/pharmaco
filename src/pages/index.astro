@@ -2,6 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CarteAccueil from '../components/accueil/CarteAccueil.astro';
 import Recherche from '../components/accueil/Recherche.astro';
+import MenuSites from '../components/MenuSites.astro';
+import ParEidosSimul from '../components/ParEidosSimul.astro';
+import PiedDePage from '../components/PiedDePage.astro';
 import Signature from '../components/Signature.astro';
 import { LIENS_EXTERNES } from '../data/liens-externes';
 import { SITE } from '../data/site';
@@ -9,6 +12,12 @@ import { THEMES_CARTES } from '../data/themes-cartes';
 import { toutesLesFiches } from '../lib/serveur/fiches';
 
 const fiches = toutesLesFiches();
+
+// Le dernier mot du nom du site (« pharmacologie ») est mis en couleur, comme les mots-clés
+// du titre de l'accueil d'Eidos-Simul
+const coupure = SITE.nom.lastIndexOf(' ');
+const nomDebut = SITE.nom.slice(0, coupure);
+const nomFin = SITE.nom.slice(coupure + 1);
 
 // Les cartes apparaissent l'une après l'autre (50 ms d'écart, au plus 650 ms)
 const ECART_ANIMATION_MS = 50;
@@ -23,69 +32,74 @@ const delai = (rang: number): number => Math.min(rang * ECART_ANIMATION_MS, DELA
     ogDescription="Toutes les fiches de pharmaco pour valider l'UE 2.11. Gratuit et accessible."
     ogType="website"
     page="index.html">
-    <div class="max-w-6xl mx-auto bg-white shadow-2xl rounded-2xl flex flex-col min-h-[calc(100vh-4rem)]">
-        <header class="bg-slate-800 text-white p-6 md:p-8 rounded-t-2xl">
-            <div class="flex items-center justify-between gap-4">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight gradient-text bg-linear-to-r from-sky-400 via-violet-400 to-pink-500 pb-1">
-                    {SITE.nom}
+    <header class="w-full max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="flex justify-end pt-3 sm:pt-4">
+            <MenuSites />
+        </div>
+        <!-- Titre et signature calée sous sa fin, comme l'accueil de Skopéo -->
+        <div class="flex justify-center pt-2 pb-8 sm:pt-4 sm:pb-12 text-center">
+            <div class="flex flex-col items-end">
+                <!-- Deux lignes : la boîte du titre prend la largeur de la plus longue, la signature s'y cale -->
+                <h1 class="font-titre font-semibold text-encre text-[clamp(2.25rem,7vw,4.75rem)] leading-[0.98] tracking-[-0.02em]">
+                    <span class="block">{`${nomDebut} `}</span>
+                    <span class="block text-pharma">{nomFin}</span>
                 </h1>
-                <div class="flex items-center gap-4 shrink-0">
-                    <div class="hidden md:block text-right font-bold text-slate-300 text-sm">
-                        <p>
-                            <Signature classe="gradient-text bg-linear-to-r from-sky-400 to-violet-400" version />
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <main id="contenu" class="p-4 sm:p-6 md:p-8 grow">
-            <Recherche />
-
-            <ul
-                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-[1fr]"
-                aria-label="Fiches de révision">
-                {fiches.map((fiche, rang) => (
-                    <CarteAccueil
-                        href={`${fiche.slug}.html`}
-                        fiche={fiche.slug}
-                        titre={fiche.carte.titre}
-                        sousTitre={fiche.carte.sousTitre}
-                        pastille={fiche.carte.semestre}
-                        theme={THEMES_CARTES[fiche.carte.couleur]}
-                        icone={fiche.carte.icone}
-                        delai={delai(rang)}
-                    />
-                ))}
-                {LIENS_EXTERNES.map((lien, i) => (
-                    <CarteAccueil
-                        href={lien.url}
-                        externe
-                        titre={lien.titre}
-                        sousTitre={lien.sousTitre}
-                        pastille={lien.pastille}
-                        theme={lien.theme}
-                        icone={lien.icone}
-                        delai={delai(fiches.length + i)}
-                    />
-                ))}
-            </ul>
-        </main>
-
-        <footer class="bg-slate-800 text-white p-4 md:p-6 mt-auto rounded-b-2xl">
-            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-4">
-                <p class="font-bold text-slate-300 text-xs sm:text-sm">
-                    <Signature classe="gradient-text bg-linear-to-r from-sky-400 to-violet-400" />
-                </p>
-                <p class="text-slate-400 text-[10px] sm:text-xs">
-                    Contenu sous licence{' '}
-                    <a href={SITE.licence.url} target="_blank" rel="noopener" class="text-sky-400 hover:underline">
-                        {SITE.licence.nom}
-                    </a>
+                <!-- « par Eidos-Simul.fr », la même signature que sous le titre de Skopéo -->
+                <p class="signature-amorce mt-4 sm:mt-5 mr-[0.15em] text-[clamp(0.95rem,1.8vw,1.15rem)] leading-none whitespace-nowrap">
+                    <ParEidosSimul />
                 </p>
             </div>
-        </footer>
-    </div>
+        </div>
+    </header>
+
+    <main id="contenu" class="w-full max-w-6xl mx-auto px-4 sm:px-6 pb-12 md:pb-16 grow">
+        <Recherche />
+
+        <ul
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-[1fr]"
+            aria-label="Fiches de révision">
+            {fiches.map((fiche, rang) => (
+                <CarteAccueil
+                    href={`${fiche.slug}.html`}
+                    fiche={fiche.slug}
+                    titre={fiche.carte.titre}
+                    sousTitre={fiche.carte.sousTitre}
+                    pastille={fiche.carte.semestre}
+                    theme={THEMES_CARTES[fiche.carte.couleur]}
+                    icone={fiche.carte.icone}
+                    delai={delai(rang)}
+                />
+            ))}
+            {LIENS_EXTERNES.map((lien, i) => (
+                <CarteAccueil
+                    href={lien.url}
+                    externe
+                    titre={lien.titre}
+                    sousTitre={lien.sousTitre}
+                    pastille={lien.pastille}
+                    theme={lien.theme}
+                    icone={lien.icone}
+                    delai={delai(fiches.length + i)}
+                />
+            ))}
+        </ul>
+    </main>
+
+    <PiedDePage>
+        <p class="text-sm">
+            <Signature version />
+        </p>
+        <p slot="droite" class="text-xs text-attenue">
+            Contenu sous licence{' '}
+            <a
+                href={SITE.licence.url}
+                target="_blank"
+                rel="noopener"
+                class="font-semibold text-pharma underline-offset-2 hover:underline">
+                {SITE.licence.nom}
+            </a>
+        </p>
+    </PiedDePage>
 
     <script>
         import { afficherScoresAccueil } from '../scripts/scores-accueil';

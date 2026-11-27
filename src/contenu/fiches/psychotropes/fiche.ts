@@ -18,12 +18,8 @@ const fiche: Fiche = {
     },
     apparence: {
         titre: 'from-lime-500 to-green-600',
-        auteurEntete: 'from-lime-500 to-green-600',
-        auteurPied: 'from-lime-400 to-green-500',
         grilleOnglets: 'grid-cols-3 sm:grid-cols-3 md:grid-cols-6',
-        enteteCollant: 'z-50',
         pleineHauteur: true,
-        ombrePied: false,
     },
     onglets: [
         {

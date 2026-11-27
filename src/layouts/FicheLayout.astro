@@ -42,14 +42,15 @@ const aDesGraphiques = Object.keys(fiche.graphiques).length > 0;
         </style>
     </noscript>
 
-    <div
-        class:list={[
-            'max-w-6xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden',
-            { 'min-h-screen flex flex-col': apparence.pleineHauteur },
-        ]}>
-        <EnteteFiche fiche={fiche} />
+    <EnteteFiche fiche={fiche} />
 
-        <main id="contenu" class:list={['p-4 sm:p-6 md:p-8', { grow: apparence.pleineHauteur }]}>
+    <!-- Le contenu des onglets, sur une feuille blanche ombrée -->
+    <main id="contenu" class="w-full max-w-6xl mx-auto px-3 sm:px-6 pt-5 sm:pt-6 pb-12 md:pb-16 grow flex flex-col">
+        <div
+            class:list={[
+                'bg-white rounded-3xl sm:rounded-[2rem] shadow-feuille p-4 sm:p-6 md:p-8',
+                { grow: apparence.pleineHauteur },
+            ]}>
             {fiche.onglets.map((onglet, i) => (
                 <PanneauOnglet id={onglet.id} visible={i === 0}>
                     {onglet.id === ONGLET_QUIZ ? (
@@ -65,10 +66,10 @@ const aDesGraphiques = Object.keys(fiche.graphiques).length > 0;
                     )}
                 </PanneauOnglet>
             ))}
-        </main>
+        </div>
+    </main>
 
-        <PiedFiche fiche={fiche} />
-    </div>
+    <PiedFiche fiche={fiche} />
 
     {aDesGraphiques && (
         <script is:inline type="application/json" id="donnees-graphiques" set:html={enJsonPourHtml(fiche.graphiques)} />

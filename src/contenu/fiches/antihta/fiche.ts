@@ -19,12 +19,8 @@ const fiche: Fiche = {
     },
     apparence: {
         titre: 'from-emerald-400 to-green-600',
-        auteurEntete: 'from-emerald-400 to-green-600',
-        auteurPied: 'from-sky-400 via-violet-500 to-pink-500',
         grilleOnglets: 'grid-cols-4 sm:grid-cols-4 md:grid-cols-7',
-        enteteCollant: 'z-50',
         pleineHauteur: true,
-        ombrePied: false,
     },
     onglets: [
         {

@@ -3,13 +3,13 @@
 const urlIndex = `${import.meta.env.BASE_URL}recherche.json`;
 ---
 
-<div class="mb-6" role="search" data-recherche={urlIndex}>
+<div class="max-w-2xl mx-auto mb-8 sm:mb-10" role="search" data-recherche={urlIndex}>
     <label for="champ-recherche" class="sr-only">
         Rechercher dans toutes les fiches
     </label>
     <div class="relative">
         <svg
-            class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"
+            class="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-pharma"
             width="20"
             height="20"
             viewBox="0 0 24 24"
@@ -30,7 +30,7 @@ const urlIndex = `${import.meta.env.BASE_URL}recherche.json`;
             enterkeyhint="search"
             aria-controls="resultats-recherche"
             placeholder="Rechercher : Lovenox, INR, morphine…"
-            class="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-slate-200 bg-white text-slate-800 placeholder:text-slate-400 shadow-xs focus:outline-hidden focus:border-sky-400 focus:ring-4 focus:ring-sky-100 transition"
+            class="w-full h-14 pl-13 pr-5 rounded-full border-2 border-white bg-white text-encre placeholder:text-indice shadow-pastille focus:outline-hidden focus:border-pharma focus:shadow-bleu transition"
         />
     </div>
     <!-- Annonce du nombre de résultats aux lecteurs d'écran -->

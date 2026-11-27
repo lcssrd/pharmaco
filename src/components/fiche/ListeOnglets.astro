@@ -14,11 +14,11 @@ interface Props {
 const { onglets, grille } = Astro.props;
 ---
 
-<div class="pt-6">
+<div class="pt-6 sm:pt-8">
     <div
         role="tablist"
         aria-label="Sections de la fiche"
-        class:list={['p-1.5 bg-slate-200/60 rounded-xl grid gap-2', grille]}
+        class:list={['p-1.5 bg-white rounded-[1.75rem] shadow-pastille grid gap-1.5', grille]}
         data-onglets>
         {onglets.map((onglet, i) => (
             <button
@@ -29,10 +29,10 @@ const { onglets, grille } = Astro.props;
                 aria-selected={i === 0 ? 'true' : 'false'}
                 tabindex={i === 0 ? 0 : -1}
                 class:list={[
-                    'nav-btn w-full py-3 px-2 rounded-lg text-slate-800 font-semibold transition-all duration-300 text-xs sm:text-sm',
+                    'nav-btn w-full py-3 px-2 rounded-[1.375rem] text-encre font-semibold transition-all duration-300 text-xs sm:text-sm',
                     'aria-selected:bg-linear-to-r aria-selected:text-white aria-selected:shadow-md',
                     onglet.actif,
-                    onglet.survol,
+                    onglet.survol ?? 'hover:bg-controle',
                 ]}>
                 {onglet.libelle}
             </button>

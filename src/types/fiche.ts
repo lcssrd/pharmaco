@@ -70,18 +70,10 @@ export interface Fiche {
     apparence: {
         /** Dégradé du titre principal */
         titre: string;
-        /** Dégradé du nom de l'auteur dans l'en-tête */
-        auteurEntete: string;
-        /** Dégradé du nom de l'auteur dans le pied de page */
-        auteurPied: string;
         /** Nombre de colonnes de la barre d'onglets, par exemple « grid-cols-4 md:grid-cols-8 » */
         grilleOnglets: string;
-        /** En-tête qui reste en haut de l'écran au défilement (avec son niveau d'empilement), ou non */
-        enteteCollant: 'z-10' | 'z-20' | 'z-50' | false;
-        /** La fiche occupe au moins toute la hauteur de l'écran */
+        /** La feuille blanche du contenu s'étire jusqu'au pied de page, même quand l'onglet est court */
         pleineHauteur: boolean;
-        /** Ombre intérieure sur le pied de page */
-        ombrePied: boolean;
     };
     /** Onglets dans l'ordre d'affichage ; l'onglet « quiz » accueille le quiz */
     onglets: Onglet[];

@@ -23,12 +23,12 @@ function carteResultat(entree: EntreePreparee, premierMot: string): HTMLLIElemen
     const passage = trouverPassage(entree, premierMot);
     const lien = creer(
         'a',
-        'resultat-recherche block p-3 rounded-xl border border-slate-200 bg-white hover:border-sky-400 hover:shadow-md transition',
+        'resultat-recherche block px-5 py-3 rounded-3xl border-2 border-white bg-white shadow-pastille hover:border-pharma hover:-translate-y-0.5 transition',
     );
     lien.href = lienResultat(entree, passage);
 
-    const titre = creer('span', 'block text-sm font-bold text-slate-800');
-    titre.append(`${entree.n} `, creer('span', 'text-slate-400', '›'), ` ${entree.l}`);
+    const titre = creer('span', 'block text-sm font-bold text-encre');
+    titre.append(`${entree.n} `, creer('span', 'text-indice', '›'), ` ${entree.l}`);
     lien.append(titre);
 
     if (passage) {
@@ -87,7 +87,7 @@ export function initialiserRecherche(zone: HTMLElement): void {
             return;
         }
         if (!index) {
-            afficher(creer('p', 'text-sm text-slate-500 px-1', 'Chargement…'));
+            afficher(creer('p', 'text-sm text-attenue px-5', 'Chargement…'));
             void chargerIndex().then(() => {
                 if (index) lancer();
             });
@@ -97,7 +97,7 @@ export function initialiserRecherche(zone: HTMLElement): void {
         const trouves = rechercher(index, mots);
         if (!trouves.length) {
             const message = `Aucun résultat pour « ${requete} ».`;
-            afficher(creer('p', 'text-sm text-slate-600 px-1', message));
+            afficher(creer('p', 'text-sm text-attenue px-5', message));
             statut.textContent = message;
             return;
         }
@@ -105,9 +105,9 @@ export function initialiserRecherche(zone: HTMLElement): void {
         const affiches = trouves.slice(0, MAX_RESULTATS);
         const pluriel = trouves.length > 1 ? 's' : '';
         const resume = `${trouves.length} résultat${pluriel}${trouves.length > affiches.length ? ` (les ${affiches.length} plus pertinents)` : ''}`;
-        const liste = creer('ul', 'grid gap-2');
+        const liste = creer('ul', 'grid gap-3');
         liste.append(...affiches.map(({ entree }) => carteResultat(entree, mots[0] ?? '')));
-        afficher(creer('p', 'text-xs text-slate-500 px-1 mb-2', resume), liste);
+        afficher(creer('p', 'text-xs text-attenue px-5 mb-2', resume), liste);
         statut.textContent = resume;
     };
 

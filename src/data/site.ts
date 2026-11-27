@@ -4,7 +4,7 @@ export const SITE = {
     auteur: 'Lucas Séraudie',
     annee: 2026,
     version: 'V6',
-    couleurTheme: '#1e293b',
+    couleurTheme: '#ffffff',
     licence: {
         nom: 'CC BY-SA 4.0',
         url: 'https://creativecommons.org/licenses/by-sa/4.0/',

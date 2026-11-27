@@ -5,6 +5,7 @@
  */
 import '../styles/global.css';
 import policeLatin from '../assets/polices/inter-latin-wght-normal.woff2?url';
+import policeTitres from '../assets/polices/parkinsans-latin-600-normal.woff2?url';
 import MesureAudience from '../components/MesureAudience.astro';
 import { SITE } from '../data/site';
 
@@ -46,14 +47,16 @@ const urlCanonique = new URL(page, Astro.site).href;
         <link rel="icon" href={`${base}assets/icones/favicon-32.png`} sizes="32x32" type="image/png" />
         <link rel="apple-touch-icon" href={`${base}assets/icones/apple-touch-icon.png`} />
 
-        <!-- Police préchargée pour éviter le changement de police à l'affichage -->
+        <!-- Polices préchargées pour éviter le changement de police à l'affichage -->
         <link rel="preload" href={policeLatin} as="font" type="font/woff2" crossorigin />
+        <link rel="preload" href={policeTitres} as="font" type="font/woff2" crossorigin />
 
         <slot name="head" />
         <MesureAudience />
     </head>
 
-    <body class="p-2 sm:p-4 md:p-8">
+    <!-- En colonne : le pied de page reste en bas de l'écran même quand la page est courte -->
+    <body class="min-h-dvh flex flex-col">
         <a href="#contenu" class="lien-evitement">
             Aller au contenu
         </a>

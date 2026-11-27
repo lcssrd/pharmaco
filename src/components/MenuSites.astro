@@ -1,0 +1,97 @@
+---
+/**
+ * Menu « Aussi sur Eidos-Simul » : bouton à quatre pastilles qui ouvre les liens vers les autres
+ * sites de la famille, avec le même dessin que dans l'en-tête d'Eidos-Simul.
+ */
+interface SiteEidos {
+    url: string;
+    nom: string;
+    sousTitre: string;
+    /** Classe de couleur de la pastille (voir global.css) */
+    classe: string;
+    /** Tracé SVG de l'icône (grille 24 × 24, trait) */
+    icone: string;
+}
+
+const SITES: readonly SiteEidos[] = [
+    {
+        url: 'https://eidos-simul.fr/',
+        nom: 'Eidos-Simul.fr',
+        sousTitre: 'Plateforme de simulation',
+        classe: 'pastille-site--eidos',
+        icone: 'M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 0 1 9 9v.375M10.125 2.25A3.375 3.375 0 0 1 13.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 0 1 3.375 3.375M9 15l2.25 2.25L15 12',
+    },
+    {
+        url: 'https://scope.eidos-simul.fr/',
+        nom: 'Skopéo',
+        sousTitre: 'Simulateur de monitorage',
+        classe: 'pastille-site--scope',
+        icone: 'M3 12h4l2.5-6 4 12 2.5-6H21',
+    },
+];
+---
+
+<div class="menu-sites" data-menu-sites>
+    <button
+        type="button"
+        class="menu-sites-bouton"
+        aria-expanded="false"
+        aria-controls="menu-sites-panneau"
+        aria-label="Autres sites d'Eidos-Simul"
+        title="Autres sites d'Eidos-Simul">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+            <g class="menu-sites-points">
+                <circle class="menu-sites-point menu-sites-point--eidos" cx="7" cy="7" r="3"></circle>
+                <circle class="menu-sites-point menu-sites-point--scope" cx="17" cy="7" r="3"></circle>
+                <circle class="menu-sites-point menu-sites-point--pharma" cx="7" cy="17" r="3"></circle>
+                <circle class="menu-sites-point menu-sites-point--reste" cx="17" cy="17" r="3"></circle>
+            </g>
+        </svg>
+    </button>
+
+    <nav id="menu-sites-panneau" class="menu-sites-panneau" aria-label="Autres sites d'Eidos-Simul">
+        <p class="menu-sites-titre menu-sites-element">Aussi sur Eidos-Simul</p>
+        {SITES.map((site) => (
+            <a href={site.url} class:list={['pastille-site menu-sites-element', site.classe]}>
+                <span class="pastille-site__icone" aria-hidden="true">
+                    <svg
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d={site.icone}></path>
+                    </svg>
+                </span>
+                <span class="pastille-site__texte">
+                    <span class="pastille-site__nom">{site.nom}</span>
+                    <span class="pastille-site__sous-titre">{site.sousTitre}</span>
+                </span>
+                <svg
+                    class="pastille-site__aller"
+                    aria-hidden="true"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M7 17L17 7"></path>
+                    <path d="M9 7h8v8"></path>
+                </svg>
+            </a>
+        ))}
+    </nav>
+</div>
+
+<script>
+    import { initialiserMenuSites } from '../scripts/menu-sites';
+
+    const menu = document.querySelector<HTMLElement>('[data-menu-sites]');
+    if (menu) initialiserMenuSites(menu);
+</script>
