@@ -15,7 +15,7 @@ export interface ThemeCarte {
 
 const pastille = (couleurs: string): string => `${couleurs} text-xs px-2.5`;
 
-export const THEMES_CARTES: Readonly<Record<CouleurCarte | 'linkedin', ThemeCarte>> = {
+export const THEMES_CARTES: Readonly<Record<CouleurCarte | 'github', ThemeCarte>> = {
     amber: {
         carte: 'from-amber-50 to-amber-100 border-amber-200 hover:ring-amber-500/80',
         accent: 'text-amber-500',
@@ -82,9 +82,10 @@ export const THEMES_CARTES: Readonly<Record<CouleurCarte | 'linkedin', ThemeCart
         accent: 'text-violet-500',
         pastille: pastille('bg-violet-200 text-violet-800'),
     },
-    linkedin: {
-        carte: 'from-indigo-50 to-blue-100 border-blue-200 hover:ring-blue-600',
-        accent: 'text-blue-600',
-        pastille: 'bg-blue-600 text-white text-[10px] px-2 uppercase',
+    // Carte du dépôt GitHub : ardoise, pastille foncée comme le logo de GitHub
+    github: {
+        carte: 'from-slate-50 to-slate-100 border-slate-200 hover:ring-slate-700',
+        accent: 'text-slate-800',
+        pastille: 'bg-slate-800 text-white text-[10px] px-2 uppercase',
     },
 };
